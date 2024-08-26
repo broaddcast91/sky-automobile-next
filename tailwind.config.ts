@@ -8,10 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primaryRed: "#EA3A51",
+        primaryGray: "#313131",
+        secondaryRed2: "#EA3A51",
+        secondaryGray2: "#707070",
+        secondaryGray3: "#EBEBEB",
+        secondaryGray4: "#F8F8F8",
+        tertiary: "#333333",
+      },
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
       },
     },
   },
