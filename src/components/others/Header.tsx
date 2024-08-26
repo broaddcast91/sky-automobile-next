@@ -7,12 +7,14 @@ import { FaFacebookF, FaLinkedin } from "react-icons/fa6";
 import { IoMailSharp } from "react-icons/io5";
 import { LuInstagram } from "react-icons/lu";
 import { RiMenu3Fill } from "react-icons/ri";
+import { usePathname } from "next/navigation";
 
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isVehicle, setIsVehicle] = useState(false);
   // const { pathname } = useNavigate();
+   const pathname = usePathname();
 
   const slideData = [
     {
@@ -77,9 +79,9 @@ const Header = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <header
