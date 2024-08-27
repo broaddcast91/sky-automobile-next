@@ -7,10 +7,12 @@ import VehcileRange from "@/components/home/VehcileRange";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
+import ModalSelectState from "@/components/others/ModalSelectState";
 
 export default function Home() {
   return (
     <main className="">
+      <ModalSelectState />
       <Header />
       <HeroSection />
       <EnqHome />

@@ -42,7 +42,7 @@ const EnqHome: React.FC = () => {
                 value=""
                 className="w-full p-2 text-sm text-black border rounded-md"
                 disabled
-                selected
+              
               >
                 I&apos;m looking for*
               </option>

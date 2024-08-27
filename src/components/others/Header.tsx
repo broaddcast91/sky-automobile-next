@@ -8,6 +8,7 @@ import { IoMailSharp } from "react-icons/io5";
 import { LuInstagram } from "react-icons/lu";
 import { RiMenu3Fill } from "react-icons/ri";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 
 const Header = () => {
@@ -132,26 +133,26 @@ const Header = () => {
           <div className="select-none">
             <Link onMouseEnter={() => setIsVehicle(false)} href="/">
               {/* {scrolled ? ( */}
-              <img
+              <Image
                 // src="https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/logos/new-hic-logo-2024-webp.webp"
-                src="/images//logo.png"
+                src="/images/logo.png"
                 // src={require("../assets/logo2_sky.png")}
                 alt="logo"
-                // width={300}
-                // height={300}
+                width={300}
+                height={300}
                 className={`w-auto h-12 rounded-lg md:h-14 duration-500 mb-1   ${
                   scrolled || isVehicle
                     ? "block "
                     : " lg:hidden group-hover:block "
                 }`}
               />
-              <img
+              <Image
                 // src="https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/logos/new-hic-logo-2024-webp.webp"
                 src="/images/logo-white.png"
                 // src={require("../assets/logo2_sky.png")}
                 alt="logo"
-                // width={300}
-                // height={300}
+                width={300}
+                height={300}
                 className={`w-auto h-12 rounded-lg md:h-14 duration-500 mb-1  ${
                   !scrolled && !isVehicle
                     ? "hidden lg:block group-hover:hidden"
