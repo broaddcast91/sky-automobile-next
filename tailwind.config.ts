@@ -21,6 +21,17 @@ const config: Config = {
         sans: ["Poppins", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
       },
+      animation: {
+        shake: "shake infinite 0.1s linear",
+      },
+      keyframes: {
+        shake: {
+          "0%": { marginLeft: "0rem" },
+          "25%": { marginLeft: "1rem" },
+          "75%": { marginLeft: "-1rem" },
+          "100%": { marginLeft: "0rem" },
+        },
+      },
     },
   },
   plugins: [],

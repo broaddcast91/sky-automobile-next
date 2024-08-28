@@ -14,10 +14,11 @@ import Image from "next/image";
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isVehicle, setIsVehicle] = useState(false);
+  const [selectedTab, setSelectedTab]= useState(0)
   // const { pathname } = useNavigate();
    const pathname = usePathname();
 
-  const slideData = [
+  const nexaData = [
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/Invicto_final.png",
@@ -68,6 +69,69 @@ const Header = () => {
     },
   ];
 
+  const arenaData = [
+    {
+      image:
+        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/Swift+Tile+Image.webp",
+      title: "Swift",
+      description: "",
+    },
+    {
+      image:
+        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-alto800.webp",
+      title: "Alto",
+      description: "",
+    },
+    {
+      image:
+        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-k10.webp",
+      title: "Alto K10",
+      description: "",
+    },
+    {
+      image:
+        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-brezza.webp",
+      title: "Brezza",
+      description: "",
+    },
+    {
+      image:
+        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-dzire.webp",
+      title: "Dzire",
+      description: "",
+    },
+    {
+      image:
+        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-spresso.webp",
+      title: "Spresso",
+      description: "",
+    },
+    {
+      image:
+        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-wagonr.webp",
+      title: "WangnoR",
+      description: "",
+    },
+    {
+      image:
+        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-ertiga.webp",
+      title: "Ertiga",
+      description: "",
+    },
+    {
+      image:
+        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-celerio.webp",
+      title: "Celerio",
+      description: "",
+    },
+    {
+      image:
+        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-eeco.webp",
+      title: "Ecco",
+      description: "",
+    },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 0);
@@ -98,19 +162,19 @@ const Header = () => {
           <div className="flex justify-between w-full gap-4 md:justify-start md:max-w-1/2">
             <div className="flex items-center gap-2 text-sm">
               <FaPhoneAlt />
-              <a href="tel:+919951699516" target="_blank" rel="noreferrer">
-                +91 9951699516
+              <a href="tel:+91123456789" target="_blank" rel="noreferrer">
+                +91 123456789
               </a>
             </div>
             <div className="flex items-center gap-2">
               <IoMailSharp />
               <a
-                href="mailto:info@hotelinnercircle.in"
+                href="mailto: xxxxxx@xxxx.xx"
                 target="_blank"
                 rel="noreferrer"
                 className="text-sm"
               >
-                info@hotelinnercircle.in
+                xxxxxx@xxxx.xx
               </a>
             </div>
           </div>
@@ -189,7 +253,7 @@ const Header = () => {
             </Link>
             <Link
               onMouseEnter={() => setIsVehicle(false)}
-              href="/services"
+              href="/"
               className="font-medium hover:text-primaryRed"
             >
               Services
@@ -197,7 +261,7 @@ const Header = () => {
 
             <Link
               onMouseEnter={() => setIsVehicle(false)}
-              href="/Outlets"
+              href="/outlets"
               className="font-medium hover:text-primaryRed"
             >
               Outlets
@@ -245,44 +309,92 @@ const Header = () => {
           <div
             onMouseLeave={() => setIsVehicle(false)}
             onMouseEnter={() => setIsVehicle(true)}
-            className="container hidden gap-1 p-2 pb-6 mx-auto bg-white xl:max-w-8xl group lg:flex"
+            className="container hidden lg:gap-2 p-2 pb-6 mx-auto bg-white xl:max-w-8xl group xl:flex overflow-x-hidden lg:block xl:overflow-visible  "
           >
-            <div className="flex flex-col gap-2 text-white w-60">
+            <div className="flex xl:flex-col gap-2 text-white xl:w-60 justify-center xl:justify-start mb-2">
               {" "}
-              <div className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer bg-primaryRed">
+              <div
+                onClick={() => setSelectedTab(0)}
+                className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28  ${
+                  selectedTab === 0
+                    ? "text-white bg-primaryRed"
+                    : "text-black bg-secondaryGray3"
+                }`}
+              >
                 Arena <FaCaretRight />
               </div>
-              <div className="flex items-center justify-between px-2 py-3 text-sm text-black cursor-pointer bg-secondaryGray3 ">
+              <div
+                onClick={() => setSelectedTab(1)}
+                className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28  ${
+                  selectedTab === 1
+                    ? "text-white bg-primaryRed"
+                    : "text-black bg-secondaryGray3"
+                }`}
+              >
                 Nexa <FaCaretRight />
               </div>
-              <div className="flex items-center justify-between px-2 py-3 text-sm text-black cursor-pointer bg-secondaryGray3 ">
+              <div
+                onClick={() => setSelectedTab(2)}
+                className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28  ${
+                  selectedTab === 2
+                    ? "text-white bg-primaryRed"
+                    : "text-black bg-secondaryGray3"
+                }`}
+              >
                 TrueValue <FaCaretRight />
               </div>
             </div>
-            <div className="grid w-full grid-cols-4 text-black ">
-              {slideData.map((slide, index) => (
-                <Link key={index} href="/arena/alto-k10-on-road-price">
-                  <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[350px] py-8 px-2 flex flex-col gap-1   hover:text-white">
-                    <div className="">
-                      {" "}
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        loading="lazy"
-                        className="scale-x-[-1] mb-4 px-2 h-28 w-auto mx-auto "
-                      />
-                    </div>
+            <div
+              className={`grid w-full grid-cols-4 text-black  max-h-[70vh] xl:overflow-hidden ${
+                selectedTab === 0 ? "xl:grid-cols-5" : "xl:grid-cols-4"
+              } `}
+            >
+              {selectedTab === 0 &&
+                arenaData.map((slide, index) => (
+                  <Link key={index} href="/arena/alto-k10-on-road-price">
+                    <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1   hover:text-white">
+                      <div className="">
+                        {" "}
+                        <img
+                          src={slide.image}
+                          alt={slide.title}
+                          loading="lazy"
+                          className="scale-x-[-1] mb-4   w-auto mx-auto "
+                        />
+                      </div>
 
-                    <h5 className="text-lg font-bold text-center uppercase lg:text-xl lg:font-extrabold ">
-                      {slide.title}
-                    </h5>
-                    <p className="text-sm text-center ">{slide.description}</p>
-                    {/* <button className="px-4 py-2 mx-auto mt-4 text-sm text-white rounded-lg opacity-0 cursor-pointer group-hover:opacity-100 bg-primaryRed w-min whitespace-nowrap">
+                      <h5 className="text-lg font-bold text-center uppercase lg:text-xl lg:font-extrabold ">
+                        {slide.title}
+                      </h5>
+                    </div>
+                  </Link>
+                ))}
+              {selectedTab === 1 &&
+                nexaData.map((slide, index) => (
+                  <Link key={index} href="/arena/alto-k10-on-road-price">
+                    <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white">
+                      <div className="">
+                        {" "}
+                        <img
+                          src={slide.image}
+                          alt={slide.title}
+                          loading="lazy"
+                          className="scale-x-[-1] mb-4 px-2 h-24 w-auto mx-auto "
+                        />
+                      </div>
+
+                      <h5 className="text-lg font-bold text-center uppercase lg:text-xl lg:font-extrabold ">
+                        {slide.title}
+                      </h5>
+                      <p className="text-sm text-center ">
+                        {slide.description}
+                      </p>
+                      {/* <button className="px-4 py-2 mx-auto mt-4 text-sm text-white rounded-lg opacity-0 cursor-pointer group-hover:opacity-100 bg-primaryRed w-min whitespace-nowrap">
                 Explore Now
               </button> */}
-                  </div>
-                </Link>
-              ))}
+                    </div>
+                  </Link>
+                ))}
             </div>
           </div>
         )}
