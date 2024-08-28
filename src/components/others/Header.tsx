@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { BsTwitterX } from "react-icons/bs";
@@ -10,13 +10,12 @@ import { RiMenu3Fill } from "react-icons/ri";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
-
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isVehicle, setIsVehicle] = useState(false);
-  const [selectedTab, setSelectedTab]= useState(0)
+  const [selectedTab, setSelectedTab] = useState(0);
   // const { pathname } = useNavigate();
-   const pathname = usePathname();
+  const pathname = usePathname();
 
   const nexaData = [
     {
@@ -258,15 +257,16 @@ const Header = () => {
             >
               Services
             </Link>
-
-            <Link
-              onMouseEnter={() => setIsVehicle(false)}
-              href="/outlets"
-              className="font-medium hover:text-primaryRed"
-            >
-              Outlets
-            </Link>
-
+            <div className="relative  ">
+              <Link
+                onMouseEnter={() => setIsVehicle(false)}
+                href="/outlets"
+                className="font-medium hover:text-primaryRed peer"
+              >
+                Outlets
+              </Link>
+              {/* <div className="h-20 absolute top-12 left-0 w-40  bg-white hidden peer-hover:block hover:block  delay-300 "></div> */}
+            </div>
             <Link
               onMouseEnter={() => setIsVehicle(false)}
               href="/contact"
@@ -276,10 +276,18 @@ const Header = () => {
             </Link>
             <Link
               onMouseEnter={() => setIsVehicle(false)}
-              href="/offers"
+              href="/blogs"
               className="font-medium hover:text-primaryRed"
             >
-              Offers
+              Blogs
+            </Link>
+
+            <Link
+              onMouseEnter={() => setIsVehicle(false)}
+              href="/career"
+              className="font-medium hover:text-primaryRed"
+            >
+              Carreer
             </Link>
           </nav>
 
@@ -294,7 +302,7 @@ const Header = () => {
             <button
               className={` md:px-6 py-2 rounded-full  bg-primaryRed text-white shadow-xl md:text-sm px-4 text-xs  `}
             >
-              Book Now
+              Offers
             </button>
             <div className="lg:hidden">
               <RiMenu3Fill

@@ -11,56 +11,57 @@ const Outlets = () => {
             {
               name: "Maruti Suzuki Arena ",
               address:
-                "Old Mumbai Hwy, Rahul Colony, Aziz Bagh Colony, Toli Chowki, Hyderabad, Telangana 500008",
-              map: "https://maps.app.goo.gl/ZGA9u4tc6yZvj1kW9",
+                "NH-16, Jagannathpur-Gopalpur Jn, Dist, Brahmapur, Odisha 760010",
+              map: "https://maps.app.goo.gl/RevmFwrWnB6Q6GKf9",
               iframe:
-                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.173533444041!2d78.40631007597905!3d17.403457783486434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb96c0f133d3bb%3A0xbf781bacc118db32!2sOld%20Mumbai%20Highway%20%26%20Rahul%20Colony%2C%20Rahul%20Colony%2C%20Aravind%20Nagar%20Colony%2C%20Toli%20Chowki%2C%20Hyderabad%2C%20Telangana%20500008!5e0!3m2!1sen!2sin!4v1716988239290!5m2!1sen!2sin",
-              phone: "7032097111",
+                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.2457974530707!2d84.85388571098957!3d19.31513754434592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3d500f3686400d%3A0x4c3cae13a22d5210!2sMaruti%20Suzuki%20ARENA%20(Sky%20Automobiles%2C%20Berhampur)!5e0!3m2!1sen!2sin!4v1724827802942!5m2!1sen!2sin",
+              phone: "123456789",
               personName: "Mr. Bhartha",
-              email: "crm.service@orangeauto.in",
+              email: "email@xxxxxx.in",
             },
             {
               name: "Maruti Suzuki Nexa ",
               address:
-                "10-5-2/1/8/3, Mehdipatnam - Banjara Hills Rd, Opposite Paradise Hotel, Owaisi Pura, Masab Tank, Hyderabad, Telangana 500028",
-              map: "https://maps.app.goo.gl/eJXKeMwWTkvCXooC7",
+                "NH-16, Jagannathpur-Gopalpur Jn, Dist, Brahmapur, Odisha 760010",
+              map: "https://maps.app.goo.gl/RevmFwrWnB6Q6GKf9",
               iframe:
-                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.171548544171!2d78.44988557505934!3d17.403553083486457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9740066d76db%3A0xc65e5977ef927ceb!2sOrange%20Maruti Suzuki Arena!5e0!3m2!1sen!2sin!4v1711003368659!5m2!1sen!2sin",
-              phone: "9052382345",
+                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.2457974530707!2d84.85388571098957!3d19.31513754434592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3d500f3686400d%3A0x4c3cae13a22d5210!2sMaruti%20Suzuki%20ARENA%20(Sky%20Automobiles%2C%20Berhampur)!5e0!3m2!1sen!2sin!4v1724827802942!5m2!1sen!2sin",
+              phone: "123456789",
               personName: "Mr. Shaam Sudhakar",
-              email: "crm.service@orangeauto.in",
+              email: "email@xxxxxx.in",
             },
             {
               name: "Maruti Suzuki Nexa ",
               address:
-                "Krishna Plaza 1-5/31, near Indian Oil Petrol Bunk, Manikonda, Telangana 500089",
-              map: "https://maps.app.goo.gl/uGjsLCS4XzDPxPcVA",
+                "NH-16, Jagannathpur-Gopalpur Jn, Dist, Brahmapur, Odisha 760010",
+              map: "https://maps.app.goo.gl/RevmFwrWnB6Q6GKf9",
               iframe:
-                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.1896330295485!2d78.37195907505925!3d17.402684783487118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb941995a23143%3A0x675f12362e6c26d6!2sOrange%20Maruti Suzuki Arena!5e0!3m2!1sen!2sin!4v1711003582070!5m2!1sen!2sin",
-              phone: "8886672154",
+                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.2457974530707!2d84.85388571098957!3d19.31513754434592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3d500f3686400d%3A0x4c3cae13a22d5210!2sMaruti%20Suzuki%20ARENA%20(Sky%20Automobiles%2C%20Berhampur)!5e0!3m2!1sen!2sin!4v1724827802942!5m2!1sen!2sin",
+              phone: "123456789",
               personName: "Mr. Mohd Salman",
-              email: "crm.service@orangeauto.in",
-            },
-            {
-              name: "Maruti Suzuki Arena ",
-              address: "Main Rd, Chevella, Telangana 501503",
-              map: "https://maps.app.goo.gl/ccuhWxGn4nG9nkvQA",
-              iframe:
-                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3809.002314227614!2d78.13098757505725!3d17.315437483559553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbe82019db7a21%3A0x7d44011f29cb3307!2sorange%20Maruti Suzuki Arena%20showroom!5e0!3m2!1sen!2sin!4v1711003704174!5m2!1sen!2sin",
-              phone: "9949768623",
-              personName: "Mr. Amar",
-              email: "crm.service@orangeauto.in",
+              email: "email@xxxxxx.in",
             },
             {
               name: "Maruti Suzuki Arena ",
               address:
-                "DHYAN SHIVA COLONY KABIR COTTAGE, K-2, beside INDIAN PETROL BUNK, Moinabad, Telangana 501504",
-              map: "https://maps.app.goo.gl/87neYhi9gCv9ZfEb6",
+                "NH-16, Jagannathpur-Gopalpur Jn, Dist, Brahmapur, Odisha 760010",
+              map: "https://maps.app.goo.gl/RevmFwrWnB6Q6GKf9",
               iframe:
-                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.6959231331466!2d78.27358807505753!3d17.330214483547245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbebb55ee5883d%3A0xa6d4677dbf46db2d!2sOrange%20Maruti Suzuki Arena%20Moinabad!5e0!3m2!1sen!2sin!4v1711003813602!5m2!1sen!2sin",
-              phone: "7981229979",
+                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.2457974530707!2d84.85388571098957!3d19.31513754434592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3d500f3686400d%3A0x4c3cae13a22d5210!2sMaruti%20Suzuki%20ARENA%20(Sky%20Automobiles%2C%20Berhampur)!5e0!3m2!1sen!2sin!4v1724827802942!5m2!1sen!2sin",
+              phone: "123456789",
+              personName: "Mr. Amar",
+              email: "email@xxxxxx.in",
+            },
+            {
+              name: "Maruti Suzuki Arena ",
+              address:
+                "NH-16, Jagannathpur-Gopalpur Jn, Dist, Brahmapur, Odisha 760010",
+              map: "https://maps.app.goo.gl/RevmFwrWnB6Q6GKf9",
+              iframe:
+                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.2457974530707!2d84.85388571098957!3d19.31513754434592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3d500f3686400d%3A0x4c3cae13a22d5210!2sMaruti%20Suzuki%20ARENA%20(Sky%20Automobiles%2C%20Berhampur)!5e0!3m2!1sen!2sin!4v1724827802942!5m2!1sen!2sin",
+              phone: "123456789",
               personName: "Mr. Akheel",
-              email: "crm.service@orangeauto.in",
+              email: "email@xxxxxx.in",
             },
           ],
         },
