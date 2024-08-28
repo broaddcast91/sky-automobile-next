@@ -244,7 +244,7 @@ const Header = () => {
             <div
               onMouseEnter={() => setIsVehicle(true)}
               // href="/"
-              className={`font-medium hover:text-primaryRed flex gap-1 items-center ${
+              className={`font-medium hover:text-primaryRed flex gap-1 items-center cursor-default ${
                 isVehicle && "text-primaryRed"
               } `}
             >
@@ -260,19 +260,19 @@ const Header = () => {
               </div>
               <div className=" absolute top-4 -left-1/2 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
                 <Link
-                  href="/service"
+                  href="/services"
                   className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
                 >
                   Book A Service <FaCaretRight />
                 </Link>
                 <Link
-                  href="/odisa-outlets"
+                  href="/finance"
                   className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
                 >
                   Insurance <FaCaretRight />
                 </Link>
                 <Link
-                  href="/odisa-outlets"
+                  href="/insurance"
                   className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
                 >
                   Finance <FaCaretRight />
@@ -291,13 +291,13 @@ const Header = () => {
               <div className=" absolute top-4 -left-1/2 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
                 <Link
                   href="/odisa-outlets"
-                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
+                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray4 text-black hover:bg-primaryRed hover:text-white border-y shadow-lg"
                 >
                   Odisa <FaCaretRight />
                 </Link>
                 <Link
                   href="/odisa-outlets"
-                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
+                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray4 text-black hover:bg-primaryRed hover:text-white shadow-lg"
                 >
                   Chhattisgarh <FaCaretRight />
                 </Link>
@@ -341,9 +341,7 @@ const Header = () => {
               Offers
             </button>
             <div className="lg:hidden">
-              <RiMenu3Fill
-                className={`text-3xl text-primaryRed  `}
-              />
+              <RiMenu3Fill className={`text-3xl text-primaryRed  `} />
             </div>
           </div>
         </div>
@@ -363,7 +361,7 @@ const Header = () => {
                     : "text-black bg-secondaryGray3"
                 }`}
               >
-                Arena <FaCaretRight />
+                Nexa <FaCaretRight />
               </div>
               <div
                 onClick={() => setSelectedTab(1)}
@@ -373,7 +371,7 @@ const Header = () => {
                     : "text-black bg-secondaryGray3"
                 }`}
               >
-                Nexa <FaCaretRight />
+                Arena <FaCaretRight />
               </div>
               <div
                 onClick={() => setSelectedTab(2)}
@@ -388,13 +386,13 @@ const Header = () => {
             </div>
             <div
               className={`grid w-full grid-cols-4 text-black  max-h-[70vh] xl:overflow-hidden ${
-                selectedTab === 0 ? "xl:grid-cols-5" : "xl:grid-cols-4"
+                selectedTab === 1 ? "xl:grid-cols-5" : "xl:grid-cols-4"
               } `}
             >
-              {selectedTab === 0 &&
+              {selectedTab === 1 &&
                 arenaData.map((slide, index) => (
                   <Link key={index} href="/arena/alto-k10-on-road-price">
-                    <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1   hover:text-white">
+                    <div className="rounded-xl hover:shadow-lg  hover:bg-secondaryGray3 cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1   hover:text-primaryRed">
                       <div className="">
                         {" "}
                         <img
@@ -411,7 +409,7 @@ const Header = () => {
                     </div>
                   </Link>
                 ))}
-              {selectedTab === 1 &&
+              {selectedTab === 0 &&
                 nexaData.map((slide, index) => (
                   <Link key={index} href="/arena/alto-k10-on-road-price">
                     <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white">
