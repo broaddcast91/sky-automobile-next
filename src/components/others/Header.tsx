@@ -241,31 +241,67 @@ const Header = () => {
             >
               About Us
             </Link>
-            <Link
+            <div
               onMouseEnter={() => setIsVehicle(true)}
-              href="/"
-              className={`font-medium hover:text-primaryRed ${
+              // href="/"
+              className={`font-medium hover:text-primaryRed flex gap-1 items-center ${
                 isVehicle && "text-primaryRed"
               } `}
             >
-              Vehicles
-            </Link>
-            <Link
-              onMouseEnter={() => setIsVehicle(false)}
-              href="/services"
-              className="font-medium hover:text-primaryRed"
-            >
-              Services
-            </Link>
-            <div className="relative  ">
-              <Link
+              Vehicles <FaCaretRight className="rotate-90" />
+            </div>
+            <div className="relative group ">
+              <div
                 onMouseEnter={() => setIsVehicle(false)}
-                href="/outlets"
-                className="font-medium hover:text-primaryRed peer"
+                // href="/outlets"
+                className="font-medium hover:text-primaryRed peer  cursor-default flex  items-center gap-1"
               >
-                Outlets
-              </Link>
-              {/* <div className="h-20 absolute top-12 left-0 w-40  bg-white hidden peer-hover:block hover:block  delay-300 "></div> */}
+                Services <FaCaretRight className="rotate-90" />
+              </div>
+              <div className=" absolute top-4 -left-1/2 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
+                <Link
+                  href="/service"
+                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
+                >
+                  Book A Service <FaCaretRight />
+                </Link>
+                <Link
+                  href="/odisa-outlets"
+                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
+                >
+                  Insurance <FaCaretRight />
+                </Link>
+                <Link
+                  href="/odisa-outlets"
+                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
+                >
+                  Finance <FaCaretRight />
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative  ">
+              <div
+                onMouseEnter={() => setIsVehicle(false)}
+                // href="/outlets"
+                className="font-medium hover:text-primaryRed peer  cursor-default flex  items-center gap-1"
+              >
+                Outlets <FaCaretRight className="rotate-90" />
+              </div>
+              <div className=" absolute top-4 -left-1/2 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
+                <Link
+                  href="/odisa-outlets"
+                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
+                >
+                  Odisa <FaCaretRight />
+                </Link>
+                <Link
+                  href="/odisa-outlets"
+                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
+                >
+                  Chhattisgarh <FaCaretRight />
+                </Link>
+              </div>
             </div>
             <Link
               onMouseEnter={() => setIsVehicle(false)}
@@ -306,9 +342,7 @@ const Header = () => {
             </button>
             <div className="lg:hidden">
               <RiMenu3Fill
-                className={`text-3xl  ${
-                  scrolled ? "text-primaryRed" : "text-white"
-                }`}
+                className={`text-3xl text-primaryRed  `}
               />
             </div>
           </div>
