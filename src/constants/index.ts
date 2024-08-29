@@ -692,10 +692,10 @@ export const models = [
       "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/SpressoBrochure_Spresso_6_pager_brochure_Red_car_A4_Digital_new.pdf",
   },
 
-  // Maruti WagonR
+  // Maruti WagonR 5
   {
     name: "Maruti WagonR",
-    subName: "WagonR",
+    subName: "Wagon R",
     colors: [
       {
         img: "/images/car/arena/wagonr/wagonr-poolside-blue.png",
@@ -777,8 +777,8 @@ export const models = [
     ],
     carDetails: [
       { label: "Engine", value: "998 cc" },
-      { label: "Mileage", value: "22.5 kmpl" },
-      { label: "Power", value: "50 kW @ 6000 rpm" },
+      { label: "Mileage", value: "24.35 kmpl" },
+      { label: "Power", value: "49.0 kW @ 5500 rpm" },
     ],
     variants: [
       { variant: "WagonR LXI", transmission: "Manual", price: "₹ 5.54 Lakh" },
@@ -809,45 +809,45 @@ export const models = [
     brochure:
       "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/WagonR%20MMC%20Brochure_NEW_1.pdf",
   },
-  // Maruti Ertiga
+  // Maruti Ertiga -6
   {
     name: "Maruti Ertiga",
     subName: "Ertiga",
     colors: [
       {
-        img: "/images/car/arena/ertiga/silky_silver.webp",
-        colorCode: "#C0C0C0",
-        colName: "Silky Silver",
+        img: "/images/car/arena/ertiga/ertiga-pearl-metallic-arctic-white.png",
+        colorCode: "#d2d2d2",
+        colName: "Pearl Metallic Artic White",
       },
       {
-        img: "/images/car/arena/ertiga/pearl_arctic_white.webp",
-        colorCode: "#F7F7F7",
-        colName: "Pearl Arctic White",
+        img: "/images/car/arena/ertiga/ertiga-auburn-red.png",
+        colorCode: "#df1f24",
+        colName: "Auburn Red",
       },
       {
-        img: "/images/car/arena/ertiga/magma_grey.webp",
-        colorCode: "#6D6E71",
+        img: "/images/car/arena/ertiga/ertiga-pearl-metallic-diginity-brown.png",
+        colorCode: "#633f2f",
+        colName: "Pearl Metallic Dignity Brown",
+      },
+      {
+        img: "/images/car/arena/ertiga/ertiga-magma-grey.png",
+        colorCode: "#5d5d5d",
         colName: "Magma Grey",
       },
       {
-        img: "/images/car/arena/ertiga/dignity_brown.webp",
-        colorCode: "#7D5A50",
-        colName: "Dignity Brown",
+        img: "/images/car/arena/ertiga/ertiga-prime-oxford-blue.png",
+        colorCode: "#29427b",
+        colName: "Prime Oxford Blue",
       },
       {
-        img: "/images/car/arena/ertiga/serene_blue.webp",
-        colorCode: "#003C6C",
-        colName: "Serene Blue",
+        img: "/images/car/arena/ertiga/ertiga-splendid-silver.png",
+        colorCode: "#4f5457",
+        colName: "Splendid Silver",
       },
       {
-        img: "/images/car/arena/ertiga/sangria_red.webp",
-        colorCode: "#C8102E",
-        colName: "Sangria Red",
-      },
-      {
-        img: "/images/car/arena/ertiga/sepia_brown.webp",
-        colorCode: "#5C3A2F",
-        colName: "Sepia Brown",
+        img: "/images/car/arena/ertiga/ertiga-pearl-midnight-black.png",
+        colorCode: "#000",
+        colName: "Midnight Black",
       },
     ],
     keySpecifications: [
@@ -882,8 +882,8 @@ export const models = [
     ],
     carDetails: [
       { label: "Engine", value: "1462 cc" },
-      { label: "Mileage", value: "19.01 kmpl" },
-      { label: "Power", value: "77.5 kW @ 6000 rpm" },
+      { label: "Mileage", value: "20.51 kmpl" },
+      { label: "Power", value: "75.8 kW @ 6000 rpm" },
     ],
     variants: [
       { variant: "Ertiga LXI", transmission: "Manual", price: "₹ 8.64 Lakh" },
@@ -922,47 +922,47 @@ export const models = [
     ],
     priceRange: "₹ 8.64 - 11.50 Lakh *",
     brochure:
-      "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/9299_S_Ertiga_Brochure.pdf",
+      "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/Updated-Ertiga-Brochure-60Pgs.pdf",
   },
-  // Maruti Celerio
+  // Maruti Celerio -7
   {
     name: "Maruti Celerio",
     subName: "Celerio",
     colors: [
       {
-        img: "/images/car/arena/celerio/silky_silver.webp",
-        colorCode: "#C0C0C0",
-        colName: "Silky Silver",
-      },
-      {
-        img: "/images/car/arena/celerio/cool_blue.webp",
-        colorCode: "#003B5C",
-        colName: "Cool Blue",
-      },
-      {
-        img: "/images/car/arena/celerio/urban_blue.webp",
-        colorCode: "#003D6C",
-        colName: "Urban Blue",
-      },
-      {
-        img: "/images/car/arena/celerio/fire_red.webp",
-        colorCode: "#F23F4A",
-        colName: "Fire Red",
-      },
-      {
-        img: "/images/car/arena/celerio/orange.webp",
-        colorCode: "#FF6600",
-        colName: "Orange",
-      },
-      {
-        img: "/images/car/arena/celerio/white.webp",
-        colorCode: "#FFFFFF",
+        img: "/images/car/arena/celerio/celerio-artic-white.png",
+        colorCode: "#f1f2f3",
         colName: "White",
       },
       {
-        img: "/images/car/arena/celerio/grey.webp",
-        colorCode: "#8D8D8D",
-        colName: "Grey",
+        img: "/images/car/arena/celerio/celerio-speedy-blue.png",
+        colorCode: "#4d7fe0",
+        colName: "Speedy Blue",
+      },
+      {
+        img: "/images/car/arena/celerio/celerio-silky-silver.png",
+        colorCode: "#8e9395",
+        colName: "Silky Silver",
+      },
+      {
+        img: "/images/car/arena/celerio/celerio-glistering-grey.png",
+        colorCode: "#9a9a9a",
+        colName: "Glistening Grey",
+      },
+      {
+        img: "/images/car/arena/celerio/celerio-solid-fire-red.png",
+        colorCode: "#bd2822",
+        colName: "Fire Red",
+      },
+      {
+        img: "/images/car/arena/celerio/celerio-caffeine-brown.png",
+        colorCode: "#6f4e37",
+        colName: "Caffine Brown",
+      },
+      {
+        img: "/images/car/arena/celerio/celerio-pearl-midnight-black.png",
+        colorCode: "#000",
+        colName: "Midnight Black",
       },
     ],
     keySpecifications: [
@@ -997,8 +997,8 @@ export const models = [
     ],
     carDetails: [
       { label: "Engine", value: "998 cc" },
-      { label: "Mileage", value: "24.97 kmpl" },
-      { label: "Power", value: "50 kW @ 6000 rpm" },
+      { label: "Mileage", value: "25.24 kmpl" },
+      { label: "Power", value: "49 kW @ 5500 rpm" },
     ],
     variants: [
       { variant: "Celerio LXI", transmission: "Manual", price: "₹ 5.35 Lakh" },
@@ -1027,32 +1027,37 @@ export const models = [
     ],
     priceRange: "₹ 5.35 - 6.87 Lakh *",
     brochure:
-      "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/9299_S_Celerio_Brochure.pdf",
+      "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/15_Page_Brochure_Celerio_Digital.pdf",
   },
-  // Maruti Eeco
+  // Maruti Eeco -8
   {
     name: "Maruti Eeco",
     subName: "Eeco",
     colors: [
       {
-        img: "/images/car/arena/eeco/silky_silver.webp",
-        colorCode: "#C0C0C0",
-        colName: "Silky Silver",
+        img: "/images/car/arena/eeco/eeco-cerulean-blue.png",
+        colorCode: "#0088ce",
+        colName: "Blue",
       },
       {
-        img: "/images/car/arena/eeco/white.webp",
-        colorCode: "#FFFFFF",
-        colName: "White",
+        img: "/images/car/arena/eeco/eeco-solid-white.png",
+        colorCode: "#e5e4e6",
+        colName: "Superior White",
       },
       {
-        img: "/images/car/arena/eeco/pearl_arctic_white.webp",
-        colorCode: "#F7F7F7",
-        colName: "Pearl Arctic White",
+        img: "/images/car/arena/eeco/eeco-metallic-glistening-grey.png",
+        colorCode: "#a09694",
+        colName: "Mettalic grey",
       },
       {
-        img: "/images/car/arena/eeco/grey.webp",
-        colorCode: "#8D8D8D",
-        colName: "Grey",
+        img: "/images/car/arena/eeco/eeco-pearl-midnight-black.png",
+        colorCode: "#141614",
+        colName: "Midnight black",
+      },
+      {
+        img: "/images/car/arena/eeco/eeco-metallic-silky-silver.png",
+        colorCode: "#a6a5a5",
+        colName: "Silky silver",
       },
     ],
     keySpecifications: [
@@ -1087,8 +1092,8 @@ export const models = [
     ],
     carDetails: [
       { label: "Engine", value: "1196 cc" },
-      { label: "Mileage", value: "16.11 kmpl" },
-      { label: "Power", value: "73.7 kW @ 6000 rpm" },
+      { label: "Mileage", value: "19.711 kmpl" },
+      { label: "Power", value: "59.4 kW @ 6000 rpm" },
     ],
     variants: [
       {
@@ -1114,6 +1119,6 @@ export const models = [
     ],
     priceRange: "₹ 5.40 - 6.67 Lakh *",
     brochure:
-      "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/9299_S_Eeco_Brochure.pdf",
+      "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/Eeco-Passenger-BRAND-Leaflet.pdf",
   },
 ];
