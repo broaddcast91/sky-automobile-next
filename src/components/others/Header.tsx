@@ -84,7 +84,7 @@ const Header = () => {
       description: "",
       to: "/arena/swift-on-road-price",
     },
-   
+
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-k10.webp",
@@ -234,7 +234,6 @@ const Header = () => {
                     : "hidden  "
                 }`}
               />
-             
             </Link>
           </div>
           <nav className="hidden gap-4 text-sm uppercase lg:gap-8 font-poppins lg:flex">
@@ -365,8 +364,8 @@ const Header = () => {
                     : "text-black bg-secondaryGray3"
                 }`}
               >
-                Nexa <FaCaretRight />
-              </div>
+                Arena <FaCaretRight />
+              </div>{" "}
               <div
                 onClick={() => setSelectedTab(1)}
                 className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28  ${
@@ -375,7 +374,7 @@ const Header = () => {
                     : "text-black bg-secondaryGray3"
                 }`}
               >
-                Arena <FaCaretRight />
+                Nexa <FaCaretRight />
               </div>
               <div
                 onClick={() => setSelectedTab(2)}
@@ -390,30 +389,31 @@ const Header = () => {
             </div>
             <div
               className={`grid w-full grid-cols-4 text-black  max-h-[70vh] xl:overflow-hidden ${
-                selectedTab === 1 ? "xl:grid-cols-5" : "xl:grid-cols-4"
+                selectedTab === 0 ? "xl:grid-cols-5" : "xl:grid-cols-4"
               } `}
             >
-              {selectedTab === 1 &&
+              {selectedTab === 0 &&
                 arenaData.map((slide, index) => (
                   <Link key={index} href={slide.to}>
-                    <div className="rounded-xl hover:shadow-lg  hover:bg-secondaryGray3 cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1   hover:text-primaryRed">
+                    <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white ">
                       <div className="">
                         {" "}
                         <img
                           src={slide.image}
                           alt={slide.title}
                           loading="lazy"
-                          className="scale-x-[-1] mb-4   w-auto mx-auto "
+                          className="scale-x-[-1] mb-4 px-2 h-32 w-auto mx-auto "
                         />
                       </div>
 
                       <h5 className="text-lg font-bold text-center uppercase lg:text-xl lg:font-extrabold ">
                         {slide.title}
                       </h5>
+                     
                     </div>
                   </Link>
                 ))}
-              {selectedTab === 0 &&
+              {selectedTab === 1 &&
                 nexaData.map((slide, index) => (
                   <Link key={index} href={slide.to}>
                     <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white ">

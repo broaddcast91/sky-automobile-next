@@ -115,16 +115,23 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
               ))}
             </div>
             <div className="flex flex-wrap gap-2 mb-6 lg:gap-4">
-              {["View Brochure", "Get On Road Price", "Book Test Drive"].map(
-                (text, index) => (
-                  <button
-                    key={index}
-                    className="px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:px-4 hover:shadow-lg hover:bg-primaryRed hover:border-primaryRed"
-                  >
-                    {text}
-                  </button>
-                )
-              )}
+              <a
+                href={data?.brochure}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:px-4 hover:shadow-lg hover:bg-primaryRed hover:border-primaryRed">
+                  View Brochure
+                </button>
+              </a>
+              {["Get On Road Price", "Book Test Drive"].map((text, index) => (
+                <button
+                  key={index}
+                  className="px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:px-4 hover:shadow-lg hover:bg-primaryRed hover:border-primaryRed"
+                >
+                  {text}
+                </button>
+              ))}
             </div>
             <p className="mb-4 text-sm">
               Our professional and well-trained staff is ready to assist you.
@@ -214,9 +221,9 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
             </button>
           </div>
           <p className="mt-6 text-xs text-gray-500">
-            *Disclaimer: I agree that by clicking the &apos;Enquir Now&apos; button below, I
-            am explicitly soliciting a call and message via whatsapp or any
-            other medium from us.
+            *Disclaimer: I agree that by clicking the &apos;Enquir Now&apos;
+            button below, I am explicitly soliciting a call and message via
+            whatsapp or any other medium from us.
           </p>
         </form>
       </div>
