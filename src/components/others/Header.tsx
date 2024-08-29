@@ -401,7 +401,7 @@ const Header = () => {
             >
               {selectedTab === 1 &&
                 arenaData.map((slide, index) => (
-                  <Link key={index} href="/arena/alto-k10-on-road-price">
+                  <Link key={index} href={slide.to}>
                     <div className="rounded-xl hover:shadow-lg  hover:bg-secondaryGray3 cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1   hover:text-primaryRed">
                       <div className="">
                         {" "}
@@ -421,7 +421,7 @@ const Header = () => {
                 ))}
               {selectedTab === 0 &&
                 nexaData.map((slide, index) => (
-                  <Link key={index} href="/arena/alto-k10-on-road-price">
+                  <Link key={index} href={slide.to}>
                     <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white ">
                       <div className="">
                         {" "}
