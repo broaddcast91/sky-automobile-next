@@ -84,13 +84,7 @@ const Header = () => {
       description: "",
       to: "/arena/swift-on-road-price",
     },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-alto800.webp",
-      title: "Alto",
-      description: "",
-      to: "/arena/alto-800-on-road-price",
-    },
+   
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-k10.webp",

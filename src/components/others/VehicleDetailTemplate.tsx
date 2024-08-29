@@ -63,97 +63,6 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
     }
   };
 
-  const colors = [
-    {
-      img: "https://www.varunmaruti.com/uploads/products/colors/altok-10-metallic-sizzling-red1.png",
-      colorCode: "#d51716",
-      colName: "Metallic Sizzling Red",
-    },
-    {
-      img: "https://www.varunmaruti.com/uploads/products/colors/altok-10-metallic-granite-gray1.png",
-      colorCode: "#797a83",
-      colName: "Metallic Granite Grey",
-    },
-    {
-      img: "https://www.varunmaruti.com/uploads/products/colors/altok-10-premium-earth-gold.png",
-      colorCode: "#5e4923",
-      colName: "Premium Earth Gold",
-    },
-    {
-      img: "https://www.varunmaruti.com/uploads/products/colors/altok-10-metallic-silky-silver1.png",
-      colorCode: "#9b9aa0",
-      colName: "Metallic Silky Silver",
-    },
-    {
-      img: "https://www.varunmaruti.com/uploads/products/colors/altok-10-metallic-speedy-blue.png",
-      colorCode: "#2249b5",
-      colName: "Metallic Speedy Blue",
-    },
-    {
-      img: "https://www.varunmaruti.com/uploads/products/colors/altok-10-solid-white1.png",
-      colorCode: "#e4e4e6",
-      colName: "Solid White",
-    },
-    {
-      img: "https://www.varunmaruti.com/uploads/products/colors/altok-10-pearl-midnight-black.png",
-      colorCode: "#050505",
-      colName: "Midnight Black",
-    },
-  ];
-
-  const keySpecifications = [
-    { label: "Fuel Tank Capacity", value: "55 Litres" },
-    { label: "Seating Capacity", value: "4, 5" },
-    { label: "Length", value: "3530 mm" },
-    { label: "Width", value: "1490 mm" },
-    { label: "Height", value: "1520 mm" },
-    { label: "Front Suspension", value: "Mac Pherson Strut with Coil Spring" },
-    { label: "Rear Suspension", value: "Torsion Beam with Coil Spring" },
-    { label: "Fuel Type", value: "Petrol, CNG" },
-    { label: "No. of Cylinders", value: "3" },
-    { label: "Max Torque", value: "82.1Nm@3400rpm" },
-    { label: "Transmission Type", value: "Manual" },
-    { label: "Body Type", value: "Hatchback" },
-    { label: "Wheel Base", value: "2380 mm" },
-    { label: "Gearbox", value: "5-Speed" },
-  ];
-
-  const images = [
-    "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/alto-800/sliders/exterior_web_01.webp",
-    "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/alto-800/sliders/exterior_web_02.webp",
-    "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/alto-800/sliders/exterior_web_03.webp",
-    "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/alto-800/sliders/exterior_web_04.webp",
-    "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/alto-800/sliders/exterior_web_05.webp",
-    "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/alto-800/sliders/Interior_web_1.webp",
-    "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/alto-800/sliders/Interior_web_2.webp",
-    "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/alto-800/sliders/Interior_web_3.webp",
-    "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/alto-800/sliders/High_web_05.webp",
-  ];
-
-  const carDetails = [
-    {
-      icon: <GiSpeedometer className="text-4xl" />,
-      label: "Engine",
-      value: "998 cc",
-    },
-    {
-      icon: <BsFuelPump className="text-4xl" />,
-      label: "Mileage",
-      value: "24.39 kmpl",
-    },
-    {
-      icon: <PiEngine className="text-4xl" />,
-      label: "Power",
-      value: "49 kW @ 5500 rpm",
-    },
-  ];
-
-  const variants = [
-    { variant: "Alto K10", transmission: "Manual", price: "₹ 5.25 Lakh" },
-    { variant: "Alto K10 1.2", transmission: "Manual", price: "₹ 5.25 Lakh" },
-    { variant: "Alto K10", transmission: "Manual", price: "₹ 5.25 Lakh" },
-    { variant: "Alto K10 1.2", transmission: "Manual", price: "₹ 5.25 Lakh" },
-  ];
   const outlets = [
     {
       img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/alto-800/sliders/exterior_web_01.webp",
@@ -224,10 +133,10 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
           <div>
             <img src={data?.colors[selectedColor].img} alt="Colors" />
             <h5 className="mb-5 text-xl font-medium text-center">
-              {colors[selectedColor].colName}
+              {data?.colors[selectedColor].colName}
             </h5>
             <div className="flex flex-wrap justify-center gap-3">
-              {colors.map((color, index) => (
+              {data?.colors.map((color, index) => (
                 <div
                   key={index}
                   onClick={() => handleClickColor(index)}
@@ -270,10 +179,12 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
               className="w-full p-2 bg-transparent border-b-2  border-b-primaryRed focus:outline-none"
               onChange={handleChange}
               required
-              defaultValue={''}
+              defaultValue={""}
             >
-              <option value="" disabled>Select Variant</option>
-              {variants.map((variant, index) => (
+              <option value="" disabled>
+                Select Variant
+              </option>
+              {data?.variants.map((variant, index) => (
                 <option key={index} value={variant.variant}>
                   {variant.variant}
                 </option>
@@ -284,9 +195,11 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
               className="w-full p-2 bg-transparent border-b-2  border-b-primaryRed focus:outline-none"
               onChange={handleChange}
               required
-              defaultValue={''}
+              defaultValue={""}
             >
-              <option value="" disabled>Select Outlet</option>
+              <option value="" disabled>
+                Select Outlet
+              </option>
               {outlets.map((outlet, index) => (
                 <option key={index} value={outlet.name}>
                   {outlet.name}
@@ -301,8 +214,9 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
             </button>
           </div>
           <p className="mt-6 text-xs text-gray-500">
-            *Disclaimer: By clicking &apos;Submit&nbsp;Now&apos;, you have
-            agreed to our Terms and Conditions.
+            *Disclaimer: I agree that by clicking the &apos;Enquir Now&apos; button below, I
+            am explicitly soliciting a call and message via whatsapp or any
+            other medium from us.
           </p>
         </form>
       </div>
