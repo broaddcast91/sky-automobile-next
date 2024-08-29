@@ -118,7 +118,7 @@ const Header = () => {
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-wagonr.webp",
       title: "WangnoR",
       description: "",
-      to: "/arena/wagonr-on-road-price",
+      to: "/arena/wagon-r-on-road-price",
     },
     {
       image:
@@ -395,21 +395,17 @@ const Header = () => {
               {selectedTab === 0 &&
                 arenaData.map((slide, index) => (
                   <Link key={index} href={slide.to}>
-                    <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white ">
-                      <div className="">
-                        {" "}
-                        <img
-                          src={slide.image}
-                          alt={slide.title}
-                          loading="lazy"
-                          className="scale-x-[-1] mb-4 px-2 h-32 w-auto mx-auto "
-                        />
-                      </div>
+                    <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1   hover:text-white ">
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        loading="lazy"
+                        className="scale-x-[-1] mb-4  h-32 w-auto mx-auto  "
+                      />
 
                       <h5 className="text-lg font-bold text-center uppercase lg:text-xl lg:font-extrabold ">
                         {slide.title}
                       </h5>
-                     
                     </div>
                   </Link>
                 ))}

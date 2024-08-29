@@ -138,7 +138,10 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
             </p>
           </div>
           <div>
-            <img src={data?.colors[selectedColor].img} alt="Colors" />
+            <img
+              src={data?.colors[selectedColor].img}
+              alt={data?.colors[selectedColor].colName}
+            />
             <h5 className="mb-5 text-xl font-medium text-center">
               {data?.colors[selectedColor].colName}
             </h5>
