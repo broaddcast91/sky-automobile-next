@@ -55,7 +55,7 @@ const ModalSelectState: React.FC = () => {
         className={`bg-gray-100 w-full max-w-[45rem] rounded py-4 m-2 md:py-6 select-none `}
       >
         <Image
-          src="/images/logo.png"
+          src="/images/other/logo.png"
           alt="logo"
           width={300}
           height={300}
@@ -65,7 +65,7 @@ const ModalSelectState: React.FC = () => {
         <div className="w-full h-full flex justify-center items-center gap-4 flex-col md:flex-row mb-4 lg:gap-8">
           <div onClick={handleClick} className="relative">
             <Image
-              src="/images/Odisa-Konarka_Temple.jpg"
+              src="/images/other/Odisa-Konarka_Temple.jpg"
               alt="Odisa-Konarka_Temple"
               width={300}
               height={300}
@@ -77,7 +77,7 @@ const ModalSelectState: React.FC = () => {
           </div>
           <div onClick={handleClick} className="relative">
             <Image
-              src="/images/Chhattisgarh-Bhoramdeo_Temple,_Kawardha.jpg"
+              src="/images/other/Chhattisgarh-Bhoramdeo_Temple,_Kawardha.jpg"
               alt="Chhattisgarh-Bhoramdeo_Temple"
               width={300}
               height={300}

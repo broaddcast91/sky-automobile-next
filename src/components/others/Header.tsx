@@ -23,48 +23,56 @@ const Header = () => {
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/Invicto_final.png",
       title: "Invicto",
       description: "The League of Extraordinary",
+      to: "/nexa/invicto-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/Jimny_final.png",
       title: "Jimny",
       description: "Crafted for Purity of Function",
+      to: "/nexa/jimny-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/ciaz.png",
       title: "Ciaz",
       description: "Created To Inspire Elegance",
+      to: "/nexa/ciaz-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/GV_final.png",
       title: "Grand Vitara",
       description: "The League of Extraordinary",
+      to: "/nexa/grand-vitara-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/xl6_final.png",
       title: "XL6",
       description: "Created to Inspire Indulgence.",
+      to: "/nexa/xl6-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/fronx_final.png",
       title: "Fronx",
       description: "Created to Inspire Style and Performance.",
+      to: "/nexa/fronx-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/baleno_final.png",
       title: "Baleno",
       description: "Created to Inspire The Bold and Intelligent",
+      to: "/nexa/baleno-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/ignis_final.png",
       title: "Ignis",
       description: "Created to Inspire The Toughness in You.",
+      to: "/nexa/ignis-on-road-price",
     },
   ];
 
@@ -74,60 +82,70 @@ const Header = () => {
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/Swift+Tile+Image.webp",
       title: "Swift",
       description: "",
+      to: "/arena/swift-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-alto800.webp",
       title: "Alto",
       description: "",
+      to: "/arena/alto-800-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-k10.webp",
       title: "Alto K10",
       description: "",
+      to: "/arena/alto-k10-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-brezza.webp",
       title: "Brezza",
       description: "",
+      to: "/arena/brezza-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-dzire.webp",
       title: "Dzire",
       description: "",
+      to: "/arena/dzire-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-spresso.webp",
       title: "Spresso",
       description: "",
+      to: "/arena/spresso-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-wagonr.webp",
       title: "WangnoR",
       description: "",
+      to: "/arena/wagonr-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-ertiga.webp",
       title: "Ertiga",
       description: "",
+      to: "/arena/ertiga-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-celerio.webp",
       title: "Celerio",
       description: "",
+      to: "/arena/celerio-on-road-price",
     },
     {
       image:
         "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-eeco.webp",
       title: "Ecco",
       description: "",
+      to: "/arena/eeco-on-road-price",
     },
   ];
 
@@ -198,7 +216,7 @@ const Header = () => {
               {/* {scrolled ? ( */}
               <Image
                 // src="https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/logos/new-hic-logo-2024-webp.webp"
-                src="/images/logo.png"
+                src="/images/other/logo.png"
                 // src={require("../assets/logo2_sky.png")}
                 alt="logo"
                 width={300}
@@ -211,7 +229,7 @@ const Header = () => {
               />
               <Image
                 // src="https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/logos/new-hic-logo-2024-webp.webp"
-                src="/images/logo-white.png"
+                src="/images/other/logo-white.png"
                 // src={require("../assets/logo2_sky.png")}
                 alt="logo"
                 width={300}
@@ -222,15 +240,7 @@ const Header = () => {
                     : "hidden  "
                 }`}
               />
-              {/* // ) : (
-              //   <Image
-              //     src="/assets/images/new-hic-white-logo-2024-webp.png"
-              //     alt="logo"
-              //     width={100}
-              //     height={100}
-              //     className="  h-14 md:h-[50px] w-auto"
-              //   />
-              // )} */}
+             
             </Link>
           </div>
           <nav className="hidden gap-4 text-sm uppercase lg:gap-8 font-poppins lg:flex">
@@ -258,7 +268,7 @@ const Header = () => {
               >
                 Services <FaCaretRight className="rotate-90" />
               </div>
-              <div className=" absolute top-4 -left-1/2 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
+              <div className=" absolute top-4 -left-1/3 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
                 <Link
                   href="/services"
                   className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
@@ -288,7 +298,7 @@ const Header = () => {
               >
                 Outlets <FaCaretRight className="rotate-90" />
               </div>
-              <div className=" absolute top-4 -left-1/2 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
+              <div className=" absolute top-4 -left-1/3 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
                 <Link
                   href="/odisa-outlets"
                   className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray4 text-black hover:bg-primaryRed hover:text-white border-y shadow-lg"
@@ -412,7 +422,7 @@ const Header = () => {
               {selectedTab === 0 &&
                 nexaData.map((slide, index) => (
                   <Link key={index} href="/arena/alto-k10-on-road-price">
-                    <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white">
+                    <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white ">
                       <div className="">
                         {" "}
                         <img
