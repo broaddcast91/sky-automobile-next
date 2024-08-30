@@ -65,18 +65,12 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
   };
 
   const outlets = [
-    {
-      img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/alto-800/sliders/exterior_web_01.webp",
-      name: "Sky Automobile Arena Showroom",
-    },
-    {
-      img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/alto-800/sliders/exterior_web_01.webp",
-      name: "Sky Automobile Arena Showroom",
-    },
-    {
-      img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/alto-800/sliders/exterior_web_01.webp",
-      name: "Sky Automobile Arena Showroom",
-    },
+    "Sky Automobile Arena Showroom",
+    ,
+    "Sky Automobile Arena Showroom",
+    ,
+    "Sky Automobile Arena Showroom",
+    ,
   ];
 
   return (
@@ -212,8 +206,8 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
                 Select Outlet
               </option>
               {outlets.map((outlet, index) => (
-                <option key={index} value={outlet.name}>
-                  {outlet.name}
+                <option key={index} value={outlet}>
+                  {outlet}
                 </option>
               ))}
             </select>

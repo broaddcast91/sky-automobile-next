@@ -228,23 +228,23 @@ export const models = [
 
     exterior: [
       {
-        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-2.webp",
+        img: "/images/slider/swift/ex-2.webp",
         title: "",
       },
       {
-        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-3.webp",
+        img: "/images/slider/swift/ex-3.webp",
         title: "",
       },
       {
-        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-4.webp",
+        img: "/images/slider/swift/ex-4.webp",
         title: "",
       },
       {
-        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-5.webp",
+        img: "/images/slider/swift/ex-5.webp",
         title: "",
       },
       {
-        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-6.webp",
+        img: "/images/slider/swift/ex-6.webp",
         title: "",
       },
       // {
@@ -254,37 +254,37 @@ export const models = [
     ],
     interior: [
       {
-        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-1.webp",
+        img: "/images/slider/swift/in-1.webp",
         title: "",
       },
       {
-        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-2.webp",
+        img: "/images/slider/swift/in-2.webp",
         title: "",
       },
       {
-        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-4.webp",
+        img: "/images/slider/swift/in-4.webp",
         title: "",
       },
       {
-        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-5.webp",
+        img: "/images/slider/swift/in-5.webp",
         title: "",
       },
       {
-        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-7.webp",
+        img: "/images/slider/swift/in-7.webp",
         title: "",
       },
-      {
-        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-6.webp",
-        title: "",
-      },
-      {
-        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-8.webp",
-        title: "",
-      },
-      {
-        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-9.webp",
-        title: "",
-      },
+      // {
+      //   img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-6.webp",
+      //   title: "",
+      // },
+      // {
+      //   img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-8.webp",
+      //   title: "",
+      // },
+      // {
+      //   img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-9.webp",
+      //   title: "",
+      // },
       // {
       //   img: "",
       //   title: "",

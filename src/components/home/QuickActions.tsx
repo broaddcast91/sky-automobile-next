@@ -40,7 +40,7 @@ const QuickActions: React.FC = () => {
         <ActionItem
           Icon={CiCircleQuestion}
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-          ariaLabel="Question Icon"
+          ariaLabel="Book Your Car Now"
         />
         <ActionItem
           Icon={PiSteeringWheel}
