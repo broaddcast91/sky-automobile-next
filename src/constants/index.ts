@@ -63,16 +63,58 @@ export const models = [
       { label: "Wheel Base", value: "2380 mm" },
       { label: "Gearbox", value: "5-Speed" },
     ],
-    sliderImages: [
-      "/images/car/arena/altok10/exterior_web_01.webp",
-      "/images/car/arena/altok10/exterior_web_02.webp",
-      "/images/car/arena/altok10/exterior_web_03.webp",
-      "/images/car/arena/altok10/exterior_web_04.webp",
-      "/images/car/arena/altok10/exterior_web_05.webp",
-      "/images/car/arena/altok10/Interior_web_1.webp",
-      "/images/car/arena/altok10/Interior_web_2.webp",
-      "/images/car/arena/altok10/Interior_web_3.webp",
-      "/images/car/arena/altok10/High_web_05.webp",
+
+    exterior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/topgun-launch-2022/exterior/exterior_web_01.webp",
+        title: "Honeycomb Grille",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/topgun-launch-2022/exterior/exterior_web_02.webp",
+        title: "Peppy Headlamps",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/topgun-launch-2022/exterior/exterior_web_03.webp",
+        title: "Trendy Rear Combination Lamps",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/topgun-launch-2022/exterior/exterior_web_04.webp",
+        title: "13''(33.02cm) Wheels with Honeycomb-Themed Covers",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/topgun-launch-2022/exterior/exterior_web_05.webp",
+        title: "Reverse Parking Sensors",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
+    ],
+    interior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/topgun-launch-2022/interior/interior_web_01.webp",
+        title: "Lively and Spacious Interior",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/topgun-launch-2022/interior/interior_web_02.webp",
+        title: "Smartplay Studio with Smartphone Navigation",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/topgun-launch-2022/interior/interior_web_03.webp",
+        title: "Steering-Mounted Audio and Voice Control",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/topgun-launch-2022/highlights/highlight_web_01.webp",
+        title: "Auto Gear Shift Technology",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/topgun-launch-2022/highlights/highlight_web_05.webp",
+        title: "1st in Segment 4 Speakers",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
     ],
     carDetails: [
       {
@@ -183,19 +225,70 @@ export const models = [
       { label: "Wheel Base", value: "2450 mm" },
       { label: "Gearbox", value: "5-Speed" },
     ],
-    sliderImages: [
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-6.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-6.webp",
+
+    exterior: [
+      {
+        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-2.webp",
+        title: "",
+      },
+      {
+        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-3.webp",
+        title: "",
+      },
+      {
+        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-4.webp",
+        title: "",
+      },
+      {
+        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-5.webp",
+        title: "",
+      },
+      {
+        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-6.webp",
+        title: "",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
+    ],
+    interior: [
+      {
+        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-1.webp",
+        title: "",
+      },
+      {
+        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-2.webp",
+        title: "",
+      },
+      {
+        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-4.webp",
+        title: "",
+      },
+      {
+        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-5.webp",
+        title: "",
+      },
+      {
+        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-7.webp",
+        title: "",
+      },
+      {
+        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-6.webp",
+        title: "",
+      },
+      {
+        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-8.webp",
+        title: "",
+      },
+      {
+        img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-9.webp",
+        title: "",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
     ],
     carDetails: [
       {
@@ -334,20 +427,58 @@ export const models = [
       { label: "Wheel Base", value: "2500 mm" },
       { label: "Gearbox", value: "-Speed" },
     ],
-    sliderImages: [
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/brezza/exterior_web_01.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/brezza/exterior_web_02.webp",
-      " https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/brezza/exterior_web_03.webp",
-      " https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/brezza/exterior_web_04.webp",
-      " https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/brezza/exterior_web_05.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/brezza/highlight_web_01.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/brezza/highlight_web_02.webp",
-      " https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/brezza/highlight_web_06.webp",
-      " https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/brezza/highlight_web_04.webp",
-      " https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/brezza/highlight_web_05.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/brezza/Interior_web_01.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/brezza/Interior_web_02.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/brezza/Interior_web_03.webp",
+
+    exterior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/new-brezza-launch-2022/exterior/exterior_web_01.webp",
+        title: "Dual LED Projector Headlamps with LED DRLs",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/new-brezza-launch-2022/exterior/exterior_web_02.webp",
+        title: "LED Tail Lamp",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/new-brezza-launch-2022/exterior/exterior_web_03.webp",
+        title: "Chrome Accentuated Front Grille",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/new-brezza-launch-2022/exterior/exterior_web_04.webp",
+        title: "Shark fin Antenna",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/new-brezza-launch-2022/exterior/exterior_web_05.webp",
+        title: "Bold Geometric Alloy Wheels",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
+    ],
+    interior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/new-brezza-launch-2022/interiors/interior_web_01.webp",
+        title: "Interior Ambient Lighting",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/new-brezza-launch-2022/interiors/interior_web_02.webp",
+        title: "Black and Brown Interiors",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/new-brezza-launch-2022/interiors/interior_web_03.webp",
+        title: "Rear AC Vents",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/new-brezza-launch-2022/interiors/interior_web_04.webp",
+        title: "Wide Cabin Space",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/new-brezza-launch-2022/interiors/interior_web_05.webp",
+        title: "Flat Bottom Steering Wheel",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
     ],
     carDetails: [
       {
@@ -526,19 +657,58 @@ export const models = [
       { label: "Wheel Base", value: "2450 mm" },
       { label: "Gearbox", value: "5-Speed" },
     ],
-    sliderImages: [
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-6.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-6.webp",
+
+    exterior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/dzire-launch-2022/exterior/exterior_web_01.webp",
+        title: "Auto-Foldable ORVMs",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/dzire-launch-2022/exterior/exterior_web_02.webp",
+        title: " Premium Single Aperture Grille For Striking Appearance",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/dzire-launch-2022/exterior/exterior_web_04.webp",
+        title: "  Fog Lamps With Bold Chrome Accents",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/dzire-launch-2022/exterior/exterior_web_03.webp",
+        title: "Precision-Cut Two-Tone Alloy Wheels",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/dzire-launch-2022/exterior/exterior_web_05.webp",
+        title: "LED Projector Headlamps & DRLs",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
+    ],
+    interior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/dzire-launch-2022/interior/interior_web_01.webp",
+        title: "Premium Trims with Champagne Accents",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/dzire-launch-2022/interior/interior_web_04.webp",
+        title: "Exclusive Wood Finish With Natural Gloss Effect",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/dzire-launch-2022/interior/interior_web_02.webp",
+        title: "Rear AC Vent",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/dzire-launch-2022/interior/interior_web_05.webp",
+        title: "Rear Armrest with Cupholder",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/dzire-launch-2022/interior/interior_web_03.webp",
+        title: "Coloured Multi-Information Display",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
     ],
     carDetails: [
       { label: "Engine", value: "1197 cc" },
@@ -638,19 +808,66 @@ export const models = [
       { label: "Wheel Base", value: "2360 mm" },
       { label: "Gearbox", value: "5-Speed" },
     ],
-    sliderImages: [
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-6.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-6.webp",
+
+    exterior: [
+      // {
+      //   img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/s-presso-launch-2022/highlights/highlight_web_01.webp",
+      //   title: "Dynamic Center Console with Smartplay Studio",
+      // },
+      // {
+      //   img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/s-presso-launch-2022/highlights/highlight_web_02.webp",
+      //   title: "Strong Heartect Platform",
+      // },
+      // {
+      //   img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/s-presso-launch-2022/highlights/highlight_web_05.webp",
+      //   title: "Auto-Gear Shift Technology",
+      // },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/s-presso-launch-2022/exterior/exterior_web_01.webp",
+        title: "Signature C-Shaped Tail Lamps",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/s-presso-launch-2022/exterior/exterior_web_02.webp",
+        title: "Twin Chamber Headlamps",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/s-presso-launch-2022/exterior/exterior_web_05.webp",
+        title: "Squarish Wheel Arches with 14'' Tyres",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/s-presso-launch-2022/exterior/exterior_web_03.webp",
+        title: "Electrically Adjustable Body Coloured ORVMs",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/s-presso-launch-2022/exterior/exterior_web_04.webp",
+        title: "SUV-Inspired Bold Front Fascia",
+      },
+    ],
+    interior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/s-presso-launch-2022/interior/interior_web_01.webp",
+        title: "Best-in-its-Class Rear Legroom",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/s-presso-launch-2022/interior/interior_web_02.webp",
+        title: "Wide and Spacious Boot",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/s-presso-launch-2022/interior/interior_web_03.webp",
+        title: "Higher Seating for a Commanding Position",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/s-presso-launch-2022/interior/interior_web_04.webp",
+        title: "Front Utility Spaces",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/s-presso-launch-2022/interior/interior_web_05.webp",
+        title: "Rear Utility Spaces",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
     ],
     carDetails: [
       { label: "Engine", value: "998 cc" },
@@ -761,25 +978,65 @@ export const models = [
       { label: "Wheel Base", value: "2435 mm" },
       { label: "Gearbox", value: "5-Speed" },
     ],
-    sliderImages: [
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-6.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-6.webp",
-    ],
+
     carDetails: [
       { label: "Engine", value: "998 cc" },
       { label: "Mileage", value: "24.35 kmpl" },
       { label: "Power", value: "49.0 kW @ 5500 rpm" },
     ],
+    exterior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/wagonr-launch-2022/exterior/exterior_web_01.webp",
+        title: "Robust Design Language with a wide stance",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/wagonr-launch-2022/exterior/exterior_web_02.webp",
+        title: "Sporty Floating Roof Design",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/wagonr-launch-2022/exterior/exterior_web_04.webp",
+        title: "Dynamic Alloy Wheels",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/wagonr-launch-2022/exterior/exterior_web_03.webp",
+        title: "Electrical Retractable ORVMs",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/wagonr-launch-2022/exterior/exterior_web_05.webp",
+        title: "Unique Dual-Split Headlamps",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
+    ],
+    interior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/wagonr-launch-2022/interior/interior_web_1.webp",
+        title: "Spacious Boot",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/wagonr-launch-2022/interior/interior_web_2.webp",
+        title: "Spacious Cabin",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/wagonr-launch-2022/interior/interior_web_4.webp",
+        title: "Smartplay Studio with Smartphone Navigation and 4 Speakers",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/wagonr-launch-2022/interior/interior_web_3.webp",
+        title: "Modern Grey Melange Fabric",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/wagonr-launch-2022/interior/interior_web_5.webp",
+        title: "Steering Mounted Controls",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
+    ],
+
     variants: [
       { variant: "WagonR LXI", transmission: "Manual", price: "₹ 5.54 Lakh" },
       { variant: "WagonR VXI", transmission: "Manual", price: "₹ 5.84 Lakh" },
@@ -866,19 +1123,58 @@ export const models = [
       { label: "Wheel Base", value: "2740 mm" },
       { label: "Gearbox", value: "5-Speed" },
     ],
-    sliderImages: [
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-6.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-6.webp",
+
+    exterior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/ertiga-launch-2022/exterior/ext_web_01.webp",
+        title: "New Dynamic Chrome Winged Front Grille",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/ertiga-launch-2022/exterior/ext_web_02.webp",
+        title: "New Back Door Garnish with Chrome Insert",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/ertiga-launch-2022/exterior/ext_web_03.webp",
+        title: "3D Origami Style LED Tail Lamps",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/ertiga-launch-2022/exterior/ext_web_04.webp",
+        title: "Machined Two-tone Alloy Wheels",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/ertiga-launch-2022/exterior/ext_web_05.webp",
+        title: "Retractable ORVMs",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
+    ],
+    interior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/ertiga-launch-2022/interior/int_web_01.webp",
+        title: "Sculpted Dashboard with Metallic Teak-Wooden Finish",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/ertiga-launch-2022/interior/int_web_02.webp",
+        title: "Plush Dual Tone Interiors",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/ertiga-launch-2022/interior/int_web_04.webp",
+        title: "Air Cooled Twin Cup Holders",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/ertiga-launch-2022/interior/int_web_03.webp",
+        title: "17.78cm SmartPlay Pro",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/ertiga-launch-2022/interior/int_web_05.webp",
+        title: "2nd Row roof mounted AC ",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
     ],
     carDetails: [
       { label: "Engine", value: "1462 cc" },
@@ -981,19 +1277,58 @@ export const models = [
       { label: "Wheel Base", value: "2425 mm" },
       { label: "Gearbox", value: "5-Speed" },
     ],
-    sliderImages: [
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-6.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-6.webp",
+
+    exterior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/celerio-launch-2022/exterior/exterior_web_01.webp",
+        title: "Animated Sweeping Headlamps",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/celerio-launch-2022/exterior/exterior_web_02.webp",
+        title: "Urbane Black 15” (38.02cm) Alloy Wheels​",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/celerio-launch-2022/exterior/exterior_web_04.webp",
+        title: "Radiant Grille With Sharp Chrome assets",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/celerio-launch-2022/exterior/exterior_web_05.webp",
+        title: "Droplet Styled Tail lamps",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/celerio-launch-2022/exterior/exterior_web_03.webp",
+        title: "Electrically-Foldable ORVMs with Turn Indicators​",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
+    ],
+    interior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/celerio-launch-2022/interior/interior_web_01.webp",
+        title: "Strereoscopic Instrument Cluster",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/celerio-launch-2022/interior/interior_web_02.webp",
+        title: "Auto Gear Shift Technology",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/celerio-launch-2022/interior/interior_web_05.webp",
+        title: "Premium All Black Interiors",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/celerio-launch-2022/interior/interior_web_04.webp",
+        title: "Contemporary Dashboard",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/celerio-launch-2022/interior/interior_web_03.webp",
+        title: "Energetic & Spacious Cabin",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
     ],
     carDetails: [
       { label: "Engine", value: "998 cc" },
@@ -1076,19 +1411,59 @@ export const models = [
       { label: "Wheel Base", value: "2350 mm" },
       { label: "Gearbox", value: "5-Speed" },
     ],
-    sliderImages: [
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/exterior/ex-6.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-1.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-2.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-3.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-4.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-5.webp",
-      "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-6.webp",
+
+    exterior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/eeco-launch-nov-2022-new/exteriors/exterior_web_01.webp",
+        title: "Exciting new color",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/eeco-launch-nov-2022-new/exteriors/exterior_web_03.webp",
+        title: "Stylish Clear Lens Headlamps and Tail Lamps",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/eeco-launch-nov-2022-new/exteriors/exterior_web_05.webp",
+        title: "Reverse Parking Sensors",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/eeco-launch-nov-2022-new/exteriors/exterior_web_02.webp",
+        title: "Outside Rear View Mirror",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/eeco-launch-nov-2022-new/exteriors/exterior_web_04.webp",
+        title: "Front Mud Flaps",
+      },
+
+      // {
+      //   img: "",
+      //   title: "",
+      // },
+    ],
+    interior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/eeco-launch-nov-2022-new/interiors/interior_web_01.webp",
+        title: "5 & 7 Seater Options ",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/eeco-launch-nov-2022-new/interiors/interior_web_02.webp",
+        title: "Matching Seat Covers with Interior Colour",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/eeco-launch-nov-2022-new/interiors/interior_web_05.webp",
+        title: "Sunvisor",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/eeco-launch-nov-2022-new/interiors/interior_web_03.webp",
+        title: "Assist Grips ",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/eeco-launch-nov-2022-new/interiors/interior_web_04.webp",
+        title: "Large Boot Space ",
+      },
+      // {
+      //   img: "",
+      //   title: "",
+      // },
     ],
     carDetails: [
       { label: "Engine", value: "1196 cc" },

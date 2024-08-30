@@ -19,8 +19,19 @@ import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
-export default function VehicleDetailsSlider({ images }: { images: string[] }) {
-  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+type ImageDetail = {
+  img: string;
+  title: string;
+};
+
+interface VehicleDetailsSliderProps {
+  images: ImageDetail[];
+}
+
+const VehicleDetailsSlider: React.FC<VehicleDetailsSliderProps> = ({
+  images,
+}) => {
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null); // or use a more specific type if available
   const navigationPrevRef = useRef<HTMLDivElement | null>(null);
   const navigationNextRef = useRef<HTMLDivElement | null>(null);
 
@@ -34,7 +45,6 @@ export default function VehicleDetailsSlider({ images }: { images: string[] }) {
           prevEl: navigationPrevRef.current,
         }}
         onBeforeInit={(swiper) => {
-          // Ensure that the navigation parameters are properly set and defined
           if (
             typeof swiper.params.navigation !== "boolean" &&
             swiper.params.navigation
@@ -46,20 +56,20 @@ export default function VehicleDetailsSlider({ images }: { images: string[] }) {
         thumbs={{ swiper: thumbsSwiper }}
         autoplay={{ delay: 2000 }}
         modules={[FreeMode, Navigation, Thumbs, Autoplay]}
-        className="mySwiper2  xl:max-w-4xl lg:rounded-xl relative select-none"
+        className="mySwiper2 xl:max-w-4xl lg:rounded-xl relative select-none"
       >
-        {images.map((src, index) => (
+        {images.map((image, index) => (
           <SwiperSlide key={index}>
             <div className="max-h-[60vh]">
               <img
-                src={src}
-                alt={`Slide ${index + 1}`}
+                src={image.img}
+                alt={image.title}
                 loading="lazy"
-                className="mb-6 lg:rounded-lg   "
+                className="mb-6 lg:rounded-lg"
               />
             </div>
           </SwiperSlide>
-        ))}{" "}
+        ))}
         <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20">
           <div
             ref={navigationPrevRef}
@@ -82,28 +92,21 @@ export default function VehicleDetailsSlider({ images }: { images: string[] }) {
         onSwiper={setThumbsSwiper}
         loop={true}
         spaceBetween={10}
-        // slidesPerView={5}
         breakpoints={{
-          320: {
-            slidesPerView: 3,
-          },
-          640: {
-            slidesPerView: 4,
-          },
-          768: {
-            slidesPerView: 5,
-          },
+          320: { slidesPerView: 3 },
+          640: { slidesPerView: 4 },
+          768: { slidesPerView: 5 },
         }}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper3  xl:max-w-3xl rounded-xl select-none"
+        className="mySwiper3 xl:max-w-3xl rounded-xl select-none"
       >
-        {images.map((src, index) => (
+        {images.map((image, index) => (
           <SwiperSlide key={index}>
             <div className="">
               <img
-                src={src}
+                src={image.img}
                 alt={`Thumbnail ${index + 1}`}
                 loading="lazy"
                 className="h-10 rounded-lg"
@@ -114,4 +117,6 @@ export default function VehicleDetailsSlider({ images }: { images: string[] }) {
       </Swiper>
     </>
   );
-}
+};
+
+export default VehicleDetailsSlider;

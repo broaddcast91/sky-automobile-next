@@ -339,7 +339,7 @@ const Header = () => {
               Offers
             </button> */}
             <button
-              className={` md:px-6 py-2 rounded-full  bg-primaryRed text-white shadow-xl md:text-sm px-4 text-xs  `}
+              className={` md:px-6 py-2 rounded-full uppercase  bg-primaryRed text-white shadow-xl md:text-sm px-4 text-xs  `}
             >
               Offers
             </button>

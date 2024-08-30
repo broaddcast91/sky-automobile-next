@@ -31,6 +31,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
     outlet: "",
     model: data?.variants[0]?.variant || "",
   });
+  const [selected, setSelected] = React.useState("Exterior");
 
   const handleClickColor = (index: number): void => {
     setSelectedColor(index);
@@ -275,11 +276,36 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
       </div>
       <div className="py-10 bg-secondaryGray4 lg:py-20 my-10">
         <div className="container flex flex-col items-center mx-auto r xl:max-w-7xl">
-          <h4 className="text-3xl font-bold text-primaryRed lg:mb-6 mb-4">
-            Gallery
-          </h4>
-
-          <VehicleDetailsSlider images={data?.sliderImages} />
+          <div className="flex justify-center  mb-6 text-xl ">
+            <button
+              onClick={() => setSelected("Exterior")}
+              aria-label="Exterior"
+              className={`   px-4 border  lg:px-8 py-1.5 ${
+                selected === "Exterior"
+                  ? "bg-primaryRed    border-primaryRed  text-white "
+                  : "text-secondaryGray2 bg-secondaryGray3"
+              }`}
+            >
+              Exterior
+            </button>
+            <button
+              onClick={() => setSelected("Interior")}
+              aria-label="Interior"
+              className={`   px-4 border  lg:px-8 py-1.5 ${
+                selected === "Interior"
+                  ? "bg-primaryRed   border-primaryRed  text-white "
+                  : "text-secondaryGray2 bg-secondaryGray3"
+              }
+            `}
+            >
+              Interior
+            </button>
+          </div>
+          {selected === "Exterior" ? (
+            <VehicleDetailsSlider images={data?.exterior} />
+          ) : (
+            <VehicleDetailsSlider images={data?.interior} />
+          )}
         </div>
       </div>
       <div className="container pt-6 pb-10 mx-auto xl:max-w-7xl lg:pb-20 px-1 ">

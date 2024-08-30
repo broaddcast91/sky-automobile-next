@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const ModalSelectState: React.FC = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [isAnimate, setIsAnimate] = useState(false);
 
   useEffect(() => {
