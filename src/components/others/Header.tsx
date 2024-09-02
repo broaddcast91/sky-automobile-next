@@ -394,7 +394,7 @@ const Header = () => {
             >
               {selectedTab === 0 &&
                 arenaData.map((slide, index) => (
-                  <Link key={index} href={slide.to}>
+                  <Link onClick={() => setIsVehicle(false)} key={index} href={slide.to}>
                     <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1   hover:text-white ">
                       <img
                         src={slide.image}
@@ -411,7 +411,7 @@ const Header = () => {
                 ))}
               {selectedTab === 1 &&
                 nexaData.map((slide, index) => (
-                  <Link key={index} href={slide.to}>
+                  <Link onClick={() => setIsVehicle(false)} key={index} href={slide.to}>
                     <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white ">
                       <div className="">
                         {" "}
@@ -426,9 +426,9 @@ const Header = () => {
                       <h5 className="text-lg font-bold text-center uppercase lg:text-xl lg:font-extrabold ">
                         {slide.title}
                       </h5>
-                      <p className="text-sm text-center ">
+                      {/* <p className="text-sm text-center ">
                         {slide.description}
-                      </p>
+                      </p> */}
                       {/* <button className="px-4 py-2 mx-auto mt-4 text-sm text-white rounded-lg opacity-0 cursor-pointer group-hover:opacity-100 bg-primaryRed w-min whitespace-nowrap">
                 Explore Now
               </button> */}

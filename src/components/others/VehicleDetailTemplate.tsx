@@ -65,18 +65,15 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
   };
 
   const outlets = [
-    "Sky Automobile Arena Showroom",
-    ,
-    "Sky Automobile Arena Showroom",
-    ,
-    "Sky Automobile Arena Showroom",
-    ,
+    "Sky Automobile Arena 01 Showroom",
+    "Sky Automobile Arena 02 Showroom",
+    "Sky Automobile Arena 03 Showroom",
   ];
 
   return (
     <div className="">
       <Header />
-      <div className="px-1 py-20 bg-primaryGray lg:py-20">
+      <div className="px-1 py-20 bg-primaryGray lg:py-20 min-h-[80vh] flex flex-col justify-center">
         <div className="container grid items-center mx-auto text-white md:grid-cols-2 xl:max-w-7xl">
           <div>
             <h1 className="mb-4 text-3xl font-bold lg:text-4xl">
@@ -270,38 +267,57 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
       </div>
       <div className="py-10 bg-secondaryGray4 lg:py-20 my-10">
         <div className="container flex flex-col items-center mx-auto r xl:max-w-7xl">
-          <div className="flex justify-center  mb-6 text-xl ">
-            <button
-              onClick={() => setSelected("Exterior")}
-              aria-label="Exterior"
-              className={`   px-4 border  lg:px-8 py-1.5 ${
-                selected === "Exterior"
-                  ? "bg-primaryRed    border-primaryRed  text-white "
-                  : "text-secondaryGray2 bg-secondaryGray3"
-              }`}
-            >
-              Exterior
-            </button>
-            <button
-              onClick={() => setSelected("Interior")}
-              aria-label="Interior"
-              className={`   px-4 border  lg:px-8 py-1.5 ${
-                selected === "Interior"
-                  ? "bg-primaryRed   border-primaryRed  text-white "
-                  : "text-secondaryGray2 bg-secondaryGray3"
-              }
-            `}
-            >
-              Interior
-            </button>
-          </div>
-          {selected === "Exterior" ? (
-            <VehicleDetailsSlider images={data?.exterior} />
+          {index === 11 ? (
+            <div className="rounded-lg ">
+              <p className="bg-primaryRed    border-primaryRed  text-white text-center mb-6 text-xl w-min mx-auto px-4 lg:px-8 py-1.5">
+                Specification
+              </p>
+              <video
+                src="https://www.nexaexperience.com/slider_html_code/images/Desktop.mp4"
+                autoPlay
+                loop
+                muted
+                className="object-cover w-full rounded-lg"
+              ></video>
+            </div>
           ) : (
-            <VehicleDetailsSlider images={data?.interior} />
+            <>
+              {" "}
+              <div className="flex justify-center  mb-6 text-xl ">
+                <button
+                  onClick={() => setSelected("Exterior")}
+                  aria-label="Exterior"
+                  className={`   px-4 border  lg:px-8 py-1.5 ${
+                    selected === "Exterior"
+                      ? "bg-primaryRed    border-primaryRed  text-white "
+                      : "text-secondaryGray2 bg-secondaryGray3"
+                  }`}
+                >
+                  Exterior
+                </button>
+                <button
+                  onClick={() => setSelected("Interior")}
+                  aria-label="Interior"
+                  className={`   px-4 border  lg:px-8 py-1.5 ${
+                    selected === "Interior"
+                      ? "bg-primaryRed   border-primaryRed  text-white "
+                      : "text-secondaryGray2 bg-secondaryGray3"
+                  }
+            `}
+                >
+                  Interior
+                </button>
+              </div>
+              {selected === "Exterior" ? (
+                <VehicleDetailsSlider images={data?.exterior} />
+              ) : (
+                <VehicleDetailsSlider images={data?.interior} />
+              )}
+            </>
           )}
         </div>
       </div>
+
       <div className="container pt-6 pb-10 mx-auto xl:max-w-7xl lg:pb-20 px-1 ">
         <h4 className="text-2xl font-bold text-primaryGray lg:mb-6">
           Key Specifications

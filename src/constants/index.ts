@@ -1496,4 +1496,1124 @@ export const models = [
     brochure:
       "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/Eeco-Passenger-BRAND-Leaflet.pdf",
   },
+
+  // Maruti Jimny -9
+  {
+    name: "Maruti Jimny",
+    subName: "Jimny",
+    colors: [
+      {
+        img: "/images/car/nexa/jimny/jimny-bluish-black.png",
+        colorCode: "#1c1c1c",
+        colName: "Bluish Black",
+      },
+      {
+        img: "/images/car/nexa/jimny/jimny-kinetic-yellow-bluish-black-roof.png",
+        colorCode: "#959a36",
+        colName: "Kinetic Yellow Bluish Black Roof",
+      },
+      {
+        img: "/images/car/nexa/jimny/jimny-Granite-Gray.png",
+        colorCode: "#575757",
+        colName: "Granite Gray",
+      },
+
+      {
+        img: "/images/car/nexa/jimny/jimny-nexa-blue.png",
+        colorCode: "#002e8a",
+        colName: "Nexa Blue",
+      },
+      {
+        img: "/images/car/nexa/jimny/jimny-pearl-arctic-white.png",
+        colorCode: "#ffffff",
+        colName: "Pearl Artic White",
+      },
+      {
+        img: "/images/car/nexa/jimny/jimny-sizzling-red.png",
+        colorCode: "#e00000",
+        colName: "Sizzling Red",
+      },
+      {
+        img: "/images/car/nexa/jimny/jimny-sizzling-red-bluish-black-roof.png",
+        colorCode: "#bd0000",
+        colName: "Sizzling Red Bluish Black Roof",
+      },
+    ],
+    keySpecifications: [
+      { label: "Fuel Tank Capacity", value: "40 Litres" },
+      { label: "Seating Capacity", value: "4" },
+      { label: "Length", value: "3985 mm" },
+      { label: "Width", value: "1645 mm" },
+      { label: "Height", value: "1720 mm" },
+      { label: "Front Suspension", value: "Independent, 3-Link Coil Spring" },
+      { label: "Rear Suspension", value: "Rigid Axle, 3-Link Coil Spring" },
+      { label: "Fuel Type", value: "Petrol" },
+      { label: "No. of Cylinders", value: "4" },
+      { label: "Max Torque", value: "134.2 Nm @ 4000 rpm" },
+      { label: "Transmission Type", value: "Manual/Automatic" },
+      { label: "Body Type", value: "SUV" },
+      { label: "Wheel Base", value: "2590 mm" },
+      { label: "Gearbox", value: "5-Speed" },
+    ],
+    exterior: [
+      {
+        img: "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/rocky/featuretechnology/exterior/clamshell-bonnet.webp",
+        title: "Clamshell Bonnet",
+      },
+      {
+        img: "https://nexaprod3.azureedge.net/-/media/feature/nexawebsitecarbrand/rocky/featuretechnology/exterior/1000x500-ar_sn_nexa_jimny_optimized-bumper_v2.webp",
+        title: "Optimized Bumpers",
+      },
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/rocky/featuretechnology/exterior/practical-drip-rail.webp",
+        title: "Practical Drip Rail",
+      },
+      {
+        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/rocky/featuretechnology/exterior/1000x500-ar_ab_jimny_led_headlamp_with_washer_02-copy.webp",
+        title: "LED Headlamps with Washer",
+      },
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/rocky/featuretechnology/exterior/alloy.webp",
+        title: "All Alloy Wheels",
+      },
+      {
+        img: "https://nexaprod1.azureedge.net/-/media/feature/nexawebsitecarbrand/rocky/featuretechnology/exterior/5-slot-chrome-plated-grille.webp",
+        title: "Gunmetal Grey Grille with Chrome Plating",
+      },
+    ],
+    interior: [
+      {
+        img: "https://nexaprod3.azureedge.net/-/media/feature/nexawebsitecarbrand/rocky/featuretechnology/interior/1000x500-ar_pk_nexa_jimny_interior_kv_v-1.webp",
+        title: "Sporty Cabin with Scratch-Resistant Surfaces",
+      },
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/rocky/featuretechnology/interior/1000x500-ar_pk_nexa_jimny_intuitively-designed-controls_v-2.webp",
+        title: "Intuitively Designed Controls",
+      },
+      {
+        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/rocky/featuretechnology/interior/comfortable-seat-design.webp",
+        title: "Comfortable Seat Design",
+      },
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/rocky/featuretechnology/interior/professional-utility-kit.webp",
+        title: " Professional Utility Kit",
+      },
+      {
+        img: "https://nexaprod1.azureedge.net/-/media/feature/nexawebsitecarbrand/rocky/featuretechnology/interior/1000x500-ar-am-jimny-ywd-smart-play-pro-shot-v1-copy.webp",
+        title: "SmartPlay Pro+",
+      },
+    ],
+    carDetails: [
+      { label: "Engine", value: "1462 cc" },
+      { label: "Mileage", value: "18-20 kmpl" },
+      { label: "Power", value: "77.1 kW @ 6000 rpm" },
+    ],
+    variants: [
+      {
+        variant: "Jimny Zeta 5MT",
+        transmission: "Manual",
+        price: "₹ 12.74 Lakh",
+      },
+      {
+        variant: "Jimny Alpha 5MT",
+        transmission: "Manual",
+        price: "₹ 13.69 Lakh",
+      },
+      {
+        variant: "Jimny Alpha 5MT DT",
+        transmission: "Manual",
+        price: "₹ 13.85 Lakh",
+      },
+      {
+        variant: "Jimny Zeta 4AT",
+        transmission: "Automatic",
+        price: "₹ 13.84 Lakh",
+      },
+      {
+        variant: "Jimny Alpha 4AT",
+        transmission: "Automatic",
+        price: "₹ 14.79 Lakh",
+      },
+      {
+        variant: "Jimny Alpha 4AT DT",
+        transmission: "Automatic",
+        price: "₹ 14.95 Lakh",
+      },
+    ],
+    priceRange: "₹ 12.74 - 14.95 Lakh*",
+    brochure:
+      "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/rocky/jimny_brochure.pdf#element_submenu",
+  },
+  // Maruti Fronx - 10
+  {
+    name: "Maruti Fronx",
+    subName: "Fronx",
+    colors: [
+      {
+        img: "/images/car/nexa/fronx/FRONX-Color-1500x700-NEXA_Blue.webp",
+        colorCode: "#163472",
+        colName: "NEXA Blue (Celestial)",
+      },
+      {
+        img: "/images/car/nexa/fronx/FRONX-Color-1500x700-ARCTIC_WHITE.webp",
+        colorCode: "#f9f9f9",
+        colName: "Arctic White",
+      },
+      {
+        img: "/images/car/nexa/fronx/FRONX-Color-1500x700-SPLENDID_SILVER.webp",
+        colorCode: "#B6BABD",
+        colName: "Splendid Silver",
+      },
+      {
+        img: "/images/car/nexa/fronx/FRONX-Color-1500x700-GRANDEUR_GREY.webp",
+        colorCode: "#414c5f",
+        colName: "Grandeur Grey",
+      },
+      {
+        img: "/images/car/nexa/fronx/FRONX-Color-1500x700-EARTHERN_BROWN.webp",
+        colorCode: "#594840",
+        colName: "Earthen Brown",
+      },
+      {
+        img: "/images/car/nexa/fronx/FRONX-Color-1500x700-OPULENT_RED.webp",
+        colorCode: "#AC0F0F",
+        colName: "Opulent Red",
+      },
+      {
+        img: "/images/car/nexa/fronx/FRONX-Color-934x455-NEXA_bluish_black webp.webp",
+        colorCode: "#171717",
+        colName: "Bluish Black",
+      },
+      {
+        img: "/images/car/nexa/fronx/FRONX-Color-1500x700-DUAL_TONE-EARTHERN_BROWN.webp",
+        colorCode: "#5b5133",
+        colName: "Earthen Brown with Bluish Black Roof",
+      },
+      {
+        img: "/images/car/nexa/fronx/FRONX-Color-1500x700-DUAL_TONE-SPLENDID_SILVER.webp",
+        colorCode: "#8d94a5",
+        colName: "Splendid Silver with Bluish Black Roof",
+      },
+      {
+        img: "/images/car/nexa/fronx/FRONX-Color-1500x700-DUAL_TONE-OPULENT_RED.webp",
+        colorCode: "#c84361",
+        colName: "Opulent Red with Bluish Black Roof",
+      },
+    ],
+    keySpecifications: [
+      { label: "Fuel Tank Capacity", value: "45 Litres" },
+      { label: "Seating Capacity", value: "5" },
+      { label: "Length", value: "3995 mm" },
+      { label: "Width", value: "1765 mm" },
+      { label: "Height", value: "1550 mm" },
+      { label: "Front Suspension", value: "Independent, McPherson Strut" },
+      { label: "Rear Suspension", value: "Torsion Beam" },
+      { label: "Fuel Type", value: "Petrol" },
+      { label: "No. of Cylinders", value: "4" },
+      { label: "Max Torque", value: "113 Nm @ 4400 rpm" },
+      { label: "Transmission Type", value: "Manual/Automatic" },
+      { label: "Body Type", value: "SUV" },
+      { label: "Wheel Base", value: "2520 mm" },
+      { label: "Gearbox", value: "5-Speed/6-Speed" },
+    ],
+    exterior: [
+      {
+        img: "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/flash/technology/technology-1000x500-dashboard.webp",
+        title: "Dual Tone Plush Interiors",
+      },
+      {
+        img: "https://nexaprod3.azureedge.net/-/media/feature/nexawebsitecarbrand/flash/technology/technology-1000x500-360_screen.webp",
+        title: "360° Panoramic View",
+      },
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/flash/technology/technology-1000x500-head_up_display.webp",
+        title: "Head-Up Display",
+      },
+      {
+        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/flash/technology/technology-1000x500-wireless-changing.webp",
+        title: "Wireless Changing",
+      },
+    ],
+    interior: [
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/flash/technology/technology-1000x500-9inch_touch_screen.webp",
+        title: "Advanced Dashboard",
+      },
+      {
+        img: "https://nexaprod1.azureedge.net/-/media/feature/nexawebsitecarbrand/flash/technology/technology-1000x500-paddle_shifters.webp",
+        title: "Paddle Shifters",
+      },
+    ],
+    carDetails: [
+      { label: "Engine", value: "1197 cc" },
+      { label: "Mileage", value: "21.79 kmpl" },
+      { label: "Power", value: "77.5 kW @ 5500 rpm" },
+    ],
+    variants: [
+      {
+        variant: "Fronx Sigma",
+        transmission: "Manual",
+        price: "₹ 7.00 Lakh",
+      },
+      {
+        variant: "Fronx Delta",
+        transmission: "Manual",
+        price: "₹ 7.50 Lakh",
+      },
+      {
+        variant: "Fronx Zeta",
+        transmission: "Automatic",
+        price: "₹ 8.50 Lakh",
+      },
+      {
+        variant: "Fronx Alpha",
+        transmission: "Automatic",
+        price: "₹ 9.50 Lakh",
+      },
+    ],
+    priceRange: "₹ 7.00 - 9.50 Lakh *",
+    brochure:
+      "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/flash/fronx-brochure.pdf#element_submenu",
+  },
+  // Maruti GV -11
+  {
+    name: "Maruti Grand Vitara",
+    subName: "Grand Vitara",
+    colors: [
+      {
+        img: "/images/car/nexa/grand-vitara/Nexa_blue.webp",
+        colorCode: "#273daa",
+        colName: "Nexa Blue",
+      },
+      {
+        img: "/images/car/nexa/grand-vitara/grandeur_grey.webp",
+        colorCode: "#5d6671",
+        colName: "Granite Grey",
+      },
+      {
+        img: "/images/car/nexa/grand-vitara/Chestnut_Brown.webp",
+        colorCode: "#221913",
+        colName: "Chestnut Brown",
+      },
+      {
+        img: "/images/car/nexa/grand-vitara/opulent_red.webp",
+        colorCode: "#cc0000",
+        colName: "Opulent Red",
+      },
+      {
+        img: "/images/car/nexa/grand-vitara/splendid_silver.webp",
+        colorCode: "#919191",
+        colName: "Splendid Silver",
+      },
+      {
+        img: "/images/car/nexa/grand-vitara/arctic_white.webp",
+        colorCode: "#dfe5ef",
+        colName: "Arctic White",
+      },
+      {
+        img: "/images/car/nexa/grand-vitara/MIDNIGHT_BLACK.webp",
+        colorCode: "#1c1c1c",
+        colName: "Midnight Black",
+      },
+      {
+        img: "/images/car/nexa/grand-vitara/arctic_white_midnight_black.webp",
+        colorCode: "#e6e6e6",
+        colName: "Arctic White Midnight Black",
+      },
+      {
+        img: "/images/car/nexa/grand-vitara/opulent_red_midnight_black.webp",
+        colorCode: "#db0000",
+        colName: "Opulent Red Midnight Black",
+      },
+      {
+        img: "/images/car/nexa/grand-vitara/splendid_silver_midnight_black.webp",
+        colorCode: "#707070",
+        colName: "Splendid Silver Midnight Black",
+      },
+    ],
+    keySpecifications: [
+      { label: "Fuel Tank Capacity", value: "45 Litres" },
+      { label: "Seating Capacity", value: "5" },
+      { label: "Length", value: "4345 mm" },
+      { label: "Width", value: "1795 mm" },
+      { label: "Height", value: "1645 mm" },
+      { label: "Front Suspension", value: "Independent, McPherson Strut" },
+      { label: "Rear Suspension", value: "Independent Torsion Beam" },
+      { label: "Fuel Type", value: "Petrol" },
+      { label: "No. of Cylinders", value: "4" },
+      { label: "Max Torque", value: "136.8 Nm @ 4400 rpm" },
+      { label: "Transmission Type", value: "Manual/Automatic" },
+      { label: "Body Type", value: "SUV" },
+      { label: "Wheel Base", value: "2600 mm" },
+      { label: "Gearbox", value: "5-Speed/6-Speed" },
+    ],
+    exterior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/grand-vitara-exterior-1.webp",
+        title: "Bold Front Grille",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/grand-vitara-exterior-2.webp",
+        title: "LED Headlamps",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/grand-vitara-exterior-3.webp",
+        title: "Stylish Alloy Wheels",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/grand-vitara-exterior-4.webp",
+        title: "Panoramic Sunroof",
+      },
+    ],
+    interior: [
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/grand-vitara-interior-1.webp",
+        title: "Luxurious Cabin",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/grand-vitara-interior-2.webp",
+        title: "Advanced Infotainment System",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/grand-vitara-interior-3.webp",
+        title: "Comfortable Leather Seats",
+      },
+      {
+        img: "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/car/car-detail/grand-vitara-interior-4.webp",
+        title: "Generous Boot Space",
+      },
+    ],
+    carDetails: [
+      { label: "Engine", value: "1462 cc" },
+      { label: "Mileage", value: "19.38 kmpl" },
+      { label: "Power", value: "77.5 kW @ 6000 rpm" },
+    ],
+    variants: [
+      {
+        variant: "Grand Vitara Sigma",
+        transmission: "Manual",
+        price: "₹ 9.50 Lakh",
+      },
+      {
+        variant: "Grand Vitara Delta",
+        transmission: "Manual",
+        price: "₹ 10.00 Lakh",
+      },
+      {
+        variant: "Grand Vitara Zeta",
+        transmission: "Automatic",
+        price: "₹ 11.00 Lakh",
+      },
+      {
+        variant: "Grand Vitara Alpha",
+        transmission: "Automatic",
+        price: "₹ 12.50 Lakh",
+      },
+    ],
+    priceRange: "₹ 9.50 - 12.50 Lakh *",
+    brochure:
+      "https://nexaprod5.azureedge.net/-/media/feature/nexawebsiteherobanner/brochure/grand_vitara-brochure.pdf",
+  },
+
+  // XL6 - 12
+
+  {
+    name: "Maruti XL6",
+    subName: "XL6",
+    colors: [
+      {
+        img: "/images/car/nexa/xl6/Brand-page-car_Nexa-Blue.webp",
+        colorCode: "#183f66",
+        colName: "NEXA Blue (Celestial)",
+      },
+      {
+        img: "/images/car/nexa/xl6/Brand-page-car_OPULENT RED.webp",
+        colorCode: "#a31326",
+        colName: "Opulent Red",
+      },
+      {
+        img: "/images/car/nexa/xl6/Brand-page-car_BRAVE KHAKI.webp",
+        colorCode: "#4f3f23",
+        colName: "Brave Khaki",
+      },
+      {
+        img: "/images/car/nexa/xl6/Brand-page-car_GRANDEUR GREY.webp",
+        colorCode: "#545454",
+        colName: "Grandeur Grey",
+      },
+      {
+        img: "/images/car/nexa/xl6/Brand-page-car_SPLENDID SILVER.webp",
+        colorCode: "#afb3b8",
+        colName: "Splendid Silver",
+      },
+      {
+        img: "/images/car/nexa/xl6/Brand-page-car_ARCTIC WHITE.webp",
+        colorCode: "#eeeff0",
+        colName: "Arctic White",
+      },
+      {
+        img: "/images/car/nexa/xl6/Car Image 810x411.webp",
+        colorCode: "#171717",
+        colName: "Pearl Midnight Black",
+      },
+      {
+        img: "/images/car/nexa/xl6/810x411-DUAL_OPPULENT_RED.webp",
+        colorCode: "#c84361",
+        colName: "Opulent Red With Midnight Black Roof",
+      },
+
+      {
+        img: "/images/car/nexa/xl6/810x411-DUAL_BRAVE_KHAKI.webp",
+        colorCode: "#5b5133",
+        colName: "Brave Khaki With Midnight Black Roof",
+      },
+      {
+        img: "/images/car/nexa/xl6/810x411-DUAL_SPLENDID_SILVER.webp",
+        colorCode: "#8d94a5",
+        colName: "Splendid Silver With Midnight Black Roof",
+      },
+    ],
+    keySpecifications: [
+      { label: "Fuel Tank Capacity", value: "45 Litres" },
+      { label: "Seating Capacity", value: "6" },
+      { label: "Length", value: "4450 mm" },
+      { label: "Width", value: "1775 mm" },
+      { label: "Height", value: "1755 mm" },
+      { label: "Front Suspension", value: " Mac Pherson Strut & Coil Spring" },
+      { label: "Rear Suspension", value: "Torsion Beam Type & Coil Spring" },
+      { label: "Fuel Type", value: "Petrol" },
+      { label: "No. of Cylinders", value: "4" },
+      { label: "Max Torque", value: "136.8 Nm @ 4400 rpm" },
+      { label: "Transmission Type", value: "Manual/Automatic" },
+      { label: "Body Type", value: "MPV" },
+      { label: "Wheel Base", value: "2740 mm" },
+      { label: "Gearbox", value: "5-Speed/6-Speed" },
+    ],
+    exterior: [
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/xl6/features/1170x521-roof-end-spoiler.webp?la=en&hash=FC5541B242B9B55E652AABB610447ABC",
+        title: "Backdoor Spoiler",
+      },
+      {
+        img: "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/xl6/features/1170x521--orvm.webp?la=en&hash=F7F609454200F93A557BAC04F24C9405",
+        title: "Auto ORVMs",
+      },
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/xl6/features/1170x521-uv-cut-glass.webp?la=en&hash=0F9AC20129A563E134848517385CE332",
+        title: "UV Cut Glass",
+      },
+      {
+        img: "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/xl6/features/1170x521-fog-light.webp?la=en&hash=E174B5DC82C324CB84C002B786A94CCF",
+        title: "LED Fog Lights",
+      },
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/xl6/features/1170x521-cabin-foot-almp.webp?la=en&hash=7CD8FA972E6FEC3E64558A85169BA5F9",
+        title: "Footlamp Illumination",
+      },
+    ],
+    interior: [
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/xl6/brand-highlights/img4.webp",
+        title: "Ventilated Seats",
+      },
+      {
+        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/xl6/brand-highlights/img1.webp",
+        title: "360 View Camera",
+      },
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/xl6/brand-highlights/img2.webpp",
+        title: "6-Speed AT with Paddle Shifters",
+      },
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/xl6/brand-highlights/img3.webp",
+        title: "Tyre Pressure Monitoring System",
+      },
+    ],
+    carDetails: [
+      { label: "Engine", value: "1462 cc" },
+      { label: "Mileage", value: "20.97 kmpl" },
+      { label: "Power", value: "75.8 kW @ 6000 rpm" },
+    ],
+    variants: [
+      {
+        variant: "XL6 Zeta",
+        transmission: "Manual",
+        price: "₹ 9.40 Lakh",
+      },
+      {
+        variant: "XL6 Alpha",
+        transmission: "Automatic",
+        price: "₹ 10.60 Lakh",
+      },
+    ],
+    priceRange: "₹ 9.40 - 10.60 Lakh *",
+    brochure:
+      "https://nexaprod3.azureedge.net/-/media/feature/nexawebsiteherobanner/brochure/xl6-brochure-for-digital.pdf",
+  },
+
+  // Ciaz - 13
+
+  {
+    name: "Maruti Ciaz",
+    subName: "Ciaz",
+    colors: [
+      {
+        img: "/images/car/nexa/ciaz/5.webp",
+        colorCode: "#063b5e",
+        colName: "Nexa Blue",
+      },
+      {
+        img: "/images/car/nexa/ciaz/6.webp",
+        colorCode: "#483333",
+        colName: "Pearl Metallic Dignity Brown",
+      },
+      {
+        img: "/images/car/nexa/ciaz/3.webp",
+        colorCode: "#525151",
+        colName: "Grandeur Grey",
+      },
+      {
+        img: "/images/car/nexa/ciaz/2.webp",
+        colorCode: "#a1a1a1",
+        colName: "Splendid Silver ",
+      },
+      {
+        img: "/images/car/nexa/ciaz/4.webp",
+        colorCode: "#d32f2f",
+        colName: "Opulent Red ",
+      },
+      {
+        img: "/images/car/nexa/ciaz/1.webp",
+        colorCode: "#dfe1e6",
+        colName: " Pearl Arctic White",
+      },
+      {
+        img: "/images/car/nexa/ciaz/7.webp",
+        colorCode: "#171516",
+        colName: "Bluish Black",
+      },
+      {
+        img: "/images/car/nexa/ciaz/PEARL METALLIC DIGNITY BROWN And_BLACK.webp",
+        colorCode: "#483333",
+        colName: "Pearl Metallic Dignity Brown And Bluish Black",
+      },
+      {
+        img: "/images/car/nexa/ciaz/OPULENT RED and_BLACK.webp",
+        colorCode: "#b40404",
+        colName: "Opulent Red And Bluish Black",
+      },
+      {
+        img: "/images/car/nexa/ciaz/GRANDEUR GREY And_BLACK.webp",
+        colorCode: "#524242",
+        colName: "Grandeur Grey and Black",
+      },
+    ],
+    keySpecifications: [
+      { label: "Fuel Tank Capacity", value: "43 Litres" },
+      { label: "Seating Capacity", value: "5" },
+      { label: "Length", value: "4490 mm" },
+      { label: "Width", value: "1730 mm" },
+      { label: "Height", value: "1485 mm" },
+      { label: "Front Suspension", value: "Independent, McPherson Strut" },
+      { label: "Rear Suspension", value: "Torsion Beam" },
+      { label: "Fuel Type", value: "Petrol" },
+      { label: "No. of Cylinders", value: "4" },
+      { label: "Max Torque", value: "138 Nm @ 4400 rpm" },
+      { label: "Transmission Type", value: "Manual/Automatic" },
+      { label: "Body Type", value: "Sedan" },
+      { label: "Wheel Base", value: "2650 mm" },
+      { label: "Gearbox", value: "5-Speed/6-Speed" },
+    ],
+    exterior: [
+      {
+        img: "/images/car/nexa/ciaz/Saboo-Nexa-Ciaz-Exterior-Metal-Grille.webp",
+        title: "Metal Grille",
+      },
+      {
+        img: "/images/car/nexa/ciaz/Saboo-Nexa-Ciaz-Exterior-Back-Lamp.webp",
+        title: "LED Tail Lamp",
+      },
+      {
+        img: "/images/car/nexa/ciaz/Saboo-Nexa-Ciaz-Exterior-Led-Projector-Head-Lamps.webp",
+        title: "LED Projector Headlamps",
+      },
+      {
+        img: "/images/car/nexa/ciaz/Saboo-Nexa-Ciaz-Exterior-Fog-Lamp.webp",
+        title: "Fog Lamps",
+      },
+      {
+        img: "/images/car/nexa/ciaz/Saboo-Nexa-Ciaz-Alloy-Wheels.webp",
+        title: "Alloy Wheels",
+      },
+    ],
+    interior: [
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/ciaz/features/smart-play.webp?la=en&hash=DF45D720A00AFAA3BF65C79BFF8D9008",
+        title: "SmartPlay Pro+",
+      },
+      {
+        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/ciaz/features/cruse-control.webp?la=en&hash=77163AF7DAC92B24F208D8E79458BB76",
+        title: "Cruse Control",
+      },
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/ciaz/features/tilt-steering-1/tilt-steering/tilt-st.webp?la=en&hash=89B8F429758F878291EF6B18C083E14B",
+        title: "Tilt Steering",
+      },
+      {
+        img: "https://nexaprod1.azureedge.net/-/media/feature/nexawebsitecarbrand/ciaz/features/mid.webp?la=en&hash=bc1qre8jdw2azrg6tf49wmp652w00xltddxmpk98xp",
+        title: "MULTI-INFORMATION DISPLAY",
+      },
+      {
+        img: "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/ciaz/features/start-stop-button/start-stop-button.webp?la=en&hash=27619673A168328A76477A098ADCA421",
+        title: "Push Start Stop Button",
+      },
+      {
+        img: "https://nexaprod3.azureedge.net/-/media/feature/nexawebsitecarbrand/ciaz/features/orvm/orvm.webp?la=en&hash=bc1qre8jdw2azrg6tf49wmp652w00xltddxmpk98xp",
+        title: "ORVM",
+      },
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/ciaz/features/auto-ac_new.webp?la=en&hash=DF96E30F84F81B3182B68AF568865207",
+        title: " Automatic Air Conditioning",
+      },
+      {
+        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/ciaz/features/rear-ac-vent/rear-ac-vent.webp?la=en&hash=55DA7ECCDB5F4C07DAAF604E73706B48",
+        title: " Rear AC Ventilation",
+      },
+    ],
+    carDetails: [
+      { label: "Engine", value: "1462 cc" },
+      { label: "Mileage", value: "20.65 kmpl" },
+      { label: "Power", value: "77 kW @ 6000 rpm" },
+    ],
+    variants: [
+      {
+        variant: "Ciaz Sigma",
+        transmission: "Manual",
+        price: "₹ 8.20 Lakh",
+      },
+      {
+        variant: "Ciaz Delta",
+        transmission: "Manual",
+        price: "₹ 8.80 Lakh",
+      },
+      {
+        variant: "Ciaz Zeta",
+        transmission: "Automatic",
+        price: "₹ 9.60 Lakh",
+      },
+      {
+        variant: "Ciaz Alpha",
+        transmission: "Automatic",
+        price: "₹ 10.50 Lakh",
+      },
+    ],
+    priceRange: "₹ 8.20 - 10.50 Lakh *",
+    brochure:
+      "https://www.nexaexperience.com/-/media/feature/nexawebsiteherobanner/brochure/all_new_ciaz_brochure.pdf",
+  },
+
+  // Baleno - 14
+
+  {
+    name: "Maruti Baleno",
+    subName: "Baleno",
+    colors: [
+      {
+        img: "/images/car/nexa/baleno/CelestialBlue.webp",
+        colorCode: "#183f66",
+        colName: "NEXA Blue (Celestial)",
+      },
+      {
+        img: "/images/car/nexa/baleno/ArticWhite.webp",
+        colorCode: "#eeeff0",
+        colName: "Pearl Arctic White",
+      },
+      {
+        img: "/images/car/nexa/baleno/SplendidSilver.webp",
+        colorCode: "#afb3bb",
+        colName: "Splendid Silver",
+      },
+      {
+        img: "/images/car/nexa/baleno/GrandeurGrey.webp",
+        colorCode: "#545454",
+        colName: "Grandeur Grey",
+      },
+      {
+        img: "/images/car/nexa/baleno/OpulantRed.webp",
+        colorCode: "#a31326",
+        colName: "Opulent Red",
+      },
+      {
+        img: "/images/car/nexa/baleno/LuxeBeige.webp",
+        colorCode: "#68482f",
+        colName: "Luxe Beige",
+      },
+      {
+        img: "/images/car/nexa/baleno/Desktop_BluishBlack_810x411 webp.webp",
+        colorCode: "#393d4c",
+        colName: "Bluish Black",
+      },
+    ],
+    keySpecifications: [
+      { label: "Fuel Tank Capacity", value: "37 Litres" },
+      { label: "Seating Capacity", value: "5" },
+      { label: "Length", value: "3990 mm" },
+      { label: "Width", value: "1745 mm" },
+      { label: "Height", value: "1500 mm" },
+      { label: "Front Suspension", value: "Independent, McPherson Strut" },
+      { label: "Rear Suspension", value: "Torsion Beam" },
+      { label: "Fuel Type", value: "Petrol/Diesel" },
+      { label: "No. of Cylinders", value: "4" },
+      { label: "Max Torque", value: "113 Nm @ 4400 rpm" },
+      { label: "Transmission Type", value: "Manual/Automatic" },
+      { label: "Body Type", value: "Hatchback" },
+      { label: "Wheel Base", value: "2520 mm" },
+      { label: "Gearbox", value: "5-Speed/Auto" },
+    ],
+    exterior: [
+      {
+        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/baleno/features/boot-space.webp?la=en&hash=5B55CB470D73DFB2CD9D91EF1921E706",
+        title: "Boot Space with 60:40 Rear Split",
+      },
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/baleno/features/anti-pinch.webp?la=en&hash=bc1qre8jdw2azrg6tf49wmp652w00xltddxmpk98xp",
+        title: "Anti-Pinch Window",
+      },
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/baleno/features/uv-cut-glasses_new.webp?la=en&hash=C28C74E6BBC12A1908F231256D10D637",
+        title: "UV Cut Glass",
+      },
+      {
+        img: "https://nexaprod1.azureedge.net/-/media/feature/nexawebsitecarbrand/baleno/features/bottle-holder.webp?la=en&hash=C7CC76BEDF0483EE82AD872C77F155BA",
+        title: "Bottle Holder",
+      },
+    ],
+    interior: [
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/baleno/newbranddetails/img3.webp",
+        title: "HEAD UP DISPLAY",
+      },
+      {
+        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/baleno/newbranddetails/img1.webp",
+        title: "360 VIEW CAMERA",
+      },
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/baleno/newbranddetails/img4.webp",
+        title: "22.86 CM HD SMARTPLAY PRO+",
+      },
+      {
+        img: "https://nexaprod1.azureedge.net/-/media/feature/nexawebsitecarbrand/baleno/newbranddetails/img5.webp",
+        title: "NEXT GENERATION SUZUKI CONNECT",
+      },
+      {
+        img: "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/baleno/newbranddetails/img2.webp",
+        title: "6 AIRBAGS",
+      },
+    ],
+    carDetails: [
+      { label: "Engine", value: "1197 cc" },
+      { label: "Mileage", value: "22.35 kmpl" },
+      { label: "Power", value: "77.5 kW @ 6000 rpm" },
+    ],
+    variants: [
+      {
+        variant: "Baleno Sigma",
+        transmission: "Manual",
+        price: "₹ 6.56 Lakh",
+      },
+      {
+        variant: "Baleno Delta",
+        transmission: "Manual",
+        price: "₹ 7.22 Lakh",
+      },
+      {
+        variant: "Baleno Zeta",
+        transmission: "Automatic",
+        price: "₹ 8.26 Lakh",
+      },
+      {
+        variant: "Baleno Alpha",
+        transmission: "Automatic",
+        price: "₹ 9.30 Lakh",
+      },
+    ],
+    priceRange: "₹ 6.56 - 9.30 Lakh *",
+    brochure:
+      "https://nexaprod1.azureedge.net/-/media/feature/nexawebsiteherobanner/brochure/the-new-age-baleno-brochure.pdf",
+  },
+
+  // Ignis - 15
+  {
+    name: "Maruti Ignis",
+    subName: "Ignis",
+    colors: [
+      {
+        img: "/images/car/nexa/ignis/brandpage-car-nexa-blue.webp",
+        colorCode: "#183F66",
+        colName: "NEXA Blue (Celestial)",
+      },
+      {
+        img: "/images/car/nexa/ignis/Orange.webp",
+        colorCode: "#E34C26",
+        colName: "Lucent Orange",
+      },
+      {
+        img: "/images/car/nexa/ignis/SILKY-SILVER.webp",
+        colorCode: "#AFB3B8",
+        colName: "Silky Silver",
+      },
+      {
+        img: "/images/car/nexa/ignis/TURQUOSIE-BLUE.webp",
+        colorCode: "#00648F",
+        colName: "Turquoise Blue",
+      },
+      {
+        img: "/images/car/nexa/ignis/GLISTERING-GREY.webp",
+        colorCode: "#545454",
+        colName: "Glistening Grey",
+      },
+      {
+        img: "/images/car/nexa/ignis/PEARL-WHITE.webp",
+        colorCode: "#EEEFF0",
+        colName: "Pearl Arctic White",
+      },
+      {
+        img: "/images/car/nexa/ignis/PEARL-MIDNIGHT-BLACK.webp",
+        colorCode: "#171717",
+        colName: "Pearl Midnight Black",
+      },
+      {
+        img: "/images/car/nexa/ignis/Orange-Black.webp",
+        colorCode: "#812418",
+        colName: "Lucent Orange With Black Roof",
+      },
+      {
+        img: "/images/car/nexa/ignis/brandpage-car-size- Blue with Silver.webp",
+        colorCode: "#213169",
+        colName: "Nexa Blue With Silver Roof",
+      },
+      {
+        img: "/images/car/nexa/ignis/brandpage-car-Nexa Blue with Black Roof.webp",
+        colorCode: "#295294",
+        colName: "Nexa Blue With Black Roof",
+      },
+    ],
+    keySpecifications: [
+      { label: "Fuel Tank Capacity", value: "32 Litres" },
+      { label: "Seating Capacity", value: "5" },
+      { label: "Length", value: "3700 mm" },
+      { label: "Width", value: "1690 mm" },
+      { label: "Height", value: "1595 mm" },
+      { label: "Front Suspension", value: "Independent, McPherson Strut" },
+      { label: "Rear Suspension", value: "Torsion Beam" },
+      { label: "Fuel Type", value: "Petrol" },
+      { label: "No. of Cylinders", value: "4" },
+      { label: "Max Torque", value: "113 Nm @ 4200 rpm" },
+      { label: "Transmission Type", value: "Manual/Automatic" },
+      { label: "Body Type", value: "Hatchback" },
+      { label: "Wheel Base", value: "2435 mm" },
+      { label: "Gearbox", value: "5-Speed/Auto" },
+    ],
+    exterior: [
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/ignis/ignis/feature-1170x521-split-seat-new-webp.webp?la=en&hash=039F52B0BF703E3E1C43F55093FB2FC5",
+        title: "60:40 SPLIT SEAT",
+      },
+      {
+        img: "https://nexaprod3.azureedge.net/-/media/feature/nexawebsitecarbrand/ignis/ignis/feature-1170x521-orvm-webp.webp?la=en&hash=B8E4F5481148E213CC69B351F8EEB1C0",
+        title: "AUTO ORVM",
+      },
+      {
+        img: "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/ignis/features/tilt.webp?la=en&hash=85A1D1E8616F3483A8B667EED998FCD1",
+        title: "TILT STEERING",
+      },
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/ignis/technology/tech.webp",
+        title: "AGS",
+      },
+    ],
+    interior: [
+      {
+        img: "https://nexaprod3.azureedge.net/-/media/feature/nexawebsitecarbrand/ignis/features/slda.webp?la=en&hash=A8AFEF85DF2A195EA9FD68A10414A841",
+        title: "SMARTPLAY STUDIO",
+      },
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/ignis/ignis/steer-mount-control-webp.webp?la=en&hash=C9B99EB8B601041D04941473C7F3C383",
+        title: "Steering Control",
+      },
+      {
+        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/ignis/features/push-start-stop.webp?la=en&hash=982D8CEF56E42A5AFB58DDCAB94E8AD6",
+        title: "Push Start Stop Button",
+      },
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/ignis/features/mid.webp?la=en&hash=C8D20EC20F5DC97DC24A07B68231D37E",
+        title: "MID WITH TFT SCREEN",
+      },
+      {
+        img: "https://nexaprod1.azureedge.net/-/media/feature/nexawebsitecarbrand/ignis/features/auto-ac.webp?la=en&hash=628B93E1800485F7D594AC7AAE6DCEFA",
+        title: "AUTOMATIC CLIMATE CONTROL",
+      },
+    ],
+    carDetails: [
+      { label: "Engine", value: "1197 cc" },
+      { label: "Mileage", value: "20.89 kmpl" },
+      { label: "Power", value: "61 kW @ 6000 rpm" },
+    ],
+    variants: [
+      {
+        variant: "Ignis Sigma",
+        transmission: "Manual",
+        price: "₹ 5.84 Lakh",
+      },
+      {
+        variant: "Ignis Delta",
+        transmission: "Manual",
+        price: "₹ 6.44 Lakh",
+      },
+      {
+        variant: "Ignis Zeta",
+        transmission: "Automatic",
+        price: "₹ 7.00 Lakh",
+      },
+      {
+        variant: "Ignis Alpha",
+        transmission: "Automatic",
+        price: "₹ 7.50 Lakh",
+      },
+    ],
+    priceRange: "₹ 5.84 - 7.50 Lakh *",
+    brochure:
+      "https://nexaprod4.azureedge.net/-/media/feature/nexawebsiteherobanner/brochure/ignis-brochure.pdf",
+  },
+
+  // Invicto - 16
+  {
+    name: "Maruti Invicto",
+    subName: "Invicto",
+    colors: [
+      {
+        img: "/images/car/nexa/invicto/Blue_810 x 411.webp",
+        colorCode: "#183F66",
+        colName: "NEXA BLUE (CELESTIAL)",
+      },
+      {
+        img: "/images/car/nexa/invicto/AVANT_GRADE_BRONZE_810 x 411 webp.webp",
+        colorCode: "#7A756E",
+        colName: "STELLAR BRONZE",
+      },
+      {
+        img: "/images/car/nexa/invicto/MAJESTIC_SILVER_810 x 411 webp.webp",
+        colorCode: "#AFB3B8",
+        colName: "MAJESTIC SILVER",
+      },
+      {
+        img: "/images/car/nexa/invicto/PLATINUM_WHITE_810 x 411 webp.webp",
+        colorCode: "#EEEFF0",
+        colName: "MYSTIC WHITE",
+      },
+      {
+        img: "/images/car/nexa/invicto/Magnificent Black.webp",
+        colorCode: "#0F1012",
+        colName: "MAGNIFICENT BLACK",
+      },
+    ],
+    keySpecifications: [
+      { label: "Fuel Tank Capacity", value: "52 Litres" },
+      { label: "Seating Capacity", value: "7/8" },
+      { label: "Length", value: "4755 mm" },
+      { label: "Width", value: "1845 mm" },
+      { label: "Height", value: "1795 mm" },
+      { label: "Front Suspension", value: "Independent, McPherson Strut" },
+      { label: "Rear Suspension", value: "Torsion Beam" },
+      { label: "Fuel Type", value: "Petrol" },
+      { label: "No. of Cylinders", value: "4" },
+      { label: "Max Torque", value: "250 Nm @ 2000 rpm" },
+      { label: "Transmission Type", value: "Manual/Automatic" },
+      { label: "Body Type", value: "SUV" },
+      { label: "Wheel Base", value: "2850 mm" },
+      { label: "Gearbox", value: "6-Speed/Auto" },
+    ],
+    exterior: [
+      {
+        img: "https://nexaprod3.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/extr-img-3-jpg.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/extr-img-5-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod1.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/extr-img-4-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/extr-img-2-jpg.webp",
+        title: "",
+      },
+    ],
+    interior: [
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/intr-img-2-jpg.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod1.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/intr-img-1-jpg.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-4-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod3.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-5-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-6-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-7-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-8-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/intr-img-3-jpg.webp",
+        title: "",
+      },
+    ],
+    carDetails: [
+      { label: "Engine", value: "1987 cc" },
+      { label: "Mileage", value: "23.24 kmpl" },
+      { label: "Power", value: "112 kW @ 6000 rpm" },
+    ],
+    variants: [
+      {
+        variant: "Invicto Base",
+        transmission: "Manual",
+        price: "₹ 15.00 Lakh",
+      },
+      {
+        variant: "Invicto Zeta",
+        transmission: "Manual",
+        price: "₹ 16.50 Lakh",
+      },
+      {
+        variant: "Invicto Alpha",
+        transmission: "Automatic",
+        price: "₹ 18.00 Lakh",
+      },
+      {
+        variant: "Invicto Prestige",
+        transmission: "Automatic",
+        price: "₹ 19.50 Lakh",
+      },
+    ],
+    priceRange: "₹ 15.00 - 19.50 Lakh *",
+    brochure:
+      "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/invicto-brochure_invicto-pdf.pdf",
+  },
 ];
