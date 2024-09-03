@@ -58,7 +58,7 @@ const BookAService: React.FC = () => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Form Data:", formData);
+    console.log("Form Data:", { ...formData, state: 'Odisa' });
     toast.success("Thank You for contacting us. We will get back to you soon!");
 
     // Uncomment if you want to reset the form after submission
