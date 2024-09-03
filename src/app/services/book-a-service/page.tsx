@@ -62,17 +62,17 @@ const BookAService: React.FC = () => {
     toast.success("Thank You for contacting us. We will get back to you soon!");
 
     // Uncomment if you want to reset the form after submission
-    // setFormData({
-    //   name: "",
-    //   phone: "",
-    //   email: "",
-    //   model: "",
-    //   city: "",
-    //   address: "",
-    //   serviceType: "",
-    //   isPickup: "",
-    //   date: "",
-    // });
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      model: "",
+      city: "",
+      address: "",
+      serviceType: "",
+      isPickup: "",
+      date: "",
+    });
   };
 
   // const handleFocus = () => {
@@ -218,9 +218,7 @@ const BookAService: React.FC = () => {
                   // ref={dateInputRef}
                   required
                   className={`w-full min-h-11 p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none rounded-none  select-none ${
-                    formData.date
-                      ? "text-black"
-                      : "  text-transparent"
+                    formData.date ? "text-black" : "  text-transparent"
                   }`}
                   value={formData.date}
                   onChange={handleChange}
@@ -231,9 +229,7 @@ const BookAService: React.FC = () => {
                 <label
                   htmlFor="date"
                   className={`absolute top-0 left-0 p-2 transition-all duration-300 ease-in-out w-[70%]  ${
-                    formData.date
-                      ? "text-transparent"
-                      : "  "
+                    formData.date ? "text-transparent" : "  "
                   }`}
                 >
                   Service date

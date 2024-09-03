@@ -1,11 +1,44 @@
 "use client"; // Add this at the top of your file
-import React from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import toast from "react-hot-toast";
 
 const EnqHome: React.FC = () => {
+  // Define the type for the form data
+  interface FormData {
+    name: string;
+    phone: string;
+    lookingFor: string;
+  }
+
+  // Initialize form state
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    phone: "",
+    lookingFor: "",
+  });
+
+  // Handle form input changes
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Handle form submission
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
+    console.log("Form Data:", { ...formData, state: "Odisa" });
     toast.success("Thank You for contacting us. We will get back to you soon!");
+    // Optionally, reset form state after submission
+    setFormData({
+      name: "",
+      phone: "",
+      lookingFor: "",
+    });
   };
 
   return (
@@ -15,6 +48,7 @@ const EnqHome: React.FC = () => {
           <div className="grid gap-4 md:grid-cols-2 md:flex-row lg:grid-cols-4">
             <input
               type="text"
+              name="name"
               placeholder="Name*"
               required
               pattern="^[a-zA-Z]+$"
@@ -22,9 +56,12 @@ const EnqHome: React.FC = () => {
               maxLength={50}
               title="Only alphabets are allowed"
               className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none placeholder:text-white"
+              value={formData.name}
+              onChange={handleChange}
             />
             <input
               type="tel"
+              name="phone"
               placeholder="Phone*"
               required
               minLength={10}
@@ -32,21 +69,23 @@ const EnqHome: React.FC = () => {
               title="Only 10 digit Indian numbers are allowed"
               pattern="^[0-9]+$"
               className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none placeholder:text-white"
+              value={formData.phone}
+              onChange={handleChange}
             />
             <select
+              name="lookingFor"
               className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none md:col-span-2 lg:col-span-1"
               required
-              defaultValue=""
+              value={formData.lookingFor}
+              onChange={handleChange}
             >
               <option
                 value=""
                 className="w-full p-2 text-sm text-black border rounded-md"
                 disabled
-              
               >
                 I&apos;m looking for*
               </option>
-
               <optgroup label="Arena" className="text-sm text-primaryGray">
                 <option value="Alto">Alto</option>
                 <option value="Alto k10">Alto K10</option>

@@ -49,7 +49,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    console.log("Form Data:", formData);
+    console.log("Form Data:", { ...formData, state: "Odisa" });
     toast.success("Thank You for contacting us. We will get back to you soon!");
     setFormData({
       name: "",
@@ -171,6 +171,8 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
                   field.charAt(0).toUpperCase() + field.slice(1)
                 }*`}
                 required={field !== "email"}
+                maxLength={field === "phone" ? 10 : undefined}
+                minLength={field === "phone" ? 10 : undefined}
                 pattern={field === "phone" ? "[0-9]{10}" : undefined}
                 onChange={handleChange}
                 className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none"
