@@ -75,12 +75,12 @@ const BookAService: React.FC = () => {
     // });
   };
 
-  const handleFocus = () => {
-    // Ensure that this function is only used if necessary
-    if (dateInputRef.current) {
-      dateInputRef.current.showPicker();
-    }
-  };
+  // const handleFocus = () => {
+  //   // Ensure that this function is only used if necessary
+  //   if (dateInputRef.current) {
+  //     dateInputRef.current.showPicker();
+  //   }
+  // };
 
   return (
     <div className="">
@@ -217,9 +217,9 @@ const BookAService: React.FC = () => {
                   id="date"
                   // ref={dateInputRef}
                   required
-                  className={`w-full min-h-11 p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none rounded-none  ${
+                  className={`w-full min-h-11 p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none rounded-none  select-none ${
                     formData.date
-                      ? "text-gray-500"
+                      ? "text-black"
                       : "  text-transparent"
                   }`}
                   value={formData.date}
