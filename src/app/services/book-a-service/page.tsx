@@ -172,7 +172,7 @@ const BookAService: React.FC = () => {
                   Model*
                 </option>
                 <optgroup label="Arena" className="text-sm text-primaryGray">
-                  <option value="Alto">Alto</option>
+      
                   <option value="Alto k10">Alto K10</option>
                   <option value="Wagon R">Wagon R</option>
                   <option value="Celerio">Celerio</option>
@@ -236,7 +236,7 @@ const BookAService: React.FC = () => {
                 </label>
               </div>
               <div className="w-full p-2 flex justify-between items-end">
-                <p>Pick Up Required*:</p>
+                <p>Pick Up Required:</p>
                 <label className="inline-flex items-center cursor-pointer">
                   <input
                     type="radio"
