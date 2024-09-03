@@ -263,22 +263,22 @@ const Header = () => {
               </div>
               <div className=" absolute top-4 -left-1/3 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
                 <Link
-                  href="/services"
+                  href="/services/book-a-service"
                   className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
                 >
                   Book A Service <FaCaretRight />
                 </Link>
                 <Link
-                  href="/finance"
+                  href="/services/finance"
                   className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
                 >
-                  Insurance <FaCaretRight />
+                Finance   <FaCaretRight />
                 </Link>
                 <Link
-                  href="/insurance"
+                  href="/services/insurance"
                   className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
                 >
-                  Finance <FaCaretRight />
+                Insurance   <FaCaretRight />
                 </Link>
               </div>
             </div>
