@@ -272,13 +272,13 @@ const Header = () => {
                   href="/services/finance"
                   className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
                 >
-                Finance   <FaCaretRight />
+                  Finance <FaCaretRight />
                 </Link>
                 <Link
                   href="/services/insurance"
                   className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
                 >
-                Insurance   <FaCaretRight />
+                  Insurance <FaCaretRight />
                 </Link>
               </div>
             </div>
@@ -293,13 +293,13 @@ const Header = () => {
               </div>
               <div className=" absolute top-4 -left-1/3 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
                 <Link
-                  href="/odisa-outlets"
+                  href="/outlets/odisa-outlets"
                   className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray4 text-black hover:bg-primaryRed hover:text-white border-y shadow-lg"
                 >
                   Odisa <FaCaretRight />
                 </Link>
                 <Link
-                  href="/odisa-outlets"
+                  href="/outlets/chhattisgarh-outlets"
                   className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray4 text-black hover:bg-primaryRed hover:text-white shadow-lg"
                 >
                   Chhattisgarh <FaCaretRight />
@@ -338,11 +338,12 @@ const Header = () => {
             >
               Offers
             </button> */}
-            <button
+            <Link
+              href="/offers"
               className={` md:px-6 py-2 rounded-full uppercase  bg-primaryRed text-white shadow-xl md:text-sm px-4 text-xs  `}
             >
               Offers
-            </button>
+            </Link>
             <div className="lg:hidden">
               <RiMenu3Fill className={`text-3xl text-primaryRed  `} />
             </div>
@@ -394,7 +395,11 @@ const Header = () => {
             >
               {selectedTab === 0 &&
                 arenaData.map((slide, index) => (
-                  <Link onClick={() => setIsVehicle(false)} key={index} href={slide.to}>
+                  <Link
+                    onClick={() => setIsVehicle(false)}
+                    key={index}
+                    href={slide.to}
+                  >
                     <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1   hover:text-white ">
                       <img
                         src={slide.image}
@@ -411,7 +416,11 @@ const Header = () => {
                 ))}
               {selectedTab === 1 &&
                 nexaData.map((slide, index) => (
-                  <Link onClick={() => setIsVehicle(false)} key={index} href={slide.to}>
+                  <Link
+                    onClick={() => setIsVehicle(false)}
+                    key={index}
+                    href={slide.to}
+                  >
                     <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white ">
                       <div className="">
                         {" "}

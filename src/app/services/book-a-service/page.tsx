@@ -88,9 +88,9 @@ const BookAService: React.FC = () => {
       <div className="min-h-screen">
         <div className="pt-20 min-h-40 bg-primaryGray">
           <img
-            src="https://saboonexa.in/static/media/Website_Maruti_Suzuki_Nexa_August_Independence_Day_Service_Saboo_RKS_Nexa.d9fdfa3802240e43c5ec.webp"
+            src="/images/other/sky-automobile-book-now-banner.jpg"
             alt="Service Banner"
-            className="object-cover w-full h-full -mt-1"
+            className="object-cover w-full h-full -mt-1 max-h-[50vh]"
           />
         </div>
         <div className="container min-h-[50vh] py-16 mx-auto xl:max-w-7xl lg:py-20 px-2">
@@ -172,7 +172,6 @@ const BookAService: React.FC = () => {
                   Model*
                 </option>
                 <optgroup label="Arena" className="text-sm text-primaryGray">
-      
                   <option value="Alto k10">Alto K10</option>
                   <option value="Wagon R">Wagon R</option>
                   <option value="Celerio">Celerio</option>

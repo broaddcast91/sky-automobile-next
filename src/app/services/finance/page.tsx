@@ -1,7 +1,4 @@
-"use client";
-import Footer from "@/components/others/Footer";
-import Header from "@/components/others/Header";
-import { models } from "@/constants";
+'use client';
 import React, {
   ChangeEvent,
   FormEvent,
@@ -10,10 +7,12 @@ import React, {
   useRef,
   useState,
 } from "react";
+import Footer from "@/components/others/Footer";
+import Header from "@/components/others/Header";
+import { models } from "@/constants";
 import toast from "react-hot-toast";
 import EMISlider from "./EMISlider";
 
-// Define the type for the form data
 interface FormData {
   name: string;
   phone: string;
@@ -21,6 +20,7 @@ interface FormData {
   model: string;
   city: string;
 }
+
 const Finance: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -32,6 +32,8 @@ const Finance: React.FC = () => {
   const dateInputRef = useRef<HTMLInputElement>(null);
   const [index, setIndex] = useState(0);
   const [selectedColor, setSelectedColor] = useState<number>(0);
+
+  const data = models[index];
 
   const MIN1 = 1;
   const MAX1 = 100;
@@ -46,46 +48,27 @@ const Finance: React.FC = () => {
   const [value1, setValue1] = useState(MIN1);
   const [value2, setValue2] = useState(MIN2);
   const [value3, setValue3] = useState(MIN3);
-  const [monthlyEMI, setMonthlyEMI] = useState("8379");
-  const [principalAmount, setPrincipalAmount] = useState(100000);
-  const [totalInterest, setTotalInterest] = useState(542);
-  const [totalAmount, setTotalAmount] = useState(100542);
 
-  const data = models[index];
-  // Monthly EMI Calculation
-  const calculateEMI = useCallback(() => {
-    // Your EMI calculation logic here based on the values of value1, value2, and value3
-    // For demonstration, I'm using a simple interest formula
-    setPrincipalAmount(value1 * 100000);
-    const rateOfInterest = value2 / 100;
-    const numberOfPayments = value3 * 12;
-    const monthlyInterestRate = rateOfInterest / 12;
-    const emi =
-      (principalAmount * monthlyInterestRate) /
-      (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+  // Calculate the EMI based on current slider values
+  const calculateEMI = useCallback(
+    (principal: number, rate: number, tenure: number) => {
+      const rateOfInterest = rate / 100;
+      const numberOfPayments = tenure * 12;
+      const monthlyInterestRate = rateOfInterest / 12;
+      const emi =
+        (principal * monthlyInterestRate) /
+        (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
 
-    return emi;
-  }, [value1, value2, value3, principalAmount]);
+      return emi;
+    },
+    []
+  );
 
-  useEffect(() => {
-    // Update EMI and other related values when any of the sliders change
-    const emi = calculateEMI();
-    setMonthlyEMI(emi.toFixed());
-    setTotalInterest(emi * value3 * 12 - principalAmount);
-    setTotalAmount(principalAmount + totalInterest);
-    const am = 938 - (principalAmount / totalAmount) * 938;
-    // setPerCentag(am);
-  }, [
-    value1,
-    value2,
-    value3,
-    principalAmount,
-    totalInterest,
-    totalAmount,
-    calculateEMI,
-  ]);
-
-  // Function to reset value to initial state
+  // Calculated values derived from the current inputs
+  const principalAmount = value1 * 100000;
+  const emi = calculateEMI(principalAmount, value2, value3);
+  const totalInterest = emi * value3 * 12 - principalAmount;
+  const totalAmount = principalAmount + totalInterest;
 
   useEffect(() => {
     // Get today's date in YYYY-MM-DD format
@@ -115,7 +98,7 @@ const Finance: React.FC = () => {
     console.log("Form Data:", { ...formData, state: "Odisa" });
     toast.success("Thank You for contacting us. We will get back to you soon!");
 
-    // Uncomment if you want to reset the form after submission
+    // Reset the form after submission
     setFormData({
       name: "",
       phone: "",
@@ -124,6 +107,7 @@ const Finance: React.FC = () => {
       city: "",
     });
   };
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -140,15 +124,15 @@ const Finance: React.FC = () => {
           </h4>
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="flex flex-col items-center">
-              <h5 className="mb-2 text-xl font-semibold  ">{data?.subName}</h5>
-              <p className="">
+              <h5 className="mb-2 text-xl font-semibold">{data?.subName}</h5>
+              <p>
                 Start from{" "}
-                <span className="text-primaryRed font-bold ">
+                <span className="text-primaryRed font-bold">
                   {data?.variants[0].price}
-                </span>{" "}
+                </span>
               </p>
               <div className="flex items-center gap-2">
-                <span className=" text-primaryGray">Select the Model</span>{" "}
+                <span className="text-primaryGray">Select the Model</span>
                 <select
                   className="w-min p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none mb-4"
                   name="index"
@@ -156,9 +140,6 @@ const Finance: React.FC = () => {
                   value={index}
                   onChange={(e) => setIndex(+e.target.value)}
                 >
-                  {/* <option value="" disabled>
-                    Model*
-                  </option> */}
                   <optgroup label="Arena" className="text-sm text-primaryGray">
                     <option value="0">Alto K10</option>
                     <option value="1">Swift</option>
@@ -210,12 +191,12 @@ const Finance: React.FC = () => {
             </div>
             <div className="">
               <div className="mb-3">
-                <div className="flex items-end justify-between mb-2 ">
-                  <div className="text-xl font-semibold ">Loan Amount</div>
-                  <div className=" bg-primaryRed text-white pr-3 py-1 w-36 text-right rounded-lg">
-                    <span className="pr-2 text-sm font-ligh6">₹</span>{" "}
-                    <span className="font-bold"> {value1}</span>
-                    <span className="pl-2 text-sm font-normal ">Lakhs</span>
+                <div className="flex items-end justify-between mb-2">
+                  <div className="text-xl font-semibold">Loan Amount</div>
+                  <div className="bg-primaryRed text-white pr-3 py-1 w-36 text-right rounded-lg">
+                    <span className="pr-2 text-sm font-light">₹</span>
+                    <span className="font-bold">{value1}</span>
+                    <span className="pl-2 text-sm font-normal">Lakhs</span>
                   </div>
                 </div>
 
@@ -228,17 +209,15 @@ const Finance: React.FC = () => {
                   points={[]}
                 />
               </div>
+
               <div className="mb-3">
-                <div className="flex items-end justify-between mb-2 ">
-                  <div className="text-xl font-semibold ">
-                    Rate of interest (p.a)
-                  </div>
-                  <div className=" bg-primaryRed text-white pr-3 py-1 w-36 text-right rounded-lg">
-                    {value2}
+                <div className="flex items-end justify-between mb-2">
+                  <div className="text-xl font-semibold">Interest Rate</div>
+                  <div className="bg-primaryRed text-white pr-3 py-1 w-36 text-right rounded-lg">
+                    <span className="font-bold">{value2}</span>
                     <span className="pl-2 text-sm font-normal">%</span>
                   </div>
                 </div>
-
                 <EMISlider
                   MIN={MIN2}
                   value={value2}
@@ -248,11 +227,12 @@ const Finance: React.FC = () => {
                   points={[]}
                 />
               </div>
-              <div className="mb-10">
-                <div className="flex items-end justify-between mb-2 ">
-                  <div className="text-xl font-semibold ">Loan tenure</div>
-                  <div className=" bg-primaryRed text-white pr-3 py-1 w-36 text-right rounded-lg">
-                    {value3}
+
+              <div className="mb-3">
+                <div className="flex items-end justify-between mb-2">
+                  <div className="text-xl font-semibold">Tenure</div>
+                  <div className="bg-primaryRed text-white pr-3 py-1 w-36 text-right rounded-lg">
+                    <span className="font-bold">{value3}</span>
                     <span className="pl-2 text-sm font-normal">Years</span>
                   </div>
                 </div>
@@ -269,154 +249,144 @@ const Finance: React.FC = () => {
                 />
               </div>
 
-              <div className="flex justify-center gap-4 text-center">
-                <div className="flex justify-center items-center shadow-md min-h-20 min-w-20 rounded-lg flex-col p-6 w-full  ">
-                  <p className=" font-medium text-primaryRed pb-2 ">
-                    Monthly EMI{" "}
-                  </p>
-                  <div className="text-xl">
-                    ₹
-                    {monthlyEMI
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                  </div>
+              <div className="mt-8">
+                <div className="flex flex-col mb-2 lg:mb-6">
+                  <span className="text-lg font-semibold">
+                    EMI you’ll pay every month
+                  </span>
+                  <span className="font-bold text-2xl text-primaryRed">
+                    ₹{emi.toFixed()}
+                  </span>
                 </div>
-                <div className="flex justify-center items-center shadow-md min-h-20 min-w-20 rounded-lg flex-col p-6 w-full ">
-                  <p className=" font-medium text-primaryRed pb-2 ">
-                    Principle Amount
-                  </p>
-                  <div className="text-xl">
-                    ₹
-                    {principalAmount
-                      .toFixed()
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+
+                <div className="flex justify-between gap-2 lg:gap-4">
+                  <div className="flex justify-center items-center shadow-md min-h-20 min-w-20 rounded-lg flex-col p-6 w-full ">
+                    <span className="text-base font-light text-gray-500">
+                      Principal Amount
+                    </span>
+                    <h6 className="font-bold text-lg text-primaryGray">
+                      ₹{principalAmount.toFixed()}
+                    </h6>
                   </div>
-                </div>
-                <div className="flex justify-center items-center shadow-md min-h-20 min-w-20 rounded-lg flex-col p-6 w-full ">
-                  <p className=" font-medium text-primaryRed pb-2 ">
-                    Total Amount
-                  </p>
-                  <div className="text-xl">
-                    ₹
-                    {totalAmount
-                      .toFixed()
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  <div className="flex justify-center items-center shadow-md min-h-20 min-w-20 rounded-lg flex-col p-6 w-full ">
+                    <span className="text-base font-light text-gray-500">
+                      Total Interest
+                    </span>
+                    <h6 className="font-bold text-lg text-primaryGray">
+                      ₹{totalInterest.toFixed()}
+                    </h6>
+                  </div>
+                  <div className="flex justify-center items-center shadow-md min-h-20 min-w-20 rounded-lg flex-col p-6 w-full ">
+                    <span className="text-base font-light text-gray-500">
+                      Total Amount
+                    </span>
+                    <h6 className="font-bold text-lg text-primaryGray">
+                      ₹{totalAmount.toFixed()}
+                    </h6>
                   </div>
                 </div>
               </div>
-              <p className="mt-5 text-sm">
-                Note: Drag the slider above to change the values
-              </p>
             </div>
           </div>
         </div>
-        <h4 className="text-3xl font-bold text-primaryGray mb-3 text-center">
-          Apply for <span className="text-primaryRed">Finance </span> Now
-        </h4>
-        <form onSubmit={handleSubmit} id="myForm" className="py-3 bg-white ">
-          <h5 className="mb-2 text-xl font-semibold ">Personal Details</h5>
-          <div className="w-full gap-4 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+
+        <form onSubmit={handleSubmit} className="p-2">
+          <h4 className="text-3xl font-bold text-primaryGray mb-3 md:mb-6 text-center">
+            Get a <span className="text-primaryRed"> Call </span> back
+          </h4>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 mb-6">
             <input
               type="text"
-              name="name"
               placeholder="Name*"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               required
               pattern="^[a-zA-Z\s'-]+$"
               minLength={3}
               maxLength={50}
               title="Only alphabets, spaces, hyphens, and apostrophes are allowed"
               className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
-              value={formData.name}
-              onChange={handleChange}
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone*"
-              required
-              minLength={10}
-              maxLength={10}
-              title="Only 10-digit Indian numbers are allowed"
-              pattern="^[0-9]+$"
-              className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
-              value={formData.phone}
-              onChange={handleChange}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              minLength={3}
-              title="Please enter a valid email address"
-              pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
-              className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
-              value={formData.email}
-              onChange={handleChange}
             />
 
             <input
-              type="text"
-              name="city"
-              placeholder="City*"
-              required
-              pattern="^[a-zA-Z\s'-]+$"
-              minLength={3}
-              maxLength={50}
-              title="Only alphabets, spaces, hyphens, and apostrophes are allowed"
-              className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
-              value={formData.city}
+              type="tel"
+              placeholder="Phone*"
+              name="phone"
+              value={formData.phone}
               onChange={handleChange}
-            />
-            <select
-              className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none"
-              name="model"
               required
+              className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+            />
+
+            <input
+              type="email"
+              placeholder="Email*"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+            />
+
+            <select
+              name="model"
               value={formData.model}
               onChange={handleChange}
+              required
+              className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
             >
-              <option value="" disabled>
-                Model*
-              </option>
-              <optgroup label="Arena" className="text-sm text-primaryGray">
-                <option value="Alto k10">Alto K10</option>
-                <option value="Wagon R">Wagon R</option>
-                <option value="Celerio">Celerio</option>
-                <option value="Epic swift 2024">Epic Swift 2024</option>
-                <option value="Swift">Swift</option>
-                <option value="Dzire">Dzire</option>
-                <option value="S-presso">S-Presso</option>
-                <option value="Ertiga">Ertiga</option>
-                <option value="Brezza">Brezza</option>
-                <option value="Eeco">Eeco</option>
-              </optgroup>
-              <optgroup label="Nexa" className="text-sm text-primaryGray">
-                <option value="Invicto">Invicto</option>
-                <option value="Fronx">Fronx</option>
-                <option value="Jimny">Jimny</option>
-                <option value="Grand Vitara">Grand Vitara</option>
-                <option value="Ciaz">Ciaz</option>
-                <option value="Baleno">Baleno</option>
-                <option value="Ignis">Ignis</option>
-                <option value="XL6">XL6</option>
-                <option value="Other">Other</option>
-              </optgroup>
+              <option value="">Select Model</option>
+              <option value="Alto K10">Alto K10</option>
+              <option value="Swift">Swift</option>
+              <option value="Brezza">Brezza</option>
+              <option value="Dzire">Dzire</option>
+              <option value="S-Presso">S-Presso</option>
+              <option value="Wagon R">Wagon R</option>
+              <option value="Ertiga">Ertiga</option>
+              <option value="Celerio">Celerio</option>
+              <option value="Eeco">Eeco</option>
+              <option value="Jimny">Jimny</option>
+              <option value="Fronx">Fronx</option>
+              <option value="Invicto">Invicto</option>
+              <option value="Grand Vitara">Grand Vitara</option>
+              <option value="XL6">XL6</option>
+              <option value="Ciaz">Ciaz</option>
+              <option value="Baleno">Baleno</option>
+              <option value="Ignis">Ignis</option>
             </select>
+
+            <input
+              type="text"
+              placeholder="City*"
+              name="city"
+              value={formData.city}
+              onChange={handleChange}
+              required
+              className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+            />
+
+            <input
+              type="date"
+              name="preferredDate"
+              ref={dateInputRef}
+              required
+              className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+            />
           </div>
           <button
             type="submit"
-            className="px-2 py-2 text-sm text-white duration-500 border rounded-md md:text-sm md:px-4 hover:shadow-lg bg-primaryRed whitespace-nowrap mt-6 min-w-40"
+            className=" mt-4 text-center bg-primaryRed rounded-sm py-2 text-white px-6 lg:px-10"
           >
-            Enquire Now
+            Submit
           </button>
           <p className="mt-6 text-xs text-gray-500">
-            *Disclaimer: By clicking &apos;Submit&apos;, you have agreed to our
-            Terms and Conditions.
+            *Disclaimer: By clicking &apos;Submit&apos;, I am explicitly
+            soliciting a call and message via whatsapp or any other medium from
+            us.
           </p>
         </form>
       </div>
-
       <Footer />
     </div>
   );

@@ -7,6 +7,10 @@ export const models = [
   {
     name: " Maruti ALTO K10",
     subName: "ALTO K10",
+    offersAmount: 53100,
+    offersAdditionalDec: "",
+    link: "/arena/alto-k10-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/arena/altok10/altok-10-metallic-sizzling-red1.png",
@@ -159,6 +163,10 @@ export const models = [
   {
     name: "Maruti Swift",
     subName: "Swift",
+    offersAmount: 38100,
+    offersAdditionalDec: "",
+    link: "/arena/swift-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/arena/swift/new-swift-sizzling-red-with-midnight-black-roof.png",
@@ -356,6 +364,10 @@ export const models = [
   {
     name: " Maruti Brezza ",
     subName: "Brezza",
+    offersAmount: 45000,
+    offersAdditionalDec: "",
+    link: "/arena/brezza-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/arena/brezza/brave_khaki.webp",
@@ -567,6 +579,10 @@ export const models = [
   {
     name: "Maruti Dzire",
     subName: "Dzire",
+    offersAmount: 35000,
+    offersAdditionalDec: "",
+    link: "/arena/dzire-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/arena/dzire/dzire-oxford-blue.png",
@@ -755,6 +771,10 @@ export const models = [
   {
     name: "Maruti S-Presso",
     subName: "S-Presso",
+    offersAmount: 53100,
+    offersAdditionalDec: "",
+    link: "/arena/spresso-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/arena/spresso/s-presso-pearl-starry-blue.png",
@@ -913,6 +933,10 @@ export const models = [
   {
     name: "Maruti WagonR",
     subName: "Wagon R",
+    offersAmount: 58100,
+    offersAdditionalDec: "",
+    link: "/arena/wagon-r-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/arena/wagonr/wagonr-poolside-blue.png",
@@ -1070,6 +1094,10 @@ export const models = [
   {
     name: "Maruti Ertiga",
     subName: "Ertiga",
+    offersAmount: 0,
+    offersAdditionalDec: "",
+    link: "/arena/ertiga-on-road-price",
+    offerValidTill: "",
     colors: [
       {
         img: "/images/car/arena/ertiga/ertiga-pearl-metallic-arctic-white.png",
@@ -1224,6 +1252,10 @@ export const models = [
   {
     name: "Maruti Celerio",
     subName: "Celerio",
+    offersAmount: 53100,
+    offersAdditionalDec: "",
+    link: "/arena/celerio-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/arena/celerio/celerio-artic-white.png",
@@ -1368,6 +1400,10 @@ export const models = [
   {
     name: "Maruti Eeco",
     subName: "Eeco",
+    offersAmount: 33100,
+    offersAdditionalDec: "",
+    link: "/arena/eeco-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/arena/eeco/eeco-cerulean-blue.png",
@@ -1501,6 +1537,10 @@ export const models = [
   {
     name: "Maruti Jimny",
     subName: "Jimny",
+    offersAmount: 100000,
+    offersAdditionalDec: "",
+    link: "/nexa/jimny-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/nexa/jimny/jimny-bluish-black.png",
@@ -1648,6 +1688,10 @@ export const models = [
   {
     name: "Maruti Fronx",
     subName: "Fronx",
+    offersAmount: 35000,
+    offersAdditionalDec: "",
+    link: "/nexa/fronx-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/nexa/fronx/FRONX-Color-1500x700-NEXA_Blue.webp",
@@ -1779,6 +1823,10 @@ export const models = [
   {
     name: "Maruti Grand Vitara",
     subName: "Grand Vitara",
+    offersAmount: 103100,
+    offersAdditionalDec: "",
+    link: "/nexa/grand-vitara-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/nexa/grand-vitara/Nexa_blue.webp",
@@ -1920,6 +1968,10 @@ export const models = [
   {
     name: "Maruti XL6",
     subName: "XL6",
+    offersAmount: 35000,
+    offersAdditionalDec: "",
+    link: "/nexa/xl6-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/nexa/xl6/Brand-page-car_Nexa-Blue.webp",
@@ -2056,6 +2108,10 @@ export const models = [
   {
     name: "Maruti Ciaz",
     subName: "Ciaz",
+    offersAmount: 43000,
+    offersAdditionalDec: "",
+    link: "/nexa/ciaz-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/nexa/ciaz/5.webp",
@@ -2217,6 +2273,10 @@ export const models = [
   {
     name: "Maruti Baleno",
     subName: "Baleno",
+    offersAmount: 53100,
+    offersAdditionalDec: "",
+    link: "/nexa/baleno-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/nexa/baleno/CelestialBlue.webp",
@@ -2346,6 +2406,10 @@ export const models = [
   {
     name: "Maruti Ignis",
     subName: "Ignis",
+    offersAmount: 52100,
+    offersAdditionalDec: "",
+    link: "/nexa/ignis-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/nexa/ignis/brandpage-car-nexa-blue.webp",
@@ -2490,6 +2554,10 @@ export const models = [
   {
     name: "Maruti Invicto",
     subName: "Invicto",
+    offersAmount: 0,
+    offersAdditionalDec: "",
+    link: "/nexa/invicto-on-road-price",
+    offerValidTill: "Sep 30, 2024",
     colors: [
       {
         img: "/images/car/nexa/invicto/Blue_810 x 411.webp",
