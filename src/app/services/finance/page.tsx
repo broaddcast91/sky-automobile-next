@@ -111,11 +111,15 @@ const Finance: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <img
-        src="https://t4.ftcdn.net/jpg/05/49/75/99/240_F_549759962_BBk58nB1v1aNt7cJHEoBZBeD45rIsgkv.jpg"
-        alt=""
-        className="w-full object-cover max-h-[50vh]"
-      />
+      <div className="pt-20 min-h-40 bg-primaryGray">
+          {/* <img
+            src="/images/other/sky-automobile-outlet-banner.jpg"
+            alt=""
+            className="object-cover w-full h-full -mt-1 max-h-[50vh]"
+          /> */} <div className="h-full min-h-[40vh] flex justify-center items-center text-white text-3xl ">
+          Required Banner Image
+        </div>
+        </div>
 
       <div className="container min-h-[50vh] py-16 mx-auto xl:max-w-7xl lg:py-20 px-2">
         <div className="mb-16 lg:mb-24 mt-8">

@@ -26,13 +26,17 @@ const Offers = () => {
       <Header />
       <div className="min-h-screen">
         <div className="pt-20 min-h-40 bg-primaryGray">
-          <img
-            src="/images/other/Website_Maruti_Suzuki_Arena_July_Monsoon_Offers_Automobile.webp"
-            className="object-cover w-full h-full -mt-1"
-          />
+          {/* <img
+            src="/images/other/sky-automobile-outlet-banner.jpg"
+            alt=""
+            className="object-cover w-full h-full -mt-1 max-h-[50vh]"
+          /> */}{" "}
+          <div className="h-full min-h-[40vh] flex justify-center items-center text-white text-3xl ">
+            Required Banner Image
+          </div>
         </div>
         <div className="container py-16 mx-auto xl:max-w-7xl lg:py-20">
-          <h4 className="text-3xl font-bold text-primaryGray mb-3  text-center ">
+          <h4 className="text-3xl font-bold text-primaryGray mb-3  text-center uppercase ">
             Maruti Suzuki <span className="text-primaryRed">Offers</span> 2024
           </h4>
           <p className=" text-primaryGray text-center md:mb-3">

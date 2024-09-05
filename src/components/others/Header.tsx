@@ -308,18 +308,18 @@ const Header = () => {
             </div>
             <Link
               onMouseEnter={() => setIsVehicle(false)}
-              href="/contact"
+              href="/contact-us"
               className="font-medium hover:text-primaryRed"
             >
-              Contact
+              Contact Us
             </Link>
-            <Link
+            {/* <Link
               onMouseEnter={() => setIsVehicle(false)}
               href="/blogs"
               className="font-medium hover:text-primaryRed"
             >
               Blogs
-            </Link>
+            </Link> */}
 
             <Link
               onMouseEnter={() => setIsVehicle(false)}

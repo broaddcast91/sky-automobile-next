@@ -72,11 +72,13 @@ const ChhattisgarhOutlets = () => {
       <Header />
       <div className="min-h-screen ">
         <div className="pt-20 min-h-40 bg-primaryGray">
-          <img
+          {/* <img
             src="/images/other/sky-automobile-outlet-banner.jpg"
             alt=""
             className="object-cover w-full h-full -mt-1 max-h-[50vh]"
-          />
+          /> */} <div className="h-full min-h-[40vh] flex justify-center items-center text-white text-3xl ">
+          Required Banner Image
+        </div>
         </div>
         <div className="container py-16 mx-auto xl:max-w-7xl lg:py-20">
           <h4 className="text-3xl font-bold text-primaryGray lg:mb-6">
