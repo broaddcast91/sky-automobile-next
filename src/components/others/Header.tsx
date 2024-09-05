@@ -326,7 +326,7 @@ const Header = () => {
               href="/career"
               className="font-medium hover:text-primaryRed"
             >
-              Carreer
+              Career
             </Link>
           </nav>
 
