@@ -54,7 +54,7 @@ const EnqHome: React.FC = () => {
               pattern="^[a-zA-Z]+$"
               minLength={3}
               maxLength={50}
-              title="Only alphabets are allowed"
+              title="Only alphabets are allowed with minimum 3 and maximum 50 characters"
               className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none placeholder:text-white"
               value={formData.name}
               onChange={handleChange}

@@ -4,7 +4,6 @@ import React, {
   FormEvent,
   useCallback,
   useEffect,
-  useRef,
   useState,
 } from "react";
 import Footer from "@/components/others/Footer";
@@ -19,6 +18,8 @@ interface FormData {
   email: string;
   model: string;
   city: string;
+  loanAmount: number;
+  loanTenure: number;
 }
 
 const Finance: React.FC = () => {
@@ -28,8 +29,10 @@ const Finance: React.FC = () => {
     email: "",
     model: "",
     city: "",
+    loanAmount: 0,
+    loanTenure: 0,
   });
-  const dateInputRef = useRef<HTMLInputElement>(null);
+
   const [index, setIndex] = useState(0);
   const [selectedColor, setSelectedColor] = useState<number>(0);
 
@@ -70,15 +73,7 @@ const Finance: React.FC = () => {
   const totalInterest = emi * value3 * 12 - principalAmount;
   const totalAmount = principalAmount + totalInterest;
 
-  useEffect(() => {
-    // Get today's date in YYYY-MM-DD format
-    const today = new Date().toISOString().split("T")[0];
-
-    // Set the min attribute of the date input
-    if (dateInputRef.current) {
-      dateInputRef.current.min = today;
-    }
-  }, []);
+ 
 
   const handleClickColor = (index: number): void => {
     setSelectedColor(index);
@@ -105,6 +100,9 @@ const Finance: React.FC = () => {
       email: "",
       model: "",
       city: "",
+      loanAmount: 0,
+      loanTenure: 0,
+      
     });
   };
 
@@ -307,10 +305,10 @@ const Finance: React.FC = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              pattern="^[a-zA-Z\s'-]+$"
+              pattern="[A-Za-z ]{3,32}"
               minLength={3}
               maxLength={50}
-              title="Only alphabets, spaces, hyphens, and apostrophes are allowed"
+              title="Only alphabets are allowed with minimum 3 and maximum 50 characters"
               className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
             />
 
@@ -334,6 +332,15 @@ const Finance: React.FC = () => {
               className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
             />
 
+            <input
+              type="text"
+              placeholder="City*"
+              name="city"
+              value={formData.city}
+              onChange={handleChange}
+              required
+              className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+            />
             <select
               name="model"
               value={formData.model}
@@ -362,21 +369,32 @@ const Finance: React.FC = () => {
             </select>
 
             <input
-              type="text"
-              placeholder="City*"
-              name="city"
-              value={formData.city}
+              type="number"
+              placeholder="Loan Amount*"
+              className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+              name="loanAmount"
+              value={formData.loanAmount ? formData.loanAmount : ""}
               onChange={handleChange}
               required
-              className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+              min={100000}
+              max={10000000}
+              step={1000}
+              title="Loan Amount should be between 100000 and 10000000"
             />
 
             <input
-              type="date"
-              name="preferredDate"
-              ref={dateInputRef}
-              required
+              type="number"
+              placeholder="Loan Tenure (in years)*"
               className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+              name="loanTenure"
+              value={formData.loanTenure ? formData.loanTenure : ""}
+              onChange={handleChange}
+              required
+              min={1}
+              max={30}
+              step={1}
+              pattern="[0-9]{1,2}"
+              title="Loan Tenure should be between 1 and 30"
             />
           </div>
           <button

@@ -80,10 +80,10 @@ const ContactUs: React.FC = () => {
                   name="name"
                   placeholder="Name*"
                   required
-                  pattern="^[a-zA-Z\s'-]+$"
+                  pattern="[A-Za-z ]{3,32}"
                   minLength={3}
                   maxLength={50}
-                  title="Only alphabets, spaces, hyphens, and apostrophes are allowed"
+                  title="Only alphabets are allowed with minimum 3 and maximum 50 characters"
                   className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
                   value={formData.name}
                   onChange={handleChange}
