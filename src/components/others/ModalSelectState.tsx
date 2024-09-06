@@ -24,7 +24,6 @@ const ModalSelectState: React.FC = () => {
     console.log(stateName);
   };
 
-  
   useEffect(() => {
     // Ensure this runs only in the browser
     if (typeof window !== "undefined") {

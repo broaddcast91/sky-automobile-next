@@ -412,11 +412,9 @@ const Header = () => {
               onClick={() => setOpenSelectState(true)}
             >
               <FaMapMarkerAlt className="" />
-              {sessionStorage.getItem("selectedState") && (
+              {selectedState && (
                 <p className={`   `}>
-                  {sessionStorage.getItem("selectedState") === "Odisha"
-                    ? "OD"
-                    : "CG"}
+                  {selectedState === "Odisha" ? "OD" : "CG"}
                 </p>
               )}
               <FaCaretRight className="rotate-90" />
