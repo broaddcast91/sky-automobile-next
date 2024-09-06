@@ -5,21 +5,9 @@ import React, { useEffect, useState } from "react";
 import { useAppContext } from "@/context";
 
 const ModalSelectState: React.FC = () => {
-  const [show, setShow] = useState(true);
   const [isAnimate, setIsAnimate] = useState(false);
-  const { setSelectedState } = useAppContext();
-
-  // useEffect(() => {
-  //   // Ensure this runs only in the browser
-  //   if (typeof window !== "undefined") {
-  //     if (sessionStorage.getItem("openSelectState")) {
-  //       setShow(false);
-  //     } else {
-  //       setShow(true);
-  //       document.body.style.overflow = "hidden";
-  //     }
-  //   }
-  // }, []);
+  const { setSelectedState, openSelectState, setOpenSelectState } =
+    useAppContext();
 
   const handleOnClose = (e: any) => {
     if (e.target.id === "container") setIsAnimate(true);
@@ -27,13 +15,31 @@ const ModalSelectState: React.FC = () => {
 
   const handleClick = (stateName: string) => {
     setSelectedState(stateName);
-    setShow(false);
+    setOpenSelectState(false);
     if (typeof window !== "undefined") {
       sessionStorage.setItem("openSelectState", "true");
+      sessionStorage.setItem("selectedState", stateName);
     }
 
     document.body.style.overflow = "auto";
   };
+
+  
+  useEffect(() => {
+    // Ensure this runs only in the browser
+    if (typeof window !== "undefined") {
+      if (sessionStorage.getItem("openSelectState")) {
+        setOpenSelectState(false);
+      } else {
+        setOpenSelectState(true);
+        document.body.style.overflow = "hidden";
+      }
+
+      if (sessionStorage.getItem("selectedState")) {
+        setSelectedState(sessionStorage.getItem("selectedState")!);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     if (isAnimate) {
@@ -43,7 +49,7 @@ const ModalSelectState: React.FC = () => {
     }
   }, [isAnimate]);
 
-  if (!show) return null;
+  if (!openSelectState) return null;
 
   return (
     <div

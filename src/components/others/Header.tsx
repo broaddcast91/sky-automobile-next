@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { BsTwitterX } from "react-icons/bs";
-import { FaCaretRight, FaPhoneAlt } from "react-icons/fa";
+import { FaCaretRight, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { FaFacebookF, FaLinkedin } from "react-icons/fa6";
 import { IoMailSharp } from "react-icons/io5";
 import { LuInstagram } from "react-icons/lu";
@@ -15,7 +15,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isVehicle, setIsVehicle] = useState(false);
   const [selectedTab, setSelectedTab] = useState(0);
-  const { selectedState } = useAppContext();
+  const { selectedState, setOpenSelectState } = useAppContext();
   // const { pathname } = useNavigate();
   const pathname = usePathname();
 
@@ -402,6 +402,25 @@ const Header = () => {
             >
               Offers
             </Link>
+            <button
+              type="button"
+              className={`flex items-center gap-1  px-2.5 py-1 hover:border hover:rounded-full  ${
+                selectedState === "Odisha"
+                  ? "hover:text-primaryBlue"
+                  : "hover:text-primaryRed"
+              }`}
+              onClick={() => setOpenSelectState(true)}
+            >
+              <FaMapMarkerAlt className="" />
+              {sessionStorage.getItem("selectedState") && (
+                <p className={`   `}>
+                  {sessionStorage.getItem("selectedState") === "Odisha"
+                    ? "OD"
+                    : "CG"}
+                </p>
+              )}
+              <FaCaretRight className="rotate-90" />
+            </button>{" "}
             <div className="lg:hidden">
               <RiMenu3Fill
                 className={`text-3xl  ${

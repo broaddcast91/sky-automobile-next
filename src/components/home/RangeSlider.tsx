@@ -4,13 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // Import required modules
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Link from "next/link";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { useAppContext } from "@/context";
 
 const RangeSlider: React.FC = () => {
@@ -72,7 +71,7 @@ const RangeSlider: React.FC = () => {
   return (
     <div className="pl-2 overflow-visible select-none">
       <Swiper
-        pagination={{ dynamicBullets: true }}
+      
         navigation={{
           nextEl: navigationNextRef.current,
           prevEl: navigationPrevRef.current,
@@ -108,7 +107,7 @@ const RangeSlider: React.FC = () => {
             spaceBetween: 20,
           },
         }}
-        modules={[Pagination, Navigation, Autoplay]}
+        modules={[ Navigation, Autoplay]}
         className="relative mx-4 overflow-visible mySwiper"
       >
         {slideData.map((slide, index) => (

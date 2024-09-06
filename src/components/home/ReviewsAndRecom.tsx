@@ -5,11 +5,10 @@ import { FaStar } from "react-icons/fa";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // Import required modules
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import {  Navigation, Autoplay } from "swiper/modules";
 import { useAppContext } from "@/context";
 
 const ReviewsAndRecom = () => {
@@ -69,9 +68,7 @@ const ReviewsAndRecom = () => {
       </h2>
       <div className="container mx-auto mb-10 overflow-visible select-none">
         <Swiper
-          pagination={{
-            dynamicBullets: true,
-          }}
+        
           loop={true}
           navigation={{
             nextEl: navigationNextRef.current,
@@ -108,7 +105,7 @@ const ReviewsAndRecom = () => {
               spaceBetween: 20,
             },
           }}
-          modules={[Pagination, Navigation, Autoplay]}
+          modules={[ Navigation, Autoplay]}
           className="relative overflow-visible mySwiper"
         >
           {blogsData.map((x, i) => (

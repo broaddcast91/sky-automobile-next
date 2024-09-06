@@ -27,11 +27,6 @@ export function AppWrapper({ children }: AppWrapperProps) {
   const [openSelectState, setOpenSelectState] = useState<boolean>(false);
   const [selectedState, setSelectedState] = useState<string>("Odisha");
 
-  useEffect(() => {
-    if (!sessionStorage.getItem("openSelectState")) {
-      setOpenSelectState(true);
-    }
-  }, []);
 
   // Define the context value
   const contextValue: AppContextType = {
