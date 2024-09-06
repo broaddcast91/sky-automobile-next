@@ -70,6 +70,8 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
     "Sky Automobile Arena 03 Showroom",
   ];
 
+  if(!data) return null
+
   return (
     <div className="">
       <Header />

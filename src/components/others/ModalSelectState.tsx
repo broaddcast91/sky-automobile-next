@@ -35,9 +35,9 @@ const ModalSelectState: React.FC = () => {
         document.body.style.overflow = "hidden";
       }
 
-      // if (sessionStorage.getItem("selectedState")) {
-      //   setSelectedState(sessionStorage.getItem("selectedState")!);
-      // }
+      if (sessionStorage.getItem("selectedState")) {
+        setSelectedState(sessionStorage.getItem("selectedState")!);
+      }
     }
   }, []);
 
