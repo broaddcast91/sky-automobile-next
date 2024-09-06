@@ -20,8 +20,8 @@ const ModalSelectState: React.FC = () => {
       sessionStorage.setItem("openSelectState", "true");
       sessionStorage.setItem("selectedState", stateName);
     }
-
     document.body.style.overflow = "auto";
+    console.log(stateName);
   };
 
   
