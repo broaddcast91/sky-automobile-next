@@ -25,7 +25,7 @@ interface AppWrapperProps {
 
 export function AppWrapper({ children }: AppWrapperProps) {
   const [openSelectState, setOpenSelectState] = useState<boolean>(false);
-  const [selectedState, setSelectedState] = useState<string>("");
+  const [selectedState, setSelectedState] = useState<string>("Odisha");
 
   useEffect(() => {
     if (!sessionStorage.getItem("openSelectState")) {
@@ -47,7 +47,7 @@ export function AppWrapper({ children }: AppWrapperProps) {
 }
 
 // Custom hook to use the AppContext
-export  const useAppContext = (): AppContextType => {
+export const useAppContext = (): AppContextType => {
   const context = useContext(AppContext);
   if (context === undefined) {
     throw new Error("useAppContext must be used within an AppWrapper");

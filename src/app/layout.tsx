@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
-// import { AppWrapper } from "@/context";
+import { AppWrapper } from "@/context";
+import ModalSelectState from "@/components/others/ModalSelectState";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,10 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <AppWrapper> */}
-        {children}
-
-        {/* </AppWrapper> */}
+        <AppWrapper>
+          <ModalSelectState />
+          {children}
+        </AppWrapper>
         <Toaster />
       </body>
     </html>

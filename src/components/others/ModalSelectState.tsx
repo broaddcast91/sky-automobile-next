@@ -2,30 +2,31 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { useAppContext } from "@/context";
 
 const ModalSelectState: React.FC = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [isAnimate, setIsAnimate] = useState(false);
+  const { setSelectedState } = useAppContext();
 
-  useEffect(() => {
-    // Ensure this runs only in the browser
-    if (typeof window !== "undefined") {
-      if (sessionStorage.getItem("openSelectState")) {
-        setShow(false);
-      } else {
-        setShow(true);
-         document.body.style.overflow = "hidden";
-      }
-    }
-    
-
-  }, []);
+  // useEffect(() => {
+  //   // Ensure this runs only in the browser
+  //   if (typeof window !== "undefined") {
+  //     if (sessionStorage.getItem("openSelectState")) {
+  //       setShow(false);
+  //     } else {
+  //       setShow(true);
+  //       document.body.style.overflow = "hidden";
+  //     }
+  //   }
+  // }, []);
 
   const handleOnClose = (e: any) => {
     if (e.target.id === "container") setIsAnimate(true);
   };
 
-  const handleClick = () => {
+  const handleClick = (stateName: string) => {
+    setSelectedState(stateName);
     setShow(false);
     if (typeof window !== "undefined") {
       sessionStorage.setItem("openSelectState", "true");
@@ -35,10 +36,9 @@ const ModalSelectState: React.FC = () => {
   };
 
   useEffect(() => {
-    if(isAnimate) {
+    if (isAnimate) {
       setTimeout(() => {
         setIsAnimate(false);
-       
       }, 500);
     }
   }, [isAnimate]);
@@ -63,7 +63,7 @@ const ModalSelectState: React.FC = () => {
         />
 
         <div className="w-full h-full flex justify-center items-center gap-4 flex-col md:flex-row mb-4 lg:gap-8">
-          <div onClick={handleClick} className="relative">
+          <div onClick={() => handleClick("Odisha")} className="relative">
             <Image
               src="/images/other/Odisa-Konarka_Temple.jpg"
               alt="Odisa-Konarka_Temple"
@@ -75,7 +75,7 @@ const ModalSelectState: React.FC = () => {
               Odisa
             </div>
           </div>
-          <div onClick={handleClick} className="relative">
+          <div onClick={() => handleClick("Chhattisgarh")} className="relative">
             <Image
               src="/images/other/Chhattisgarh-Bhoramdeo_Temple,_Kawardha.jpg"
               alt="Chhattisgarh-Bhoramdeo_Temple"

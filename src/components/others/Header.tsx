@@ -9,11 +9,13 @@ import { LuInstagram } from "react-icons/lu";
 import { RiMenu3Fill } from "react-icons/ri";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useAppContext } from "@/context";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isVehicle, setIsVehicle] = useState(false);
   const [selectedTab, setSelectedTab] = useState(0);
+  const { selectedState } = useAppContext();
   // const { pathname } = useNavigate();
   const pathname = usePathname();
 
@@ -167,7 +169,9 @@ const Header = () => {
     >
       <div
         onMouseEnter={() => setIsVehicle(false)}
-        className={`bg-primaryRed text-white max-h-9 `}
+        className={` text-white max-h-9 ${
+          selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
+        } `}
       >
         <div className="container flex items-center justify-between h-full px-2 py-2 mx-auto xl:max-w-8xl">
           <div className="flex justify-between w-full gap-4 md:justify-start md:max-w-1/2">
@@ -200,7 +204,11 @@ const Header = () => {
       <div
         className={`absolute top-9 left-0 w-full hover:bg-white hover:text-black duration-200 transition-all hover:backdrop-blur-lg ${
           scrolled || isVehicle
-            ? "bg-white text-black border-b-primaryRed shadow "
+            ? `bg-white text-black  shadow ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : "border-b-primaryRed"
+              } `
             : "lg:text-white bg-white lg:bg-transparent lg:hover:bg-white hover:shadow  "
         }`}
       >
@@ -240,15 +248,23 @@ const Header = () => {
             <Link
               onMouseEnter={() => setIsVehicle(false)}
               href="/about-us"
-              className="font-medium hover:text-primaryRed"
+              className={`font-medium  ${
+                selectedState === "Odisha"
+                  ? "hover:text-primaryBlue"
+                  : "hover:text-primaryRed"
+              }`}
             >
               About Us
             </Link>
             <div
               onMouseEnter={() => setIsVehicle(true)}
               // href="/"
-              className={`font-medium hover:text-primaryRed flex gap-1 items-center cursor-default ${
-                isVehicle && "text-primaryRed"
+              className={`font-medium  flex gap-1 items-center cursor-default ${
+                isVehicle && selectedState === "Odisha"
+                  ? "text-primaryBlue"
+                  : isVehicle
+                  ? "text-primaryRed"
+                  : ""
               } `}
             >
               Vehicles <FaCaretRight className="rotate-90" />
@@ -257,26 +273,42 @@ const Header = () => {
               <div
                 onMouseEnter={() => setIsVehicle(false)}
                 // href="/outlets"
-                className="font-medium hover:text-primaryRed peer  cursor-default flex  items-center gap-1"
+                className={`font-medium  peer  cursor-default flex  items-center gap-1 ${
+                  selectedState === "Odisha"
+                    ? "hover:text-primaryBlue"
+                    : "hover:text-primaryRed"
+                }`}
               >
                 Services <FaCaretRight className="rotate-90" />
               </div>
               <div className=" absolute top-4 -left-1/3 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
                 <Link
                   href="/services/book-a-service"
-                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                    selectedState === "Odisha"
+                      ? " hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed"
+                  }`}
                 >
                   Book A Service <FaCaretRight />
                 </Link>
                 <Link
                   href="/services/finance"
-                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                    selectedState === "Odisha"
+                      ? " hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed"
+                  }`}
                 >
                   Finance <FaCaretRight />
                 </Link>
                 <Link
                   href="/services/insurance"
-                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white hover:bg-primaryRed"
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                    selectedState === "Odisha"
+                      ? " hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed"
+                  }`}
                 >
                   Insurance <FaCaretRight />
                 </Link>
@@ -287,20 +319,32 @@ const Header = () => {
               <div
                 onMouseEnter={() => setIsVehicle(false)}
                 // href="/outlets"
-                className="font-medium hover:text-primaryRed peer  cursor-default flex  items-center gap-1"
+                className={`font-medium  peer  cursor-default flex  items-center gap-1 ${
+                  selectedState === "Odisha"
+                    ? "hover:text-primaryBlue"
+                    : "hover:text-primaryRed"
+                }`}
               >
                 Outlets <FaCaretRight className="rotate-90" />
               </div>
               <div className=" absolute top-4 -left-1/3 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
                 <Link
                   href="/outlets/odisa-outlets"
-                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray4 text-black hover:bg-primaryRed hover:text-white border-y shadow-lg"
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                    selectedState === "Odisha"
+                      ? " hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed"
+                  }`}
                 >
                   Odisa <FaCaretRight />
                 </Link>
                 <Link
                   href="/outlets/chhattisgarh-outlets"
-                  className="flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray4 text-black hover:bg-primaryRed hover:text-white shadow-lg"
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                    selectedState === "Odisha"
+                      ? " hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed"
+                  }`}
                 >
                   Chhattisgarh <FaCaretRight />
                 </Link>
@@ -309,14 +353,22 @@ const Header = () => {
             <Link
               onMouseEnter={() => setIsVehicle(false)}
               href="/contact-us"
-              className="font-medium hover:text-primaryRed"
+              className={`font-medium  ${
+                selectedState === "Odisha"
+                  ? "hover:text-primaryBlue"
+                  : "hover:text-primaryRed"
+              }`}
             >
               Contact Us
             </Link>
             {/* <Link
               onMouseEnter={() => setIsVehicle(false)}
               href="/blogs"
-              className="font-medium hover:text-primaryRed"
+              className={`font-medium  ${
+                selectedState === "Odisha"
+                  ? "hover:text-primaryBlue"
+                  : "hover:text-primaryRed"
+              }`}
             >
               Blogs
             </Link> */}
@@ -324,7 +376,11 @@ const Header = () => {
             <Link
               onMouseEnter={() => setIsVehicle(false)}
               href="/career"
-              className="font-medium hover:text-primaryRed"
+              className={`font-medium  ${
+                selectedState === "Odisha"
+                  ? "hover:text-primaryBlue"
+                  : "hover:text-primaryRed"
+              }`}
             >
               Career
             </Link>
@@ -340,12 +396,20 @@ const Header = () => {
             </button> */}
             <Link
               href="/offers"
-              className={` md:px-6 py-2 rounded-full uppercase  bg-primaryRed text-white shadow-xl md:text-sm px-4 text-xs  `}
+              className={` md:px-6 py-2 rounded-full uppercase   text-white shadow-xl md:text-sm px-4 text-xs ${
+                selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
+              }  `}
             >
               Offers
             </Link>
             <div className="lg:hidden">
-              <RiMenu3Fill className={`text-3xl text-primaryRed  `} />
+              <RiMenu3Fill
+                className={`text-3xl  ${
+                  selectedState === "Odisha"
+                    ? "text-primaryBlue"
+                    : "text-primaryRed"
+                }  `}
+              />
             </div>
           </div>
         </div>
@@ -360,7 +424,9 @@ const Header = () => {
               <div
                 onClick={() => setSelectedTab(0)}
                 className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28  ${
-                  selectedTab === 0
+                  selectedTab === 0 && selectedState === "Odisha"
+                    ? "text-white bg-primaryBlue"
+                    : selectedTab === 0
                     ? "text-white bg-primaryRed"
                     : "text-black bg-secondaryGray3"
                 }`}
@@ -370,7 +436,9 @@ const Header = () => {
               <div
                 onClick={() => setSelectedTab(1)}
                 className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28  ${
-                  selectedTab === 1
+                  selectedTab === 1 && selectedState === "Odisha"
+                    ? "text-white bg-primaryBlue"
+                    : selectedTab === 1
                     ? "text-white bg-primaryRed"
                     : "text-black bg-secondaryGray3"
                 }`}
@@ -380,7 +448,9 @@ const Header = () => {
               <div
                 onClick={() => setSelectedTab(2)}
                 className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28  ${
-                  selectedTab === 2
+                  selectedTab === 2 && selectedState === "Odisha"
+                    ? "text-white bg-primaryBlue"
+                    : selectedTab === 2
                     ? "text-white bg-primaryRed"
                     : "text-black bg-secondaryGray3"
                 }`}
@@ -400,7 +470,13 @@ const Header = () => {
                     key={index}
                     href={slide.to}
                   >
-                    <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1   hover:text-white ">
+                    <div
+                      className={`rounded-xl hover:shadow-lg   cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1 ${
+                        selectedState === "Odisha"
+                          ? "hover:bg-primaryBlue"
+                          : "hover:bg-primaryRed"
+                      }  hover:text-white`}
+                    >
                       <img
                         src={slide.image}
                         alt={slide.title}
@@ -421,7 +497,13 @@ const Header = () => {
                     key={index}
                     href={slide.to}
                   >
-                    <div className="rounded-xl hover:shadow-lg  hover:bg-primaryRed cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white ">
+                    <div
+                      className={`rounded-xl hover:shadow-lg  ${
+                        selectedState === "Odisha"
+                          ? "hover:bg-primaryBlue"
+                          : "hover:bg-primaryRed"
+                      } cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white`}
+                    >
                       <div className="">
                         {" "}
                         <img

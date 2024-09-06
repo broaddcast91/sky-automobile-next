@@ -11,8 +11,10 @@ import "swiper/css/navigation";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Link from "next/link";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { useAppContext } from "@/context";
 
 const RangeSlider: React.FC = () => {
+   const { selectedState } = useAppContext();
   const slideData = [
     {
       image:
@@ -112,7 +114,14 @@ const RangeSlider: React.FC = () => {
         {slideData.map((slide, index) => (
           <SwiperSlide key={index} className="mt-4">
             <Link href="/arena/alto-k10-on-road-price">
-              <div className="rounded-xl hover:shadow-lg hover:bg-primaryRed cursor-pointer w-[400px] py-10 px-2 flex flex-col gap-1 group">
+              <div
+                className={`rounded-xl hover:shadow-lg  cursor-pointer w-[400px] py-10 px-2 flex flex-col gap-1 group ${
+                  selectedState === "Odisha"
+                    ? "hover:bg-primaryBlue"
+                    : "hover:bg-primaryRed"
+                }
+ `}
+              >
                 <img
                   src={slide.image}
                   alt={slide.title}
@@ -132,13 +141,21 @@ const RangeSlider: React.FC = () => {
         <div className="flex justify-center gap-4 my-6">
           <div
             ref={navigationPrevRef}
-            className="flex items-center justify-center w-10 h-10 text-xl font-bold border-2 rounded-full cursor-pointer hover:text-white hover:bg-primaryRed border-secondaryGray2 hover:border-primaryRed"
+            className={`flex items-center justify-center w-10 h-10 text-xl font-bold border-2 rounded-full cursor-pointer hover:text-white  border-secondaryGray2  ${
+              selectedState === "Odisha"
+                ? "hover:border-primaryBlue hover:bg-primaryBlue"
+                : "hover:border-primaryRed hover:bg-primaryRed"
+            }`}
           >
             <AiOutlineArrowLeft />
           </div>
           <div
             ref={navigationNextRef}
-            className="flex items-center justify-center w-10 h-10 text-xl font-bold border-2 rounded-full cursor-pointer hover:text-white hover:bg-primaryRed border-secondaryGray2 hover:border-primaryRed"
+            className={`flex items-center justify-center w-10 h-10 text-xl font-bold border-2 rounded-full cursor-pointer hover:text-white  border-secondaryGray2 ${
+              selectedState === "Odisha"
+                ? "hover:border-primaryBlue hover:bg-primaryBlue"
+                : "hover:border-primaryRed hover:bg-primaryRed"
+            }`}
           >
             <AiOutlineArrowRight />
           </div>

@@ -1,7 +1,10 @@
+"use client";
+import { useAppContext } from "@/context";
 import React from "react";
 import { TbTargetArrow } from "react-icons/tb";
 
-const WhyChooseUs = () => {
+const WhyChooseUs: React.FC = () => {
+  const { selectedState } = useAppContext();
   return (
     <div className="py-10 bg-primaryGray md:py-16 lg:py-20">
       <div className="container mx-auto xl:max-w-6xl">
@@ -27,13 +30,20 @@ const WhyChooseUs = () => {
                 ></path>
               </g>
             </svg>
-            <h4 className="mb-2 text-xl font-medium text-primaryRed">
+            <h4
+              className={`mb-2 text-xl font-medium  ${
+                selectedState === "Odisha"
+                  ? "text-white "
+                  : "text-primaryRed "
+              }`}
+            >
               Hassle-Free Transaction
             </h4>
             <p className="text-sm text-white ">
               All you’ll need to do is to choose your favourite car and leave
               the rest on us!
             </p>
+           
           </div>
           <div className="text-center">
             <img
@@ -41,7 +51,13 @@ const WhyChooseUs = () => {
               alt=" Expansive Network"
               className="mx-auto mb-4"
             />
-            <h4 className="mb-2 text-xl font-medium text-primaryRed">
+            <h4
+              className={`mb-2 text-xl  font-medium ${
+                selectedState === "Odisha"
+                  ? "text-white "
+                  : "text-primaryRed "
+              }`}
+            >
               Expansive Network
             </h4>
             <p className="text-sm text-white ">
@@ -67,7 +83,11 @@ const WhyChooseUs = () => {
                 ></path>
               </g>
             </svg>
-            <h4 className="mb-2 text-xl font-medium text-primaryRed">
+            <h4
+              className={`mb-2 text-xl font-medium  ${
+                selectedState === "Odisha" ? "text-white" : "text-primaryRed"
+              }`}
+            >
               Reliability
             </h4>
             <p className="text-sm text-white ">
@@ -77,7 +97,11 @@ const WhyChooseUs = () => {
           </div>
           <div className="text-center">
             <TbTargetArrow className="mx-auto mb-4 text-5xl text-white lg:mb-5 lg:text-6xl" />
-            <h4 className="mb-2 text-xl font-medium text-primaryRed">
+            <h4
+              className={`mb-2 text-xl font-medium  ${
+                selectedState === "Odisha" ? "text-white" : "text-primaryRed"
+              }`}
+            >
               Customer Obsession
             </h4>
             <p className="text-sm text-white ">

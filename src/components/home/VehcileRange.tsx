@@ -1,9 +1,11 @@
 "use client";
 import React from "react";
 import RangeSlider from "./RangeSlider";
+import { useAppContext } from "@/context";
 
 const VehcileRange = () => {
-  const [selected, setSelected] = React.useState("Arena");
+  const [selected, setSelected] = React.useState("Nexa");
+   const { selectedState } = useAppContext();
   return (
     <div className="py-10 md:pt-16 lg:pt-24">
       <div className="container mx-auto mb-8 ">
@@ -14,7 +16,9 @@ const VehcileRange = () => {
           <button
             onClick={() => setSelected("Arena")}
             className={` font-semibold px-2 border-b-2 ${
-              selected === "Arena"
+              selected === "Arena" && selectedState === "Odisha"
+                ? "text-primaryBlue border-b-primaryBlue"
+                : selected === "Arena"
                 ? "text-primaryRed border-b-primaryRed"
                 : "text-secondaryGray2"
             }`}
@@ -24,7 +28,9 @@ const VehcileRange = () => {
           <button
             onClick={() => setSelected("Nexa")}
             className={` font-semibold px-2 border-b-2  ${
-              selected === "Nexa"
+              selected === "Nexa" && selectedState === "Odisha"
+                ? "text-primaryBlue border-b-primaryBlue"
+                : selected === "Nexa"
                 ? "text-primaryRed border-b-primaryRed"
                 : "text-secondaryGray2"
             }

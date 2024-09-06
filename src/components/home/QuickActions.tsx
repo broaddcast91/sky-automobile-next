@@ -1,3 +1,5 @@
+"use client";
+import { useAppContext } from "@/context";
 import React from "react";
 import { CiCircleQuestion } from "react-icons/ci";
 import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
@@ -11,24 +13,35 @@ interface ActionItemProps {
   ariaLabel: string;
 }
 
-const ActionItem: React.FC<ActionItemProps> = ({ Icon, label, ariaLabel }) => (
-  <div className="flex flex-col items-center justify-center gap-4 px-4 py-10 border hover:bg-primaryRed group hover:text-white md:flex-row">
-    <div>
-      <Icon
-        className="text-4xl lg:text-5xl text-primaryRed group-hover:text-white"
-        aria-label={ariaLabel}
-      />
+const ActionItem: React.FC<ActionItemProps> = ({ Icon, label, ariaLabel }) => {
+  const { selectedState } = useAppContext();
+  return (
+    <div
+      className={`flex flex-col items-center justify-center gap-4 px-4 py-10 border  group hover:text-white md:flex-row ${selectedState === "Odisha" ? "hover:bg-primaryBlue" : "hover:bg-primaryRed"}`}
+    >
+      <div>
+        <Icon
+          className={`text-4xl lg:text-5xl  group-hover:text-white ${
+            selectedState === "Odisha"
+              ? "text-primaryBlue"
+              : "text-primaryRed"
+          } `}
+          aria-label={ariaLabel}
+        />
+      </div>
+      <div className="flex flex-col items-center md:items-start">
+        <p className="text-center max-w-60 text-primaryGray group-hover:text-white md:text-left">
+          {label}
+        </p>
+        <button
+          className={`px-4 py-2 mx-auto mt-4 text-sm border rounded-lg group-hover:border-white hover:bg-white  md:mx-0 ${selectedState === "Odisha" ? "hover:text-primaryBlue" : "hover:text-primaryRed"}`}
+        >
+          Know More
+        </button>
+      </div>
     </div>
-    <div className="flex flex-col items-center md:items-start">
-      <p className="text-center max-w-60 text-primaryGray group-hover:text-white md:text-left">
-        {label}
-      </p>
-      <button className="px-4 py-2 mx-auto mt-4 text-sm border rounded-lg group-hover:border-white hover:bg-white hover:text-primaryRed md:mx-0">
-        Know More
-      </button>
-    </div>
-  </div>
-);
+  );
+};
 
 const QuickActions: React.FC = () => {
   return (

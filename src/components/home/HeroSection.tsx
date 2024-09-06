@@ -1,7 +1,10 @@
+'use client';
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
+
 const HeroSection = () => {
+
   return (
     <main>
       <div className="relative min-h-screen bg-center bg-primaryRed">

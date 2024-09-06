@@ -1,4 +1,5 @@
 "use client"; // Add this at the top of your file
+import { useAppContext } from "@/context";
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import toast from "react-hot-toast";
 
@@ -9,6 +10,8 @@ const EnqHome: React.FC = () => {
     phone: string;
     lookingFor: string;
   }
+
+  const { selectedState } = useAppContext();
 
   // Initialize form state
   const [formData, setFormData] = useState<FormData>({
@@ -55,7 +58,11 @@ const EnqHome: React.FC = () => {
               minLength={3}
               maxLength={50}
               title="Only alphabets are allowed with minimum 3 and maximum 50 characters"
-              className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none placeholder:text-white"
+              className={`w-full p-2 bg-transparent  border-b-2  focus:outline-none placeholder:text-white ${
+                selectedState === "Odisha"
+                  ? "border-b-white "
+                  : "border-b-primaryRed "
+              }`}
               value={formData.name}
               onChange={handleChange}
             />
@@ -68,13 +75,21 @@ const EnqHome: React.FC = () => {
               maxLength={10}
               title="Only 10 digit Indian numbers are allowed"
               pattern="^[0-9]+$"
-              className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none placeholder:text-white"
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none placeholder:text-white ${
+                selectedState === "Odisha"
+                  ? "border-b-white"
+                  : "border-b-primaryRed"
+              }`}
               value={formData.phone}
               onChange={handleChange}
             />
             <select
               name="lookingFor"
-              className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none md:col-span-2 lg:col-span-1"
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none placeholder:text-white ${
+                selectedState === "Odisha"
+                  ? "border-b-white"
+                  : "border-b-primaryRed"
+              }`}
               required
               value={formData.lookingFor}
               onChange={handleChange}
@@ -116,7 +131,11 @@ const EnqHome: React.FC = () => {
 
             <button
               type="submit"
-              className="hidden px-2 py-2 mx-auto text-sm duration-500 bg-transparent border rounded-md md:text-sm md:px-4 hover:shadow-lg hover:bg-primaryRed w-min whitespace-nowrap lg:block hover:border-primaryRed"
+              className={`hidden px-2 py-2 mx-auto text-sm duration-500 bg-transparent border rounded-md md:text-sm md:px-4 hover:shadow-lg  w-min whitespace-nowrap lg:block ${
+                selectedState === "Odisha"
+                  ? " hover:bg-primaryBlue"
+                  : "hover:border-primaryRed hover:bg-primaryRed"
+              } `}
             >
               Enquire Now
             </button>
@@ -124,7 +143,11 @@ const EnqHome: React.FC = () => {
           <div className="flex justify-center py-2 mt-4 lg:hidden">
             <button
               type="submit"
-              className="px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:text-base md:px-4 hover:shadow-lg hover:bg-primaryRed hover:border-primaryRed"
+              className={`px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:text-base md:px-4 hover:shadow-lg  ${
+                selectedState === "Odisha"
+                  ? " hover:bg-primaryBlue"
+                  : "hover:border-primaryRed hover:bg-primaryRed"
+              }`}
             >
               Enquire Now
             </button>
