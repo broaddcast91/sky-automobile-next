@@ -2,6 +2,7 @@
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
 import { models } from "@/constants";
+import { useAppContext } from "@/context";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaRegCalendarCheck } from "react-icons/fa";
@@ -10,6 +11,7 @@ import { IoSearch } from "react-icons/io5";
 const Offers = () => {
   // State to handle search input
   const [searchQuery, setSearchQuery] = useState("");
+  const { selectedState } = useAppContext();
 
   // Filtered data based on search input
   const filteredAndSortedData = models
@@ -36,8 +38,18 @@ const Offers = () => {
           </div>
         </div>
         <div className="container py-16 mx-auto xl:max-w-7xl lg:py-20">
-          <h4 className="text-3xl font-bold text-primaryGray mb-3  text-center uppercase ">
-            Maruti Suzuki <span className="text-primaryRed">Offers</span> 2024
+          <h4 className="text-3xl font-bold text-primaryGray mb-3  text-center  ">
+            Maruti Suzuki{" "}
+            <span
+              className={`${
+                selectedState === "Odisha"
+                  ? "text-primaryBlue"
+                  : "text-primaryRed"
+              }`}
+            >
+              Offers
+            </span>{" "}
+            2024
           </h4>
           <p className=" text-primaryGray text-center md:mb-3">
             Discover unbeatable deals on Maruti Suzuki Arena & Nexa models.
@@ -52,7 +64,11 @@ const Offers = () => {
                 placeholder="Search by name or offer amount..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full max-w-lg pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primaryRed text-center"
+                className={`w-full max-w-lg pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none  text-center ${
+                  selectedState === "Odisha"
+                    ? "focus:border-primaryBlue"
+                    : "focus:border-primaryRed"
+                }`}
               />
               <IoSearch className="absolute top-1/3 left-2" />
             </div>
@@ -80,11 +96,20 @@ const Offers = () => {
                         {offer.name}
                       </p>
 
-                      <p className="text-xl font-bold text-primaryRed">
+                      <p
+                        className={`text-xl font-bold ${
+                          selectedState === "Odisha"
+                            ? "text-primaryBlue"
+                            : "text-primaryRed"
+                        }`}
+                      >
                         <span className="text-sm font-medium text-gray-900">
                           Save upto
                         </span>{" "}
                         {offer.offersAmount} ₹*
+                      </p>
+                      <p className="text-sm mb-2 ">
+                        {offer.offersAdditionalDec}
                       </p>
                       <p className="flex gap-1 mt-1 text-xs xl:text-sm justify-center">
                         <FaRegCalendarCheck />
@@ -94,7 +119,11 @@ const Offers = () => {
                     <div className="flex items-center justify-center gap-4 pb-2 mx-4">
                       <Link
                         href={offer.link}
-                        className="w-full p-1.5 text-sm text-center uppercase border rounded-lg border-primaryRed   hover:text-white group-hover:text-white group-hover:bg-primaryRed"
+                        className={`w-full p-1.5 text-sm text-center uppercase border rounded-lg   hover:text-white group-hover:text-white  ${
+                          selectedState === "Odisha"
+                            ? "group-hover:bg-primaryBlue border-primaryBlue"
+                            : "group-hover:bg-primaryRed border-primaryRed "
+                        }`}
                       >
                         Book Now
                       </Link>

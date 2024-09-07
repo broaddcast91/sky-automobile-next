@@ -7,7 +7,7 @@ export const models = [
   {
     name: " Maruti ALTO K10",
     subName: "ALTO K10",
-    offersAmount: 53100,
+    offersAmount: 56100,
     offersAdditionalDec: "",
     link: "/arena/alto-k10-on-road-price",
     offerValidTill: "Sep 30, 2024",
@@ -364,7 +364,7 @@ export const models = [
   {
     name: " Maruti Brezza ",
     subName: "Brezza",
-    offersAmount: 45000,
+    offersAmount: 25000,
     offersAdditionalDec: "",
     link: "/arena/brezza-on-road-price",
     offerValidTill: "Sep 30, 2024",
@@ -579,7 +579,7 @@ export const models = [
   {
     name: "Maruti Dzire",
     subName: "Dzire",
-    offersAmount: 35000,
+    offersAmount: 30000,
     offersAdditionalDec: "",
     link: "/arena/dzire-on-road-price",
     offerValidTill: "Sep 30, 2024",
@@ -771,7 +771,7 @@ export const models = [
   {
     name: "Maruti S-Presso",
     subName: "S-Presso",
-    offersAmount: 53100,
+    offersAmount: 56100,
     offersAdditionalDec: "",
     link: "/arena/spresso-on-road-price",
     offerValidTill: "Sep 30, 2024",
@@ -1538,7 +1538,7 @@ export const models = [
     name: "Maruti Jimny",
     subName: "Jimny",
     offersAmount: 100000,
-    offersAdditionalDec: "",
+    offersAdditionalDec: "+ 1.5 Lakh MSSF Offer",
     link: "/nexa/jimny-on-road-price",
     offerValidTill: "Sep 30, 2024",
     colors: [
@@ -1688,8 +1688,8 @@ export const models = [
   {
     name: "Maruti Fronx",
     subName: "Fronx",
-    offersAmount: 35000,
-    offersAdditionalDec: "",
+    offersAmount: 45000,
+    offersAdditionalDec: "+ Velocity Kit worth 43K ",
     link: "/nexa/fronx-on-road-price",
     offerValidTill: "Sep 30, 2024",
     colors: [
@@ -1823,8 +1823,8 @@ export const models = [
   {
     name: "Maruti Grand Vitara",
     subName: "Grand Vitara",
-    offersAmount: 103100,
-    offersAdditionalDec: "",
+    offersAmount: 108100,
+    offersAdditionalDec: "+ Royal Platinum EW",
     link: "/nexa/grand-vitara-on-road-price",
     offerValidTill: "Sep 30, 2024",
     colors: [
@@ -1968,7 +1968,7 @@ export const models = [
   {
     name: "Maruti XL6",
     subName: "XL6",
-    offersAmount: 35000,
+    offersAmount: 40000,
     offersAdditionalDec: "",
     link: "/nexa/xl6-on-road-price",
     offerValidTill: "Sep 30, 2024",
@@ -2108,7 +2108,7 @@ export const models = [
   {
     name: "Maruti Ciaz",
     subName: "Ciaz",
-    offersAmount: 43000,
+    offersAmount: 48000,
     offersAdditionalDec: "",
     link: "/nexa/ciaz-on-road-price",
     offerValidTill: "Sep 30, 2024",
@@ -2273,7 +2273,7 @@ export const models = [
   {
     name: "Maruti Baleno",
     subName: "Baleno",
-    offersAmount: 53100,
+    offersAmount: 57100,
     offersAdditionalDec: "",
     link: "/nexa/baleno-on-road-price",
     offerValidTill: "Sep 30, 2024",
@@ -2406,8 +2406,8 @@ export const models = [
   {
     name: "Maruti Ignis",
     subName: "Ignis",
-    offersAmount: 52100,
-    offersAdditionalDec: "",
+    offersAmount: 58100,
+    offersAdditionalDec: "+ Radiance Kit Worth 3K",
     link: "/nexa/ignis-on-road-price",
     offerValidTill: "Sep 30, 2024",
     colors: [
