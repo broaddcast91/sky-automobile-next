@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
+import { useAppContext } from "@/context";
 import React, {
   ChangeEvent,
   FormEvent,
@@ -36,6 +37,8 @@ const BookAService: React.FC = () => {
     date: "",
   });
   const dateInputRef = useRef<HTMLInputElement>(null);
+
+  const { selectedState } = useAppContext();
 
   useEffect(() => {
     // Get today's date in YYYY-MM-DD format
@@ -105,7 +108,17 @@ const BookAService: React.FC = () => {
         </div> */}
         <div className="container min-h-[50vh] py-16 mx-auto xl:max-w-7xl lg:py-20 px-2">
           <h4 className="text-3xl font-bold text-primaryGray lg:mb-6">
-            Book a <span className="text-primaryRed">Service </span> Now
+            Book a{" "}
+            <span
+              className={`   ${
+                selectedState === "Odisha"
+                  ? "text-primaryBlue"
+                  : "text-primaryRed"
+              }`}
+            >
+              Service{" "}
+            </span>{" "}
+            Now
           </h4>
           <form onSubmit={handleSubmit} id="myForm" className="py-3 bg-white">
             <div className="w-full gap-4 grid sm:grid-cols-2 lg:grid-cols-3">
@@ -118,7 +131,11 @@ const BookAService: React.FC = () => {
                 minLength={3}
                 maxLength={50}
                 title="Only alphabets, spaces, hyphens, and apostrophes are allowed"
-                className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 value={formData.name}
                 onChange={handleChange}
               />
@@ -131,7 +148,11 @@ const BookAService: React.FC = () => {
                 maxLength={10}
                 title="Only 10-digit Indian numbers are allowed"
                 pattern="^[0-9]+$"
-                className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -142,7 +163,11 @@ const BookAService: React.FC = () => {
                 minLength={3}
                 title="Please enter a valid email address"
                 pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
-                className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -154,7 +179,11 @@ const BookAService: React.FC = () => {
                 minLength={3}
                 maxLength={50}
                 title="Only alphabets are allowed with minimum 3 and maximum 50 characters"
-                className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 value={formData.address}
                 onChange={handleChange}
               />
@@ -167,12 +196,20 @@ const BookAService: React.FC = () => {
                 minLength={3}
                 maxLength={50}
                 title="Only alphabets are allowed with minimum 3 and maximum 50 characters"
-                className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 value={formData.city}
                 onChange={handleChange}
               />
               <select
-                className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 name="model"
                 required
                 value={formData.model}
@@ -206,7 +243,11 @@ const BookAService: React.FC = () => {
                 </optgroup>
               </select>
               <select
-                className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 name="serviceType"
                 required
                 value={formData.serviceType}
@@ -226,9 +267,11 @@ const BookAService: React.FC = () => {
                   id="date"
                   // ref={dateInputRef}
                   required
-                  className={`w-full min-h-11 p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none rounded-none  select-none ${
-                    formData.date ? "text-black" : "  text-transparent"
-                  }`}
+                  className={`w-full min-h-11 p-2 bg-transparent border-b-2  focus:outline-none rounded-none  select-none ${
+                    selectedState === "Odisha"
+                      ? "border-b-primaryBlue"
+                      : "border-b-primaryRed"
+                  } ${formData.date ? "text-black" : "  text-transparent"}`}
                   value={formData.date}
                   onChange={handleChange}
                   min={new Date().toISOString().split("T")[0]}
@@ -264,7 +307,7 @@ const BookAService: React.FC = () => {
                     value="No"
                     checked={formData.isPickup === "No"}
                     onChange={handleChange}
-                    className="form-radio"
+                    className="form-radio "
                   />
                   <span className="ml-2">No</span>
                 </label>
@@ -272,7 +315,9 @@ const BookAService: React.FC = () => {
             </div>
             <button
               type="submit"
-              className="px-2 py-2 text-sm text-white duration-500 border rounded-md md:text-sm md:px-4 hover:shadow-lg bg-primaryRed whitespace-nowrap mt-6 min-w-40"
+              className={`px-2 py-2 text-sm text-white duration-500 border rounded-md md:text-sm md:px-4 hover:shadow-lg  whitespace-nowrap mt-6 min-w-40 ${
+                selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
+              }`}
             >
               Enquire Now
             </button>

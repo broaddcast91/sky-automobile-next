@@ -4,6 +4,7 @@ import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
 import VehicleDetailsSlider from "@/components/others/VehicleDetailsSlider";
 import { models } from "@/constants";
+import { useAppContext } from "@/context";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import toast from "react-hot-toast";
 import { BsFuelPump } from "react-icons/bs";
@@ -22,6 +23,8 @@ interface VehiceProps {
 }
 
 const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
+  const { selectedState } = useAppContext();
+
   const data = models[index];
   const [selectedColor, setSelectedColor] = useState<number>(0);
   const [formData, setFormData] = useState<FormData>({
@@ -70,7 +73,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
     "Sky Automobile Arena 03 Showroom",
   ];
 
-  if(!data) return null
+  if (!data) return null;
 
   return (
     <div className="">
@@ -112,16 +115,29 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
               <a
                 href={data?.brochure}
                 target="_blank"
+                aria-label="View Brochure"
                 rel="noopener noreferrer"
               >
-                <button className="px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:px-4 hover:shadow-lg hover:bg-primaryRed hover:border-primaryRed">
+                <button
+                  aria-label="View Brochure"
+                  className={`px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:px-4 hover:shadow-lg   ${
+                    selectedState === "Odisha"
+                      ? "hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed "
+                  }`}
+                >
                   View Brochure
                 </button>
               </a>
               {["Get On Road Price", "Book Test Drive"].map((text, index) => (
                 <button
                   key={index}
-                  className="px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:px-4 hover:shadow-lg hover:bg-primaryRed hover:border-primaryRed"
+                  aria-label={text}
+                  className={`px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:px-4 hover:shadow-lg   ${
+                    selectedState === "Odisha"
+                      ? "hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed "
+                  }`}
                 >
                   {text}
                 </button>
@@ -160,7 +176,17 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
 
       <div className="container mx-auto xl:max-w-7xl bg-white py-10 lg:pt-20">
         <h4 className="text-3xl font-bold text-primaryGray lg:mb-6">
-          Book your <span className="text-primaryRed">{data?.subName}</span> Now
+          Book your{" "}
+          <span
+            className={` ${
+              selectedState === "Odisha"
+                ? "text-primaryBlue"
+                : "text-primaryRed"
+            }`}
+          >
+            {data?.subName}
+          </span>{" "}
+          Now
         </h4>
         <form onSubmit={handleSubmit} id="myForm" className="py-3 bg-white ">
           <div className=" w-full gap-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
@@ -177,12 +203,20 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
                 minLength={field === "phone" ? 10 : undefined}
                 pattern={field === "phone" ? "[0-9]{10}" : undefined}
                 onChange={handleChange}
-                className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : " border-b-primaryRed"
+                }  `}
               />
             ))}
             <select
               name="model"
-              className="w-full p-2 bg-transparent border-b-2  border-b-primaryRed focus:outline-none"
+              className={`w-full p-2 bg-transparent border-b-2   focus:outline-none ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : " border-b-primaryRed"
+              }`}
               onChange={handleChange}
               required
               defaultValue={""}
@@ -198,7 +232,11 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
             </select>
             <select
               name="model"
-              className="w-full p-2 bg-transparent border-b-2  border-b-primaryRed focus:outline-none"
+              className={`w-full p-2 bg-transparent border-b-2   focus:outline-none ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : " border-b-primaryRed"
+              }`}
               onChange={handleChange}
               required
               defaultValue={""}
@@ -214,7 +252,11 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
             </select>
             <button
               type="submit"
-              className="px-4 py-2   hover:text-white duration-500 border-b-2   md:px-4 hover:shadow-lg hover:bg-primaryRed whitespace-nowrap border-primaryRed "
+              className={`px-4 py-2   hover:text-white duration-500 border-b-2   md:px-4 hover:shadow-lg  whitespace-nowrap ${
+                selectedState === "Odisha"
+                  ? "hover:bg-primaryBlue border-primaryBlue"
+                  : "hover:bg-primaryRed border-primaryRed"
+              } `}
             >
               Enquire Now
             </button>
@@ -235,7 +277,13 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
         </h5>
         <div className="overflow-x-auto">
           <table className="w-full table-auto">
-            <thead className="text-white border border-b-2 border-b-primaryRed bg-primaryRed">
+            <thead
+              className={`text-white border border-b-2  ${
+                selectedState === "Odisha"
+                  ? " border-b-primaryBlue bg-primaryBlue"
+                  : "border-b-primaryRed bg-primaryRed"
+              }`}
+            >
               <tr>
                 <th className="w-1/3 px-2 py-2 font-semibold text-left ">
                   Variant
@@ -252,7 +300,11 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
               {data?.variants.map((variant, index) => (
                 <tr
                   key={index}
-                  className="border hover:bg-secondaryRed2 hover:bg-opacity-10"
+                  className={`border  hover:bg-opacity-10 ${
+                    selectedState === "Odisha"
+                      ? "hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed"
+                  }`}
                 >
                   <td className="px-2 py-2 text-primaryGray">
                     {variant.variant}
@@ -273,7 +325,11 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
         <div className="container flex flex-col items-center mx-auto r xl:max-w-7xl">
           {index === 11 ? (
             <div className="rounded-lg ">
-              <p className="bg-primaryRed    border-primaryRed  text-white text-center mb-6 text-xl w-min mx-auto px-4 lg:px-8 py-1.5">
+              <p
+                className={`  text-white text-center mb-6 text-xl w-min mx-auto px-4 lg:px-8 py-1.5 ${
+                  selectedState === "Odisha" ? " bg-primaryBlue border-primaryBlue" : "bg-primaryRed border-primaryRed"
+                }`}
+              >
                 Specification
               </p>
               <video
@@ -292,7 +348,9 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
                   onClick={() => setSelected("Exterior")}
                   aria-label="Exterior"
                   className={`   px-4 border  lg:px-8 py-1.5 ${
-                    selected === "Exterior"
+                    selected === "Exterior" && selectedState === "Odisha"
+                      ? "bg-primaryBlue    border-primaryBlue  text-white "
+                      : selected === "Exterior"
                       ? "bg-primaryRed    border-primaryRed  text-white "
                       : "text-secondaryGray2 bg-secondaryGray3"
                   }`}
@@ -303,11 +361,12 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
                   onClick={() => setSelected("Interior")}
                   aria-label="Interior"
                   className={`   px-4 border  lg:px-8 py-1.5 ${
-                    selected === "Interior"
-                      ? "bg-primaryRed   border-primaryRed  text-white "
+                    selected === "Interior" && selectedState === "Odisha"
+                      ? "bg-primaryBlue    border-primaryBlue  text-white "
+                      : selected === "Interior"
+                      ? "bg-primaryRed    border-primaryRed  text-white "
                       : "text-secondaryGray2 bg-secondaryGray3"
-                  }
-            `}
+                  }`}
                 >
                   Interior
                 </button>

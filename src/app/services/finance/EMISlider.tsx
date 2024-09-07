@@ -25,9 +25,9 @@ const EMISlider : React.FC<EMISliderProps> = ({ MIN, MAX, value, setValue, steps
       cursor: grab;
       border-radius: 2px;
       border: 2px solid red;
-      border-color: #EA3A51;
+      border-color: #303a9b;
       top: -10px;
-      background-color: #EA3A51;
+      background-color: #303a9b;
     }
     .slider .mark {
       width: 2px;
@@ -48,7 +48,7 @@ const EMISlider : React.FC<EMISliderProps> = ({ MIN, MAX, value, setValue, steps
     .slider .track-1 {
       width: 100%;
       height: 4px;
-      background-color: #EA3A51;
+      background-color: #303a9b;
     }
   `;
 

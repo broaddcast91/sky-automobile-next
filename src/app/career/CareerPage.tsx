@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
+import { useAppContext } from "@/context";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import toast from "react-hot-toast";
 
@@ -27,6 +28,7 @@ const CareerPage: React.FC = () => {
     currentCTC: "",
     expectedCTC: "",
   });
+   const { selectedState } = useAppContext();
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -67,7 +69,16 @@ const CareerPage: React.FC = () => {
         </div>
         <div className="container min-h-[50vh] py-16 mx-auto xl:max-w-7xl lg:py-20 px-2">
           <h4 className="text-3xl font-bold text-primaryGray lg:mb-6">
-            Apply for a <span className="text-primaryRed">Position</span>
+            Apply for a{" "}
+            <span
+              className={`${
+                selectedState === "Odisha"
+                  ? "text-primaryBlue"
+                  : "text-primaryRed"
+              }`}
+            >
+              Position
+            </span>
             {formData.designation && (
               <span className="text-base"> ({formData.designation}) </span>
             )}
@@ -85,7 +96,11 @@ const CareerPage: React.FC = () => {
                 required
                 minLength={3}
                 maxLength={50}
-                className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none rounded-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 value={formData.name}
                 onChange={handleChange}
               />
@@ -94,7 +109,11 @@ const CareerPage: React.FC = () => {
                 name="email"
                 placeholder="Email*"
                 required
-                className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none rounded-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -107,7 +126,11 @@ const CareerPage: React.FC = () => {
                 maxLength={10}
                 pattern="^[0-9]{10}$"
                 title="Please enter a valid 10-digit phone number"
-                className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none rounded-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -120,7 +143,11 @@ const CareerPage: React.FC = () => {
                 maxLength={50}
                 pattern="^[a-zA-Z\s]+$"
                 title="Please enter a valid designation"
-                className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none rounded-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 value={formData.designation}
                 onChange={handleChange}
               />
@@ -133,7 +160,11 @@ const CareerPage: React.FC = () => {
                 maxLength={100}
                 pattern="^\d+\s*(years?|months?)$"
                 title="Please enter a valid experience in the format 'X years' or 'X months'"
-                className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none rounded-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 value={formData.experience}
                 onChange={handleChange}
               />
@@ -144,7 +175,11 @@ const CareerPage: React.FC = () => {
                 required
                 pattern="^\d+(?:\.\d{1,2})?$"
                 title="Please enter a valid current CTC in numbers (e.g., 50000, 50000.00)"
-                className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none rounded-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 value={formData.currentCTC}
                 onChange={handleChange}
               />
@@ -155,12 +190,20 @@ const CareerPage: React.FC = () => {
                 required
                 pattern="^\d+(?:\.\d{1,2})?$"
                 title="Please enter a valid expected CTC in numbers (e.g., 60000, 60000.00)"
-                className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none rounded-none"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 value={formData.expectedCTC}
                 onChange={handleChange}
               />
               <select
-                className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none"
+                className={`w-full p-2 bg-transparent border-b-2  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
                 name="noticePeriod"
                 required
                 value={formData.noticePeriod}
@@ -179,7 +222,9 @@ const CareerPage: React.FC = () => {
             </div>
             <button
               type="submit"
-              className="px-2 py-2 text-sm text-white duration-500 border rounded-md md:text-sm md:px-4 hover:shadow-lg bg-primaryRed whitespace-nowrap mt-6 min-w-40"
+              className={`px-2 py-2 text-sm text-white duration-500 border rounded-md md:text-sm md:px-4 hover:shadow-lg  whitespace-nowrap mt-6 min-w-40 ${
+                selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
+              }`}
             >
               Apply Now
             </button>

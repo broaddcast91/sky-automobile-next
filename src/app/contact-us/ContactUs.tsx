@@ -1,13 +1,8 @@
 "use client";
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
-import React, {
-  ChangeEvent,
-  FormEvent,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { useAppContext } from "@/context";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import toast from "react-hot-toast";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
@@ -29,6 +24,7 @@ const ContactUs: React.FC = () => {
     message: "",
     subject: "",
   });
+  const { selectedState } = useAppContext();
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -66,7 +62,10 @@ const ContactUs: React.FC = () => {
       <div className="container min-h-[50vh] py-16 mx-auto xl:max-w-7xl lg:py-20 px-2">
         <div className="mb-12 lg:mb-20 text-lg">
           <h4 className="text-3xl font-bold text-primaryGray mb-3 md:mb-6 ">
-            <span className="text-primaryRed">Contact </span> Us
+            <span className={`${selectedState === "Odisha" ? "text-primaryBlue" : "text-primaryRed"}`}>
+              Contact{" "}
+            </span>{" "}
+            Us
           </h4>
           <div className="grid lg:grid-cols-3 gap-4">
             <form
@@ -84,7 +83,11 @@ const ContactUs: React.FC = () => {
                   minLength={3}
                   maxLength={50}
                   title="Only alphabets are allowed with minimum 3 and maximum 50 characters"
-                  className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+                  className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                    selectedState === "Odisha"
+                      ? "border-b-primaryBlue"
+                      : "border-b-primaryRed"
+                  }`}
                   value={formData.name}
                   onChange={handleChange}
                 />
@@ -97,7 +100,11 @@ const ContactUs: React.FC = () => {
                   maxLength={10}
                   title="Only 10-digit Indian numbers are allowed"
                   pattern="^[0-9]{10}$"
-                  className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+                  className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                    selectedState === "Odisha"
+                      ? "border-b-primaryBlue"
+                      : "border-b-primaryRed"
+                  }`}
                   value={formData.phone}
                   onChange={handleChange}
                 />
@@ -108,12 +115,20 @@ const ContactUs: React.FC = () => {
                   minLength={3}
                   title="Please enter a valid email address"
                   pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
-                  className="w-full p-2 bg-transparent border-b-2 appearance-none border-b-primaryRed focus:outline-none rounded-none"
+                  className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                    selectedState === "Odisha"
+                      ? "border-b-primaryBlue"
+                      : "border-b-primaryRed"
+                  }`}
                   value={formData.email}
                   onChange={handleChange}
                 />
                 <select
-                  className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none"
+                  className={`w-full p-2 bg-transparent border-b-2   focus:outline-none rounded-none ${
+                    selectedState === "Odisha"
+                      ? "border-b-primaryBlue"
+                      : "border-b-primaryRed"
+                  }`}
                   name="subject"
                   required
                   value={formData.subject}
@@ -137,12 +152,20 @@ const ContactUs: React.FC = () => {
                   onChange={handleChange}
                   title="Maximum 500 characters allowed"
                   placeholder="Message (Optional)"
-                  className="w-full p-2 bg-transparent border-b-2 border-b-primaryRed focus:outline-none max-h-32 min-h-20 sm:col-span-2"
+                  className={`w-full p-2 bg-transparent border-b-2  focus:outline-none max-h-32 min-h-20 sm:col-span-2 ${
+                    selectedState === "Odisha"
+                      ? "border-b-primaryBlue"
+                      : "border-b-primaryRed"
+                  }`}
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="px-2 py-2 text-sm text-white duration-500 border rounded-md md:text-sm md:px-4 hover:shadow-lg bg-primaryRed whitespace-nowrap mt-6 min-w-40"
+                className={`px-2 py-2 text-sm text-white duration-500 border rounded-md md:text-sm md:px-4   whitespace-nowrap mt-6 min-w-40 hover:shadow-xl  ${
+                  selectedState === "Odisha"
+                    ? "bg-primaryBlue"
+                    : "bg-primaryRed"
+                }`}
               >
                 Submit
               </button>
@@ -153,12 +176,26 @@ const ContactUs: React.FC = () => {
             </form>
             <div className="lg:p-4 rounded-lg flex flex-col gap-2 lg:gap-4">
               <div className="flex items-center px-4 bg-secondaryGray4 rounded-lg gap-4 py-3 hover:shadow-xl duration-200 border">
-                <FaPhoneAlt className="text-5xl text-primaryRed p-3 rounded-full" />
+                <FaPhoneAlt
+                  className={`text-5xl  p-3 ${
+                    selectedState === "Odisha"
+                      ? " text-primaryBlue"
+                      : "text-primaryRed"
+                  } `}
+                />
                 <div>
-                  <p className="font-medium text-primaryRed">Sales:</p>
+                  <p
+                    className={`font-medium  ${
+                      selectedState === "Odisha"
+                        ? "text-primaryBlue"
+                        : "text-primaryRed"
+                    }`}
+                  >
+                    Sales:
+                  </p>
                   <a
                     href="tel:+91 1234567890"
-                    className="text-lg lg:text-xl"
+                    className="text-lg "
                     aria-label="Call"
                   >
                     +91 1234567890
@@ -166,12 +203,26 @@ const ContactUs: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-center px-4 bg-secondaryGray4 rounded-lg gap-4 py-3 hover:shadow-xl duration-200 border">
-                <FaPhoneAlt className="text-5xl text-primaryRed p-3 rounded-full" />
+                <FaPhoneAlt
+                  className={`text-5xl  p-3 ${
+                    selectedState === "Odisha"
+                      ? " text-primaryBlue"
+                      : "text-primaryRed"
+                  } `}
+                />
                 <div>
-                  <p className="font-medium text-primaryRed">Service:</p>
+                  <p
+                    className={`font-medium   ${
+                      selectedState === "Odisha"
+                        ? "text-primaryBlue"
+                        : "text-primaryRed"
+                    }`}
+                  >
+                    Service:
+                  </p>
                   <a
                     href="tel:+91 1234567890"
-                    className="text-lg lg:text-xl"
+                    className="text-lg"
                     aria-label="Call"
                   >
                     +91 1234567890
@@ -179,12 +230,26 @@ const ContactUs: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-center px-4 bg-secondaryGray4 rounded-lg gap-4 py-3 hover:shadow-xl duration-200 border">
-                <MdOutlineMailOutline className="text-5xl text-primaryRed p-3 rounded-full" />
+                <MdOutlineMailOutline
+                  className={`text-5xl  p-3 ${
+                    selectedState === "Odisha"
+                      ? " text-primaryBlue"
+                      : "text-primaryRed"
+                  } `}
+                />
                 <div>
-                  <p className="font-medium text-primaryRed">Email:</p>
+                  <p
+                    className={`font-medium  ${
+                      selectedState === "Odisha"
+                        ? "text-primaryBlue"
+                        : "text-primaryRed"
+                    }`}
+                  >
+                    Email:
+                  </p>
                   <a
                     href="mailto:xyz@xyz.xyz"
-                    className="text-lg lg:text-xl"
+                    className="text-lg "
                     aria-label="Email"
                   >
                     xyz@xyz.xyz
@@ -193,11 +258,29 @@ const ContactUs: React.FC = () => {
               </div>
               <div className="flex items-start px-4 bg-secondaryGray4 rounded-lg gap-4 py-3 hover:shadow-xl duration-200 border">
                 <div className="min-w-12">
-                  <FaMapMarkerAlt className="text-5xl text-primaryRed p-3 rounded-full" />
+                  <FaMapMarkerAlt
+                    className={`text-5xl  p-3 ${
+                      selectedState === "Odisha"
+                        ? " text-primaryBlue"
+                        : "text-primaryRed"
+                    } `}
+                  />
                 </div>
                 <div className="overflow-hidden">
-                  <p className="font-medium text-primaryRed">Head Office:</p>
-                  <a href="mailto:xyz@xyz.xyz" className="" aria-label="Email">
+                  <p
+                    className={`font-medium  ${
+                      selectedState === "Odisha"
+                        ? "text-primaryBlue"
+                        : "text-primaryRed"
+                    }`}
+                  >
+                    Head Office:
+                  </p>
+                  <a
+                    href="mailto:xyz@xyz.xyz"
+                    className="text-base"
+                    aria-label="Email"
+                  >
                     NH-16, Jagannathpur-Gopalpur Jn, Dist, Brahmapur, Odisha
                     760010
                   </a>

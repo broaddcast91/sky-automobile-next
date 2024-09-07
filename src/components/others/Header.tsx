@@ -244,7 +244,7 @@ const Header = () => {
               />
             </Link>
           </div>
-          <nav className="hidden gap-4 text-sm uppercase lg:gap-8 font-poppins lg:flex">
+          <nav className="hidden gap-4 text-sm uppercase lg:gap-6 xl:gap-8 font-poppins lg:flex">
             <Link
               onMouseEnter={() => setIsVehicle(false)}
               href="/about-us"
@@ -404,7 +404,8 @@ const Header = () => {
             </Link>
             <button
               type="button"
-              className={`flex items-center gap-1  px-2.5 py-1 hover:border hover:rounded-full  ${
+              aria-label="Select State"
+              className={`flex items-center gap-1  px-2.5 py-1.5 border rounded-full border-transparent hover:border-gray-200 hover:shadow-sm ${
                 selectedState === "Odisha"
                   ? "hover:text-primaryBlue"
                   : "hover:text-primaryRed"
@@ -413,7 +414,7 @@ const Header = () => {
             >
               <FaMapMarkerAlt className="" />
               {selectedState && (
-                <p className={`   `}>
+                <p className={`  text-sm `}>
                   {selectedState === "Odisha" ? "OD" : "CG"}
                 </p>
               )}

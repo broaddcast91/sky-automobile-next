@@ -95,7 +95,7 @@ const ModalSelectState: React.FC = () => {
           </div>
         </div>
         <p
-          className={`text-sm font-medium my-2 text-center text-primaryRed md:text-base ${
+          className={`text-sm font-medium my-2 text-center text-primaryBlue md:text-base ${
             isAnimate ? "animate-shake" : ""
           }`}
         >
