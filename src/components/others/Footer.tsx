@@ -2,47 +2,12 @@
 
 import Link from "next/link";
 import React from "react";
-import { BsTwitterX } from "react-icons/bs";
+
 import { FaFacebookF, FaLinkedin } from "react-icons/fa";
 import { LuInstagram } from "react-icons/lu";
 import { useAppContext } from "@/context";
 
-const SocialMediaLinks: React.FC<{ selectedState: string }> = React.memo(
-  ({ selectedState }) => (
-    <div className="flex justify-center gap-4 mt-8 text-white md:justify-start">
-      <FaFacebookF
-        className={`cursor-pointer ${
-          selectedState === "Odisha"
-            ? "hover:text-primaryBlue"
-            : "hover:text-primaryRed"
-        }`}
-      />
-      <LuInstagram
-        className={`cursor-pointer ${
-          selectedState === "Odisha"
-            ? "hover:text-primaryBlue"
-            : "hover:text-primaryRed"
-        }`}
-      />
-      <BsTwitterX
-        className={`cursor-pointer ${
-          selectedState === "Odisha"
-            ? "hover:text-primaryBlue"
-            : "hover:text-primaryRed"
-        }`}
-      />
-      <FaLinkedin
-        className={`cursor-pointer ${
-          selectedState === "Odisha"
-            ? "hover:text-primaryBlue"
-            : "hover:text-primaryRed"
-        }`}
-      />
-    </div>
-  )
-);
 
-SocialMediaLinks.displayName = "SocialMediaLinks";
 
 const NavigationLinks: React.FC<{
   title: string;
@@ -95,7 +60,29 @@ const Footer: React.FC = () => {
                 Sky Automobiles India Pvt. Ltd. is an Indian automobile dealer
                 company.
               </p>
-              <SocialMediaLinks selectedState={selectedState} />
+              <div className="flex justify-center gap-4 mt-4 text-white md:justify-start lg:text-lg">
+                {" "}
+                <a
+                  href="https://www.facebook.com/profile.php?id=100057528455659"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <FaFacebookF />
+                </a>
+                <a href="https://www.instagram.com/sky.automobiles/">
+                  {" "}
+                  <LuInstagram />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/skyautomobiles/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <FaLinkedin />
+                </a>
+              </div>
             </div>
             <div className="grid gap-8 lg:col-span-2 grid-cols-2 lg:grid-cols-4">
               <NavigationLinks

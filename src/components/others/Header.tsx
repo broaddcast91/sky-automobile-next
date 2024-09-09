@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { BsTwitterX } from "react-icons/bs";
+
 import { FaCaretRight, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { FaFacebookF, FaLinkedin } from "react-icons/fa6";
 import { IoMailSharp } from "react-icons/io5";
@@ -194,10 +194,27 @@ const Header = () => {
             </div>
           </div>
           <div className="hidden gap-4 md:flex">
-            <FaFacebookF />
-            <LuInstagram />
-            <BsTwitterX />
-            <FaLinkedin />
+            <a
+              href="https://www.facebook.com/profile.php?id=100057528455659"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {" "}
+              <FaFacebookF />
+            </a>
+            <a href="https://www.instagram.com/sky.automobiles/">
+              {" "}
+              <LuInstagram />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/company/skyautomobiles/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {" "}
+              <FaLinkedin />
+            </a>
           </div>
         </div>
       </div>
