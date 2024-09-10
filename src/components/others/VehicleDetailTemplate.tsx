@@ -175,7 +175,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
       </div>
 
       <div className="container mx-auto xl:max-w-7xl bg-white py-10 lg:pt-20">
-        <h4 className="text-3xl font-bold text-primaryGray lg:mb-6">
+        <h4 className="sm:text-3xl font-bold text-primaryGray lg:mb-6 text-2xl">
           Book your{" "}
           <span
             className={` ${

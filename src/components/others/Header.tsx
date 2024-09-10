@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 
 import { FaCaretRight, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { FaFacebookF, FaLinkedin } from "react-icons/fa6";
-import { IoMailSharp } from "react-icons/io5";
+import { IoClose, IoMailSharp } from "react-icons/io5";
 import { LuInstagram } from "react-icons/lu";
 import { RiMenu3Fill } from "react-icons/ri";
 import { usePathname } from "next/navigation";
@@ -17,6 +17,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isVehicle, setIsVehicle] = useState(false);
   const [selectedTab, setSelectedTab] = useState(0);
+  const [showSidePanel, setShowSidePanel] = useState(false);
   const { selectedState, setOpenSelectState } = useAppContext();
   // const { pathname } = useNavigate();
   const pathname = usePathname();
@@ -285,14 +286,6 @@ const Header = () => {
             >
               Offers
             </button> */}
-            <Link
-              href="/offers"
-              className={` md:px-6 py-2 rounded-full uppercase   text-white md:shadow-xl md:text-sm px-4 text-xs ${
-                selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
-              }  `}
-            >
-              Offers
-            </Link>
             <button
               type="button"
               aria-label="Select State"
@@ -311,15 +304,31 @@ const Header = () => {
               )}
               <FaCaretRight className="rotate-90" />
             </button>{" "}
-            <div className="lg:hidden">
-              <RiMenu3Fill
-                className={`text-3xl  ${
-                  selectedState === "Odisha"
-                    ? "text-primaryBlue"
-                    : "text-primaryRed"
-                }  `}
-              />
-            </div>
+            <Link
+              href="/offers"
+              className={` md:px-6 py-2 rounded-full uppercase   text-white md:shadow-xl md:text-sm px-4 text-xs ${
+                selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
+              }  `}
+            >
+              Offers
+            </Link>
+            <button
+              aria-label="Menu"
+              onClick={() => setShowSidePanel(!showSidePanel)}
+              className={`lg:hidden flex justify-center items-center text-white p-1.5 text-3xl rounded-lg ${
+                selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
+              } `}
+            >
+              {showSidePanel ? (
+                <IoClose />
+              ) : (
+                <>
+                  {" "}
+                  {/* <p className="  sm:block lg:hidden"> Menu</p>{" "} */}
+                  <RiMenu3Fill />
+                </>
+              )}
+            </button>
           </div>
         </div>
         {isVehicle && (
@@ -439,7 +448,7 @@ const Header = () => {
           </div>
         )}
       </div>
-      <ModalSidePannel />
+      {showSidePanel && <ModalSidePannel setShowSidePanel={setShowSidePanel} />}
     </header>
   );
 };
