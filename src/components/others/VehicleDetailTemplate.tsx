@@ -52,7 +52,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    console.log("Form Data:", { ...formData, state: "Odisa" });
+    console.log("Form Data:", { ...formData, state: selectedState });
     toast.success("Thank You for contacting us. We will get back to you soon!");
     setFormData({
       name: "",

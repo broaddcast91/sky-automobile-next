@@ -1,6 +1,7 @@
 "use client";
 import { useAppContext } from "@/context";
 import React from "react";
+import { BiSolidOffer } from "react-icons/bi";
 import { CiCircleQuestion } from "react-icons/ci";
 import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 import { MdLocalPhone } from "react-icons/md";
@@ -11,9 +12,10 @@ interface ActionItemProps {
   Icon: React.ElementType;
   label: string;
   ariaLabel: string;
+  btnName?: string;
 }
 
-const ActionItem: React.FC<ActionItemProps> = ({ Icon, label, ariaLabel }) => {
+const ActionItem: React.FC<ActionItemProps> = ({ Icon, label, ariaLabel, btnName }) => {
   const { selectedState } = useAppContext();
   return (
     <div
@@ -30,13 +32,13 @@ const ActionItem: React.FC<ActionItemProps> = ({ Icon, label, ariaLabel }) => {
         />
       </div>
       <div className="flex flex-col items-center md:items-start">
-        <p className="text-center max-w-60 text-primaryGray group-hover:text-white md:text-left">
+        <p className="text-center max-w-64 text-primaryGray group-hover:text-white md:text-left text-sm ">
           {label}
         </p>
         <button
           className={`px-4 py-2 mx-auto mt-4 text-sm border rounded-lg group-hover:border-white hover:bg-white  md:mx-0 ${selectedState === "Odisha" ? "hover:text-primaryBlue" : "hover:text-primaryRed"}`}
         >
-          Know More
+          {btnName}
         </button>
       </div>
     </div>
@@ -49,26 +51,30 @@ const QuickActions: React.FC = () => {
       <h4 className="mb-6 text-3xl font-bold text-center text-primaryGray lg:mb-10">
         Quick Actions
       </h4>
-      <div className="grid grid-cols-2 px-2">
+      <div className="grid grid-cols-2 px-2 ">
         <ActionItem
-          Icon={CiCircleQuestion}
-          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-          ariaLabel="Book Your Car Now"
+          Icon={BiSolidOffer}
+          label="Unlock exclusive savings and promotions on your next vehicle or service."
+          ariaLabel="Book Your Car "
+          btnName="View  Offers"
         />
         <ActionItem
           Icon={PiSteeringWheel}
-          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          label="Experience your dream car firsthand by scheduling a test drive."
           ariaLabel="Steering Wheel Icon"
+          btnName="Book A Test Drive "
         />
         <ActionItem
           Icon={HiOutlineWrenchScrewdriver}
-          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          label="Schedule expert maintenance and repairs for your vehicle with ease."
           ariaLabel="Wrench Icon"
+          btnName="Book A Service "
         />
         <ActionItem
           Icon={MdLocalPhone}
-          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          label="Reserve your ideal car today and start driving your dream vehicle."
           ariaLabel="Phone Icon"
+          btnName="Book Your Dream Car "
         />
       </div>
     </div>

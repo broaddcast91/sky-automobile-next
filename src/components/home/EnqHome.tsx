@@ -34,7 +34,7 @@ const EnqHome: React.FC = () => {
   // Handle form submission
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    console.log("Form Data:", { ...formData, state: "Odisa" });
+    console.log("Form Data:", { ...formData, state: selectedState });
     toast.success("Thank You for contacting us. We will get back to you soon!");
     // Optionally, reset form state after submission
     setFormData({

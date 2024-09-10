@@ -94,7 +94,7 @@ const Finance: React.FC = () => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Form Data:", { ...formData, state: "Odisa" });
+    console.log("Form Data:", { ...formData, state: selectedState });
     toast.success("Thank You for contacting us. We will get back to you soon!");
 
     // Reset the form after submission

@@ -41,7 +41,7 @@ const WhyChooseUs: React.FC = () => {
                 selectedState === "Odisha" ? "text-white" : "text-primaryRed"
               }`}
             >
-              500000+ Happy Customers
+              5,00,000+ Happy Customers
             </h4>
             <p className="text-sm text-white ">
               Driven by years of conviction and experience, Our brand is a name
@@ -71,7 +71,7 @@ const WhyChooseUs: React.FC = () => {
                 selectedState === "Odisha" ? "text-white " : "text-primaryRed "
               }`}
             >
-              200000+ Vehicle Sold
+              2,00,000+ Vehicle Sold
             </h4>
             <p className="text-sm text-white ">
               Over 2 lakh vehicles sold, experience our commitment to quality
