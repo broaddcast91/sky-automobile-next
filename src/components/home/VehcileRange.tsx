@@ -12,7 +12,7 @@ const VehcileRange = () => {
         <h4 className="text-3xl font-bold text-center text-primaryGray">
           Our Vehicle Range
         </h4>
-        <div className="flex justify-center gap-3 mt-4 lg:text-xl">
+        <div className="flex justify-center gap-3 mt-4 text-xl">
           {/* <button
             onClick={() => setSelected("All")}
             className={` font-semibold px-2 border-b-2  ${

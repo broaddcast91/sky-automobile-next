@@ -78,7 +78,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
   return (
     <div className="">
       <Header />
-      <div className="px-1 py-20 bg-primaryGray lg:py-20 min-h-[80vh] flex flex-col justify-center">
+      <div className="px-1 py-28 bg-primaryGray lg:py-20 min-h-[80vh] flex flex-col justify-center">
         <div className="container grid items-center mx-auto text-white md:grid-cols-2 xl:max-w-7xl">
           <div>
             <h1 className="mb-4 text-3xl font-bold lg:text-4xl">
@@ -272,7 +272,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
         <h4 className="text-2xl font-bold text-primaryGray lg:mb-3">
           Variants & Prices
         </h4>
-        <h5 className="text-lg font-medium text-primaryGray lg:mb-4">
+        <h5 className="text-lg font-medium text-primaryGray mb-4">
           Ex-Showroom
         </h5>
         <div className="overflow-x-auto">
@@ -385,7 +385,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
         <h4 className="text-2xl font-bold text-primaryGray lg:mb-6">
           Key Specifications
         </h4>
-        <div className="grid gap-4 md:grid-cols-2 md:gap-16 lg:gap-28">
+        <div className="grid sm:gap-4 md:grid-cols-2 md:gap-16 lg:gap-28">
           <div className="overflow-x-auto">
             {data?.keySpecifications?.slice(0, 7).map((key, index) => (
               <div

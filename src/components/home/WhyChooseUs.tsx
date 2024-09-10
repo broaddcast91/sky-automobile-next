@@ -5,7 +5,7 @@ import React from "react";
 const WhyChooseUs: React.FC = () => {
   const { selectedState } = useAppContext();
   return (
-    <div className="py-10 bg-primaryGray md:py-16 lg:py-20">
+    <div className="py-12 bg-primaryGray md:py-16 lg:py-20">
       <div className="container mx-auto xl:max-w-6xl">
         <h4 className="mb-6 text-3xl font-bold text-center text-white lg:mb-14">
           Why Choose Us

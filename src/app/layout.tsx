@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { AppWrapper } from "@/context";
 import ModalSelectState from "@/components/others/ModalSelectState";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({
         <AppWrapper>
           {children}
           <ModalSelectState />
+        
         </AppWrapper>
         <Toaster />
       </body>

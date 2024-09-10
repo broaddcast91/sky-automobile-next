@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { useAppContext } from "@/context";
 import { models } from "@/constants";
+import ModalSidePannel from "./ModalSidePannel";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -109,7 +110,7 @@ const Header = () => {
             <Link onMouseEnter={() => setIsVehicle(false)} href="/">
               {/* {scrolled ? ( */}
               <Image
-                  src="/images/other/logo.png"
+                src="/images/other/logo.png"
                 // src={require("../assets/logo2_sky.png")}
                 alt="logo"
                 width={300}
@@ -121,7 +122,7 @@ const Header = () => {
                 }`}
               />
               <Image
-                   src="/images/other/logo-white.png"
+                src="/images/other/logo-white.png"
                 // src={require("../assets/logo2_sky.png")}
                 alt="logo"
                 width={300}
@@ -286,7 +287,7 @@ const Header = () => {
             </button> */}
             <Link
               href="/offers"
-              className={` md:px-6 py-2 rounded-full uppercase   text-white shadow-xl md:text-sm px-4 text-xs ${
+              className={` md:px-6 py-2 rounded-full uppercase   text-white md:shadow-xl md:text-sm px-4 text-xs ${
                 selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
               }  `}
             >
@@ -438,6 +439,7 @@ const Header = () => {
           </div>
         )}
       </div>
+      <ModalSidePannel />
     </header>
   );
 };
