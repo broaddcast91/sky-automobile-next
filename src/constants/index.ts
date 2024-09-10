@@ -285,22 +285,7 @@ export const models = [
         img: "/images/slider/swift/in-7.webp",
         title: "",
       },
-      // {
-      //   img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-6.webp",
-      //   title: "",
-      // },
-      // {
-      //   img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-8.webp",
-      //   title: "",
-      // },
-      // {
-      //   img: "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/cars/swift-2024/slider/interior/in-9.webp",
-      //   title: "",
-      // },
-      // {
-      //   img: "",
-      //   title: "",
-      // },
+     
     ],
     carDetails: [
       {
@@ -2462,23 +2447,23 @@ export const models = [
     ],
     exterior: [
       {
-        img: "/images/car/nexa/ciaz/Saboo-Nexa-Ciaz-Exterior-Metal-Grille.webp",
+        img: "/images/car/nexa/ciaz/Ciaz-Exterior-Metal-Grille.webp",
         title: "Metal Grille",
       },
       {
-        img: "/images/car/nexa/ciaz/Saboo-Nexa-Ciaz-Exterior-Back-Lamp.webp",
+        img: "/images/car/nexa/ciaz/Ciaz-Exterior-Back-Lamp.webp",
         title: "LED Tail Lamp",
       },
       {
-        img: "/images/car/nexa/ciaz/Saboo-Nexa-Ciaz-Exterior-Led-Projector-Head-Lamps.webp",
+        img: "/images/car/nexa/ciaz/Ciaz-Exterior-Led-Projector-Head-Lamps.webp",
         title: "LED Projector Headlamps",
       },
       {
-        img: "/images/car/nexa/ciaz/Saboo-Nexa-Ciaz-Exterior-Fog-Lamp.webp",
+        img: "/images/car/nexa/ciaz/Ciaz-Exterior-Fog-Lamp.webp",
         title: "Fog Lamps",
       },
       {
-        img: "/images/car/nexa/ciaz/Saboo-Nexa-Ciaz-Alloy-Wheels.webp",
+        img: "/images/car/nexa/ciaz/Ciaz-Alloy-Wheels.webp",
         title: "Alloy Wheels",
       },
     ],

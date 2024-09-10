@@ -109,8 +109,7 @@ const Header = () => {
             <Link onMouseEnter={() => setIsVehicle(false)} href="/">
               {/* {scrolled ? ( */}
               <Image
-                // src="https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/logos/new-hic-logo-2024-webp.webp"
-                src="/images/other/logo.png"
+                  src="/images/other/logo.png"
                 // src={require("../assets/logo2_sky.png")}
                 alt="logo"
                 width={300}
@@ -122,8 +121,7 @@ const Header = () => {
                 }`}
               />
               <Image
-                // src="https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/logos/new-hic-logo-2024-webp.webp"
-                src="/images/other/logo-white.png"
+                   src="/images/other/logo-white.png"
                 // src={require("../assets/logo2_sky.png")}
                 alt="logo"
                 width={300}
