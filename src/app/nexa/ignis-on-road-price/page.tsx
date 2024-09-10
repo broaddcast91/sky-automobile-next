@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const Ignis: React.FC = () => {
   return (
     <div>
-      <VehicleDetailTemplate index={15} />
+      <VehicleDetailTemplate index={16} />
     </div>
   );
 };

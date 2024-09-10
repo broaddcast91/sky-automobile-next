@@ -10,6 +10,7 @@ import { RiMenu3Fill } from "react-icons/ri";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { useAppContext } from "@/context";
+import { models } from "@/constants";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -18,132 +19,6 @@ const Header = () => {
   const { selectedState, setOpenSelectState } = useAppContext();
   // const { pathname } = useNavigate();
   const pathname = usePathname();
-
-  const nexaData = [
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/Invicto_final.png",
-      title: "Invicto",
-      description: "The League of Extraordinary",
-      to: "/nexa/invicto-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/Jimny_final.png",
-      title: "Jimny",
-      description: "Crafted for Purity of Function",
-      to: "/nexa/jimny-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/ciaz.png",
-      title: "Ciaz",
-      description: "Created To Inspire Elegance",
-      to: "/nexa/ciaz-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/GV_final.png",
-      title: "Grand Vitara",
-      description: "The League of Extraordinary",
-      to: "/nexa/grand-vitara-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/xl6_final.png",
-      title: "XL6",
-      description: "Created to Inspire Indulgence.",
-      to: "/nexa/xl6-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/fronx_final.png",
-      title: "Fronx",
-      description: "Created to Inspire Style and Performance.",
-      to: "/nexa/fronx-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/baleno_final.png",
-      title: "Baleno",
-      description: "Created to Inspire The Bold and Intelligent",
-      to: "/nexa/baleno-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/ignis_final.png",
-      title: "Ignis",
-      description: "Created to Inspire The Toughness in You.",
-      to: "/nexa/ignis-on-road-price",
-    },
-  ];
-
-  const arenaData = [
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/Swift+Tile+Image.webp",
-      title: "Swift",
-      description: "",
-      to: "/arena/swift-on-road-price",
-    },
-
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-k10.webp",
-      title: "Alto K10",
-      description: "",
-      to: "/arena/alto-k10-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-brezza.webp",
-      title: "Brezza",
-      description: "",
-      to: "/arena/brezza-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-dzire.webp",
-      title: "Dzire",
-      description: "",
-      to: "/arena/dzire-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-spresso.webp",
-      title: "Spresso",
-      description: "",
-      to: "/arena/spresso-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-wagonr.webp",
-      title: "WangnoR",
-      description: "",
-      to: "/arena/wagon-r-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-ertiga.webp",
-      title: "Ertiga",
-      description: "",
-      to: "/arena/ertiga-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-celerio.webp",
-      title: "Celerio",
-      description: "",
-      to: "/arena/celerio-on-road-price",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/Arena/thumnails/arena-eeco.webp",
-      title: "Ecco",
-      description: "",
-      to: "/arena/eeco-on-road-price",
-    },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -499,11 +374,11 @@ const Header = () => {
               } `}
             >
               {selectedTab === 0 &&
-                arenaData.map((slide, index) => (
+                models.slice(0, 9).map((slide, index) => (
                   <Link
                     onClick={() => setIsVehicle(false)}
                     key={index}
-                    href={slide.to}
+                    href={slide.link}
                   >
                     <div
                       className={`rounded-xl hover:shadow-lg   cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1 ${
@@ -513,24 +388,24 @@ const Header = () => {
                       }  hover:text-white`}
                     >
                       <img
-                        src={slide.image}
-                        alt={slide.title}
+                        src={slide.thumbnail}
+                        alt={slide.subName}
                         loading="lazy"
-                        className="scale-x-[-1] mb-4  h-32 w-auto mx-auto  "
+                        className=" mb-4  h-32 w-auto mx-auto  "
                       />
 
                       <h5 className="text-lg font-bold text-center uppercase lg:text-xl lg:font-extrabold ">
-                        {slide.title}
+                        {slide.subName}
                       </h5>
                     </div>
                   </Link>
                 ))}
               {selectedTab === 1 &&
-                nexaData.map((slide, index) => (
+                models.slice(9).map((slide, index) => (
                   <Link
                     onClick={() => setIsVehicle(false)}
                     key={index}
-                    href={slide.to}
+                    href={slide.link}
                   >
                     <div
                       className={`rounded-xl hover:shadow-lg  ${
@@ -542,15 +417,15 @@ const Header = () => {
                       <div className="">
                         {" "}
                         <img
-                          src={slide.image}
-                          alt={slide.title}
+                          src={slide.thumbnail}
+                          alt={slide.subName}
                           loading="lazy"
-                          className="scale-x-[-1] mb-4 px-2 h-24 w-auto mx-auto "
+                          className=" mb-4 px-2 h-36 w-auto mx-auto "
                         />
                       </div>
 
                       <h5 className="text-lg font-bold text-center uppercase lg:text-xl lg:font-extrabold ">
-                        {slide.title}
+                        {slide.subName}
                       </h5>
                       {/* <p className="text-sm text-center ">
                         {slide.description}

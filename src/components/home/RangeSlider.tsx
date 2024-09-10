@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -11,67 +11,39 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Link from "next/link";
 import { Autoplay, Navigation } from "swiper/modules";
 import { useAppContext } from "@/context";
+import { models } from "@/constants";
 
-const RangeSlider: React.FC = () => {
-   const { selectedState } = useAppContext();
-  const slideData = [
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/Invicto_final.png",
-      title: "Invicto",
-      description: "The League of Extraordinary",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/Jimny_final.png",
-      title: "Jimny",
-      description: "Crafted for Purity of Function",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/ciaz.png",
-      title: "Ciaz",
-      description: "Created To Inspire Elegance",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/GV_final.png",
-      title: "Grand Vitara",
-      description: "The League of Extraordinary",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/xl6_final.png",
-      title: "XL6",
-      description: "Created to Inspire Indulgence.",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/fronx_final.png",
-      title: "Fronx",
-      description: "Created to Inspire Style and Performance.",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/baleno_final.png",
-      title: "Baleno",
-      description: "Created to Inspire The Bold and Intelligent",
-    },
-    {
-      image:
-        "https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/nexa/thumbnails/ignis_final.png",
-      title: "Ignis",
-      description: "Created to Inspire The Toughness in You.",
-    },
-  ];
+interface SlideProps {
+  selected: string;
+}
 
+const RangeSlider: React.FC<SlideProps> = ({ selected }) => {
+  const { selectedState } = useAppContext();
   const navigationPrevRef = useRef<HTMLDivElement | null>(null);
   const navigationNextRef = useRef<HTMLDivElement | null>(null);
+  const swiperRef = useRef<any>(null); // Create a reference for Swiper instance
+
+  // Determine the slide data based on the selected prop
+  const filteredModels =
+    selected === "Nexa"
+      ? models.slice(9)
+      : selected === "Arena"
+      ? models.slice(0, 9)
+      : models;
+
+  // Reset Swiper slide to 0 whenever `selected` changes
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.slideTo(0); // Slide to index 0
+    }
+  }, [selected]);
 
   return (
     <div className="pl-2 overflow-visible select-none">
       <Swiper
-      
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }} // Set swiperRef to the Swiper instance
         navigation={{
           nextEl: navigationNextRef.current,
           prevEl: navigationPrevRef.current,
@@ -107,27 +79,28 @@ const RangeSlider: React.FC = () => {
             spaceBetween: 20,
           },
         }}
-        modules={[ Navigation, Autoplay]}
+        modules={[Navigation, Autoplay]}
         className="relative mx-4 overflow-visible mySwiper"
       >
-        {slideData.map((slide, index) => (
+        {filteredModels?.map((slide, index) => (
           <SwiperSlide key={index} className="mt-4">
-            <Link href="/arena/alto-k10-on-road-price">
+            <Link href={slide.link}>
               <div
-                className={`rounded-xl hover:shadow-lg  cursor-pointer w-[400px] py-10 px-2 flex flex-col gap-1 group ${
+                className={`rounded-xl overflow-hidden hover:shadow-lg cursor-pointer w-[400px] py-10 px-2 flex flex-col gap-1 group ${
                   selectedState === "Odisha"
                     ? "hover:bg-primaryBlue"
                     : "hover:bg-primaryRed"
-                }
- `}
+                }`}
               >
                 <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="scale-x-[-1] mb-4 px-2 lg:px-0"
+                  src={slide.thumbnail}
+                  alt={slide.subName}
+                  className={`scale-x-[-1] mb-4 px-2 lg:px-0  mx-auto ${
+                    selected === "Nexa" ? "max-w-[290px]" : "max-w-[350px]"
+                  }`}
                 />
                 <h5 className="text-xl font-bold text-center uppercase group-hover:text-white lg:text-2xl lg:font-extrabold">
-                  {slide.title}
+                  {slide.subName}
                 </h5>
                 <p className="text-center group-hover:text-secondaryGray3">
                   {slide.description}
@@ -140,7 +113,7 @@ const RangeSlider: React.FC = () => {
         <div className="flex justify-center gap-4 my-6">
           <div
             ref={navigationPrevRef}
-            className={`flex items-center justify-center w-10 h-10 text-xl font-bold border-2 rounded-full cursor-pointer hover:text-white  border-secondaryGray2  ${
+            className={`flex items-center justify-center w-10 h-10 text-xl font-bold border-2 rounded-full cursor-pointer hover:text-white border-secondaryGray2 ${
               selectedState === "Odisha"
                 ? "hover:border-primaryBlue hover:bg-primaryBlue"
                 : "hover:border-primaryRed hover:bg-primaryRed"
@@ -150,7 +123,7 @@ const RangeSlider: React.FC = () => {
           </div>
           <div
             ref={navigationNextRef}
-            className={`flex items-center justify-center w-10 h-10 text-xl font-bold border-2 rounded-full cursor-pointer hover:text-white  border-secondaryGray2 ${
+            className={`flex items-center justify-center w-10 h-10 text-xl font-bold border-2 rounded-full cursor-pointer hover:text-white border-secondaryGray2 ${
               selectedState === "Odisha"
                 ? "hover:border-primaryBlue hover:bg-primaryBlue"
                 : "hover:border-primaryRed hover:bg-primaryRed"

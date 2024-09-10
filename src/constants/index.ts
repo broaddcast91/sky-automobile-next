@@ -157,6 +157,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
+    thumbnail: "/thumbnail/altoK10.webp",
     priceRange: `₹7.49L - ₹15.49L *`,
     brochure:
       "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/Alto-Brochure-and-Spec-Sheet.pdf",
@@ -363,6 +364,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
+    thumbnail: "/thumbnail/swift02.webp",
     priceRange: `₹ 6.49-9.5 Lakhs *`,
     brochure:
       "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/Vertical_Brochure_NEW.pdf",
@@ -565,6 +567,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
+    thumbnail: "/thumbnail/brezza-page.webp",
     priceRange: `₹ 8.34 - 14.14 Lakh *`,
     brochure:
       "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/9299_S_Brezza_6_Page_CNG_Brochure.pdf",
@@ -739,6 +742,7 @@ export const models = [
         transmission: "Manual",
       },
     ],
+    thumbnail: "/thumbnail/dzire.webp",
     priceRange: "₹ 6.80 - 9.50 Lakh *",
     brochure:
       "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/Dzire_6_Pages_Vertical_Web_Brochure_Updated_with_S_CNG.pdf",
@@ -872,26 +876,21 @@ export const models = [
       { label: "Power", value: "50 kW @ 5500 rpm" },
     ],
     variants: [
-      { variant: "NEW CELERIO LXI", price: 536500, transmission: "Manual" },
-      { variant: "NEW CELERIO VXI", price: 583500, transmission: "Manual" },
+      { variant: "NEW SPRESSO LXI", price: 499500, transmission: "Manual" },
+      { variant: "NEW SPRESSO VXI", price: 521500, transmission: "Manual" },
       {
-        variant: "NEW CELERIO VXI-AGS",
-        price: 628500,
+        variant: "NEW SPRESSO VXI-AGS",
+        price: 566500,
         transmission: "Automatic",
       },
-      { variant: "NEW CELERIO ZXI", price: 611500, transmission: "Manual" },
+      { variant: "NEW SPRESSO VXI+", price: 550500, transmission: "Manual" },
       {
-        variant: "NEW CELERIO ZXI-AGS",
-        price: 656500,
-        transmission: "Automatic",
-      },
-      { variant: "NEW CELERIO ZXI+", price: 659500, transmission: "Manual" },
-      {
-        variant: "NEW CELERIO ZXI+-AGS",
-        price: 704500,
+        variant: "NEW SPRESSO VXI+ AGS",
+        price: 595500,
         transmission: "Automatic",
       },
     ],
+    thumbnail: "/thumbnail/spresso.webp",
     priceRange: "₹ 4.27 - 5.90 Lakh *",
     brochure:
       "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/SpressoBrochure_Spresso_6_pager_brochure_Red_car_A4_Digital_new.pdf",
@@ -1081,6 +1080,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
+    thumbnail: "/thumbnail/wagnor.webp",
     priceRange: "₹ 5.54 - 7.14 Lakh *",
     brochure:
       "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/WagonR%20MMC%20Brochure_NEW_1.pdf",
@@ -1242,6 +1242,7 @@ export const models = [
       },
       { variant: "ERTIGA TOUR M 1.5L", price: 980000, transmission: "Manual" },
     ],
+    thumbnail: "/thumbnail/ertiga.webp",
     priceRange: "₹ 8.64 - 11.50 Lakh *",
     brochure:
       "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/Updated-Ertiga-Brochure-60Pgs.pdf",
@@ -1386,6 +1387,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
+    thumbnail: "/thumbnail/celerio.webp",
     priceRange: "₹ 5.35 - 6.87 Lakh *",
     brochure:
       "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/15_Page_Brochure_Celerio_Digital.pdf",
@@ -1543,15 +1545,147 @@ export const models = [
         transmission: "Manual",
       },
     ],
+    thumbnail: "/thumbnail/Eeco.webp",
     priceRange: "₹ 5.40 - 6.67 Lakh *",
     brochure:
       "https://marutistoragenew.blob.core.windows.net/msilintiwebpdf/Eeco-Passenger-BRAND-Leaflet.pdf",
   },
-
-  // Maruti Jimny -9
+  // Invicto - 9
+  {
+    name: "Maruti Invicto",
+    subName: "Invicto",
+    description: "The League of Extraordinary",
+    offersAmount: 0,
+    offersAdditionalDec: "",
+    link: "/nexa/invicto-on-road-price",
+    offerValidTill: "Sep 30, 2024",
+    colors: [
+      {
+        img: "/images/car/nexa/invicto/Blue_810 x 411.webp",
+        colorCode: "#183F66",
+        colName: "NEXA BLUE (CELESTIAL)",
+      },
+      {
+        img: "/images/car/nexa/invicto/AVANT_GRADE_BRONZE_810 x 411 webp.webp",
+        colorCode: "#7A756E",
+        colName: "STELLAR BRONZE",
+      },
+      {
+        img: "/images/car/nexa/invicto/MAJESTIC_SILVER_810 x 411 webp.webp",
+        colorCode: "#AFB3B8",
+        colName: "MAJESTIC SILVER",
+      },
+      {
+        img: "/images/car/nexa/invicto/PLATINUM_WHITE_810 x 411 webp.webp",
+        colorCode: "#EEEFF0",
+        colName: "MYSTIC WHITE",
+      },
+      {
+        img: "/images/car/nexa/invicto/Magnificent Black.webp",
+        colorCode: "#0F1012",
+        colName: "MAGNIFICENT BLACK",
+      },
+    ],
+    keySpecifications: [
+      { label: "Fuel Tank Capacity", value: "52 Litres" },
+      { label: "Seating Capacity", value: "7/8" },
+      { label: "Length", value: "4755 mm" },
+      { label: "Width", value: "1845 mm" },
+      { label: "Height", value: "1795 mm" },
+      { label: "Front Suspension", value: "Independent, McPherson Strut" },
+      { label: "Rear Suspension", value: "Torsion Beam" },
+      { label: "Fuel Type", value: "Petrol" },
+      { label: "No. of Cylinders", value: "4" },
+      { label: "Max Torque", value: "250 Nm @ 2000 rpm" },
+      { label: "Transmission Type", value: "Manual/Automatic" },
+      { label: "Body Type", value: "SUV" },
+      { label: "Wheel Base", value: "2850 mm" },
+      { label: "Gearbox", value: "6-Speed/Auto" },
+    ],
+    exterior: [
+      {
+        img: "https://nexaprod3.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/extr-img-3-jpg.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/extr-img-5-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod1.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/extr-img-4-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/extr-img-2-jpg.webp",
+        title: "",
+      },
+    ],
+    interior: [
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/intr-img-2-jpg.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod1.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/intr-img-1-jpg.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-4-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod3.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-5-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-6-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-7-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-8-webp.webp",
+        title: "",
+      },
+      {
+        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/intr-img-3-jpg.webp",
+        title: "",
+      },
+    ],
+    carDetails: [
+      { label: "Engine", value: "1987 cc" },
+      { label: "Mileage", value: "23.24 kmpl" },
+      { label: "Power", value: "112 kW @ 6000 rpm" },
+    ],
+    variants: [
+      {
+        variant: " ALPHA+ 7S E-CVT",
+        price: 2901500,
+        transmission: "Automatic",
+      },
+      {
+        variant: " ZETA+ 8S E-CVT",
+        price: 2535500,
+        transmission: "Automatic",
+      },
+      {
+        variant: " ZETA+ 7S E-CVT",
+        price: 2530500,
+        transmission: "Automatic",
+      },
+    ],
+    thumbnail: "/thumbnail/Invicto.webp",
+    priceRange: "₹ 25.305 - 29.015 Lakh *",
+    brochure:
+      "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/invicto-brochure_invicto-pdf.pdf",
+  },
+  // Maruti Jimny -10
   {
     name: "Maruti Jimny",
     subName: "Jimny",
+    description: "Crafted for Purity of Function",
     offersAmount: 100000,
     offersAdditionalDec: "+ 1.5 Lakh MSSF Offer",
     link: "/nexa/jimny-on-road-price",
@@ -1695,14 +1829,16 @@ export const models = [
         transmission: "Manual",
       },
     ],
+    thumbnail: "/thumbnail/Jimny.webp",
     priceRange: "₹ 12.74 - 14.95 Lakh*",
     brochure:
       "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/rocky/jimny_brochure.pdf#element_submenu",
   },
-  // Maruti Fronx - 10
+  // Maruti Fronx - 11
   {
     name: "Maruti Fronx",
     subName: "Fronx",
+    description: "Created to Inspire Style and Performance.",
     offersAmount: 45000,
     offersAdditionalDec: "+ Velocity Kit worth 43K ",
     link: "/nexa/fronx-on-road-price",
@@ -1875,14 +2011,16 @@ export const models = [
       { variant: "CNG (MT) DELTA", price: 932500, transmission: "Manual" },
       { variant: "CNG (MT) SIGMA", price: 846500, transmission: "Manual" },
     ],
+    thumbnail: "/thumbnail/Fronx.webp",
     priceRange: "₹ 7.515 - 13.035 Lakh *",
     brochure:
       "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/flash/fronx-brochure.pdf#element_submenu",
   },
-  // Maruti GV -11
+  // Maruti GV -12
   {
     name: "Maruti Grand Vitara",
     subName: "Grand Vitara",
+    description: "The League of Extraordinary",
     offersAmount: 108100,
     offersAdditionalDec: "+ Royal Platinum EW",
     link: "/nexa/grand-vitara-on-road-price",
@@ -2081,16 +2219,18 @@ export const models = [
       { variant: "ZETA CNG (MT)", price: 1496000, transmission: "Manual" },
       { variant: "DELTA CNG (MT)", price: 1315000, transmission: "Manual" },
     ],
+    thumbnail: "/thumbnail/GV.webp",
     priceRange: "₹ 10.99- 20.09 Lakh *",
     brochure:
       "https://nexaprod5.azureedge.net/-/media/feature/nexawebsiteherobanner/brochure/grand_vitara-brochure.pdf",
   },
 
-  // XL6 - 12
+  // XL6 - 13
 
   {
     name: "Maruti XL6",
     subName: "XL6",
+    description: "Created to Inspire Indulgence.",
     offersAmount: 40000,
     offersAdditionalDec: "",
     link: "/nexa/xl6-on-road-price",
@@ -2236,16 +2376,18 @@ export const models = [
       { variant: "ZETA (1.5 P MT)", price: 1161000, transmission: "Manual" },
       { variant: "ZETA CNG (MT)", price: 1256000, transmission: "Manual" },
     ],
+    thumbnail: "/thumbnail/XL6.webp",
     priceRange: "₹ 12.56 - 14.77 Lakh *",
     brochure:
       "https://nexaprod3.azureedge.net/-/media/feature/nexawebsiteherobanner/brochure/xl6-brochure-for-digital.pdf",
   },
 
-  // Ciaz - 13
+  // Ciaz - 14
 
   {
     name: "Maruti Ciaz",
     subName: "Ciaz",
+    description: "Created To Inspire Elegance",
     offersAmount: 48000,
     offersAdditionalDec: "",
     link: "/nexa/ciaz-on-road-price",
@@ -2406,16 +2548,18 @@ export const models = [
       { variant: "DELTA (1.5 P MT)", price: 1000000, transmission: "Manual" },
       { variant: "SIGMA (1.5 P MT)", price: 940000, transmission: "Manual" },
     ],
+    thumbnail: "/thumbnail/Ciaz.webp",
     priceRange: "₹ 9.40 - 12.45 Lakh *",
     brochure:
       "https://www.nexaexperience.com/-/media/feature/nexawebsiteherobanner/brochure/all_new_ciaz_brochure.pdf",
   },
 
-  // Baleno - 14
+  // Baleno - 15
 
   {
     name: "Maruti Baleno",
     subName: "Baleno",
+    description: "Created to Inspire The Bold and Intelligent",
     offersAmount: 57100,
     offersAdditionalDec: "",
     link: "/nexa/baleno-on-road-price",
@@ -2530,15 +2674,17 @@ export const models = [
       { variant: "ZETA (CNG) MT", price: 933000, transmission: "Manual" },
       { variant: "DELTA (CNG) MT", price: 840000, transmission: "Manual" },
     ],
+    thumbnail: "/thumbnail/Baleno.webp",
     priceRange: "₹ 6.66 - 9.83 Lakh *",
     brochure:
       "https://nexaprod1.azureedge.net/-/media/feature/nexawebsiteherobanner/brochure/the-new-age-baleno-brochure.pdf",
   },
 
-  // Ignis - 15
+  // Ignis - 16
   {
     name: "Maruti Ignis",
     subName: "Ignis",
+    description: "Created to Inspire The Toughness in You.",
     offersAmount: 58100,
     offersAdditionalDec: "+ Radiance Kit Worth 3K",
     link: "/nexa/ignis-on-road-price",
@@ -2669,138 +2815,9 @@ export const models = [
       { variant: "DELTA MT (P)", price: 638000, transmission: "Manual" },
       { variant: "SIGMA MT (P)", price: 584000, transmission: "Manual" },
     ],
+    thumbnail: "/thumbnail/Ignis.webp",
     priceRange: "₹ 5.84 - 8.20 Lakh *",
     brochure:
       "https://nexaprod4.azureedge.net/-/media/feature/nexawebsiteherobanner/brochure/ignis-brochure.pdf",
-  },
-
-  // Invicto - 16
-  {
-    name: "Maruti Invicto",
-    subName: "Invicto",
-    offersAmount: 0,
-    offersAdditionalDec: "",
-    link: "/nexa/invicto-on-road-price",
-    offerValidTill: "Sep 30, 2024",
-    colors: [
-      {
-        img: "/images/car/nexa/invicto/Blue_810 x 411.webp",
-        colorCode: "#183F66",
-        colName: "NEXA BLUE (CELESTIAL)",
-      },
-      {
-        img: "/images/car/nexa/invicto/AVANT_GRADE_BRONZE_810 x 411 webp.webp",
-        colorCode: "#7A756E",
-        colName: "STELLAR BRONZE",
-      },
-      {
-        img: "/images/car/nexa/invicto/MAJESTIC_SILVER_810 x 411 webp.webp",
-        colorCode: "#AFB3B8",
-        colName: "MAJESTIC SILVER",
-      },
-      {
-        img: "/images/car/nexa/invicto/PLATINUM_WHITE_810 x 411 webp.webp",
-        colorCode: "#EEEFF0",
-        colName: "MYSTIC WHITE",
-      },
-      {
-        img: "/images/car/nexa/invicto/Magnificent Black.webp",
-        colorCode: "#0F1012",
-        colName: "MAGNIFICENT BLACK",
-      },
-    ],
-    keySpecifications: [
-      { label: "Fuel Tank Capacity", value: "52 Litres" },
-      { label: "Seating Capacity", value: "7/8" },
-      { label: "Length", value: "4755 mm" },
-      { label: "Width", value: "1845 mm" },
-      { label: "Height", value: "1795 mm" },
-      { label: "Front Suspension", value: "Independent, McPherson Strut" },
-      { label: "Rear Suspension", value: "Torsion Beam" },
-      { label: "Fuel Type", value: "Petrol" },
-      { label: "No. of Cylinders", value: "4" },
-      { label: "Max Torque", value: "250 Nm @ 2000 rpm" },
-      { label: "Transmission Type", value: "Manual/Automatic" },
-      { label: "Body Type", value: "SUV" },
-      { label: "Wheel Base", value: "2850 mm" },
-      { label: "Gearbox", value: "6-Speed/Auto" },
-    ],
-    exterior: [
-      {
-        img: "https://nexaprod3.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/extr-img-3-jpg.webp",
-        title: "",
-      },
-      {
-        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/extr-img-5-webp.webp",
-        title: "",
-      },
-      {
-        img: "https://nexaprod1.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/extr-img-4-webp.webp",
-        title: "",
-      },
-      {
-        img: "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/extr-img-2-jpg.webp",
-        title: "",
-      },
-    ],
-    interior: [
-      {
-        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/intr-img-2-jpg.webp",
-        title: "",
-      },
-      {
-        img: "https://nexaprod1.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/intr-img-1-jpg.webp",
-        title: "",
-      },
-      {
-        img: "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-4-webp.webp",
-        title: "",
-      },
-      {
-        img: "https://nexaprod3.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-5-webp.webp",
-        title: "",
-      },
-      {
-        img: "https://nexaprod4.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-6-webp.webp",
-        title: "",
-      },
-      {
-        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-7-webp.webp",
-        title: "",
-      },
-      {
-        img: "https://nexaprod6.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/int-img-8-webp.webp",
-        title: "",
-      },
-      {
-        img: "https://nexaprod5.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/discoveropulence/intr-img-3-jpg.webp",
-        title: "",
-      },
-    ],
-    carDetails: [
-      { label: "Engine", value: "1987 cc" },
-      { label: "Mileage", value: "23.24 kmpl" },
-      { label: "Power", value: "112 kW @ 6000 rpm" },
-    ],
-    variants: [
-      {
-        variant: " ALPHA+ 7S E-CVT",
-        price: 2901500,
-        transmission: "Automatic",
-      },
-      {
-        variant: " ZETA+ 8S E-CVT",
-        price: 2535500,
-        transmission: "Automatic",
-      },
-      {
-        variant: " ZETA+ 7S E-CVT",
-        price: 2530500,
-        transmission: "Automatic",
-      },
-    ],
-    priceRange: "₹ 25.305 - 29.015 Lakh *",
-    brochure:
-      "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/invicto-brochure_invicto-pdf.pdf",
   },
 ];

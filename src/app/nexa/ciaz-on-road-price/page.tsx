@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const Ciaz: React.FC = () => {
   return (
     <div> 
-      <VehicleDetailTemplate index={13} />
+      <VehicleDetailTemplate index={14} />
     </div>
   );
 };

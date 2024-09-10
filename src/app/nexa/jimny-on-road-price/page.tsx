@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const Jimny: React.FC = () => {
   return (
     <div> 
-      <VehicleDetailTemplate index={9} />
+      <VehicleDetailTemplate index={10} />
     </div>
   );
 };
