@@ -285,7 +285,6 @@ export const models = [
         img: "/images/slider/swift/in-7.webp",
         title: "",
       },
-     
     ],
     carDetails: [
       {
@@ -1661,7 +1660,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
-    thumbnail: "/thumbnail/Invicto.webp",
+    thumbnail: "/thumbnail/invicto-main-thubmnail-no-bg.webp",
     priceRange: "₹ 25.305 - 29.015 Lakh *",
     brochure:
       "https://nexaprod2.azureedge.net/-/media/feature/nexawebsitecarbrand/invicto/invicto-brochure_invicto-pdf.pdf",
