@@ -221,16 +221,6 @@ const Header = () => {
               </div>
               <div className=" absolute top-4 -left-1/3 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
                 <Link
-                  href="/outlets/odisa-outlets"
-                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
-                    selectedState === "Odisha"
-                      ? " hover:bg-primaryBlue"
-                      : "hover:bg-primaryRed"
-                  }`}
-                >
-                  Odisa <FaCaretRight />
-                </Link>
-                <Link
                   href="/outlets/chhattisgarh-outlets"
                   className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
                     selectedState === "Odisha"
@@ -239,6 +229,16 @@ const Header = () => {
                   }`}
                 >
                   Chhattisgarh <FaCaretRight />
+                </Link>{" "}
+                <Link
+                  href="/outlets/odisa-outlets"
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                    selectedState === "Odisha"
+                      ? " hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed"
+                  }`}
+                >
+                  Odisa <FaCaretRight />
                 </Link>
               </div>
             </div>
