@@ -331,7 +331,8 @@ const Header = () => {
             </button>
           </div>
         </div>
-        {isVehicle && (
+        {
+          isVehicle &&
           <div
             onMouseLeave={() => setIsVehicle(false)}
             onMouseEnter={() => setIsVehicle(true)}
@@ -444,9 +445,45 @@ const Header = () => {
                     </div>
                   </Link>
                 ))}
+              {selectedTab === 2 && (
+                <div className=" col-span-4 w-full  gap-1 min-h-24 pb-2 pl-4 flex xl:flex-col justify-center xl:justify-start items-center xl:items-start">
+                  <button
+                    aria-label="Buy A Car Now"
+                    className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 xl:w-full max-w-md ${
+                      selectedState === "Odisha"
+                        ? "hover:text-white hover:bg-primaryBlue text-primaryBlue border border-primaryBlue  "
+                        : "hover:text-white hover:bg-primaryRed text-primaryRed border border-primaryRed"
+                    }`}
+                  >
+                    <Link
+                      className="flex gap-2 w-full items-center justify-between"
+                      href="/truevalue/buy-a-car"
+                    >
+                      {" "}
+                      Buy A Car Now <FaCaretRight />
+                    </Link>
+                  </button>
+                  <button
+                    aria-label="Buy A Car Now"
+                    className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 xl:w-full max-w-md ${
+                      selectedState === "Odisha"
+                        ? "hover:text-white hover:bg-primaryBlue text-primaryBlue border border-primaryBlue  "
+                        : "hover:text-white hover:bg-primaryRed text-primaryRed border border-primaryRed"
+                    }`}
+                  >
+                    <Link
+                      className="flex gap-2 w-full items-center justify-between"
+                      href="/truevalue/sell-a-car"
+                    >
+                      {" "}
+                      Sell A Car Now <FaCaretRight />
+                    </Link>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
-        )}
+        }
       </div>
       {showSidePanel && <ModalSidePannel setShowSidePanel={setShowSidePanel} />}
     </header>
