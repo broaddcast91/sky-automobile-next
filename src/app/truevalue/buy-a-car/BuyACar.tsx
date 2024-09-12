@@ -5,8 +5,9 @@ import { useAppContext } from "@/context";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { BsFillFuelPumpFill } from "react-icons/bs";
-import { FaUser } from "react-icons/fa";
-import { GiGearStickPattern } from "react-icons/gi";
+import { FaTrafficLight, FaUser } from "react-icons/fa";
+import { FaGear } from "react-icons/fa6";
+import { GiGearStickPattern, GiTrafficLightsGreen } from "react-icons/gi";
 import { HiMiniMapPin } from "react-icons/hi2";
 
 // Sample car data
@@ -16,7 +17,7 @@ const carData = [
     fuel: "Petrol",
     owner: "1st owner",
     transmission: "Automatic",
-    mileage: "80K Km",
+    kmDriven: "80K Km",
     price: "₹ 4.40 Lakh",
     emi: "EMI from ₹ 8,003/m",
     location: "Mahoba Bazar",
@@ -28,7 +29,7 @@ const carData = [
     fuel: "Diesel",
     owner: "2nd owner",
     transmission: "Manual",
-    mileage: "60K Km",
+    kmDriven: "60K Km",
     price: "₹ 3.15 Lakh",
     emi: "EMI from ₹ 8,003/m",
     location: "Udhyog Bhawan",
@@ -39,7 +40,7 @@ const carData = [
     fuel: "Petrol",
     owner: "1st owner",
     transmission: "Automatic",
-    mileage: "40K Km",
+    kmDriven: "40K Km",
     price: "₹ 5.70 Lakh",
     emi: "EMI from ₹ 8,003/m",
     location: "Mahoba Bazar",
@@ -51,7 +52,30 @@ const carData = [
     fuel: "Diesel",
     owner: "2nd owner",
     transmission: "Manual",
-    mileage: "60K Km",
+    kmDriven: "60K Km",
+    price: "₹ 3.15 Lakh",
+    emi: "EMI from ₹ 8,003/m",
+    location: "Udhyog Bhawan",
+    image: "https://www.varunmaruti.com/uploads/trueValueCars/16167468937.jpeg",
+  },
+  {
+    name: "2022 Maruti Suzuki Swift",
+    fuel: "Petrol",
+    owner: "1st owner",
+    transmission: "Automatic",
+    kmDriven: "40K Km",
+    price: "₹ 5.70 Lakh",
+    emi: "EMI from ₹ 8,003/m",
+    location: "Mahoba Bazar",
+    image:
+      "https://www.varunmaruti.com/uploads/trueValueCars/161674921718.jpeg",
+  },
+  {
+    name: "2024 Maruti Suzuki Alto K10",
+    fuel: "Diesel",
+    owner: "2nd owner",
+    transmission: "Manual",
+    kmDriven: "60K Km",
     price: "₹ 3.15 Lakh",
     emi: "EMI from ₹ 8,003/m",
     location: "Udhyog Bhawan",
@@ -75,7 +99,7 @@ const BuyACar: React.FC = () => {
         car.fuel.toLowerCase().includes(e.target.value.toLowerCase()) ||
         car.owner.toLowerCase().includes(e.target.value.toLowerCase()) ||
         car.transmission.toLowerCase().includes(e.target.value.toLowerCase()) ||
-        car.mileage.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        car.kmDriven.toLowerCase().includes(e.target.value.toLowerCase()) ||
         car.price.toLowerCase().includes(e.target.value.toLowerCase()) ||
         car.emi.toLowerCase().includes(e.target.value.toLowerCase()) ||
         car.location.toLowerCase().includes(e.target.value.toLowerCase())
@@ -142,56 +166,66 @@ const BuyACar: React.FC = () => {
                   placeholder="Search by name, fuel, owner, etc."
                   value={searchTerm}
                   onChange={handleSearch}
-                  className="md:w-1/2 p-2 border rounded"
+                  className="md:w-1/2 p-2 border rounded-lg text-sm"
                 />
                 <select
                   value={sortOption}
                   onChange={handleSort}
-                  className="p-2 border rounded"
+                  className="p-2 border rounded-lg text-sm"
                 >
                   <option value="">Sort By</option>
                   <option value="priceLowToHigh">Price: Low to High</option>
                   <option value="priceHighToLow">Price: High to Low</option>
                 </select>
               </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3  gap-2 mt-4 md:gap-4 lg:gap-y-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3   gap-2 mt-4 md:gap-4 lg:gap-y-6">
                 {filteredCars.map((car, index) => (
-                  <div key={index} className="bg-secondaryGray3 rounded-lg max-w-lg mx-auto md:mx-0 lg:hover:scale-105 duration-200">
+                  <div
+                    key={index}
+                    className="bg-secondaryGray3 rounded-lg max-w-lg mx-auto md:mx-0  group hover:shadow-xl hover:shadow-primaryGray/30 "
+                  >
                     <img
                       src={car.image}
                       alt={car.name}
-                      className="object-cover w-full rounded-t-lg max-h-[21rem]"
+                      className="object-cover w-full rounded-t-lg max-h-[21rem] min-h-80"
                     />
                     <div
-                      className={`px-3 py-4 rounded-b-lg text-white ${
+                      className={`p-4 lg:py-6 rounded-b-lg  ${
                         selectedState === "Odisha"
-                          ? "bg-primaryBlue"
-                          : "bg-primaryRed"
+                          ? "group-hover:bg-primaryBlue group-hover:text-white"
+                          : "group-hover:bg-primaryRed group-hover:text-white"
                       }`}
                     >
-                      <div className="relative group pb-1">
-                        <h3 className="font-bold line-clamp-1">{car.name}</h3>
-                        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max p-2 bg-black text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          {car.name}
-                        </span>
-                      </div>
+                      <h3
+                        title={car.name}
+                        className="font-bold line-clamp-1 pb-2"
+                      >
+                        {car.name}
+                      </h3>
+
                       <h5 className="text-xs line-clamp-1 pb-2 flex gap-1">
                         <p className="flex gap-1 items-center line-clamp-1 whitespace-nowrap">
-                          <BsFillFuelPumpFill /> {car.fuel}
+                          <BsFillFuelPumpFill className={`${selectedState==='Odisha'?"text-primaryBlue":"text-primaryRed"} group-hover:text-white `} /> {car.fuel}
                         </p>
                         <span> |</span>
                         <p className="flex gap-1 items-center line-clamp-1 whitespace-nowrap">
-                          <FaUser /> {car.owner}
+                          <FaUser className={`${selectedState==='Odisha'?"text-primaryBlue":"text-primaryRed"} group-hover:text-white `} /> {car.owner}
                         </p>
                         <span> |</span>
                         <p className="flex gap-1 items-center line-clamp-1">
-                          <GiGearStickPattern /> {car.transmission}
-                        </p>
-                        <span> |</span>
-                        <p className="flex gap-1 items-center line-clamp-1">
-                          {car.mileage}
+                          <FaGear className={`${selectedState==='Odisha'?"text-primaryBlue":"text-primaryRed"} group-hover:text-white `} /> {car.transmission}
                         </p>
                       </h5>
+                      <div className="flex text-xs pb-2 gap-1">
+                        <p className="flex gap-1 items-center line-clamp-1">
+                          <FaTrafficLight className={`${selectedState==='Odisha'?"text-primaryBlue":"text-primaryRed"} group-hover:text-white `} /> {car.kmDriven}
+                        </p>
+                        <span> |</span>{" "}
+                        <div className="   gap-1  line-clamp-1 text-xs flex  items-center  ">
+                          <HiMiniMapPin className={`${selectedState==='Odisha'?"text-primaryBlue":"text-primaryRed"} group-hover:text-white `}  />
+                          {car.location}
+                        </div>
+                      </div>
                       <div className="flex justify-between pt-1 items-center pb-2">
                         <p className="text-lg line-clamp-1 font-medium">
                           {car.price}
@@ -200,24 +234,19 @@ const BuyACar: React.FC = () => {
                           {car.emi}
                         </p>
                       </div>
-                      <div className="grid grid-cols-7 gap-3 items-center">
-                        <button
-                          className={`w-full border col-span-4 border-white font-bold text-sm rounded-lg px-2 py-1.5  ${
-                            selectedState === "Odisha"
-                              ? "hover:text-primaryBlue hover:bg-white"
-                              : "hover:text-primaryRed hover:bg-white"
-                          }`}
-                          onClick={() => {
-                            toast.success("Enquiry Submitted Successfully");
-                          }}
-                        >
-                          Enquire Now
-                        </button>
-                        <div className=" col-span-3  gap-1 texr line-clamp-1 text-xs flex  items-center ">
-                          <HiMiniMapPin className="ml-auto" />
-                          {car.location}
-                        </div>
-                      </div>
+
+                      <button
+                        className={`w-full border col-span-4 border-white font-bold text-sm rounded-lg px-2 py-2  ${
+                          selectedState === "Odisha"
+                            ? "group-hover:text-primaryBlue group-hover:bg-white bg-primaryBlue text-white"
+                            : "group-hover:text-primaryRed group-hover:bg-white bg-primaryRed text-white"
+                        }`}
+                        onClick={() => {
+                          toast.success("Enquiry Submitted Successfully");
+                        }}
+                      >
+                        Enquire Now
+                      </button>
                     </div>
                   </div>
                 ))}

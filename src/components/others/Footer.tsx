@@ -7,8 +7,6 @@ import { FaFacebookF, FaLinkedin } from "react-icons/fa";
 import { LuInstagram } from "react-icons/lu";
 import { useAppContext } from "@/context";
 
-
-
 const NavigationLinks: React.FC<{
   title: string;
   links: { label: string; href: string }[];
@@ -28,7 +26,7 @@ const NavigationLinks: React.FC<{
           key={link.label}
           className={`hover:opacity-75 ${
             selectedState === "Odisha"
-              ? "hover:text-primaryBlue"
+              ? "hover:text-white hover:font-medium"
               : "hover:text-primaryRed"
           }`}
           href={link.href}
@@ -47,7 +45,7 @@ const Footer: React.FC = () => {
 
   return (
     <div className="bg-primaryGray">
-      <footer className="container px-2 py-10 mx-auto xl:max-w-7xl lg:py-16">
+      <footer className="container px-2 py-10 mx-auto xl:max-w-7xl lg:pt-16">
         <div className="max-w-screen-xl px-4 pt-10 mx-auto sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
@@ -86,43 +84,65 @@ const Footer: React.FC = () => {
             </div>
             <div className="grid gap-8 lg:col-span-2 grid-cols-2 lg:grid-cols-4">
               <NavigationLinks
-                title="Company"
+                title="Arena"
                 selectedState={selectedState}
                 links={[
-                  { label: "About", href: "/" },
-                  { label: "Meet the Team", href: "/" },
-                  { label: "History", href: "/" },
-                  { label: "Careers", href: "/" },
+                  { label: "Alto K10", href: "/arena/alto-k10-on-road-price" },
+                  { label: "Swift", href: "/arena/swift-on-road-price" },
+                  { label: "Brezza", href: "/arena/brezza-on-road-price" },
+                  { label: "Dzire", href: "/arena/dzire-on-road-price" },
+                  { label: "S-Presso", href: "/arena/spresso-on-road-price" },
+                  { label: "Wagon R", href: "/arena/wagon-r-on-road-price" },
+                  { label: "Ertiga", href: "/arena/ertiga-on-road-price" },
+                  { label: "Celerio", href: "/arena/celerio-on-road-price" },
+                  { label: "Eeco", href: "/arena/eeco-on-road-price" },
                 ]}
               />
               <NavigationLinks
-                title="Services"
+                title="Nexa"
                 selectedState={selectedState}
                 links={[
-                  { label: "1on1 Coaching", href: "/" },
-                  { label: "Company Review", href: "/" },
-                  { label: "Accounts Review", href: "/" },
-                  { label: "HR Consulting", href: "/" },
-                  { label: "SEO Optimisation", href: "/" },
+                  { label: "Invicto", href: "/nexa/invicto-on-road-price" },
+                  { label: "Jimny", href: "/nexa/jimny-on-road-price" },
+                  { label: "Fronx", href: "/nexa/fronx-on-road-price" },
+                  {
+                    label: "Grand Vitara",
+                    href: "/nexa/grand-vitara-on-road-price",
+                  },
+                  { label: "XL6", href: "/nexa/xl6-on-road-price" },
+                  { label: "Ciaz", href: "/nexa/ciaz-on-road-price" },
+                  { label: "Baleno", href: "/nexa/baleno-on-road-price" },
+                  { label: "Ignis", href: "/nexa/ignis-on-road-price" },
                 ]}
               />
               <NavigationLinks
                 title="Helpful Links"
                 selectedState={selectedState}
                 links={[
-                  { label: "Contact", href: "/" },
-                  { label: "FAQs", href: "/" },
-                  { label: "Live Chat", href: "/" },
+                  { label: "Buy a Car", href: "/truevalue/buy-a-car" },
+                  { label: "Sell Your Car", href: "/truevalue/sell-a-car" },
+                  { label: "Offers", href: "/offers" },
+                  {
+                    label: "Chhattisgarh Outlets",
+                    href: "/outlets/chhattisgarh-outlets",
+                  },
+                  { label: "Odisha Outlets", href: "/outlets/odisa-outlets" },
                 ]}
-              />
+              />{" "}
               <NavigationLinks
-                title="Legal"
+                title="Others"
                 selectedState={selectedState}
                 links={[
-                  { label: "Privacy Policy", href: "/" },
-                  { label: "Terms & Conditions", href: "/" },
-                  { label: "Returns Policy", href: "/" },
-                  { label: "Accessibility", href: "/" },
+                  { label: "Book a Service", href: "/services/book-a-service" },
+                  { label: "Finance", href: "/services/finance" },
+                  { label: "Insurance", href: "/services/insurance" },
+
+                  { label: "About Us", href: "/about-us" },
+                  { label: "Contact Us", href: "/contact-us" },
+                  { label: "Career", href: "/career" },
+
+                  // { label: "Returns Policy", href: "/" },
+                  // { label: "Accessibility", href: "/" },
                 ]}
               />
             </div>
