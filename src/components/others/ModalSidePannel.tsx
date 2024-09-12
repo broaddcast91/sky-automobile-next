@@ -10,13 +10,9 @@ interface ModalSidePannelProps {
   setShowSidePanel: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ModalSidePannel = ({
-  
-  setShowSidePanel,
-}: ModalSidePannelProps) => {
+const ModalSidePannel = ({ setShowSidePanel }: ModalSidePannelProps) => {
   const { selectedState } = useAppContext();
   const [openShowVehicle, setOpenShowVehicle] = React.useState(0);
-
 
   return (
     <div
@@ -187,18 +183,22 @@ const ModalSidePannel = ({
           )}
           {openShowVehicle === 4 && (
             <div className="bg-gray-50 rounded-lg">
-              <div
-                onClick={() => setShowSidePanel(false)}
-                className="  min-h-8 pl-12 py-2 border-b  text-sm "
-              >
-                Buy a Vehicle
-              </div>
-              <div
-                onClick={() => setShowSidePanel(false)}
-                className="  min-h-8 pl-12 py-2 border-b  text-sm "
-              >
-                Sell your Car
-              </div>
+              <Link href="/truevalue/buy-a-car">
+                <div
+                  onClick={() => setShowSidePanel(false)}
+                  className="  min-h-8 pl-12 py-2 border-b  text-sm "
+                >
+                  Buy a Vehicle
+                </div>
+              </Link>
+              <Link href="/truevalue/sell-a-car">
+                <div
+                  onClick={() => setShowSidePanel(false)}
+                  className="  min-h-8 pl-12 py-2 border-b  text-sm "
+                >
+                  Sell your Car
+                </div>
+              </Link>
             </div>
           )}
           <div

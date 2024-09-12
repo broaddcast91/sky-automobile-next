@@ -420,7 +420,7 @@ const SellCar: React.FC = () => {
                 selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
               }`}
             >
-              Enquire Now
+              Submit 
             </button>
             <p className="mt-6 text-xs text-gray-500">
               *Disclaimer: By clicking &apos;Submit&apos;, you have agreed to
