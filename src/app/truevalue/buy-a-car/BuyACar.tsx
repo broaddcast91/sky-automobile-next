@@ -160,18 +160,27 @@ const BuyACar: React.FC = () => {
 
             <div className="xl:max-w-5xl mx-auto">
               {/* Search and Sort */}
-              <div className="container py-4 mx-auto xl:max-w-7xl lg:py-6  flex justify-between items-center flex-col gap-2 md:flex-row">
+              <div className="container py-4 mx-auto  mb-2 lg:py-6  flex justify-between items-center flex-col gap-2 md:flex-row  px-2 ">
                 <input
                   type="text"
                   placeholder="Search by name, fuel, owner, etc."
                   value={searchTerm}
+                  autoFocus
                   onChange={handleSearch}
-                  className="md:w-1/2 p-2 border rounded-lg text-sm"
+                  className={`w-full md:w-2/3 py-2 px-4 bg-transparent border rounded appearance-none  focus:outline-none border-b-2 bg-white  ${
+                    selectedState === "Odisha"
+                      ? "border-b-primaryBlue"
+                      : "border-b-primaryRed"
+                  }`}
                 />
                 <select
                   value={sortOption}
                   onChange={handleSort}
-                  className="p-2 border rounded-lg text-sm"
+                  className={`px-2 bg-transparent border-b-2 bg-white focus:outline-none rounded border w-1/2 md:w-1/3 py-2.5 ${
+                    selectedState === "Odisha"
+                      ? "border-b-primaryBlue"
+                      : "border-b-primaryRed"
+                  }`}
                 >
                   <option value="">Sort By</option>
                   <option value="priceLowToHigh">Price: Low to High</option>
@@ -182,20 +191,18 @@ const BuyACar: React.FC = () => {
                 {filteredCars.map((car, index) => (
                   <div
                     key={index}
-                    className="bg-secondaryGray3 rounded-lg max-w-lg mx-auto md:mx-0  group hover:shadow-xl hover:shadow-primaryGray/30 "
+                    className={`bg-secondaryGray3 rounded-lg max-w-lg mx-auto md:mx-0  group hover:shadow-xl hover:shadow-primaryGray/30 p-1 ${
+                      selectedState === "Odisha"
+                        ? "hover:bg-primaryBlue hover:text-white"
+                        : "hover:bg-primaryRed hover:text-white"
+                    } `}
                   >
                     <img
                       src={car.image}
                       alt={car.name}
-                      className="object-cover w-full rounded-t-lg max-h-[21rem] min-h-80"
+                      className="object-cover w-full rounded-lg max-h-[21rem] min-h-80 "
                     />
-                    <div
-                      className={`p-4 lg:py-6 rounded-b-lg  ${
-                        selectedState === "Odisha"
-                          ? "group-hover:bg-primaryBlue group-hover:text-white"
-                          : "group-hover:bg-primaryRed group-hover:text-white"
-                      }`}
-                    >
+                    <div className={`p-4 lg:py-6 rounded-b-lg  `}>
                       <h3
                         title={car.name}
                         className="font-bold line-clamp-1 pb-2"
@@ -203,26 +210,60 @@ const BuyACar: React.FC = () => {
                         {car.name}
                       </h3>
 
-                      <h5 className="text-xs line-clamp-1 pb-2 flex gap-1">
+                      <div className="text-xs line-clamp-1 pb-2 grid grid-cols-3 gap-1 justify-between ">
                         <p className="flex gap-1 items-center line-clamp-1 whitespace-nowrap">
-                          <BsFillFuelPumpFill className={`${selectedState==='Odisha'?"text-primaryBlue":"text-primaryRed"} group-hover:text-white `} /> {car.fuel}
+                          <BsFillFuelPumpFill
+                            className={`${
+                              selectedState === "Odisha"
+                                ? "text-primaryBlue"
+                                : "text-primaryRed"
+                            } group-hover:text-white `}
+                          />{" "}
+                          {car.fuel}
                         </p>
-                        <span> |</span>
+                        {/* <span> |</span> */}
                         <p className="flex gap-1 items-center line-clamp-1 whitespace-nowrap">
-                          <FaUser className={`${selectedState==='Odisha'?"text-primaryBlue":"text-primaryRed"} group-hover:text-white `} /> {car.owner}
+                          <FaUser
+                            className={`${
+                              selectedState === "Odisha"
+                                ? "text-primaryBlue"
+                                : "text-primaryRed"
+                            } group-hover:text-white `}
+                          />{" "}
+                          {car.owner}
                         </p>
-                        <span> |</span>
+                        {/* <span> |</span> */}
                         <p className="flex gap-1 items-center line-clamp-1">
-                          <FaGear className={`${selectedState==='Odisha'?"text-primaryBlue":"text-primaryRed"} group-hover:text-white `} /> {car.transmission}
+                          <FaGear
+                            className={`${
+                              selectedState === "Odisha"
+                                ? "text-primaryBlue"
+                                : "text-primaryRed"
+                            } group-hover:text-white `}
+                          />{" "}
+                          {car.transmission}
                         </p>
-                      </h5>
-                      <div className="flex text-xs pb-2 gap-1">
+                      </div>
+                      <div className="grid text-xs pb-2 gap-1 grid-cols-3">
                         <p className="flex gap-1 items-center line-clamp-1">
-                          <FaTrafficLight className={`${selectedState==='Odisha'?"text-primaryBlue":"text-primaryRed"} group-hover:text-white `} /> {car.kmDriven}
+                          <FaTrafficLight
+                            className={`${
+                              selectedState === "Odisha"
+                                ? "text-primaryBlue"
+                                : "text-primaryRed"
+                            } group-hover:text-white `}
+                          />{" "}
+                          {car.kmDriven}
                         </p>
-                        <span> |</span>{" "}
-                        <div className="   gap-1  line-clamp-1 text-xs flex  items-center  ">
-                          <HiMiniMapPin className={`${selectedState==='Odisha'?"text-primaryBlue":"text-primaryRed"} group-hover:text-white `}  />
+                        {/* <span> |</span>{" "} */}
+                        <div className="   gap-1  line-clamp-1 text-xs flex  items-center col-span-2  ">
+                          <HiMiniMapPin
+                            className={`${
+                              selectedState === "Odisha"
+                                ? "text-primaryBlue"
+                                : "text-primaryRed"
+                            } group-hover:text-white `}
+                          />
                           {car.location}
                         </div>
                       </div>
