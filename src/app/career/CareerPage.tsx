@@ -28,7 +28,7 @@ const CareerPage: React.FC = () => {
     currentCTC: "",
     expectedCTC: "",
   });
-   const { selectedState } = useAppContext();
+  const { selectedState } = useAppContext();
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -40,10 +40,39 @@ const CareerPage: React.FC = () => {
     });
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("Career Form Data:", formData);
-    toast.success("Thank you for applying! We will get back to you soon.");
+    try {
+      // Send the POST request
+      const response = await fetch("/api/career", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...formData, state: selectedState }),
+      });
+
+      // Check if the response is ok
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Parse the JSON response
+      const data = await response.json();
+
+      // Handle the response based on the data
+      if (data.status === true) {
+        toast.success(
+          "Thank you for contacting us. We will get back to you soon!"
+        );
+      } else {
+        toast.error("Failed to send request. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("Failed to send request. Please try again later.");
+      console.error("Error sending request:", error);
+    }
 
     // Reset the form after submission
     setFormData({
@@ -76,12 +105,12 @@ const CareerPage: React.FC = () => {
                   ? "text-primaryBlue"
                   : "text-primaryRed"
               }`}
-            >
-              Position
-            </span>
-            {formData.designation && (
-              <span className="text-base"> ({formData.designation}) </span>
+            > {formData.designation && (
+              <span className=""> {formData.designation} </span>
             )}
+             
+            </span>
+            Position
           </h4>
           <form
             onSubmit={handleSubmit}
@@ -157,9 +186,9 @@ const CareerPage: React.FC = () => {
                 placeholder="Experience*"
                 required
                 minLength={3}
-                maxLength={100}
-                pattern="^\d+\s*(years?|months?)$"
-                title="Please enter a valid experience in the format 'X years' or 'X months'"
+                maxLength={30}
+                // pattern="^\d+\s*(years?|months?)$"
+                // title="Please enter a valid experience in the format 'X years' or 'X months'"
                 className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
                   selectedState === "Odisha"
                     ? "border-b-primaryBlue"
