@@ -33,9 +33,8 @@ const Finance: React.FC = () => {
     loanAmount: 0,
     loanTenure: 0,
   });
-  
- const { selectedState } = useAppContext();
 
+  const { selectedState } = useAppContext();
 
   const [index, setIndex] = useState(0);
   const [selectedColor, setSelectedColor] = useState<number>(0);
@@ -77,8 +76,6 @@ const Finance: React.FC = () => {
   const totalInterest = emi * value3 * 12 - principalAmount;
   const totalAmount = principalAmount + totalInterest;
 
- 
-
   const handleClickColor = (index: number): void => {
     setSelectedColor(index);
   };
@@ -92,10 +89,41 @@ const Finance: React.FC = () => {
     });
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("Form Data:", { ...formData, state: selectedState });
-    toast.success("Thank You for contacting us. We will get back to you soon!");
+
+    // toast.success("Thank You for contacting us. We will get back to you soon!");
+    try {
+      // Send the POST request
+      const response = await fetch("/api/finance", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...formData, state: selectedState }),
+      });
+
+      // Check if the response is ok
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Parse the JSON response
+      const data = await response.json();
+
+      // Handle the response based on the data
+      if (data.status === true) {
+        toast.success(
+          "Thank you for contacting us. We will get back to you soon!"
+        );
+      } else {
+        toast.error("Failed to send request. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("Failed to send request. Please try again later.");
+      console.error("Error sending request:", error);
+    }
 
     // Reset the form after submission
     setFormData({
@@ -106,7 +134,6 @@ const Finance: React.FC = () => {
       city: "",
       loanAmount: 0,
       loanTenure: 0,
-      
     });
   };
 
@@ -309,7 +336,7 @@ const Finance: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="flex justify-between gap-2 lg:gap-4">
+                <div className="flex justify-between gap-2 lg:gap-4 ">
                   <div className="flex justify-center items-center shadow-md min-h-20 min-w-20 rounded-lg flex-col p-6 w-full ">
                     <span className="text-base font-light text-gray-500">
                       Principal Amount
@@ -367,11 +394,11 @@ const Finance: React.FC = () => {
               minLength={3}
               maxLength={50}
               title="Only alphabets are allowed with minimum 3 and maximum 50 characters"
-             className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
-                  selectedState === "Odisha"
-                    ? "border-b-primaryBlue"
-                    : "border-b-primaryRed"
-                }`}
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : "border-b-primaryRed"
+              }`}
             />
 
             <input
@@ -381,11 +408,11 @@ const Finance: React.FC = () => {
               value={formData.phone}
               onChange={handleChange}
               required
-             className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
-                  selectedState === "Odisha"
-                    ? "border-b-primaryBlue"
-                    : "border-b-primaryRed"
-                }`}
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : "border-b-primaryRed"
+              }`}
             />
 
             <input
@@ -395,11 +422,11 @@ const Finance: React.FC = () => {
               value={formData.email}
               onChange={handleChange}
               required
-             className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
-                  selectedState === "Odisha"
-                    ? "border-b-primaryBlue"
-                    : "border-b-primaryRed"
-                }`}
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : "border-b-primaryRed"
+              }`}
             />
 
             <input
@@ -409,22 +436,22 @@ const Finance: React.FC = () => {
               value={formData.city}
               onChange={handleChange}
               required
-             className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
-                  selectedState === "Odisha"
-                    ? "border-b-primaryBlue"
-                    : "border-b-primaryRed"
-                }`}
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : "border-b-primaryRed"
+              }`}
             />
             <select
               name="model"
               value={formData.model}
               onChange={handleChange}
               required
-             className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
-                  selectedState === "Odisha"
-                    ? "border-b-primaryBlue"
-                    : "border-b-primaryRed"
-                }`}
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : "border-b-primaryRed"
+              }`}
             >
               <option value="">Select Model</option>
               <option value="Alto K10">Alto K10</option>
@@ -449,11 +476,11 @@ const Finance: React.FC = () => {
             <input
               type="number"
               placeholder="Loan Amount*"
-             className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
-                  selectedState === "Odisha"
-                    ? "border-b-primaryBlue"
-                    : "border-b-primaryRed"
-                }`}
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : "border-b-primaryRed"
+              }`}
               name="loanAmount"
               value={formData.loanAmount ? formData.loanAmount : ""}
               onChange={handleChange}
@@ -467,11 +494,11 @@ const Finance: React.FC = () => {
             <input
               type="number"
               placeholder="Loan Tenure (in years)*"
-             className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
-                  selectedState === "Odisha"
-                    ? "border-b-primaryBlue"
-                    : "border-b-primaryRed"
-                }`}
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : "border-b-primaryRed"
+              }`}
               name="loanTenure"
               value={formData.loanTenure ? formData.loanTenure : ""}
               onChange={handleChange}

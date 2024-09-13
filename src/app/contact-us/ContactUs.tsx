@@ -36,11 +36,39 @@ const ContactUs: React.FC = () => {
     });
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("Form Data:", { ...formData, state: selectedState });
-    toast.success("Thank You for contacting us. We will get back to you soon!");
+    try {
+      // Send the POST request
+      const response = await fetch("/api/contactUs", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...formData, state: selectedState }),
+      });
 
+      // Check if the response is ok
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Parse the JSON response
+      const data = await response.json();
+
+      // Handle the response based on the data
+      if (data.status === true) {
+        toast.success(
+          "Thank you for contacting us. We will get back to you soon!"
+        );
+      } else {
+        toast.error("Failed to send request. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("Failed to send request. Please try again later.");
+      console.error("Error sending request:", error);
+    }
     // Uncomment if you want to reset the form after submission
     setFormData({
       name: "",
@@ -62,7 +90,13 @@ const ContactUs: React.FC = () => {
       <div className="container min-h-[50vh] py-16 mx-auto xl:max-w-7xl lg:py-20 px-2">
         <div className="mb-12 lg:mb-20 text-lg">
           <h4 className="text-3xl font-bold text-primaryGray mb-3 md:mb-6 ">
-            <span className={`${selectedState === "Odisha" ? "text-primaryBlue" : "text-primaryRed"}`}>
+            <span
+              className={`${
+                selectedState === "Odisha"
+                  ? "text-primaryBlue"
+                  : "text-primaryRed"
+              }`}
+            >
               Contact{" "}
             </span>{" "}
             Us

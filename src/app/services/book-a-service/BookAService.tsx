@@ -21,7 +21,7 @@ interface FormData {
   address: string;
   serviceType: string;
   isPickup: string;
-  date: string;
+  serviceDate: string;
 }
 
 const BookAService: React.FC = () => {
@@ -34,7 +34,7 @@ const BookAService: React.FC = () => {
     address: "",
     serviceType: "",
     isPickup: "",
-    date: "",
+    serviceDate: "",
   });
   const dateInputRef = useRef<HTMLInputElement>(null);
 
@@ -59,10 +59,39 @@ const BookAService: React.FC = () => {
     });
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("Form Data:", { ...formData, state: selectedState });
-    toast.success("Thank You for contacting us. We will get back to you soon!");
+    try {
+      // Send the POST request
+      const response = await fetch("/api/service", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...formData, state: selectedState }),
+      });
+
+      // Check if the response is ok
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Parse the JSON response
+      const data = await response.json();
+
+      // Handle the response based on the data
+      if (data.status === true) {
+        toast.success(
+          "Thank you for contacting us. We will get back to you soon!"
+        );
+      } else {
+        toast.error("Failed to send request. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("Failed to send request. Please try again later.");
+      console.error("Error sending request:", error);
+    }
 
     // Uncomment if you want to reset the form after submission
     setFormData({
@@ -74,7 +103,7 @@ const BookAService: React.FC = () => {
       address: "",
       serviceType: "",
       isPickup: "",
-      date: "",
+      serviceDate: "",
     });
   };
 
@@ -263,25 +292,27 @@ const BookAService: React.FC = () => {
               <div className="relative">
                 <input
                   type="date"
-                  name="date"
-                  id="date"
+                  name="serviceDate"
+                  id="serviceDate"
                   // ref={dateInputRef}
                   required
                   className={`w-full min-h-11 p-2 bg-transparent border-b-2  focus:outline-none rounded-none  select-none ${
                     selectedState === "Odisha"
                       ? "border-b-primaryBlue"
                       : "border-b-primaryRed"
-                  } ${formData.date ? "text-black" : "  text-transparent"}`}
-                  value={formData.date}
+                  } ${
+                    formData.serviceDate ? "text-black" : "  text-transparent"
+                  }`}
+                  value={formData.serviceDate}
                   onChange={handleChange}
                   min={new Date().toISOString().split("T")[0]}
                   placeholder="Date*"
                   // onFocus={handleFocus}
                 />
                 <label
-                  htmlFor="date"
+                  htmlFor="serviceDate"
                   className={`absolute top-0 left-0 p-2 transition-all duration-300 ease-in-out w-[70%]  ${
-                    formData.date ? "text-transparent" : "  "
+                    formData.serviceDate ? "text-transparent" : "  "
                   }`}
                 >
                   Service date
