@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
+import { cgOutlets } from "@/constants";
 import { useAppContext } from "@/context";
 import React, { useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -26,9 +27,10 @@ interface ServiceBrand {
 const ChhattisgarhOutlets: React.FC = () => {
   const [filter, setFilter] = useState<string>("All");
   const { selectedState } = useAppContext();
+
   const serviceBrands: ServiceBrand[] = [
     {
-      name: "Maruti Suzuki Arena",
+      name: "Maruti Suzuki ",
       locations: [
         {
           name: "SKY AUTOMOBILES - RAIPUR",
@@ -369,11 +371,13 @@ const ChhattisgarhOutlets: React.FC = () => {
     setFilter(channel);
   };
 
-  const filteredLocations =
-    filter === "All"
-      ? serviceBrands[0].locations
-      : serviceBrands[0].locations.filter((loc) => loc.channel === filter);
+  const filteredLocations = cgOutlets.flatMap((category) =>
+    category.locations.filter((location) => {
+      const isChannelMatch = filter === "All" || location.channel === filter;
 
+      return isChannelMatch;
+    })
+  );
   return (
     <div>
       <Header />
@@ -415,102 +419,111 @@ const ChhattisgarhOutlets: React.FC = () => {
               </button>
             ))}
           </div>
+
           <div className="grid grid-cols-1 gap-4 mt-6 md:grid-cols-2 lg:grid-cols-3">
-            {filteredLocations.map((location, index) => (
-              <div
-                key={index}
-                className={`flex flex-col justify-between p-4 duration-300 border rounded-lg shadow-md cursor-default bg-secondaryGray4 group hover:scale-95  hover:text-white ${
-                  selectedState === "Odisha"
-                    ? "hover:bg-primaryBlue"
-                    : "hover:bg-primaryRed"
-                } `}
-              >
-                <div>
-                  <div className="mb-4 overflow-hidden rounded-lg bg-secondaryGray3">
-                    <iframe
-                      src={location.iframe}
-                      width="100%"
-                      height="200"
-                      allowFullScreen
-                      aria-hidden="false"
-                      loading="lazy"
-                      title={location.name}
-                      className="rounded-lg"
-                    ></iframe>
-                  </div>
-                  <div className="lg:px-2">
-                    <h2 className="mb-2 text-lg font-semibold">
-                      {location.name}
-                    </h2>
-                    <div className="flex gap-2 pb-3 text-sm">
-                      {location.address}
+            {filteredLocations.length > 0 ? (
+              filteredLocations.map((location, index) => (
+                <div
+                  key={index}
+                  className={`flex flex-col justify-between p-4 duration-300 border rounded-lg shadow-md cursor-default bg-secondaryGray4 group hover:scale-95  hover:text-white ${
+                    selectedState === "Odisha"
+                      ? "hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed"
+                  } `}
+                >
+                  <div>
+                    <div className="mb-4 overflow-hidden rounded-lg bg-secondaryGray3">
+                      <iframe
+                        src={location.iframe}
+                        width="100%"
+                        height="200"
+                        allowFullScreen
+                        aria-hidden="false"
+                        loading="lazy"
+                        title={location.name}
+                        className="rounded-lg"
+                      ></iframe>
                     </div>
-                    <table className="w-full text-sm">
-                      <tbody>
-                        {location.salesPersonName && (
-                          <tr>
-                            <td className="font-semibold pr-4">Sale:</td>
-                            <td>{location.salesPersonName}</td>
-                          </tr>
-                        )}
-                        {location.phone && (
-                          <tr className="border-b">
-                            <td className="font-semibold pr-4 pb-2 ">
-                              Contact:
-                            </td>
-                            <td className="pb-2">{location.phone}</td>
-                          </tr>
-                        )}
-                        {location.servicePersonName && (
-                          <tr>
-                            <td className="font-semibold pr-4 pt-2">
-                              Service:
-                            </td>
-                            <td>{location.servicePersonName}</td>
-                          </tr>
-                        )}
-                        {location.servicePhone && (
-                          <tr>
-                            <td className="font-semibold pr-4 pb-2">
-                              Contact:
-                            </td>
-                            <td className="pb-2">{location.servicePhone}</td>
-                          </tr>
-                        )}
-                        {location.email && (
-                          <tr className="border-t ">
-                            <td className="font-semibold pr-4 pt-1">Email:</td>
-                            <td className="lowercase pt-1">{location.email}</td>
-                          </tr>
-                        )}
-                        {/* <tr>
+                    <div className="lg:px-2">
+                      <h2 className="mb-2 text-lg font-semibold">
+                        {location.name}
+                      </h2>
+                      <div className="flex gap-2 pb-3 text-sm">
+                        {location.address}
+                      </div>
+                      <table className="w-full text-sm">
+                        <tbody>
+                          {location.salesPersonName && (
+                            <tr>
+                              <td className="font-semibold pr-4">Sale:</td>
+                              <td>{location.salesPersonName}</td>
+                            </tr>
+                          )}
+                          {location.phone && (
+                            <tr className="border-b">
+                              <td className="font-semibold pr-4 pb-2 ">
+                                Contact:
+                              </td>
+                              <td className="pb-2">{location.phone}</td>
+                            </tr>
+                          )}
+                          {location.servicePersonName && (
+                            <tr>
+                              <td className="font-semibold pr-4 pt-2">
+                                Service:
+                              </td>
+                              <td>{location.servicePersonName}</td>
+                            </tr>
+                          )}
+                          {location.servicePhone && (
+                            <tr>
+                              <td className="font-semibold pr-4 pb-2">
+                                Contact:
+                              </td>
+                              <td className="pb-2">{location.servicePhone}</td>
+                            </tr>
+                          )}
+                          {location.email && (
+                            <tr className="border-t ">
+                              <td className="font-semibold pr-4 pt-1">
+                                Email:
+                              </td>
+                              <td className="lowercase pt-1">
+                                {location.email}
+                              </td>
+                            </tr>
+                          )}
+                          {/* <tr>
                           <td className="font-semibold pr-4">Timing:</td>
                           <td>
                             9:30 AM to 8 PM - Mon to Sat <br />
                             10.00 AM to 5 PM - Sun
                           </td>
                         </tr> */}
-                      </tbody>
-                    </table>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div className="mt-4 lg:mt-6">
+                    <a
+                      href={location.map}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`flex items-center justify-center gap-2 pt-3 pb-2 text-sm border rounded-lg group-hover:bg-white  ${
+                        selectedState === "Odisha"
+                          ? "group-hover:text-primaryBlue border-primaryBlue"
+                          : "group-hover:text-primaryRed border-primaryRed"
+                      } `}
+                    >
+                      <FaMapMarkerAlt className="text-secondaryRed2" /> View in
+                      Google Maps
+                    </a>
                   </div>
                 </div>
-                <div className="mt-4 lg:mt-6">
-                  <a
-                    href={location.map}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`flex items-center justify-center gap-2 pt-3 pb-2 text-sm border rounded-lg group-hover:bg-white  ${
-                      selectedState === "Odisha"
-                        ? "group-hover:text-primaryBlue border-primaryBlue"
-                        : "group-hover:text-primaryRed border-primaryRed"
-                    } `}
-                  >
-                    <FaMapMarkerAlt className="text-secondaryRed2" /> View in
-                    Google Maps
-                  </a>
-                </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <p>No locations match your filters.</p>
+            )}
           </div>
         </div>
       </div>

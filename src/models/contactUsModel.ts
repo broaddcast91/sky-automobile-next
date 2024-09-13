@@ -1,4 +1,4 @@
-import mongoose, { Document, Schema, Model } from "mongoose";
+import mongoose, {  Schema, Model } from "mongoose";
 
 // Define a TypeScript interface that extends mongoose.Document
 interface IContactUs {
@@ -6,10 +6,9 @@ interface IContactUs {
   phone: string;
   email: string;
   subject: string;
-  address: string;
   message?: string;
   state: string;
-
+  leadFrom: string;
   time: string;
   date: string;
   isDeleted?: boolean;
@@ -49,7 +48,10 @@ const contactUsSchema: Schema = new Schema<IContactUs>(
       required: true,
       trim: true,
     },
-
+    leadFrom: {
+      type: String,
+      default: "Contact Us",
+    },
     isDeleted: {
       type: Boolean,
       default: false,
@@ -72,6 +74,6 @@ const contactUsSchema: Schema = new Schema<IContactUs>(
 // Create the model with the interface
 const ContactUs: Model<IContactUs> =
   mongoose.models.ContactUs ||
-  mongoose.model<IContactUs>("ContactUs", contactUsSchema);
+  mongoose.model<IContactUs>("contactUs", contactUsSchema);
 
 export default ContactUs;

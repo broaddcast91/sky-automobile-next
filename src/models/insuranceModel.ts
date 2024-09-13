@@ -1,4 +1,4 @@
-import mongoose, { Document, Schema, Model } from "mongoose";
+import mongoose, { Schema, Model } from "mongoose";
 
 // Define a TypeScript interface that extends mongoose.Document
 interface IInsurance {
@@ -9,7 +9,7 @@ interface IInsurance {
   address: string;
   city: string;
   state: string;
-
+  leadFrom: string;
   time: string;
   date: string;
   isDeleted?: boolean;
@@ -49,6 +49,10 @@ const insuranceSchema: Schema = new Schema<IInsurance>(
       required: true,
       trim: true,
     },
+    leadFrom: {
+      type: String,
+      default: "Insurance",
+    },
     address: {
       type: String,
       required: true,
@@ -76,6 +80,6 @@ const insuranceSchema: Schema = new Schema<IInsurance>(
 // Create the model with the interface
 const Insurance: Model<IInsurance> =
   mongoose.models.Insurance ||
-  mongoose.model<IInsurance>("Insurance", insuranceSchema);
+  mongoose.model<IInsurance>("insurance", insuranceSchema);
 
 export default Insurance;

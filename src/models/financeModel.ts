@@ -1,4 +1,4 @@
-import mongoose, { Document, Schema, Model } from "mongoose";
+import mongoose, {  Schema, Model } from "mongoose";
 
 // Define a TypeScript interface that extends mongoose.Document
 interface IFinance {
@@ -10,6 +10,7 @@ interface IFinance {
   state: string;
   loanAmount: number;
   loanTenure: number;
+  leadFrom: string;
   time: string;
   date: string;
   isDeleted?: boolean;
@@ -57,6 +58,10 @@ const financeSchema: Schema = new Schema<IFinance>(
       type: Number,
       required: true,
     },
+    leadFrom: {
+      type: String,
+      default: "finance",
+    },
     isDeleted: {
       type: Boolean,
       default: false,
@@ -78,6 +83,6 @@ const financeSchema: Schema = new Schema<IFinance>(
 
 // Create the model with the interface
 const Finance: Model<IFinance> =
-  mongoose.models.Finance || mongoose.model<IFinance>("Finance", financeSchema);
+  mongoose.models.Finance || mongoose.model<IFinance>("finance", financeSchema);
 
 export default Finance;

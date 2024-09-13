@@ -3,7 +3,7 @@
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
 import VehicleDetailsSlider from "@/components/others/VehicleDetailsSlider";
-import { models } from "@/constants";
+import { cgOutlets, models } from "@/constants";
 import { useAppContext } from "@/context";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import toast from "react-hot-toast";
@@ -16,7 +16,7 @@ interface FormData {
   phone: string;
   email: string;
   outlet: string;
-  model: string;
+  variant: string;
 }
 interface VehiceProps {
   index: number;
@@ -32,7 +32,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
     phone: "",
     email: "",
     outlet: "",
-    model: data?.variants[0]?.variant || "",
+    variant: data?.variants[0]?.variant || "",
   });
   const [selected, setSelected] = React.useState("Exterior");
 
@@ -44,22 +44,62 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ): void => {
     const { name, value } = e.target;
+    console.log(name, value);
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Form Data:", { ...formData, state: selectedState });
-    toast.success("Thank You for contacting us. We will get back to you soon!");
+    console.log("Form Data:", {
+      ...formData,
+      state: selectedState,
+      model: data.name,
+    });
+    let modelName = data.name;
+    try {
+      // Send the POST request
+      const response = await fetch("/api/on-road-price", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          state: selectedState,
+          model: modelName,
+        }),
+      });
+
+      // Check if the response is ok
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Parse the JSON response
+      const data = await response.json();
+
+      // Handle the response based on the data
+      if (data.status === true) {
+        toast.success(
+          "Thank you for contacting us. We will get back to you soon!"
+        );
+      } else {
+        toast.error("Failed to send request. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("Failed to send request. Please try again later.");
+      console.error("Error sending request:", error);
+    }
     setFormData({
       name: "",
       phone: "",
       email: "",
       outlet: "",
-      model: data?.variants[0]?.variant || "",
+
+      variant: data?.variants[0]?.variant || "",
     });
     const formElement = document.getElementById("myForm") as HTMLFormElement;
     if (formElement) {
@@ -190,28 +230,53 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
         </h4>
         <form onSubmit={handleSubmit} id="myForm" className="py-3 bg-white ">
           <div className=" w-full gap-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
-            {["name", "phone", "email"].map((field, index) => (
-              <input
-                key={index}
-                type={field === "email" ? "email" : "text"}
-                name={field}
-                placeholder={`${
-                  field.charAt(0).toUpperCase() + field.slice(1)
-                }*`}
-                required={field !== "email"}
-                maxLength={field === "phone" ? 10 : undefined}
-                minLength={field === "phone" ? 10 : undefined}
-                pattern={field === "phone" ? "[0-9]{10}" : undefined}
-                onChange={handleChange}
-                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none ${
-                  selectedState === "Odisha"
-                    ? "border-b-primaryBlue"
-                    : " border-b-primaryRed"
-                }  `}
-              />
-            ))}
+            <input
+              type="text"
+              name="name"
+              placeholder="Name*"
+              required
+              minLength={3}
+              maxLength={50}
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : "border-b-primaryRed"
+              }`}
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone*"
+              required
+              minLength={10}
+              maxLength={10}
+              pattern="^[0-9]{10}$"
+              title="Please enter a valid 10-digit phone number"
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : "border-b-primaryRed"
+              }`}
+              value={formData.phone}
+              onChange={handleChange}
+            />{" "}
+            <input
+              type="email"
+              name="email"
+              placeholder="Email*"
+              required
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : "border-b-primaryRed"
+              }`}
+              value={formData.email}
+              onChange={handleChange}
+            />
             <select
-              name="model"
+              name="variant"
               className={`w-full p-2 bg-transparent border-b-2   focus:outline-none ${
                 selectedState === "Odisha"
                   ? "border-b-primaryBlue"
@@ -231,7 +296,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
               ))}
             </select>
             <select
-              name="model"
+              name="outlet"
               className={`w-full p-2 bg-transparent border-b-2   focus:outline-none ${
                 selectedState === "Odisha"
                   ? "border-b-primaryBlue"
@@ -244,11 +309,23 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
               <option value="" disabled>
                 Select Outlet
               </option>
-              {outlets.map((outlet, index) => (
-                <option key={index} value={outlet}>
-                  {outlet}
-                </option>
-              ))}
+              {selectedState !== "Odisha" && index < 9
+                ? cgOutlets[0].locations.map((outlet, i) => (
+                    <option key={i} value={outlet.name}>
+                      {outlet.name}
+                    </option>
+                  ))
+                : selectedState !== "Odisha"
+                ? cgOutlets[1].locations.map((outlet, i) => (
+                    <option key={i} value={outlet.name}>
+                      {outlet.name}
+                    </option>
+                  ))
+                : outlets.map((outlet, i) => (
+                    <option key={i} value={outlet}>
+                      {outlet}
+                    </option>
+                  ))}
             </select>
             <button
               type="submit"
@@ -327,7 +404,9 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
             <div className="rounded-lg ">
               <p
                 className={`  text-white text-center mb-6 text-xl w-min mx-auto px-4 lg:px-8 py-1.5 ${
-                  selectedState === "Odisha" ? " bg-primaryBlue border-primaryBlue" : "bg-primaryRed border-primaryRed"
+                  selectedState === "Odisha"
+                    ? " bg-primaryBlue border-primaryBlue"
+                    : "bg-primaryRed border-primaryRed"
                 }`}
               >
                 Specification

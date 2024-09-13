@@ -1,17 +1,16 @@
-import mongoose, { Document, Schema, Model } from "mongoose";
+import mongoose, { Schema, Model } from "mongoose";
 
 // Define a TypeScript interface that extends mongoose.Document
-interface ICareer {
+interface IOnRoadPrice {
   name: string;
   phone: string;
   email: string;
-  designation: string;
-  noticePeriod: string;
-  experience: string;
-  currentCTC: string;
-  expectedCTC: string;
+  model: string;
+  outlet: string;
   state: string;
   leadFrom: string;
+  variant: string;
+
   time: string;
   date: string;
   isDeleted?: boolean;
@@ -19,7 +18,7 @@ interface ICareer {
 }
 
 // Define the schema with type annotations
-const careerSchema: Schema = new Schema<ICareer>(
+const onRoadPriceSchema: Schema = new Schema<IOnRoadPrice>(
   {
     name: {
       type: String,
@@ -36,34 +35,25 @@ const careerSchema: Schema = new Schema<ICareer>(
       required: true,
       trim: true,
     },
-    designation: {
+    model: {
       type: String,
       required: true,
       trim: true,
     },
-    noticePeriod: {
-      type: String,
-
-      trim: true,
-    },
-    experience: {
+    outlet: {
       type: String,
       required: true,
       trim: true,
     },
-    currentCTC: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    expectedCTC: {
+    variant: {
       type: String,
       required: true,
       trim: true,
     },
     leadFrom: {
       type: String,
-      default: "Career",
+      default: "On Road Price",
+      trim: true,
     },
     state: {
       type: String,
@@ -91,8 +81,8 @@ const careerSchema: Schema = new Schema<ICareer>(
 );
 
 // Create the model with the interface
-const Career: Model<ICareer> =
-  mongoose.models.Career ||
-  mongoose.model<ICareer>("career", careerSchema);
+const OnRoadPrice =
+  mongoose.models.OnRoadPrice ||
+  mongoose.model("OnRoadPrice", onRoadPriceSchema);
 
-export default Career;
+export default OnRoadPrice;

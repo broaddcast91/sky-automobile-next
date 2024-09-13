@@ -12,7 +12,7 @@ interface IService {
   isPickup: string;
   serviceDate: string;
   state: string;
-
+  leadFrom: string;
   time: string;
   date: string;
   isDeleted?: boolean;
@@ -75,7 +75,10 @@ const serviceSchema: Schema = new Schema<IService>(
       required: true,
       trim: true,
     },
-
+    leadFrom: {
+      type: String,
+      default: "Service",
+    },
     isDeleted: {
       type: Boolean,
       default: false,
@@ -97,6 +100,6 @@ const serviceSchema: Schema = new Schema<IService>(
 
 // Create the model with the interface
 const Service: Model<IService> =
-  mongoose.models.Service || mongoose.model<IService>("Service", serviceSchema);
+  mongoose.models.Service || mongoose.model<IService>("service", serviceSchema);
 
 export default Service;

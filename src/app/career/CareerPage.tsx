@@ -133,20 +133,7 @@ const CareerPage: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
               />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email*"
-                required
-                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
-                  selectedState === "Odisha"
-                    ? "border-b-primaryBlue"
-                    : "border-b-primaryRed"
-                }`}
-                value={formData.email}
-                onChange={handleChange}
-              />
-              <input
+                <input
                 type="tel"
                 name="phone"
                 placeholder="Phone*"
@@ -162,7 +149,20 @@ const CareerPage: React.FC = () => {
                 }`}
                 value={formData.phone}
                 onChange={handleChange}
+              />  <input
+                type="email"
+                name="email"
+                placeholder="Email*"
+                required
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
+                value={formData.email}
+                onChange={handleChange}
               />
+          
               <input
                 type="text"
                 name="designation"

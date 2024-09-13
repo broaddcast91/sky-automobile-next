@@ -56,7 +56,7 @@ const Insurance: React.FC = () => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("Form Data:", { ...formData, state: selectedState });
-    toast.success("Thank You for contacting us. We will get back to you soon!");
+   
     try {
       // Send the POST request
       const response = await fetch("/api/insurance", {
