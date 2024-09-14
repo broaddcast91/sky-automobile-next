@@ -20,6 +20,7 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
     phone: string;
     model: string;
     outlet: string;
+    email: string;
   }
 
   useEffect(() => {
@@ -37,6 +38,7 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
     phone: "",
     model: "",
     outlet: '',
+    email: "",
   });
 
   // Handle form input changes
@@ -61,6 +63,7 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
       phone: "",
       model: "",
       outlet: '',
+      email: "",
     });
     setShowTestDrive(false);
   };
@@ -122,6 +125,20 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
               value={formData.phone}
               onChange={handleChange}
             />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              // title="Only 10 digit Indian numbers are allowed"
+              // pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none  lg:col-span-2 ${
+                selectedState === "Odisha"
+                  ? "border-b-white"
+                  : "border-b-primaryRed"
+              }`}
+              value={formData.email}
+              onChange={handleChange}
+            />
             <select
               name="model"
               className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none  ${
@@ -138,7 +155,7 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
                 className="w-full p-2 text-sm text-black border rounded-md"
                 disabled
               >
-               Select Model*
+                Select Model*
               </option>
               <optgroup label="Arena" className="text-sm text-primaryGray">
                 <option value="Alto k10">Alto K10</option>
