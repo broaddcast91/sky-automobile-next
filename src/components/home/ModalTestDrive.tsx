@@ -81,7 +81,7 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
     >
       <div className="bg-white w-full max-w-md rounded py-6 m-2 md:py-6 select-none px-4 ">
         <h4 className=" text-xl font-semibold  text-primaryGray mb-4">
-          Book A{" "}
+          Book A Test Drive{" "}
           <span
             className={` ${
               selectedState === "Odisha"
@@ -89,7 +89,7 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
                 : "text-primaryRed"
             }`}
           >
-            Test Drive {model&& `For ${model}`}
+            {model&& `For ${model}`}
           </span>{" "}
         </h4>
         <form onSubmit={handleSubmit}>
