@@ -1,23 +1,42 @@
-"use client"; // Add this at the top of your file
+"use client";
 import { useAppContext } from "@/context";
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-const EnqHome: React.FC = () => {
-  // Define the type for the form data
+interface ModalTestDriveProps {
+  showTestDrive: boolean;
+  setShowTestDrive: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
+  showTestDrive,
+  setShowTestDrive,
+}) => {
+  const handleOnClose = (e: any) => {
+    if (e.target.id === "container") setShowTestDrive(false);
+  };
   interface FormData {
     name: string;
     phone: string;
-    lookingFor: string;
+    model: string;
+    outlet: string;
   }
 
-  const { selectedState } = useAppContext();
+  useEffect(() => {
+    // Prevent scrolling when the modal is open
+    document.body.style.overflow = showTestDrive ? "hidden" : "auto";
 
-  // Initialize form state
+    // Clean up the effect when the component is unmounted or the state changes
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showTestDrive]);
+  const { selectedState } = useAppContext();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
-    lookingFor: "",
+    model: "",
+    outlet: '',
   });
 
   // Handle form input changes
@@ -40,15 +59,35 @@ const EnqHome: React.FC = () => {
     setFormData({
       name: "",
       phone: "",
-      lookingFor: "",
+      model: "",
+      outlet: '',
     });
+    setShowTestDrive(false);
   };
 
+  if (!showTestDrive) return null;
+
   return (
-    <div className="text-white bg-primaryGray">
-      <div className="container px-4 py-10 mx-auto xl:max-w-7xl">
+    <div
+      id="container"
+      onClick={handleOnClose}
+      className="fixed inset-0 flex items-center justify-center z-[100] backdrop-blur-[3px] overflow-hidden bg-black bg-opacity-50"
+    >
+      <div className="bg-white w-full max-w-md rounded py-6 m-2 md:py-6 select-none px-4 ">
+        <h4 className=" text-xl font-semibold  text-primaryGray mb-4">
+          Book A{" "}
+          <span
+            className={` ${
+              selectedState === "Odisha"
+                ? "text-primaryBlue"
+                : "text-primaryRed"
+            }`}
+          >
+            Test Drive
+          </span>{" "}
+        </h4>
         <form onSubmit={handleSubmit}>
-          <div className="grid gap-4 md:grid-cols-2  lg:grid-cols-4">
+          <div className="flex flex-col gap-2">
             <input
               type="text"
               name="name"
@@ -58,9 +97,9 @@ const EnqHome: React.FC = () => {
               minLength={3}
               maxLength={50}
               title="Only alphabets are allowed with minimum 3 and maximum 50 characters"
-              className={`w-full p-2 bg-transparent  border-b-2  focus:outline-none placeholder:text-white ${
+              className={`w-full p-2 bg-transparent  border-b-2  focus:outline-none  ${
                 selectedState === "Odisha"
-                  ? "border-b-white "
+                  ? "border-b-primaryBlue "
                   : "border-b-primaryRed "
               }`}
               value={formData.name}
@@ -75,23 +114,23 @@ const EnqHome: React.FC = () => {
               maxLength={10}
               title="Only 10 digit Indian numbers are allowed"
               pattern="^[0-9]+$"
-              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none placeholder:text-white ${
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none  ${
                 selectedState === "Odisha"
-                  ? "border-b-white"
+                  ? "border-b-primaryBlue"
                   : "border-b-primaryRed"
               }`}
               value={formData.phone}
               onChange={handleChange}
             />
             <select
-              name="lookingFor"
-              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none placeholder:text-white ${
+              name="model"
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none  ${
                 selectedState === "Odisha"
-                  ? "border-b-white"
+                  ? "border-b-primaryBlue"
                   : "border-b-primaryRed"
               }`}
               required
-              value={formData.lookingFor}
+              value={formData.model}
               onChange={handleChange}
             >
               <option
@@ -99,7 +138,7 @@ const EnqHome: React.FC = () => {
                 className="w-full p-2 text-sm text-black border rounded-md"
                 disabled
               >
-                I&apos;m looking for*
+               Select Model*
               </option>
               <optgroup label="Arena" className="text-sm text-primaryGray">
                 <option value="Alto k10">Alto K10</option>
@@ -123,34 +162,27 @@ const EnqHome: React.FC = () => {
                 <option value="Ignis">Ignis</option>
                 <option value="XL6">XL6</option>
               </optgroup>
-              <optgroup label="True Value" className="text-sm text-primaryGray">
+              {/* <optgroup label="True Value" className="text-sm text-primaryGray">
                 <option value="I want to buy">I want to buy</option>
                 <option value="I want to sell">I want to sell</option>
-              </optgroup>
+              </optgroup> */}
             </select>
 
             <button
               type="submit"
-              className={`hidden px-2 py-2 mx-auto text-sm duration-500 bg-transparent border rounded-md md:text-sm md:px-4 hover:shadow-lg  w-min whitespace-nowrap lg:block ${
+              className={`mt-4  px-2 py-2  text-sm duration-500  border rounded-md md:text-sm md:px-4 hover:shadow-lg   whitespace-nowrap text-white  ${
                 selectedState === "Odisha"
-                  ? " hover:bg-primaryBlue"
-                  : "hover:border-primaryRed hover:bg-primaryRed"
+                  ? " bg-primaryBlue"
+                  : "border-primaryRed bg-primaryRed"
               } `}
             >
               Enquire Now
             </button>
-          </div>
-          <div className="flex justify-center py-2 mt-4 lg:hidden">
-            <button
-              type="submit"
-              className={`px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:text-base md:px-4 hover:shadow-lg  ${
-                selectedState === "Odisha"
-                  ? " hover:bg-primaryBlue"
-                  : "hover:border-primaryRed hover:bg-primaryRed"
-              }`}
-            >
-              Enquire Now
-            </button>
+            <p className=" text-[10px] text-gray-500">
+              *Disclaimer: I agree that by clicking the &apos;Enquir Now&apos;
+              button below, I am explicitly soliciting a call and message via
+              whatsapp or any other medium from us.
+            </p>
           </div>
         </form>
       </div>
@@ -158,4 +190,4 @@ const EnqHome: React.FC = () => {
   );
 };
 
-export default EnqHome;
+export default ModalTestDrive;
