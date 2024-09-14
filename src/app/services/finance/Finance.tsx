@@ -42,13 +42,13 @@ const Finance: React.FC = () => {
   const data = models[index];
 
   const MIN1 = 1;
-  const MAX1 = 100;
+  const MAX1 = 30;
   const steps1 = 0.1;
   const MIN2 = 1;
   const MAX2 = 30;
   const steps2 = 0.01;
   const MIN3 = 1;
-  const MAX3 = 30;
+  const MAX3 = 10;
   const steps3 = 1;
 
   const [value1, setValue1] = useState(MIN1);

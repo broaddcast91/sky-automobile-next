@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 import { BsFuelPump } from "react-icons/bs";
 import { GiSpeedometer } from "react-icons/gi";
 import { PiEngine } from "react-icons/pi";
+import ModalTestDrive from "../home/ModalTestDrive";
 
 interface FormData {
   name: string;
@@ -35,6 +36,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
     variant: data?.variants[0]?.variant || "",
   });
   const [selected, setSelected] = React.useState("Exterior");
+   const [showTestDrive, setShowTestDrive] = useState(false);
 
   const handleClickColor = (index: number): void => {
     setSelectedColor(index);
@@ -169,19 +171,29 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
                   View Brochure
                 </button>
               </a>
-              {["Get On Road Price", "Book Test Drive"].map((text, index) => (
-                <button
-                  key={index}
-                  aria-label={text}
-                  className={`px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:px-4 hover:shadow-lg   ${
-                    selectedState === "Odisha"
-                      ? "hover:bg-primaryBlue"
-                      : "hover:bg-primaryRed "
-                  }`}
-                >
-                  {text}
-                </button>
-              ))}
+
+              <a
+                href="#enq-form"
+                aria-label="  Get On Road Price"
+                className={`px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:px-4 hover:shadow-lg   ${
+                  selectedState === "Odisha"
+                    ? "hover:bg-primaryBlue"
+                    : "hover:bg-primaryRed "
+                }`}
+              >
+                Get On Road Price
+              </a>
+              <button
+                aria-label=" Book Test Drive"
+                onClick={() => setShowTestDrive(true)}
+                className={`px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:px-4 hover:shadow-lg   ${
+                  selectedState === "Odisha"
+                    ? "hover:bg-primaryBlue"
+                    : "hover:bg-primaryRed "
+                }`}
+              >
+                Book Test Drive
+              </button>
             </div>
             <p className="mb-4 text-sm">
               Our professional and well-trained staff is ready to assist you.
@@ -214,7 +226,10 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
         </div>
       </div>
 
-      <div className="container mx-auto xl:max-w-7xl bg-white py-10 lg:pt-20">
+      <div
+        id="enq-form"
+        className="container mx-auto xl:max-w-7xl bg-white py-10 lg:pt-20"
+      >
         <h4 className="sm:text-3xl font-bold text-primaryGray lg:mb-6 text-2xl">
           Book your{" "}
           <span
@@ -490,6 +505,11 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
         </div>
       </div>
       <Footer />
+      <ModalTestDrive
+        showTestDrive={showTestDrive}
+        setShowTestDrive={setShowTestDrive}
+        model={data?.subName}
+      />
     </div>
   );
 };

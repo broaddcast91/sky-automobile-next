@@ -6,11 +6,13 @@ import toast from "react-hot-toast";
 interface ModalTestDriveProps {
   showTestDrive: boolean;
   setShowTestDrive: React.Dispatch<React.SetStateAction<boolean>>;
+  model?: string;
 }
 
 const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
   showTestDrive,
   setShowTestDrive,
+  model,
 }) => {
   const handleOnClose = (e: any) => {
     if (e.target.id === "container") setShowTestDrive(false);
@@ -23,6 +25,7 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
     email: string;
   }
 
+  console.log(model);
   useEffect(() => {
     // Prevent scrolling when the modal is open
     document.body.style.overflow = showTestDrive ? "hidden" : "auto";
@@ -36,8 +39,8 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
   const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
-    model: "",
-    outlet: '',
+    model: model || "",
+    outlet: "",
     email: "",
   });
 
@@ -62,7 +65,7 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
       name: "",
       phone: "",
       model: "",
-      outlet: '',
+      outlet: "",
       email: "",
     });
     setShowTestDrive(false);
@@ -86,7 +89,7 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
                 : "text-primaryRed"
             }`}
           >
-            Test Drive
+            Test Drive {model&& `For ${model}`}
           </span>{" "}
         </h4>
         <form onSubmit={handleSubmit}>
@@ -139,51 +142,53 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
               value={formData.email}
               onChange={handleChange}
             />
-            <select
-              name="model"
-              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none  ${
-                selectedState === "Odisha"
-                  ? "border-b-primaryBlue"
-                  : "border-b-primaryRed"
-              }`}
-              required
-              value={formData.model}
-              onChange={handleChange}
-            >
-              <option
-                value=""
-                className="w-full p-2 text-sm text-black border rounded-md"
-                disabled
+            {!model  && (
+              <select
+                name="model"
+                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none  ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : "border-b-primaryRed"
+                }`}
+                required
+                value={formData.model}
+                onChange={handleChange}
               >
-                Select Model*
-              </option>
-              <optgroup label="Arena" className="text-sm text-primaryGray">
-                <option value="Alto k10">Alto K10</option>
-                <option value="Wagon R">Wagon R</option>
-                <option value="Celerio">Celerio</option>
-                <option value="Epic swift 2024">Epic Swift 2024</option>
-                <option value="Swift">Swift</option>
-                <option value="Dzire">Dzire</option>
-                <option value="S-presso">S-Presso</option>
-                <option value="Ertiga">Ertiga</option>
-                <option value="Brezza">Brezza</option>
-                <option value="Eeco">Eeco</option>
-              </optgroup>
-              <optgroup label="Nexa" className="text-sm text-primaryGray">
-                <option value="Invicto">Invicto</option>
-                <option value="Fronx">Fronx</option>
-                <option value="Jimny">Jimny</option>
-                <option value="Grand Vitara">Grand Vitara</option>
-                <option value="Ciaz">Ciaz</option>
-                <option value="Baleno">Baleno</option>
-                <option value="Ignis">Ignis</option>
-                <option value="XL6">XL6</option>
-              </optgroup>
-              {/* <optgroup label="True Value" className="text-sm text-primaryGray">
+                <option
+                  value=""
+                  className="w-full p-2 text-sm text-black border rounded-md"
+                  disabled
+                >
+                  Select Model*
+                </option>
+                <optgroup label="Arena" className="text-sm text-primaryGray">
+                  <option value="Alto k10">Alto K10</option>
+                  <option value="Wagon R">Wagon R</option>
+                  <option value="Celerio">Celerio</option>
+                  <option value="Epic swift 2024">Epic Swift 2024</option>
+                  <option value="Swift">Swift</option>
+                  <option value="Dzire">Dzire</option>
+                  <option value="S-presso">S-Presso</option>
+                  <option value="Ertiga">Ertiga</option>
+                  <option value="Brezza">Brezza</option>
+                  <option value="Eeco">Eeco</option>
+                </optgroup>
+                <optgroup label="Nexa" className="text-sm text-primaryGray">
+                  <option value="Invicto">Invicto</option>
+                  <option value="Fronx">Fronx</option>
+                  <option value="Jimny">Jimny</option>
+                  <option value="Grand Vitara">Grand Vitara</option>
+                  <option value="Ciaz">Ciaz</option>
+                  <option value="Baleno">Baleno</option>
+                  <option value="Ignis">Ignis</option>
+                  <option value="XL6">XL6</option>
+                </optgroup>
+                {/* <optgroup label="True Value" className="text-sm text-primaryGray">
                 <option value="I want to buy">I want to buy</option>
                 <option value="I want to sell">I want to sell</option>
               </optgroup> */}
-            </select>
+              </select>
+            )}
 
             <button
               type="submit"
@@ -193,10 +198,10 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
                   : "border-primaryRed bg-primaryRed"
               } `}
             >
-              Enquire Now
+              Book Now
             </button>
             <p className=" text-[10px] text-gray-500">
-              *Disclaimer: I agree that by clicking the &apos;Enquir Now&apos;
+              *Disclaimer: I agree that by clicking the &apos;Book Now&apos;
               button below, I am explicitly soliciting a call and message via
               whatsapp or any other medium from us.
             </p>
