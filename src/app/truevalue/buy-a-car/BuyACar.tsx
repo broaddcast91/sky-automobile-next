@@ -7,8 +7,9 @@ import toast from "react-hot-toast";
 import { BsFillFuelPumpFill } from "react-icons/bs";
 import { FaTrafficLight, FaUser } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
-import { GiGearStickPattern, GiTrafficLightsGreen } from "react-icons/gi";
+// import { GiGearStickPattern, GiTrafficLightsGreen } from "react-icons/gi";
 import { HiMiniMapPin } from "react-icons/hi2";
+import ModalBuyACar from "./ModalBuyACar";
 
 // Sample car data
 const carData = [
@@ -89,6 +90,7 @@ const BuyACar: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("");
   const [filteredCars, setFilteredCars] = useState(carData);
+  const [showBuyACar, setShowBuyACar] = useState(false);
 
   // Handle Search
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -297,6 +299,7 @@ const BuyACar: React.FC = () => {
         </div>
       </div>
       <Footer />
+      <ModalBuyACar  showBuyACar={showBuyACar} setShowBuyACar={setShowBuyACar} />
     </div>
   );
 };

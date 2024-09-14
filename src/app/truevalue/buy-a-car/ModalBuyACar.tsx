@@ -175,6 +175,7 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
                   ? " bg-primaryBlue"
                   : "border-primaryRed bg-primaryRed"
               } `}
+              onClick={() => setShowBuyACar(true)}
             >
               Enquire Now
             </button>

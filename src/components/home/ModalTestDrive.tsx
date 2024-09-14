@@ -131,9 +131,9 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
               placeholder="Email"
               // title="Only 10 digit Indian numbers are allowed"
               // pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none  lg:col-span-2 ${
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none   lg:col-span-2 ${
                 selectedState === "Odisha"
-                  ? "border-b-white"
+                  ? "border-b-primaryBlue"
                   : "border-b-primaryRed"
               }`}
               value={formData.email}
