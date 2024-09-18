@@ -519,7 +519,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
           <h4 className="text-2xl font-bold text-primaryGray mb-6">
             Explore More Vehicles
           </h4>
-          <div className="grid gap-4 md:grid-cols-2  lg:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-2  lg:grid-cols-3">
             {data?.exploreMore?.map((vehicle, index) => (
               <div
                 key={index}

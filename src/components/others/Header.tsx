@@ -136,7 +136,7 @@ const Header = () => {
               />
             </Link>
           </div>
-          <nav className="hidden gap-4 text-sm uppercase lg:gap-6 xl:gap-8 font-poppins lg:flex">
+          <nav className="hidden gap-4 text-sm uppercase  xl:gap-8 font-poppins lg:flex whitespace-nowrap">
             <Link
               onMouseEnter={() => setIsVehicle(false)}
               href="/about-us"
@@ -298,8 +298,8 @@ const Header = () => {
             >
               <FaMapMarkerAlt className="" />
               {selectedState && (
-                <p className={`  text-sm `}>
-                  {selectedState === "Odisha" ? "OD" : "CG"}
+                <p className={`  text-sm uppercase `}>
+                  {selectedState === "Odisha" ? "Odisha" : "Chhattisgarh"}
                 </p>
               )}
               <FaCaretRight className="rotate-90" />
@@ -331,8 +331,7 @@ const Header = () => {
             </button>
           </div>
         </div>
-        {
-          isVehicle &&
+        {isVehicle && (
           <div
             onMouseLeave={() => setIsVehicle(false)}
             onMouseEnter={() => setIsVehicle(true)}
@@ -483,7 +482,7 @@ const Header = () => {
               )}
             </div>
           </div>
-        }
+        )}
       </div>
       {showSidePanel && <ModalSidePannel setShowSidePanel={setShowSidePanel} />}
     </header>
