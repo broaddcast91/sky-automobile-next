@@ -523,22 +523,28 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
             {data?.exploreMore?.map((vehicle, index) => (
               <div
                 key={index}
-                className={`border rounded-lg hover:shadow-lg flex flex-col justify-between ${
-                 index > 1  ? "hidden md:block" : index > 0 && "hidden lg:block"
+                className={`border rounded-lg hover:shadow-lg  flex-col justify-between ${
+                  index > 1
+                    ? "hidden md:flex"
+                    : index > 0
+                    ? "hidden lg:flex"
+                    : "flex"
                 }`}
               >
                 <img
-                  src={models?.[vehicle]?.colors[selectedColor].img}
-                  alt={models?.[vehicle]?.colors[selectedColor].colName}
+                  src={models?.[vehicle]?.thumbnail}
+                  alt={models?.[vehicle]?.subName}
                   className="my-auto"
                 />
                 <div className="p-4 text-center ">
                   {" "}
-                  <p className="pb-1 text-lg font-bold">{models?.[vehicle]?.subName}</p>
+                  <p className="pb-1 text-lg font-bold">
+                    {models?.[vehicle]?.subName}
+                  </p>
                   <p className="text-sm text-primaryGray pb-4">
                     Starting from ₹ {models?.[vehicle]?.variants[0].price} /-
                   </p>
-                  <div className="flex gap-2">
+                  <div className="">
                     {" "}
                     {/* <button
                     className={`w-full  col-span-4  font-bold text-sm rounded-lg px-2 py-2 border  ${
