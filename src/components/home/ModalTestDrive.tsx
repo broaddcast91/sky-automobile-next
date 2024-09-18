@@ -89,7 +89,7 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
                 : "text-primaryRed"
             }`}
           >
-            {model&& `For ${model}`}
+            {model && `For ${model}`}
           </span>{" "}
         </h4>
         <form onSubmit={handleSubmit}>
@@ -142,7 +142,7 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
               value={formData.email}
               onChange={handleChange}
             />
-            {!model  && (
+            {!model && (
               <select
                 name="model"
                 className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none  ${
@@ -200,7 +200,7 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
             >
               Book Now
             </button>
-            <p className=" text-[10px] text-gray-500">
+            <p className="mt-4 text-[10px] text-gray-500">
               *Disclaimer: I agree that by clicking the &apos;Book Now&apos;
               button below, I am explicitly soliciting a call and message via
               whatsapp or any other medium from us.

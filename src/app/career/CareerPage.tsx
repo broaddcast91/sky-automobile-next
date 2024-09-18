@@ -105,10 +105,11 @@ const CareerPage: React.FC = () => {
                   ? "text-primaryBlue"
                   : "text-primaryRed"
               }`}
-            > {formData.designation && (
-              <span className=""> {formData.designation} </span>
-            )}
-             
+            >
+              {" "}
+              {formData.designation && (
+                <span className=""> {formData.designation} </span>
+              )}
             </span>
             Position
           </h4>
@@ -133,7 +134,7 @@ const CareerPage: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
               />
-                <input
+              <input
                 type="tel"
                 name="phone"
                 placeholder="Phone*"
@@ -149,7 +150,8 @@ const CareerPage: React.FC = () => {
                 }`}
                 value={formData.phone}
                 onChange={handleChange}
-              />  <input
+              />{" "}
+              <input
                 type="email"
                 name="email"
                 placeholder="Email*"
@@ -162,7 +164,6 @@ const CareerPage: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
               />
-          
               <input
                 type="text"
                 name="designation"
@@ -257,9 +258,10 @@ const CareerPage: React.FC = () => {
             >
               Apply Now
             </button>
-            <p className="mt-6 text-xs text-gray-500">
-              *Disclaimer: By clicking &apos;Submit&apos;, you have agreed to
-              our Terms and Conditions.
+            <p className="mt-4 text-[10px] text-gray-500">
+              *Disclaimer: I agree that by clicking the &apos;Book Now&apos;
+              button below, I am explicitly soliciting a call and message via
+              whatsapp or any other medium from us.
             </p>
           </form>
         </div>

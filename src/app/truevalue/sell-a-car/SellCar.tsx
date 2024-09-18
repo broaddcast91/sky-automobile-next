@@ -123,7 +123,6 @@ const SellCar: React.FC = () => {
             Now
           </h4>
           <form onSubmit={handleSubmit} id="myForm" className="py-3 bg-white">
-          
             <div className="w-full gap-4 grid sm:grid-cols-2 lg:grid-cols-3">
               <p
                 className={`sm:col-span-2 lg:col-span-3   text-lg ${
@@ -420,11 +419,12 @@ const SellCar: React.FC = () => {
                 selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
               }`}
             >
-              Submit 
+              Submit
             </button>
-            <p className="mt-6 text-xs text-gray-500">
-              *Disclaimer: By clicking &apos;Submit&apos;, you have agreed to
-              our Terms and Conditions.
+            <p className="mt-4 text-[10px] text-gray-500">
+              *Disclaimer: I agree that by clicking the &apos;Book Now&apos;
+              button below, I am explicitly soliciting a call and message via
+              whatsapp or any other medium from us.
             </p>
           </form>
         </div>

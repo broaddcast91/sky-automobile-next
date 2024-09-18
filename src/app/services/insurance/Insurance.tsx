@@ -2,6 +2,7 @@
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
 import { useAppContext } from "@/context";
+import Image from "next/image";
 import React, {
   ChangeEvent,
   FormEvent,
@@ -10,6 +11,7 @@ import React, {
   useState,
 } from "react";
 import toast from "react-hot-toast";
+import AddonsSlider from "./AddonsSlider";
 
 // Define the type for the form data
 interface FormData {
@@ -56,7 +58,7 @@ const Insurance: React.FC = () => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("Form Data:", { ...formData, state: selectedState });
-   
+
     try {
       // Send the POST request
       const response = await fetch("/api/insurance", {
@@ -98,6 +100,44 @@ const Insurance: React.FC = () => {
     });
   };
 
+  const steps = [
+    {
+      title: "Step 1",
+      subtitle: "Claim Intimation & Estimation",
+      description:
+        "Intimation of claim by the customer and repair estimate generation by the repairer.",
+      icon: "/icons/claim_icon1.png",
+    },
+    {
+      title: "Step 2",
+      subtitle: "Loss Evaluation",
+      description:
+        "Surveyor Appointment by Insurance Company and Vehicle Inspection followed by approval for repair by the surveyor.",
+      icon: "/icons/claim_icon2.png",
+    },
+    {
+      title: "Step 3",
+      subtitle: "Customer Consent & Repairs",
+      description:
+        "Communication of estimate and approval to the customer to obtain his/her consent. Commencement of Repairs based on surveyor’s approval and customer consent.",
+      icon: "/icons/claim_icon3.png",
+    },
+    {
+      title: "Step 4",
+      subtitle: "Final Inspection & Delivery of repaired vehicle",
+      description:
+        "Surveyor to verify repairs done and confirm for delivery of vehicle to customer on near cash-less basis. Workshop to charge the customer for its share of payment and deliver the repaired vehicle.",
+      icon: "/icons/claim_icon4.png",
+    },
+    {
+      title: "Step 5",
+      subtitle: "Claim Settlement by Insurance Company",
+      description:
+        "On the basis of the surveyor’s report, Insurance Company to settle the claim and make payment to the workshop/customer (if settlement is not done on cash-less basis).",
+      icon: "/icons/claim_icon5.png",
+    },
+  ];
+
   // const handleFocus = () => {
   //   // Ensure that this function is only used if necessary
   //   if (dateInputRef.current) {
@@ -126,7 +166,7 @@ const Insurance: React.FC = () => {
             className="object-cover w-full h-full -mt-1 max-h-[50vh]"
           />
         </div> */}
-        <div className="container min-h-[50vh] py-16 mx-auto xl:max-w-7xl lg:py-20 px-2">
+        <div className="container min-h-[50vh] py-16 mx-auto xl:max-w-7xl lg:pt-20 px-2">
           <h4 className="text-3xl font-bold text-primaryGray lg:mb-6">
             Apply for a{" "}
             <span
@@ -140,7 +180,11 @@ const Insurance: React.FC = () => {
             </span>{" "}
             Now
           </h4>
-          <form onSubmit={handleSubmit} id="myForm" className="py-3 bg-white">
+          <form
+            onSubmit={handleSubmit}
+            id="myForm"
+            className="py-3 bg-white mb-10 lg:mb-12"
+          >
             <div className="w-full gap-4 grid sm:grid-cols-2 lg:grid-cols-3">
               <input
                 type="text"
@@ -269,13 +313,64 @@ const Insurance: React.FC = () => {
                 selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
               }`}
             >
-              Enquire Now
+              Renew Now
             </button>
-            <p className="mt-6 text-xs text-gray-500">
-              *Disclaimer: By clicking &apos;Submit&apos;, you have agreed to
-              our Terms and Conditions.
+            <p className="mt-4 text-[10px] text-gray-500">
+              *Disclaimer: I agree that by clicking the &apos;Book Now&apos;
+              button below, I am explicitly soliciting a call and message via
+              whatsapp or any other medium from us.
             </p>
           </form>
+         <section>
+            <h4 className="text-2xl font-bold text-primaryGray">
+              5 Easy Steps For{" "}
+              <span
+                className={` ${
+                  selectedState === "Odisha"
+                    ? "text-primaryBlue"
+                    : "text-primaryRed"
+                }`}
+              >
+                Claim Process
+              </span>
+            </h4>
+            <div className="my-6 grid lg:grid-cols-5 gap-2 lg:gap-4 grid-cols-2 md:grid-cols-3">
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className={`text-center hover:text-white px-2 rounded-lg py-4 group  ${
+                    selectedState === "Odisha"
+                      ? "hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed"
+                  }`}
+                >
+                  <div className="flex justify-center items-center bg-secondaryGray4 rounded-full w-20 h-20 mx-auto">
+                    <Image src={step.icon} alt="" width={60} height={60} />
+                  </div>
+                  <p className="font-medium my-2 uppercase">{step.title}</p>
+                  <p className="mb-2">{step.subtitle}</p>
+                  <p className="text-xs text-gray-500 group-hover:text-white text-justify ">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>   <section>
+            <h4 className="text-2xl font-bold text-primaryGray   pt-4">
+              Choose from our wide range of{" "}
+              <span
+                className={`   ${
+                  selectedState === "Odisha"
+                    ? "text-primaryBlue"
+                    : "text-primaryRed"
+                }`}
+              >
+                Addons{" "}
+              </span>
+            </h4>
+            <AddonsSlider />
+          </section>{" "}
+        
         </div>
       </div>
       <Footer />

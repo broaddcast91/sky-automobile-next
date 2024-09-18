@@ -19,6 +19,7 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
     name: string;
     phone: string;
     model: string;
+    email: string;
     outlet: string;
   }
 
@@ -36,6 +37,7 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
     name: "",
     phone: "",
     model: "",
+    email: "",
     outlet: "",
   });
 
@@ -60,6 +62,7 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
       name: "",
       phone: "",
       model: "",
+      email: "",
       outlet: "",
     });
     setShowBuyACar(false);
@@ -75,7 +78,7 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
     >
       <div className="bg-white w-full max-w-md rounded py-6 m-2 md:py-6 select-none px-4 ">
         <h4 className=" text-xl font-semibold  text-primaryGray mb-4">
-          Book A{" "}
+          Get A{" "}
           <span
             className={` ${
               selectedState === "Odisha"
@@ -83,7 +86,7 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
                 : "text-primaryRed"
             }`}
           >
-            Test Drive
+            Call Back
           </span>{" "}
         </h4>
         <form onSubmit={handleSubmit}>
@@ -120,6 +123,18 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
                   : "border-b-primaryRed"
               }`}
               value={formData.phone}
+              onChange={handleChange}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none   lg:col-span-2 ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : "border-b-primaryRed"
+              }`}
+              value={formData.email}
               onChange={handleChange}
             />
             <select

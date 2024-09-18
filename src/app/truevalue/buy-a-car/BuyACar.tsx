@@ -285,7 +285,8 @@ const BuyACar: React.FC = () => {
                             : "group-hover:text-primaryRed group-hover:bg-white bg-primaryRed text-white"
                         }`}
                         onClick={() => {
-                          toast.success("Enquiry Submitted Successfully");
+                          // toast.success("Enquiry Submitted Successfully");
+                          setShowBuyACar(true);
                         }}
                       >
                         Enquire Now
@@ -299,7 +300,7 @@ const BuyACar: React.FC = () => {
         </div>
       </div>
       <Footer />
-      <ModalBuyACar  showBuyACar={showBuyACar} setShowBuyACar={setShowBuyACar} />
+      <ModalBuyACar showBuyACar={showBuyACar} setShowBuyACar={setShowBuyACar} />
     </div>
   );
 };

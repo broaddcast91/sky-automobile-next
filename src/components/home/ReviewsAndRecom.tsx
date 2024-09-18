@@ -8,11 +8,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // Import required modules
-import {  Navigation, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import { useAppContext } from "@/context";
 
 const ReviewsAndRecom = () => {
-   const { selectedState } = useAppContext();
+  const { selectedState } = useAppContext();
   const blogsData = [
     {
       review:
@@ -68,7 +68,6 @@ const ReviewsAndRecom = () => {
       </h2>
       <div className="container mx-auto mb-10 overflow-visible select-none">
         <Swiper
-        
           loop={true}
           navigation={{
             nextEl: navigationNextRef.current,
@@ -105,12 +104,18 @@ const ReviewsAndRecom = () => {
               spaceBetween: 20,
             },
           }}
-          modules={[ Navigation, Autoplay]}
+          modules={[Navigation, Autoplay]}
           className="relative overflow-visible mySwiper"
         >
           {blogsData.map((x, i) => (
             <SwiperSlide key={i} className="overflow-hidden">
-              <div className={`h-full m-2 overflow-hidden duration-200 border hover:text-white bg-secondaryGray3 rounded-xl group hover:border-primary  ${selectedState === "Odisha" ? "hover:bg-primaryBlue" : "hover:bg-primaryRed"}`}>
+              <div
+                className={`h-full m-2 overflow-hidden duration-200 border hover:text-white bg-secondaryGray3 rounded-xl group hover:border-primary  ${
+                  selectedState === "Odisha"
+                    ? "hover:bg-primaryBlue"
+                    : "hover:bg-primaryRed"
+                }`}
+              >
                 <div className="p-4 my-auto space-y-3 text-left lg:p-6">
                   <div className="flex gap-2 pb-2">
                     {Array.from({ length: 5 }).map((_, idx) => (
@@ -118,8 +123,8 @@ const ReviewsAndRecom = () => {
                         key={idx}
                         className={`${
                           idx < parseInt(x.rating) && selectedState === "Odisha"
-                            ? "text-primaryBlue group-hover:text-white":
-                          idx < parseInt(x.rating)
+                            ? "text-primaryBlue group-hover:text-white"
+                            : idx < parseInt(x.rating)
                             ? "text-primaryRed group-hover:text-white"
                             : "text-gray-400"
                         }`}
@@ -136,7 +141,6 @@ const ReviewsAndRecom = () => {
               </div>
             </SwiperSlide>
           ))}
-          <div className="mt-6"></div>
         </Swiper>
       </div>
     </div>
