@@ -521,7 +521,12 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
           </h4>
           <div className="grid gap-4 md:grid-cols-2  lg:grid-cols-4">
             {data?.exploreMore?.map((vehicle, index) => (
-              <div key={index} className="border rounded-lg hover:shadow-lg flex flex-col justify-between">
+              <div
+                key={index}
+                className={`border rounded-lg hover:shadow-lg flex flex-col justify-between ${
+                 index > 1  ? "hidden md:block" : index > 0 && "hidden lg:block"
+                }`}
+              >
                 <img
                   src={models?.[vehicle]?.colors[selectedColor].img}
                   alt={models?.[vehicle]?.colors[selectedColor].colName}
@@ -529,7 +534,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
                 />
                 <div className="p-4 text-center ">
                   {" "}
-                  <p className="pb-1">{models?.[vehicle]?.subName}</p>
+                  <p className="pb-1 text-lg font-bold">{models?.[vehicle]?.subName}</p>
                   <p className="text-sm text-primaryGray pb-4">
                     Starting from ₹ {models?.[vehicle]?.variants[0].price} /-
                   </p>
@@ -544,16 +549,16 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
                   >
                     Book Test Drive
                   </button>{" "} */}
-                  <Link href={models?.[vehicle]?.link} className="w-full" >
-                    <button
-                      className={`w-full border col-span-4 border-white font-bold text-sm rounded-lg px-2 py-2  ${
-                        selectedState === "Odisha"
-                          ? "group-hover:text-primaryBlue group-hover:bg-white bg-primaryBlue text-white"
-                          : "group-hover:text-primaryRed group-hover:bg-white bg-primaryRed text-white"
-                      }`}
-                    >
-                      Explore Now
-                    </button>
+                    <Link href={models?.[vehicle]?.link} className="w-full">
+                      <button
+                        className={`w-full border col-span-4 border-white font-bold text-sm rounded-lg px-2 py-2  ${
+                          selectedState === "Odisha"
+                            ? "group-hover:text-primaryBlue group-hover:bg-white bg-primaryBlue text-white"
+                            : "group-hover:text-primaryRed group-hover:bg-white bg-primaryRed text-white"
+                        }`}
+                      >
+                        Explore Now
+                      </button>
                     </Link>
                   </div>
                 </div>

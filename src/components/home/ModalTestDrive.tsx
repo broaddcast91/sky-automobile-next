@@ -25,7 +25,6 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
     email: string;
   }
 
-  console.log(model);
   useEffect(() => {
     // Prevent scrolling when the modal is open
     document.body.style.overflow = showTestDrive ? "hidden" : "auto";
