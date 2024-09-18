@@ -1,6 +1,7 @@
 "use client";
 import { useAppContext } from "@/context";
 import React from "react";
+import CountUp from "react-countup";
 
 const WhyChooseUs: React.FC = () => {
   const { selectedState } = useAppContext();
@@ -12,7 +13,6 @@ const WhyChooseUs: React.FC = () => {
         </h4>
         <div className="grid gap-4 px-2 mt-2 md:grid-cols-3 lg:grid-cols-3 lg:gap-12">
           <div className="text-center">
-            
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -41,7 +41,8 @@ const WhyChooseUs: React.FC = () => {
                 selectedState === "Odisha" ? "text-white" : "text-primaryRed"
               }`}
             >
-              5,00,000+ Happy Customers
+              <CountUp start={100000} end={500000} duration={20} suffix="+ " />
+              Happy Customers
             </h4>
             <p className="text-sm text-white ">
               Driven by years of conviction and experience, Our brand is a name
@@ -71,7 +72,8 @@ const WhyChooseUs: React.FC = () => {
                 selectedState === "Odisha" ? "text-white " : "text-primaryRed "
               }`}
             >
-              2,00,000+ Vehicle Sold
+              <CountUp start={0} end={200000} duration={20} suffix="+ " />{" "}
+              Vehicle Sold
             </h4>
             <p className="text-sm text-white ">
               Over 2 lakh vehicles sold, experience our commitment to quality
