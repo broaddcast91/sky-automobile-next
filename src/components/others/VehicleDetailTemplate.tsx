@@ -516,7 +516,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
       <section id="explore-more-section">
         <div className="container pt-6 pb-10 mx-auto xl:max-w-7xl lg:pb-20 px-1 ">
           {" "}
-          <h4 className="text-2xl font-bold text-primaryGray lg:mb-6">
+          <h4 className="text-2xl font-bold text-primaryGray mb-6">
             Explore More Vehicles
           </h4>
           <div className="grid gap-4 md:grid-cols-2  lg:grid-cols-4">
