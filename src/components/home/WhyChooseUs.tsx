@@ -1,10 +1,9 @@
 "use client";
-import { useAppContext } from "@/context";
+
 import React from "react";
 import CountUp from "react-countup";
 
 const WhyChooseUs: React.FC = () => {
-  const { selectedState } = useAppContext();
   return (
     <div className="py-12 bg-primaryGray md:py-16 lg:py-20">
       <div className="container mx-auto xl:max-w-6xl">
@@ -36,12 +35,20 @@ const WhyChooseUs: React.FC = () => {
                 />
               </g>
             </svg>
-            <h4
-              className={`mb-2 text-xl font-medium  ${
-                selectedState === "Odisha" ? "text-white" : "text-primaryRed"
-              }`}
+            <h3
+              className={`mb-2   text-yellow-500`}
             >
-              <CountUp start={200000} end={500000} duration={30} suffix="+ " />
+              <CountUp
+                start={400000}
+                end={500000}
+                duration={30}
+                suffix="+ "
+                className="text-3xl lg:text-4xl lg:font-bold pb-2 "
+              />
+            </h3>
+            <h4
+              className={`mb-2 text-xl font-medium text-yellow-500`}
+            >
               Happy Customers
             </h4>
             <p className="text-sm text-white ">
@@ -67,12 +74,20 @@ const WhyChooseUs: React.FC = () => {
                 ></path>
               </g>
             </svg>
-            <h4
-              className={`mb-2 text-xl font-medium  ${
-                selectedState === "Odisha" ? "text-white " : "text-primaryRed "
-              }`}
+            <h3
+              className={`mb-2 text-xl font-medium  text-yellow-500`}
             >
-              <CountUp start={0} end={200000} duration={20} suffix="+ " />{" "}
+              <CountUp
+                start={100000}
+                end={200000}
+                duration={25}
+                suffix="+ "
+                className="text-3xl lg:text-4xl lg:font-bold pb-2"
+              />
+            </h3>
+            <h4
+              className={`mb-2 text-xl font-medium  text-yellow-500`}
+            >
               Vehicle Sold
             </h4>
             <p className="text-sm text-white ">
@@ -88,13 +103,23 @@ const WhyChooseUs: React.FC = () => {
               alt=" Expansive Network"
               className="mx-auto mb-4"
             />
+            <h3
+              className={`mb-2 text-xl font-medium text-yellow-500`}
+            >
+              <CountUp
+                start={0}
+                end={40}
+                duration={25}
+                suffix="+ "
+                className="text-3xl lg:text-4xl lg:font-bold pb-2"
+              />
+            </h3>
             <h4
-              className={`mb-2 text-xl  font-medium ${
-                selectedState === "Odisha" ? "text-white " : "text-primaryRed "
-              }`}
+              className={`mb-2 text-xl font-medium text-yellow-500 `}
             >
               Expansive Network
             </h4>
+
             <p className="text-sm text-white ">
               Operating at more than 40+ touchpoints, we are one of the largest
               automobile dealer in the state.

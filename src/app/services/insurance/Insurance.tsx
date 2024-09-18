@@ -321,7 +321,7 @@ const Insurance: React.FC = () => {
               whatsapp or any other medium from us.
             </p>
           </form>
-         <section>
+          <section>
             <h4 className="text-2xl font-bold text-primaryGray">
               5 Easy Steps For{" "}
               <span
@@ -338,24 +338,25 @@ const Insurance: React.FC = () => {
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  className={`text-center hover:text-white px-2 rounded-lg py-4 group  ${
+                  className={` hover:text-white px-2 rounded-lg py-4 group border bg-secondaryGray4 text-center ${
                     selectedState === "Odisha"
                       ? "hover:bg-primaryBlue"
                       : "hover:bg-primaryRed"
                   }`}
                 >
-                  <div className="flex justify-center items-center bg-secondaryGray4 rounded-full w-20 h-20 mx-auto">
+                  <p className="font-medium my-2 uppercase">{step.title}</p>
+                  <div className="flex justify-center items-center bg-white rounded-full w-20 h-20 mb-2 mx-auto">
                     <Image src={step.icon} alt="" width={60} height={60} />
                   </div>
-                  <p className="font-medium my-2 uppercase">{step.title}</p>
                   <p className="mb-2">{step.subtitle}</p>
-                  <p className="text-xs text-gray-500 group-hover:text-white text-justify ">
+                  <p className="text-xs text-gray-500 group-hover:text-white  ">
                     {step.description}
                   </p>
                 </div>
               ))}
             </div>
-          </section>   <section>
+          </section>{" "}
+          <section>
             <h4 className="text-2xl font-bold text-primaryGray   pt-4">
               Choose from our wide range of{" "}
               <span
@@ -370,7 +371,6 @@ const Insurance: React.FC = () => {
             </h4>
             <AddonsSlider />
           </section>{" "}
-        
         </div>
       </div>
       <Footer />

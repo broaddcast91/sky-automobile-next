@@ -157,6 +157,8 @@ export const models = [
         transmission: "Automatic",
       },
     ],
+
+    exploreMore: [2, 3],
     thumbnail: "/thumbnail/altoK10.webp",
     priceRange: `₹7.49L - ₹15.49L *`,
     brochure:
@@ -348,6 +350,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
+    exploreMore: [3, 4],
     thumbnail: "/thumbnail/swift02.webp",
     priceRange: `₹ 6.49-9.5 Lakhs *`,
     brochure:
@@ -551,6 +554,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
+    exploreMore: [4, 5],
     thumbnail: "/thumbnail/brezza-page.webp",
     priceRange: `₹ 8.34 - 14.14 Lakh *`,
     brochure:
@@ -726,6 +730,7 @@ export const models = [
         transmission: "Manual",
       },
     ],
+    exploreMore: [4, 5],
     thumbnail: "/thumbnail/dzire.webp",
     priceRange: "₹ 6.80 - 9.50 Lakh *",
     brochure:
@@ -874,6 +879,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
+    exploreMore: [5, 6],
     thumbnail: "/thumbnail/spresso.webp",
     priceRange: "₹ 4.27 - 5.90 Lakh *",
     brochure:
@@ -1064,6 +1070,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
+    exploreMore: [6, 7],
     thumbnail: "/thumbnail/wagnor.webp",
     priceRange: "₹ 5.54 - 7.14 Lakh *",
     brochure:
@@ -1226,6 +1233,7 @@ export const models = [
       },
       { variant: "ERTIGA TOUR M 1.5L", price: 980000, transmission: "Manual" },
     ],
+    exploreMore: [7, 8],
     thumbnail: "/thumbnail/ertiga.webp",
     priceRange: "₹ 8.64 - 11.50 Lakh *",
     brochure:
@@ -1371,6 +1379,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
+    exploreMore: [8, 1],
     thumbnail: "/thumbnail/celerio.webp",
     priceRange: "₹ 5.35 - 6.87 Lakh *",
     brochure:
@@ -1529,6 +1538,7 @@ export const models = [
         transmission: "Manual",
       },
     ],
+    exploreMore: [1, 2],
     thumbnail: "/thumbnail/Eeco.webp",
     priceRange: "₹ 5.40 - 6.67 Lakh *",
     brochure:
@@ -1660,6 +1670,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
+    exploreMore: [10, 11],
     thumbnail: "/thumbnail/invicto-main-thubmnail-no-bg.webp",
     priceRange: "₹ 25.305 - 29.015 Lakh *",
     brochure:
@@ -1813,6 +1824,7 @@ export const models = [
         transmission: "Manual",
       },
     ],
+    exploreMore: [11, 12],
     thumbnail: "/thumbnail/Jimny.webp",
     priceRange: "₹ 12.74 - 14.95 Lakh*",
     brochure:
@@ -1995,6 +2007,7 @@ export const models = [
       { variant: "CNG (MT) DELTA", price: 932500, transmission: "Manual" },
       { variant: "CNG (MT) SIGMA", price: 846500, transmission: "Manual" },
     ],
+    exploreMore: [12, 13],
     thumbnail: "/thumbnail/Fronx.webp",
     priceRange: "₹ 7.515 - 13.035 Lakh *",
     brochure:
@@ -2203,6 +2216,7 @@ export const models = [
       { variant: "ZETA CNG (MT)", price: 1496000, transmission: "Manual" },
       { variant: "DELTA CNG (MT)", price: 1315000, transmission: "Manual" },
     ],
+    exploreMore: [13, 14],
     thumbnail: "/thumbnail/GV.webp",
     priceRange: "₹ 10.99- 20.09 Lakh *",
     brochure:
@@ -2360,6 +2374,7 @@ export const models = [
       { variant: "ZETA (1.5 P MT)", price: 1161000, transmission: "Manual" },
       { variant: "ZETA CNG (MT)", price: 1256000, transmission: "Manual" },
     ],
+    exploreMore: [14, 15],
     thumbnail: "/thumbnail/XL6.webp",
     priceRange: "₹ 12.56 - 14.77 Lakh *",
     brochure:
@@ -2532,6 +2547,7 @@ export const models = [
       { variant: "DELTA (1.5 P MT)", price: 1000000, transmission: "Manual" },
       { variant: "SIGMA (1.5 P MT)", price: 940000, transmission: "Manual" },
     ],
+    exploreMore: [15, 16],
     thumbnail: "/thumbnail/Ciaz.webp",
     priceRange: "₹ 9.40 - 12.45 Lakh *",
     brochure:
@@ -2658,6 +2674,7 @@ export const models = [
       { variant: "ZETA (CNG) MT", price: 933000, transmission: "Manual" },
       { variant: "DELTA (CNG) MT", price: 840000, transmission: "Manual" },
     ],
+    exploreMore: [16, 9],
     thumbnail: "/thumbnail/Baleno.webp",
     priceRange: "₹ 6.66 - 9.83 Lakh *",
     brochure:
@@ -2799,6 +2816,7 @@ export const models = [
       { variant: "DELTA MT (P)", price: 638000, transmission: "Manual" },
       { variant: "SIGMA MT (P)", price: 584000, transmission: "Manual" },
     ],
+    exploreMore: [9, 10],
     thumbnail: "/thumbnail/Ignis.webp",
     priceRange: "₹ 5.84 - 8.20 Lakh *",
     brochure:

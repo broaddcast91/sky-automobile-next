@@ -13,6 +13,9 @@
 /.next/
 /out/
 
+/src/app/admin
+/src/components/admin
+
 # production
 /build
 

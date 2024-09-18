@@ -126,17 +126,17 @@ const AddonsSlider = () => {
                   <Image
                     src={x.img}
                     alt=""
-                    width={60}
-                    height={60}
-                    className=""
+                    width={50}
+                    height={50}
+                    className="max-w-12"
                   />
                 </div>
-                <div className={`  tracking-wide  font-medium  text-lg`}>
+                <div className={`  tracking-wide   `}>
                   {x.title}
                 </div>
                 <div
                   title={x.desc1}
-                  className={`text-sm  text-primaryGray    line-clamp-6 `}
+                  className={`text-xs  text-primaryGray    line-clamp-6 `}
                 >
                   {x.desc1}
                 </div>
