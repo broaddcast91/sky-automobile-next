@@ -8,6 +8,8 @@ import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 import { MdLocalPhone } from "react-icons/md";
 import { PiSteeringWheel } from "react-icons/pi";
 import ModalTestDrive from "./ModalTestDrive";
+import { IoIosCalculator } from "react-icons/io";
+import { FaCar } from "react-icons/fa";
 
 // Define the types for the props
 
@@ -16,11 +18,11 @@ const QuickActions: React.FC = () => {
   const [showTestDrive, setShowTestDrive] = useState(false);
   return (
     <>
-      <div className="container py-10 mx-auto mb-8 xl:max-w-6xl">
+      <div className="container py-10 mx-auto mb-8 xl:max-w-7xl">
         <h4 className="mb-6 text-3xl font-bold text-center text-primaryGray lg:mb-10">
           Quick Actions
         </h4>
-        <div className="grid grid-cols-2 px-2 ">
+        <div className="grid grid-cols-2 px-2 lg:grid-cols-3">
           <div
             className={`flex flex-col items-center justify-center gap-4 px-4 py-10 border  group hover:text-white md:flex-row ${
               selectedState === "Odisha"
@@ -40,20 +42,24 @@ const QuickActions: React.FC = () => {
             </div>
             <div className="flex flex-col items-center md:items-start">
               <p className="text-center max-w-64 text-primaryGray group-hover:text-white md:text-left text-sm ">
-                Unlock exclusive savings and promotions on your next vehicle or
-                service.
+                {/* Unlock exclusive savings and promotions on your next vehicle or
+                service. */}
+                Unlock exclusive savings on your next vehicle or service!
               </p>
 
-              <button
-                className={`px-4 py-2 mx-auto mt-4 text-sm border rounded-lg group-hover:border-white hover:bg-white  md:mx-0 ${
-                  selectedState === "Odisha"
-                    ? "hover:text-primaryBlue"
-                    : "hover:text-primaryRed"
-                }`}
-              >
+              <Link href={"/offers"}>
                 {" "}
-                <Link href={"/offers"}> View Offers</Link>
-              </button>
+                <button
+                  className={`px-4 py-2 mx-auto mt-4 text-sm border rounded-lg group-hover:border-white hover:bg-white  md:mx-0 ${
+                    selectedState === "Odisha"
+                      ? "hover:text-primaryBlue"
+                      : "hover:text-primaryRed"
+                  }`}
+                >
+                  {" "}
+                  View Offers
+                </button>
+              </Link>
             </div>
           </div>
           <div
@@ -113,15 +119,18 @@ const QuickActions: React.FC = () => {
                 ease.
               </p>
 
-              <button
-                className={`px-4 py-2 mx-auto mt-4 text-sm border rounded-lg group-hover:border-white hover:bg-white  md:mx-0 ${
-                  selectedState === "Odisha"
-                    ? "hover:text-primaryBlue"
-                    : "hover:text-primaryRed"
-                }`}
-              >
-                <Link href={"/services/book-a-service"}> Book A Service</Link>
-              </button>
+              <Link href={"/services/book-a-service"}>
+                {" "}
+                <button
+                  className={`px-4 py-2 mx-auto mt-4 text-sm border rounded-lg group-hover:border-white hover:bg-white  md:mx-0 ${
+                    selectedState === "Odisha"
+                      ? "hover:text-primaryBlue"
+                      : "hover:text-primaryRed"
+                  }`}
+                >
+                  Book A Service
+                </button>
+              </Link>
             </div>
           </div>
           <div
@@ -159,6 +168,82 @@ const QuickActions: React.FC = () => {
               >
                 Book Your Dream Car
               </a>
+            </div>
+          </div>
+
+          <div
+            className={`flex flex-col items-center justify-center gap-4 px-4 py-10 border  group hover:text-white md:flex-row ${
+              selectedState === "Odisha"
+                ? "hover:bg-primaryBlue"
+                : "hover:bg-primaryRed"
+            }`}
+          >
+            <div>
+              <FaCar
+                className={`text-4xl lg:text-5xl  group-hover:text-white ${
+                  selectedState === "Odisha"
+                    ? "text-primaryBlue"
+                    : "text-primaryRed"
+                } `}
+                aria-label="Car Icon"
+              />
+            </div>
+            <div className="flex flex-col items-center md:items-start">
+              <p className="text-center max-w-64 text-primaryGray group-hover:text-white md:text-left text-sm ">
+                {/* Explore our range of new True Value cars and drive home your
+                perfect match today! */}
+                Discover new True Value cars and drive home your perfect match!
+              </p>
+              <Link href={"/truevalue/buy-a-car"}>
+                {" "}
+                <button
+                  className={`px-4 py-2 mx-auto mt-4 text-sm border rounded-lg group-hover:border-white hover:bg-white  md:mx-0 ${
+                    selectedState === "Odisha"
+                      ? "hover:text-primaryBlue"
+                      : "hover:text-primaryRed"
+                  }`}
+                  aria-label="TrueValue - Buy A Car Now"
+                >
+                  TrueValue - Buy A Car Now
+                </button>{" "}
+              </Link>
+            </div>
+          </div>
+          <div
+            className={`flex flex-col items-center justify-center gap-4 px-4 py-10 border  group hover:text-white md:flex-row ${
+              selectedState === "Odisha"
+                ? "hover:bg-primaryBlue"
+                : "hover:bg-primaryRed"
+            }`}
+          >
+            <div>
+              <IoIosCalculator
+                className={`text-4xl lg:text-5xl  group-hover:text-white ${
+                  selectedState === "Odisha"
+                    ? "text-primaryBlue"
+                    : "text-primaryRed"
+                } `}
+                aria-label="Calculator Icon"
+              />
+            </div>
+            <div className="flex flex-col items-center md:items-start">
+              <p className="text-center max-w-64 text-primaryGray group-hover:text-white md:text-left text-sm ">
+                Effortlessly calculate your car EMI and get closer to your dream
+                vehicle!
+              </p>
+              <Link href={"/services/finance/#emi-calculator"}>
+                {" "}
+                <button
+                  className={`px-4 py-2 mx-auto mt-4 text-sm border rounded-lg group-hover:border-white hover:bg-white  md:mx-0 ${
+                    selectedState === "Odisha"
+                      ? "hover:text-primaryBlue"
+                      : "hover:text-primaryRed"
+                  }`}
+                  aria-label="EMI Calculator"
+                >
+                  EMI Calculator
+                </button>
+              </Link>
             </div>
           </div>
         </div>

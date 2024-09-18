@@ -41,7 +41,7 @@ const WhyChooseUs: React.FC = () => {
                 selectedState === "Odisha" ? "text-white" : "text-primaryRed"
               }`}
             >
-              <CountUp start={100000} end={500000} duration={20} suffix="+ " />
+              <CountUp start={200000} end={500000} duration={30} suffix="+ " />
               Happy Customers
             </h4>
             <p className="text-sm text-white ">

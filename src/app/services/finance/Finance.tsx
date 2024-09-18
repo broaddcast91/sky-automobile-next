@@ -151,7 +151,10 @@ const Finance: React.FC = () => {
         </div>
       </div>
 
-      <div className="container min-h-[50vh] py-16 mx-auto xl:max-w-7xl lg:py-20 px-2">
+      <div
+        id="emi-calculator"
+        className="container min-h-[50vh] py-16 mx-auto xl:max-w-7xl lg:py-20 px-2"
+      >
         <div className="mb-16 lg:mb-24 mt-8">
           <h4 className="text-3xl font-bold text-primaryGray mb-3 md:mb-6 text-center">
             <span
@@ -332,7 +335,7 @@ const Finance: React.FC = () => {
                         : "text-primaryRed"
                     }`}
                   >
-                    ₹{emi.toFixed()}
+                    ₹ {emi.toFixed()}
                   </span>
                 </div>
 
@@ -342,7 +345,7 @@ const Finance: React.FC = () => {
                       Principal Amount
                     </span>
                     <h6 className="font-bold text-lg text-primaryGray">
-                      ₹{principalAmount.toFixed()}
+                      ₹ {principalAmount.toFixed()}
                     </h6>
                   </div>
                   <div className="flex justify-center items-center shadow-md min-h-20 min-w-20 rounded-lg flex-col p-6 w-full ">
@@ -350,7 +353,7 @@ const Finance: React.FC = () => {
                       Total Interest
                     </span>
                     <h6 className="font-bold text-lg text-primaryGray">
-                      ₹{totalInterest.toFixed()}
+                      ₹ {totalInterest.toFixed()}
                     </h6>
                   </div>
                   <div className="flex justify-center items-center shadow-md min-h-20 min-w-20 rounded-lg flex-col p-6 w-full ">
@@ -358,10 +361,11 @@ const Finance: React.FC = () => {
                       Total Amount
                     </span>
                     <h6 className="font-bold text-lg text-primaryGray">
-                      ₹{totalAmount.toFixed()}
+                      ₹ {totalAmount.toFixed()}
                     </h6>
                   </div>
                 </div>
+                <p className="text-xs text-gray-500 mt-4">Note:drag the slider to change the values</p>
               </div>
             </div>
           </div>
