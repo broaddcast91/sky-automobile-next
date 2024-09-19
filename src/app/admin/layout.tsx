@@ -9,7 +9,7 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-     const [isCollapsed, setIsCollapsed] = useState(false);
+     const [isCollapsed, setIsCollapsed] = useState(true);
      const [showSidebar, setShowSidebar] = useState(true);
      const pathname = usePathname();
 
@@ -20,7 +20,7 @@ export default function DashboardLayout({
        setShowSidebar(pathname !== "/login" && pathname !== "/");
      }, [pathname]);
   return (
-    <section className="bg-[#F5F6FA]">
+    <section className="bg-[#e1e7fd]">
       <Sidebar
         isCollapsed={isCollapsed}
         toggleSidebar={toggleSidebar}

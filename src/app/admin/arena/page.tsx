@@ -1,6 +1,8 @@
 
 import React from "react";
 
+import ArenaEnq from "./EnquiryTable";
+
 const Arena = () => {
   // const [selectedTab, setSelectedTab] = useState("Car Enquiry");
 
@@ -36,7 +38,37 @@ const Arena = () => {
   //     <div className="text-xl uppercase">{selectedTab}</div>
   //   </div>
   // );
-  return <div>Hello</div>
+  return (
+    <div className="bg-white h-[calc(100vh-25px)] p-2  rounded-lg mr-2 mt-1">
+      {/* <div className="bg-primaryBlue h-14 mb-2 rounded-lg flex items-center px-4 text-white">
+           <h5 className="text-xl mb-2">Arena Enquiries </h5>
+      </div> */}
+      {/* <div className="py-4 px-4 border-b ">
+        <h5 className="text-xl mb-2">Arena Enquiries </h5>
+      
+        <div className="flex items-center gap-2 justify-between">
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="rounded px-2 py-1 w-1/5 focus:border-primaryBlue border outline-none "
+          />
+          <div>
+            <button
+              className={`hover:bg-primaryBlue hover:text-white px-4 py-1.5 rounded-lg border text-sm flex  items-center gap-2 `}
+            >
+              Download <FaCloudDownloadAlt className="text-xl" />
+            </button>
+          </div>
+        </div>
+      </div> */}
+      <div className="h-40 px-4">
+        <h5 className="text-xl my-4 text-primaryBlue uppercase">Arena Enquiries </h5>
+        <ArenaEnq />
+      </div>
+    </div>
+  );
 };
 
 export default Arena;
