@@ -1,17 +1,19 @@
-'use client';
-import { useMemo } from "react";
+"use client";
+import { useMemo, useState } from "react";
 import {
   MaterialReactTable,
-  MRT_Row,
+  // MRT_Row,
   useMaterialReactTable,
   type MRT_ColumnDef,
 } from "material-react-table";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Select } from "@mui/material";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import { mkConfig, generateCsv, download } from "export-to-csv";
 import { data, type Person } from "./makeData";
+import { FiSearch } from "react-icons/fi";
 
 const Example = () => {
+  const [rangeValue, setRangeValue] = useState("");
   const columns = useMemo<MRT_ColumnDef<Person>[]>(
     //column definitions...
     () => [
@@ -56,11 +58,11 @@ const Example = () => {
     download(csvConfig)(csv);
   };
 
-    const handleExportRows = (rows: MRT_Row<Person>[]) => {
-      const rowData = rows.map((row) => row.original);
-      const csv = generateCsv(csvConfig)(rowData);
-      download(csvConfig)(csv);
-    };
+  // const handleExportRows = (rows: MRT_Row<Person>[]) => {
+  //   const rowData = rows.map((row) => row.original);
+  //   const csv = generateCsv(csvConfig)(rowData);
+  //   download(csvConfig)(csv);
+  // };
 
   const table = useMaterialReactTable({
     columns,
@@ -69,10 +71,19 @@ const Example = () => {
     enableStickyHeader: true,
     enableStickyFooter: true,
     enablePagination: true,
-    enableRowSelection: true,
+    initialState: {
+      density: "compact",
+      pagination: {
+        pageIndex: 0, // Set the default page index
+        pageSize: 15, // Set the default number of rows per page
+      },
+    },
+    // enableRowSelection: true,
     columnFilterDisplayMode: "popover",
     paginationDisplayMode: "pages",
     positionToolbarAlertBanner: "bottom",
+
+    //  enableDensityToggle: false,
     muiTableContainerProps: { sx: { height: "73vh", maxHeight: "73vh" } },
     muiTableBodyCellProps: {
       sx: (theme) => ({
@@ -82,7 +93,7 @@ const Example = () => {
             : theme.palette.grey[50],
       }),
     },
-    renderTopToolbarCustomActions: ({ table }) => (
+    renderTopToolbarCustomActions: () => (
       <Box
         sx={{
           display: "flex",
@@ -91,6 +102,82 @@ const Example = () => {
           flexWrap: "wrap",
         }}
       >
+        {/* <Button
+          disabled={table.getRowModel().rows.length === 0}
+          //export all rows as seen on the screen (respects pagination, sorting, filtering, etc.)
+          // onClick={() => alert("Not yet implemented")}
+          variant="contained"
+          style={{ backgroundColor: "#303a9b", color: "white" }}
+        >
+          Car Enquiry
+        </Button>
+        <Button
+          disabled={table.getRowModel().rows.length === 0}
+          //export all rows as seen on the screen (respects pagination, sorting, filtering, etc.)
+          onClick={() => alert("Not yet implemented")}
+          variant="outlined"
+          style={{ color: "#303a9b", borderColor: "#303a9b" }}
+        >
+          Test Drive
+        </Button> */}
+        <Select
+          native
+          // value={dateRange} // Set the value to the state variable
+          // onChange={handleChangeDateRange}
+          value={rangeValue}
+          onChange={(e) => setRangeValue(e.target.value)}
+          className="h-10 p-1    border-none foucs:outline-none"
+          variant="outlined"
+          style={{ color: "#303a9b", borderColor: "#303a9b" }}
+        >
+          {/* <option value="">All Enquiries</option> */}
+          <option value="allData">All Data</option>
+          <option value="today">Today</option>
+          <option value="yesterday">Yesterday</option>
+          <option value="thisMonth">This Month</option>
+          <option value="lastMonth">Last Month</option>
+          <option value="last3Months">Last 3 Months</option>
+          <option value="last6Months">Last 6 Months</option>
+          <option value="last12Months">Last 12 Months</option>
+          <option value="Between">Between Dates</option>
+        </Select>{" "}
+        {rangeValue === "Between" && (
+          <form className="flex gap-2">
+            <div className="relative">
+              {" "}
+              <input
+                type="date"
+                name=""
+                id=""
+                max={new Date().toISOString().split("T")[0]}
+                required
+                className="border rounded-md px-4 py-1.5"
+              />
+              <label className="absolute -top-2 left-1 text-xs bg-white px-1 text-gray-400">
+                Start Date
+              </label>
+            </div>{" "}
+            <div className="relative">
+              {" "}
+              <input
+                type="date"
+                name=""
+                id=""
+                required
+                className="border rounded-md px-4 py-1.5"
+              />
+              <label className="absolute -top-2 left-1 text-xs bg-white px-1 text-gray-400">
+                End Date
+              </label>
+            </div>
+            <button
+              type="submit"
+              className="mr-10 ml-2 flex items-center gap-2 border px-4 py-1 rounded-lg bg-primaryBlue text-white"
+            >
+              <FiSearch /> Search
+            </button>
+          </form>
+        )}
         <Button
           //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
           onClick={handleExportData}
@@ -98,7 +185,7 @@ const Example = () => {
           variant="contained"
           style={{ backgroundColor: "#303a9b", color: "white" }}
         >
-          Export All Data
+          Export
         </Button>
         {/* <Button
           disabled={table.getPrePaginationRowModel().rows.length === 0}
@@ -117,7 +204,7 @@ const Example = () => {
           startIcon={<FileDownloadIcon />}
         >
           Export Page Rows
-        </Button> */}
+        </Button>
         <Button
           disabled={
             !table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()
@@ -127,7 +214,7 @@ const Example = () => {
           startIcon={<FileDownloadIcon />}
         >
           Export Selected Rows
-        </Button>
+        </Button> */}
       </Box>
     ),
   });

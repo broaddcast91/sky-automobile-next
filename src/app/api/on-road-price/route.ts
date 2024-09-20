@@ -37,7 +37,6 @@ export async function POST(req: NextRequest) {
       variant,
       state,
       outlet,
-
       date, // Ensure these fields are in the schema
       time,
     });
