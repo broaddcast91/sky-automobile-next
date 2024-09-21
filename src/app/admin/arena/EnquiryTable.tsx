@@ -1,10 +1,11 @@
 "use client";
 import { useMemo, useState } from "react";
 import {
+  createMRTColumnHelper,
   MaterialReactTable,
   // MRT_Row,
   useMaterialReactTable,
-  type MRT_ColumnDef,
+  // type MRT_ColumnDef,
 } from "material-react-table";
 import { Box, Button, Select } from "@mui/material";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
@@ -16,38 +17,33 @@ import { FiSearch } from "react-icons/fi";
 const ArenaEnq = () => {
   const [rangeValue, setRangeValue] = useState("");
 
-  const columns = useMemo<MRT_ColumnDef<Person>[]>(
-    //column definitions...
-    () => [
-      {
-        accessorKey: "firstName",
-        header: "First Name",
-        // footer: "First Name",
-      },
-      {
-        accessorKey: "lastName",
-        header: "Last Name",
-        // footer: "Last Name",
-      },
-      {
-        accessorKey: "company",
-        header: "Company",
-        // footer: "Email",
-      },
-      {
-        accessorKey: "city",
-        header: "City",
-        // footer: "City",
-      },
-      {
-        accessorKey: "country",
-        header: "Country",
-        // footer: "Email",
-      },
-    ],
-    []
-    //end
-  );
+const columnHelper = createMRTColumnHelper<Person>();
+
+const columns = [
+  columnHelper.accessor("id", {
+    header: "ID",
+    size: 40,
+  }),
+  columnHelper.accessor("firstName", {
+    header: "First Name",
+    size: 120,
+  }),
+  columnHelper.accessor("lastName", {
+    header: "Last Name",
+    size: 120,
+  }),
+  columnHelper.accessor("company", {
+    header: "Company",
+    size: 300,
+  }),
+  columnHelper.accessor("city", {
+    header: "City",
+  }),
+  columnHelper.accessor("country", {
+    header: "Country",
+    size: 220,
+  }),
+];
 
   const csvConfig = mkConfig({
     fieldSeparator: ",",

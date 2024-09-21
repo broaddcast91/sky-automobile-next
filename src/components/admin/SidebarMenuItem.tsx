@@ -25,14 +25,10 @@ const SidebarMenuItem: React.FC<SidebarMenuItemProps> = ({
     >
       <div
         title={isCollapsed ? text : ""}
-        className={`${
-          isCollapsed
-            ? "p-4 hover:bg-primaryBlue rounded-lg"
-            : "hover:bg-primaryBlue rounded-lg py-2 w-3/4"
-        } 
-        flex items-center p-2 overflow-hidden ${
+        className={`${!isCollapsed && " w-3/4 "} 
+        flex px-4 items-center rounded-lg hover:bg-primaryBlue overflow-hidden ${
           active ? "bg-primaryBlue text-white" : "text-black"
-        } hover:text-white`}
+        } hover:text-white p-2 h-[50px]`}
       >
         {/* Render the passed icon */}
         {text !== "Nexa" ? (
@@ -43,9 +39,9 @@ const SidebarMenuItem: React.FC<SidebarMenuItemProps> = ({
           />
         ) : (
           <p
-            className={` ${isCollapsed ? "mx-auto" : "mr-4"} font-serif font-bold  text-xl ${
-              active && "text-white"
-            }`}
+            className={` ${
+              isCollapsed ? "mx-auto" : "mr-4"
+            } font-serif font-bold  text-xl ${active && "text-white"}`}
           >
             N
           </p>
