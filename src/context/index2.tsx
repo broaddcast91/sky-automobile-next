@@ -3,17 +3,58 @@
 import {
   createContext,
   useContext,
-  useEffect,
   useState,
   ReactNode,
+  useEffect,
 } from "react";
+
+// Define the shape of the MongoDB data
+interface MongoDBData {
+  _id: {
+    $oid: string;
+  };
+  name: string;
+  phone: string;
+  email: string;
+  model: string;
+  outlet: string;
+  variant: string;
+  leadFrom: string;
+  state: string;
+  isDeleted: boolean;
+  time: string;
+  date: string;
+  createdAt: {
+    $date: string;
+  };
+  updatedAt: {
+    $date: string;
+  };
+  __v: number;
+}
 
 // // Define the context value type
 interface DataContextType {
-  //   openSelectState: boolean;
-  //   setOpenSelectState: (open: boolean) => void;
-  //   selectedState: string;
-  //   setSelectedState: (state: string) => void;
+  financeData: MongoDBData[];
+  setFinanceData: (data: MongoDBData[]) => void;
+  insuranceData: MongoDBData[];
+  setInsuranceData: (data: MongoDBData[]) => void;
+  testDriveData: MongoDBData[];
+  setTestDriveData: (data: MongoDBData[]) => void;
+  careerData: MongoDBData[];
+  setCareerData: (data: MongoDBData[]) => void;
+  contactUsData: MongoDBData[];
+  setContactUsData: (data: MongoDBData[]) => void;
+  buyACarData: MongoDBData[];
+  setBuyACarData: (data: MongoDBData[]) => void;
+  sellACarData: MongoDBData[];
+  setSellACarData: (data: MongoDBData[]) => void;
+  arenaData: MongoDBData[];
+  setArenaData: (data: MongoDBData[]) => void;
+  nexaData: MongoDBData[];
+  setNexaData: (data: MongoDBData[]) => void;
+  bookAServiceData: MongoDBData[];
+  setBookAServiceData: (data: MongoDBData[]) => void;
 }
 
 // Create a context with a default value
@@ -24,62 +65,45 @@ interface DataWrapperProps {
 }
 
 export function DataWrapper({ children }: DataWrapperProps) {
-  const [financeData, setFinaceData] = useState([]);
-  const [insuranceData, setInsuranceData] = useState([]);
-  const [testDriveData, setTestDriveData] = useState([]);
-  const [careerData, setCareerData] = useState([]);
-  const [contactUsData, setContactUsData] = useState([]);
-  const [buyACarData, setBuyACarData] = useState([]);
-  const [sellACarData, setSellACarData] = useState([]);
-  const [arenaData, setArenaData] = useState([]);
-  const [nexaData, setNexaData] = useState([]);
-  const [bookAServiceData, setBookAServiceData] = useState([]);
+  const [financeData, setFinanceData] = useState<MongoDBData[]>([]);
+  const [insuranceData, setInsuranceData] = useState<MongoDBData[]>([]);
+  const [testDriveData, setTestDriveData] = useState<MongoDBData[]>([]);
+  const [careerData, setCareerData] = useState<MongoDBData[]>([]);
+  const [contactUsData, setContactUsData] = useState<MongoDBData[]>([]);
+  const [buyACarData, setBuyACarData] = useState<MongoDBData[]>([]);
+  const [sellACarData, setSellACarData] = useState<MongoDBData[]>([]);
+  const [arenaData, setArenaData] = useState<MongoDBData[]>([]);
+  const [nexaData, setNexaData] = useState<MongoDBData[]>([]);
+  const [bookAServiceData, setBookAServiceData] = useState<MongoDBData[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await Promise.all([
-        fetch("/api/finance"),
-        fetch("/api/insurance"),
-        fetch("/api/test-drive"),
-        fetch("/api/career"),
-        fetch("/api/contact-us"),
-        fetch("/api/buy-a-car"),
-        fetch("/api/sell-a-car"),
-        fetch("/api/arena"),
-        fetch("/api/nexa"),
-        fetch("/api/book-a-service"),
-      ]);
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/on-road-price?rangeValue=allData&channel=Arena"
+        );
 
-      const [
-        finance,
-        insurance,
-        testDrive,
-        career,
-        contactUs,
-        buyACar,
-        sellACar,
-        arena,
-        nexa,
-        bookAService,
-      ] = await Promise.all(data.map((res) => res.json()));
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
 
-      setFinaceData(finance);
-      setInsuranceData(insurance);
-      setTestDriveData(testDrive);
-      setCareerData(career);
-      setContactUsData(contactUs);
-      setBuyACarData(buyACar);
-      setSellACarData(sellACar);
-      setArenaData(arena);
-      setNexaData(nexa);
-      setBookAServiceData(bookAService);
+        const data = await response.json();
+        setArenaData(data);
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
     };
-  });
 
+    fetchData();
+  }, []);
   // Define the context value
   const contextValue: DataContextType = {
     financeData,
-    setFinaceData,
+    setFinanceData,
     insuranceData,
     setInsuranceData,
     testDriveData,
@@ -106,10 +130,12 @@ export function DataWrapper({ children }: DataWrapperProps) {
 }
 
 // Custom hook to use the AppContext
-export const useAppContext = (): DataContextType => {
+export const useDataContext = (): DataContextType => {
   const context = useContext(DataContext);
   if (context === undefined) {
     throw new Error("useAppContext must be used within an AppWrapper");
   }
   return context;
 };
+
+// export default DataContext;

@@ -1,6 +1,7 @@
 "use client";
 import Sidebar from "@/components/admin/Siderbar";
 import { DataWrapper } from "@/context/index2";
+
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -20,7 +21,7 @@ export default function DashboardLayout({
     setShowSidebar(pathname !== "/login" && pathname !== "/");
   }, [pathname]);
   return (
-    <section className="bg-[#e1e7fd]">
+    <section className="bg-slate-200">
       <Sidebar
         isCollapsed={isCollapsed}
         toggleSidebar={toggleSidebar}

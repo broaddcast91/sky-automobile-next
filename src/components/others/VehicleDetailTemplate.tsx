@@ -73,6 +73,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
           ...formData,
           state: selectedState,
           model: modelName,
+          channel: index > 8 ? "Nexa" : "Arena",
         }),
       });
 

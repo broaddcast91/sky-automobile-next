@@ -10,7 +10,7 @@ interface IOnRoadPrice {
   state: string;
   leadFrom: string;
   variant: string;
-
+  channel: string;
   time: string;
   date: string;
   isDeleted?: boolean;
@@ -46,6 +46,12 @@ const onRoadPriceSchema: Schema = new Schema<IOnRoadPrice>(
       trim: true,
     },
     variant: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    channel: {
       type: String,
       required: true,
       trim: true,

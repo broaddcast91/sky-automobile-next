@@ -12,8 +12,10 @@ import { mkConfig, generateCsv, download } from "export-to-csv";
 import { data, type Person } from "./makeData";
 import { FiSearch } from "react-icons/fi";
 
-const Example = () => {
+
+const ArenaEnq = () => {
   const [rangeValue, setRangeValue] = useState("");
+
   const columns = useMemo<MRT_ColumnDef<Person>[]>(
     //column definitions...
     () => [
@@ -84,7 +86,7 @@ const Example = () => {
     positionToolbarAlertBanner: "bottom",
 
     //  enableDensityToggle: false,
-    muiTableContainerProps: { sx: { height: "73vh", maxHeight: "73vh" } },
+    muiTableContainerProps: { sx: { minHeight: "70vh", maxHeight: "72vh" } },
     muiTableBodyCellProps: {
       sx: (theme) => ({
         backgroundColor:
@@ -100,6 +102,7 @@ const Example = () => {
           gap: "16px",
           //   padding: "8px",
           flexWrap: "wrap",
+          marginTop: "8px",
         }}
       >
         {/* <Button
@@ -224,6 +227,12 @@ const Example = () => {
       sx={{
         overflow: "hidden",
         boxShadow: "none", // Remove shadow from the table
+        // borderTop: "1px solid #e1e3e6",
+        // borderRight: "0px solid #e1e3e6",
+        // borderBottom: "1px solid #e1e3e6",
+        // borderLeft: "1px solid #e1e3e6",
+        border: "1px solid #e1e3e6",
+        borderRadius: "4px",
       }}
     >
       <MaterialReactTable table={table} />
@@ -231,4 +240,4 @@ const Example = () => {
   );
 };
 
-export default Example;
+export default ArenaEnq;

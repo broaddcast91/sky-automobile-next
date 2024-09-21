@@ -1,9 +1,12 @@
-import React from 'react'
+"use client";
+import { useDataContext } from "@/context/index2";
+import React from "react";
 
 const Home = () => {
-  return (
-    <div>page</div>
-  )
-}
+  const { arenaData } = useDataContext();
+  console.log(arenaData, "arena data");
 
-export default Home
+  return <div>Home</div>;
+};
+
+export default Home;
