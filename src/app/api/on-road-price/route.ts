@@ -76,6 +76,7 @@ export async function GET(req: NextRequest) {
     const startDate = searchParams.get("startDate");
     const endDate = searchParams.get("endDate");
     const channel = searchParams.get("channel");
+    console.log(rangeValue, startDate, endDate, channel);
 
     let filter: any = { isDeleted: false };
 
@@ -159,7 +160,7 @@ export async function GET(req: NextRequest) {
       case "allData":
       default:
         // No date filter for all data
-        filter = {};
+        // filter = {};
         break;
     }
 

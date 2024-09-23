@@ -3,7 +3,7 @@
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
 import VehicleDetailsSlider from "@/components/others/VehicleDetailsSlider";
-import { cgOutlets, models } from "@/constants";
+import { cgOutlets, models, odOutlets } from "@/constants";
 import { useAppContext } from "@/context";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import toast from "react-hot-toast";
@@ -59,9 +59,9 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
     console.log("Form Data:", {
       ...formData,
       state: selectedState,
-      model: data.name,
+      model: data.subName,
     });
-    let modelName = data.name;
+    let modelName = data.subName;
     try {
       // Send the POST request
       const response = await fetch("/api/on-road-price", {
@@ -111,11 +111,6 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
     }
   };
 
-  const outlets = [
-    "Sky Automobile Arena 01 Showroom",
-    "Sky Automobile Arena 02 Showroom",
-    "Sky Automobile Arena 03 Showroom",
-  ];
 
   if (!data) return null;
 
@@ -334,15 +329,21 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
                         {outlet.name}
                       </option>
                     ))
-                  : selectedState !== "Odisha"
+                  : selectedState !== "Odisha" && index > 8
                   ? cgOutlets[1].locations.map((outlet, i) => (
                       <option key={i} value={outlet.name}>
                         {outlet.name}
                       </option>
                     ))
-                  : outlets.map((outlet, i) => (
-                      <option key={i} value={outlet}>
-                        {outlet}
+                  : selectedState === "Odisha" && index > 8
+                  ? odOutlets[1].locations.map((outlet, i) => (
+                      <option key={i} value={outlet.name}>
+                        {outlet.name}
+                      </option>
+                    ))
+                  : odOutlets[0].locations.map((outlet, i) => (
+                      <option key={i} value={outlet.name}>
+                        {outlet.name}
                       </option>
                     ))}
               </select>

@@ -140,6 +140,7 @@ const Footer: React.FC = () => {
                   { label: "About Us", href: "/about-us" },
                   { label: "Contact Us", href: "/contact-us" },
                   { label: "Career", href: "/career" },
+                  { label: "Privacy Policy", href: "/privacy-policy" },
 
                   // { label: "Returns Policy", href: "/" },
                   // { label: "Accessibility", href: "/" },

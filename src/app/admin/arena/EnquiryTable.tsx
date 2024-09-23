@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import {
   createMRTColumnHelper,
   MaterialReactTable,
@@ -10,40 +10,12 @@ import {
 import { Box, Button, Select } from "@mui/material";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import { mkConfig, generateCsv, download } from "export-to-csv";
-import { data, type Person } from "./makeData";
+
 import { FiSearch } from "react-icons/fi";
 
-
-const ArenaEnq = () => {
+const EnqTable = ({ data, columns }: { data: any, columns: any }) => {
   const [rangeValue, setRangeValue] = useState("");
 
-const columnHelper = createMRTColumnHelper<Person>();
-
-const columns = [
-  columnHelper.accessor("id", {
-    header: "ID",
-    size: 40,
-  }),
-  columnHelper.accessor("firstName", {
-    header: "First Name",
-    size: 120,
-  }),
-  columnHelper.accessor("lastName", {
-    header: "Last Name",
-    size: 120,
-  }),
-  columnHelper.accessor("company", {
-    header: "Company",
-    size: 300,
-  }),
-  columnHelper.accessor("city", {
-    header: "City",
-  }),
-  columnHelper.accessor("country", {
-    header: "Country",
-    size: 220,
-  }),
-];
 
   const csvConfig = mkConfig({
     fieldSeparator: ",",
@@ -236,4 +208,4 @@ const columns = [
   );
 };
 
-export default ArenaEnq;
+export default EnqTable;

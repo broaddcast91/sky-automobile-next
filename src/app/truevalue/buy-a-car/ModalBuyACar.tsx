@@ -2,15 +2,20 @@
 import { useAppContext } from "@/context";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { cgOutlets, odOutlets } from "@/constants";
 
 interface ModalBuyACarProps {
   showBuyACar: boolean;
   setShowBuyACar: React.Dispatch<React.SetStateAction<boolean>>;
+  model?: string;
+  carNumber?: string;
 }
 
 const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
   showBuyACar,
   setShowBuyACar,
+  model,
+  carNumber,
 }) => {
   const handleOnClose = (e: any) => {
     if (e.target.id === "container") setShowBuyACar(false);
@@ -18,7 +23,7 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
   interface FormData {
     name: string;
     phone: string;
-    model: string;
+    // model: string;
     email: string;
     outlet: string;
   }
@@ -36,7 +41,7 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
   const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
-    model: "",
+    // model: model || "",
     email: "",
     outlet: "",
   });
@@ -53,15 +58,56 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
   };
 
   // Handle form submission
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (
+    event
+  ) => {
     event.preventDefault();
-    console.log("Form Data:", { ...formData, state: selectedState });
-    toast.success("Thank You for contacting us. We will get back to you soon!");
+    console.log("Form Data:", {
+      ...formData,
+      state: selectedState,
+      model,
+      carNumber,
+    });
+    try {
+      // Send the POST request
+      const response = await fetch("/api/buy-a-car", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          state: selectedState,
+          model,
+          carNumber,
+        }),
+      });
+
+      // Check if the response is ok
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Parse the JSON response
+      const data = await response.json();
+
+      // Handle the response based on the data
+      if (data.status === true) {
+        toast.success(
+          "Thank you for contacting us. We will get back to you soon!"
+        );
+      } else {
+        toast.error("Failed to send request. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("Failed to send request. Please try again later.");
+      console.error("Error sending request:", error);
+    }
     // Optionally, reset form state after submission
     setFormData({
       name: "",
       phone: "",
-      model: "",
+      // model: "",
       email: "",
       outlet: "",
     });
@@ -78,15 +124,15 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
     >
       <div className="bg-white w-full max-w-md rounded py-6 m-2 md:py-6 select-none px-4 ">
         <h4 className=" text-xl font-semibold  text-primaryGray mb-4">
-          Get A{" "}
+          Get A Call Back for{" "}
           <span
-            className={` ${
+            className={`text-sm ${
               selectedState === "Odisha"
                 ? "text-primaryBlue"
                 : "text-primaryRed"
             }`}
           >
-            Call Back
+            - {model}
           </span>{" "}
         </h4>
         <form onSubmit={handleSubmit}>
@@ -129,7 +175,7 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
               type="email"
               name="email"
               placeholder="Email"
-              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none   lg:col-span-2 ${
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none  ${
                 selectedState === "Odisha"
                   ? "border-b-primaryBlue"
                   : "border-b-primaryRed"
@@ -138,50 +184,43 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
               onChange={handleChange}
             />
             <select
+              name="outlet"
+              className={`w-full p-2 bg-transparent border-b-2   focus:outline-none ${
+                selectedState === "Odisha"
+                  ? "border-b-primaryBlue"
+                  : " border-b-primaryRed"
+              }`}
+              onChange={handleChange}
+              required
+              defaultValue={""}
+            >
+              <option value="" disabled>
+                Select Outlet
+              </option>
+              {selectedState !== "Odisha"
+                ? cgOutlets[3].locations.map((outlet, i) => (
+                    <option key={i} value={outlet.name}>
+                      {outlet.name}
+                    </option>
+                  ))
+                : odOutlets[2]?.locations.map((outlet, i) => (
+                    <option key={i} value={outlet.name}>
+                      {outlet.name}
+                    </option>
+                  ))}
+            </select>
+            {/* <input
+              type="model"
               name="model"
-              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none  ${
+              placeholder="Model"
+              disabled
+              className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none cursor-not-allowed text-gray-400 text-sm ${
                 selectedState === "Odisha"
                   ? "border-b-primaryBlue"
                   : "border-b-primaryRed"
               }`}
-              required
-              value={formData.model}
-              onChange={handleChange}
-            >
-              <option
-                value=""
-                className="w-full p-2 text-sm text-black border rounded-md"
-                disabled
-              >
-                Select Model*
-              </option>
-              <optgroup label="Arena" className="text-sm text-primaryGray">
-                <option value="Alto k10">Alto K10</option>
-                <option value="Wagon R">Wagon R</option>
-                <option value="Celerio">Celerio</option>
-                <option value="Epic swift 2024">Epic Swift 2024</option>
-                <option value="Swift">Swift</option>
-                <option value="Dzire">Dzire</option>
-                <option value="S-presso">S-Presso</option>
-                <option value="Ertiga">Ertiga</option>
-                <option value="Brezza">Brezza</option>
-                <option value="Eeco">Eeco</option>
-              </optgroup>
-              <optgroup label="Nexa" className="text-sm text-primaryGray">
-                <option value="Invicto">Invicto</option>
-                <option value="Fronx">Fronx</option>
-                <option value="Jimny">Jimny</option>
-                <option value="Grand Vitara">Grand Vitara</option>
-                <option value="Ciaz">Ciaz</option>
-                <option value="Baleno">Baleno</option>
-                <option value="Ignis">Ignis</option>
-                <option value="XL6">XL6</option>
-              </optgroup>
-              {/* <optgroup label="True Value" className="text-sm text-primaryGray">
-                <option value="I want to buy">I want to buy</option>
-                <option value="I want to sell">I want to sell</option>
-              </optgroup> */}
-            </select>
+              value={model}
+            /> */}
 
             <button
               type="submit"

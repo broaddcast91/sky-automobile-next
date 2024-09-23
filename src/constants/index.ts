@@ -158,7 +158,7 @@ export const models = [
       },
     ],
 
-    exploreMore: [1, 2,3],
+    exploreMore: [1, 2, 3],
     thumbnail: "/thumbnail/altoK10.webp",
     priceRange: `₹7.49L - ₹15.49L *`,
     brochure:
@@ -350,7 +350,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
-    exploreMore: [2,3, 4],
+    exploreMore: [2, 3, 4],
     thumbnail: "/thumbnail/swift02.webp",
     priceRange: `₹ 6.49-9.5 Lakhs *`,
     brochure:
@@ -554,7 +554,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
-    exploreMore: [3,4, 5],
+    exploreMore: [3, 4, 5],
     thumbnail: "/thumbnail/brezza-page.webp",
     priceRange: `₹ 8.34 - 14.14 Lakh *`,
     brochure:
@@ -730,7 +730,7 @@ export const models = [
         transmission: "Manual",
       },
     ],
-    exploreMore: [4, 5,6],
+    exploreMore: [4, 5, 6],
     thumbnail: "/thumbnail/dzire.webp",
     priceRange: "₹ 6.80 - 9.50 Lakh *",
     brochure:
@@ -879,7 +879,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
-    exploreMore: [5, 6,7],
+    exploreMore: [5, 6, 7],
     thumbnail: "/thumbnail/spresso.webp",
     priceRange: "₹ 4.27 - 5.90 Lakh *",
     brochure:
@@ -1070,7 +1070,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
-    exploreMore: [6, 7,8],
+    exploreMore: [6, 7, 8],
     thumbnail: "/thumbnail/wagnor.webp",
     priceRange: "₹ 5.54 - 7.14 Lakh *",
     brochure:
@@ -1233,7 +1233,7 @@ export const models = [
       },
       { variant: "ERTIGA TOUR M 1.5L", price: 980000, transmission: "Manual" },
     ],
-    exploreMore: [7, 8,0],
+    exploreMore: [7, 8, 0],
     thumbnail: "/thumbnail/ertiga.webp",
     priceRange: "₹ 8.64 - 11.50 Lakh *",
     brochure:
@@ -1379,7 +1379,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
-    exploreMore: [8,0, 1],
+    exploreMore: [8, 0, 1],
     thumbnail: "/thumbnail/celerio.webp",
     priceRange: "₹ 5.35 - 6.87 Lakh *",
     brochure:
@@ -1538,7 +1538,7 @@ export const models = [
         transmission: "Manual",
       },
     ],
-    exploreMore: [1, 2,3],
+    exploreMore: [1, 2, 3],
     thumbnail: "/thumbnail/Eeco.webp",
     priceRange: "₹ 5.40 - 6.67 Lakh *",
     brochure:
@@ -1670,7 +1670,7 @@ export const models = [
         transmission: "Automatic",
       },
     ],
-    exploreMore: [10, 11,12],
+    exploreMore: [10, 11, 12],
     thumbnail: "/thumbnail/invicto-main-thubmnail-no-bg.webp",
     priceRange: "₹ 25.305 - 29.015 Lakh *",
     brochure:
@@ -1824,7 +1824,7 @@ export const models = [
         transmission: "Manual",
       },
     ],
-    exploreMore: [11, 12,13],
+    exploreMore: [11, 12, 13],
     thumbnail: "/thumbnail/Jimny.webp",
     priceRange: "₹ 12.74 - 14.95 Lakh*",
     brochure:
@@ -2007,7 +2007,7 @@ export const models = [
       { variant: "CNG (MT) DELTA", price: 932500, transmission: "Manual" },
       { variant: "CNG (MT) SIGMA", price: 846500, transmission: "Manual" },
     ],
-    exploreMore: [12, 13,14],
+    exploreMore: [12, 13, 14],
     thumbnail: "/thumbnail/Fronx.webp",
     priceRange: "₹ 7.515 - 13.035 Lakh *",
     brochure:
@@ -2216,7 +2216,7 @@ export const models = [
       { variant: "ZETA CNG (MT)", price: 1496000, transmission: "Manual" },
       { variant: "DELTA CNG (MT)", price: 1315000, transmission: "Manual" },
     ],
-    exploreMore: [13, 14,15],
+    exploreMore: [13, 14, 15],
     thumbnail: "/thumbnail/GV.webp",
     priceRange: "₹ 10.99- 20.09 Lakh *",
     brochure:
@@ -2374,7 +2374,7 @@ export const models = [
       { variant: "ZETA (1.5 P MT)", price: 1161000, transmission: "Manual" },
       { variant: "ZETA CNG (MT)", price: 1256000, transmission: "Manual" },
     ],
-    exploreMore: [14, 15,16],
+    exploreMore: [14, 15, 16],
     thumbnail: "/thumbnail/XL6.webp",
     priceRange: "₹ 12.56 - 14.77 Lakh *",
     brochure:
@@ -2547,7 +2547,7 @@ export const models = [
       { variant: "DELTA (1.5 P MT)", price: 1000000, transmission: "Manual" },
       { variant: "SIGMA (1.5 P MT)", price: 940000, transmission: "Manual" },
     ],
-    exploreMore: [15, 16,9],
+    exploreMore: [15, 16, 9],
     thumbnail: "/thumbnail/Ciaz.webp",
     priceRange: "₹ 9.40 - 12.45 Lakh *",
     brochure:
@@ -2674,7 +2674,7 @@ export const models = [
       { variant: "ZETA (CNG) MT", price: 933000, transmission: "Manual" },
       { variant: "DELTA (CNG) MT", price: 840000, transmission: "Manual" },
     ],
-    exploreMore: [16, 9,10],
+    exploreMore: [16, 9, 10],
     thumbnail: "/thumbnail/Baleno.webp",
     priceRange: "₹ 6.66 - 9.83 Lakh *",
     brochure:
@@ -2816,7 +2816,7 @@ export const models = [
       { variant: "DELTA MT (P)", price: 638000, transmission: "Manual" },
       { variant: "SIGMA MT (P)", price: 584000, transmission: "Manual" },
     ],
-    exploreMore: [9, 10,11],
+    exploreMore: [9, 10, 11],
     thumbnail: "/thumbnail/Ignis.webp",
     priceRange: "₹ 5.84 - 8.20 Lakh *",
     brochure:
@@ -3130,7 +3130,7 @@ export const cgOutlets = [
       // TrueValue
       {
         name: "SKY AUTOMOBILES - Mahoba Bazar",
-        channel: "True Value ",
+        channel: "True Value",
         address:
           "Maruti Heights Commercial Complex, Mohaba Bazar Great Eastern Road NH 6, near Ambika Rly Crossing, Raipur, Chhattisgarh 492001",
         map: "https://maps.app.goo.gl/J82JQAyo91wE2hss7",
@@ -3144,7 +3144,7 @@ export const cgOutlets = [
       },
       {
         name: "SKY AUTOMOBILES - Udhyog Bhawan",
-        channel: "True Value ",
+        channel: "True Value",
         address:
           "Ring Road No. 1, near Udyog Bhawan, MAHAVIR NAGAR, Telibandha, Raipur, Chhattisgarh 492001",
         map: "https://maps.app.goo.gl/MgBraXYNRfVwKQ5N6",
@@ -3158,7 +3158,7 @@ export const cgOutlets = [
       },
       {
         name: "SKY AUTOMOBILES - JAGDALPUR ",
-        channel: "True Value ",
+        channel: "True Value",
         address: "",
         map: "",
         iframe: "",
@@ -3176,18 +3176,191 @@ export const odOutlets = [
     name: "Arena",
     locations: [
       {
-        name: "SKY AUTOMOBILES - RAIPUR",
+        name: "SKY AUTOMOBILES - BHUBANESWAR",
         channel: "Arena",
         address:
-          "Great Eastern Rd, Maruti Vihar, Kota, Raipur, Chhattisgarh 492001",
-        map: "https://maps.app.goo.gl/jBXrQK86hU4sDmDk8",
+          "Besides The, Arcon Retreat, Nandankanan Rd, Kanan Vihar, Patia, Bhubaneswar, Odisha 751031",
+        map: "https://maps.app.goo.gl/7kujYmyGs5NnRUys6",
         iframe:
-          "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14873.575748626132!2d81.5938016!3d21.2558686!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28de0522595e83%3A0x9b53881314481416!2sMaruti%20Suzuki%20ARENA%20(Sky%20Automobiles%2C%20Raipur%2C%20Mohaba%20Bazar)!5e0!3m2!1sen!2sin!4v1726030050436!5m2!1sen!2sin",
-        phone: "9893307422",
-        salesPersonName: "Mr. Ustav Goswami",
-        email: "sales@skyautomobiles.in",
-        servicePersonName: "Mr. Jai Singh Madwar",
-        servicePhone: "9584433150",
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.9206376940115!2d85.82146437603774!3d20.34489698113881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909dd9bca2089%3A0xa54f9d01703c8849!2sMaruti%20Suzuki%20ARENA%20(Sky%20Automobiles%2C%20Bhubaneswar%2C%20Patia)!5e0!3m2!1sen!2sin!4v1727083042435!5m2!1sen!2sin",
+        phone: "9776645722",
+        salesPersonName: "Mr. Sudhir Kumar Das",
+        // email: "sales@skyautomobiles.in",
+        servicePersonName: "Mr. Surendra",
+        servicePhone: "9776645798",
+      },
+      {
+        name: "SKY AUTOMOBILES - TANGI",
+        channel: "Arena",
+        address: "Benta Chowk, Champagada, Tangi, Odisha 752024",
+        map: "https://maps.app.goo.gl/a8sTThhu5hQCG9wK6",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.3272706351518!2d85.41678017602939!3d19.95273438144072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1847fb45bc6ed1%3A0xef8be353f23d8e42!2sMaruti%20Suzuki%20Arena%20(Sky%20Automobiles%2C%20Khurda%2C%20Tangi)!5e0!3m2!1sen!2sin!4v1727084375546!5m2!1sen!2sin",
+        phone: "9776645715",
+        salesPersonName: "Mr. Biswajit  Rana",
+        // email: "",
+        servicePersonName: "Mr. Biswajit  Rana",
+        servicePhone: "9776645715",
+      },
+      {
+        name: "SKY AUTOMOBILES - DHENKANAL",
+        channel: "Arena",
+        address:
+          "PLOT NO-136/1103, KATHAGARA, NEARASSAM, OIL NH-42, Ananda Nagar, Dhenkanal, Odisha 759013",
+        map: "https://maps.app.goo.gl/LJBcWMqnnxNpRp5M7",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.84514496587!2d85.61882397604396!3d20.63516788091758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a191feae8dfc023%3A0x9576f496c2c6d84b!2sMaruti%20Suzuki%20ARENA%20(Sky%20Automobiles%2C%20Dhenkanal%2C%20Kathagada)!5e0!3m2!1sen!2sin!4v1727084721383!5m2!1sen!2sin",
+        phone: "9776900005",
+        salesPersonName: "Mr. Anup Sundar Samal",
+        // email: "",
+        servicePersonName: "Mr. Satya",
+        servicePhone: "7440025919",
+      },
+      {
+        name: "SKY AUTOMOBILES - KAMAKSHYANAGAR",
+        channel: "Arena",
+        address:
+          "INFRONT OF KAMAKHYA NAGAR POLICE STATION,HANUMAN BAZAR, Kamakhyanagar, Odisha 759018",
+        map: "https://maps.app.goo.gl/BdXZDvLryaDDhqi77",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.50960400156!2d85.53879037605049!3d20.932040580693204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a18d6988531e92b%3A0x4f88a770e7562fb2!2sMaruti%20Suzuki%20Arena%20(Sky%20Automobiles%2C%20Kamakhya%20nagar%2C%20Hanuman%20Bazar)!5e0!3m2!1sen!2sin!4v1727086398171!5m2!1sen!2sin",
+        phone: "9776900005",
+        salesPersonName: "Mr. Anup Sundar Samal",
+        // email: "",
+        servicePersonName: "",
+        servicePhone: "",
+      },
+      {
+        name: "SKY AUTOMOBILES - NARSINGHPUR",
+        channel: "Arena",
+        address: "PAIKAPADA,NARSINGHPUR, CUTTACK, Odisha 754032",
+        map: "https://maps.app.goo.gl/HKUzWSrXKZt38t868",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3738.061633781103!2d85.08761867604032!3d20.462661581048753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a189ab739eed375%3A0xce81fd47c548d0e7!2sMaruti%20Suzuki%20ARENA%20(Sky%20Automobiles%2C%20Cuttack%2C%20Narasinghpur)!5e0!3m2!1sen!2sin!4v1727086573412!5m2!1sen!2sin",
+        phone: "9776900005",
+        salesPersonName: "Mr. Anup Sundar Samal",
+        // email: "",
+        servicePersonName: "",
+        servicePhone: "",
+      },
+      {
+        name: "SKY AUTOMOBILES - CUTTACK",
+        channel: "Arena",
+        address: "At/Po- Bhanpur, NH16, Urali, Odisha 753011",
+        map: "https://maps.app.goo.gl/YtUJ9jNNsHAyt1bC9",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59842.397949808044!2d85.81121821953124!3d20.376709579723716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190c5b69728a9d%3A0xa3832eebb93eba7a!2sMaruti%20Suzuki%20ARENA%20(Sky%20Automobiles%2C%20Cuttack%2C%20Kathajodi)!5e0!3m2!1sen!2sin!4v1727086664331!5m2!1sen!2sin",
+        phone: "9776900555",
+        salesPersonName: "Mr. Jagannath Sahoo",
+        // email: "",
+        servicePersonName: "Mr. Saroj",
+        servicePhone: "9583011030",
+      },
+      {
+        name: "SKY AUTOMOBILES - SALEPUR",
+        channel: "Arena",
+        address: "https://maps.app.goo.gl/ou869kWDtYPbR2XBA",
+        map: "https://maps.app.goo.gl/ou869kWDtYPbR2XBA",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d959027.356043581!2d84.82850161249995!3d20.125676664635417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1965bac675e76f%3A0x1c0221e74eb054de!2sMaruti%20Suzuki%20ARENA%20(Sky%20Automobiles%2C%20Salepur%2C%20Machuati)!5e0!3m2!1sen!2sin!4v1727086815580!5m2!1sen!2sin",
+        phone: "7440011601",
+        salesPersonName: "Mr. Ashok Sahoo",
+        // email: "",
+        servicePersonName: "",
+        servicePhone: "",
+      },
+      {
+        name: "SKY AUTOMOBILES - JAJPUR",
+        channel: "Arena",
+        address:
+          " At-BENAPUR, NEAR JANHA HOTEL, JAJPUR ROAD, JAJPUR, Odisha 755019",
+        map: "https://maps.app.goo.gl/t9MkJ7kT9UJDgDU76",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.4183936550785!2d86.16410577605053!3d20.935706580690447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a195148eecbd077%3A0x9eed6dd171481fc3!2sMaruti%20Suzuki%20Arena%20(Sky%20Automobiles%2C%20Jajpur%2C%20Benapur)!5e0!3m2!1sen!2sin!4v1727087773128!5m2!1sen!2sin",
+        phone: "9776900777",
+        salesPersonName: "Mr. Bharat Panda",
+        // email: "",
+        servicePersonName: "Mr. Janaki",
+        servicePhone: "9583011010",
+      },
+      {
+        name: "SKY AUTOMOBILES - CHANDIKHOL",
+        channel: "Arena",
+        address: "PO, AT:, Chandikhol, Sunguda, Odisha 754204",
+        map: "https://maps.app.goo.gl/E8E8M8cunN6HawQk9",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.4995464689073!2d86.12957017604515!3d20.689929780875993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a195d7500e92783%3A0x19f63087bb7032c6!2sMaruti%20Suzuki%20ARENA%20(Sky%20Automobiles%2C%20Jajpur%2C%20Chandikhol)!5e0!3m2!1sen!2sin!4v1727088009796!5m2!1sen!2sin",
+        phone: "9583011012",
+        salesPersonName: "Mr. Aswini Panda",
+        // email: "",
+        servicePersonName: "Mr. Sahadat  ",
+        servicePhone: "8117829611",
+      },
+      {
+        name: "SKY AUTOMOBILES - BERHAMPUR",
+        channel: "Arena",
+        address:
+          "NH-16, Jagannathpur-Gopalpur Jn, Dist, Brahmapur, Odisha 760010",
+        map: "https://maps.app.goo.gl/bU3rxP3DMBuuamm19",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238685.84372829174!2d85.98461797812499!3d20.812868294635525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a195148eecbd077%3A0x9eed6dd171481fc3!2sMaruti%20Suzuki%20Arena%20(Sky%20Automobiles%2C%20Jajpur%2C%20Benapur)!5e0!3m2!1sen!2sin!4v1727088180853!5m2!1sen!2sin",
+        phone: "9776645725",
+        salesPersonName: "Mr. Dillip Behera",
+        // email: "",
+        servicePersonName: "Mr. Sada",
+        servicePhone: "8828291895",
+      },
+      {
+        name: "SKY AUTOMOBILES - BHANJA NAGAR",
+        channel: "Arena",
+        address: "baunsalundi, Bhanjanagar, Odisha 761126",
+        map: "https://maps.app.goo.gl/cMQp655yXRtWxgga8",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.006833115482!2d84.56583917602885!3d19.924116881463036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a22eb109187a573%3A0xba858c55d71403c1!2sMaruti%20Suzuki%20Arena%20(Sky%20Automobiles%2C%20Bhanjanagar%2C%20Baunsalundi)!5e0!3m2!1sen!2sin!4v1727088296429!5m2!1sen!2sin",
+        phone: "7328812012",
+        salesPersonName: "Mr. Balaram Panda",
+        // email: "",
+        servicePersonName: "",
+        servicePhone: "",
+      },
+      {
+        name: "SKY AUTOMOBILES - PHULBANI",
+        channel: "Arena",
+        address: "Gudrisahi, Gudari, PS, Dist, Khajuripada, Odisha 762012",
+        map: "https://maps.app.goo.gl/7M8ehbejqGPSt5mb6",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3738.1054687933843!2d84.28291887604018!3d20.460860881050156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a224d801c34f79f%3A0x99a62dfbdf279ed7!2sMaruti%20Suzuki%20Arena%20(Sky%20Automobiles%2C%20Phulbani%2C%20Gudari)!5e0!3m2!1sen!2sin!4v1727088427851!5m2!1sen!2sin",
+        phone: "6370687787",
+        salesPersonName: "Mr. Pitabas Amat",
+        // email: "",
+        servicePersonName: "Mr. Biranchi",
+        servicePhone: "9337777800",
+      },
+      {
+        name: "SKY AUTOMOBILES - PARALAKHEMUNDI",
+        channel: "Arena",
+        address: "Q3Vh+Crs6, Paralakhemundi, Odisha 761201",
+        map: "https://maps.app.goo.gl/bQTdvR3uZ1FtVpsQ8",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3777.1655005475154!2d84.07563487934566!3d18.7907763729119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3cf7388563d045%3A0xcee40bf96800f81e!2sMaruti%20Suzuki%20Arena%20(Sky%20Automobiles%2C%20Odisha%2C%20Paralakhemundi)!5e0!3m2!1sen!2sin!4v1727088680635!5m2!1sen!2sin",
+        phone: "8093010737",
+        salesPersonName: "Mr. Shambhunath Panda",
+        // email: "",
+        servicePersonName: "Mr. Umashankar",
+        servicePhone: "8249561230",
+      },
+      {
+        name: "SKY AUTOMOBILES - BALIGUDA",
+        channel: "Arena",
+        address: "",
+        map: "https://maps.app.goo.gl/Bpm8zFiEK8Q8pteQ8",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7488.75276110039!2d83.90309825869141!3d20.201674924864673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a237580e8151827%3A0x775f31287b8dca23!2sMaruti%20Suzuki%20Arena%20(%20Sky%20Automobiles%2C%20Baliguda%2C%20Kandhamala)!5e0!3m2!1sen!2sin!4v1727088811313!5m2!1sen!2sin",
+        phone: "9692875363",
+        salesPersonName: "Mr. Nirmal Chandra Behera",
+        // email: "",
+        servicePersonName: "",
+        servicePhone: "",
       },
     ],
   },
@@ -3196,56 +3369,95 @@ export const odOutlets = [
     locations: [
       // Nexa
       {
-        name: "SKY AUTOMOBILES - MAGNETO MALL  ",
+        name: "SKY AUTOMOBILES -  Bhubaneshwar",
+        channel: "Nexa",
+        address: "Mouza, NH16, Naharkanta, Bhubaneswar, Odisha 752101",
+        map: "https://maps.app.goo.gl/74tEX5Gj7Lx4Y12D9",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.5645908400693!2d85.87805527603712!3d20.31828188115911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909c4e7c351c5%3A0xc70e6896ae439b35!2sNEXA%20(Sky%20Automobiles%2C%20Bhubaneshwar%2C%20Twin%20City)!5e0!3m2!1sen!2sin!4v1727091501886!5m2!1sen!2sin",
+        salesPersonName: "Mr. Birat Nayak",
+        phone: "9090060111",
+        servicePersonName: "Mr. Biswajit ",
+        servicePhone: "9776999977",
+        email: "",
+      },
+      {
+        name: "SKY AUTOMOBILES -  Berhampur",
         channel: "Nexa",
         address:
-          "Beside Magneto The Mall, National Highway, Street Number 6, Labhandih, Chhattisgarh 492001",
-        map: "https://maps.app.goo.gl/sbg569Z6cp6JMfkM8",
+          "N.H. - 5, Amabapua Mouza, Between Gopalpur, Junction, Jaganathpur, Brahmapur, Odisha 760007",
+        map: "https://maps.app.goo.gl/GnR9rkkmAFKxoPHE6",
         iframe:
-          "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14875.289415715275!2d81.6848154!3d21.2388919!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dd21064997cb%3A0xcfc08d5e3f679793!2sNEXA%20(Sky%20Automobiles%2C%20Raipur%2C%20Magneto)!5e0!3m2!1sen!2sin!4v1726038467745!5m2!1sen!2sin",
-        salesPersonName: "Mr. Abhishek  ",
-        phone: "9111107017",
-        servicePersonName: "Mr. Srijan Gupta",
-        servicePhone: "7470778082",
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.3216906316534!2d84.84798137601607!3d19.31184228194186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3d51b3544ed31d%3A0xa3fb10ccd1f5fc83!2sNEXA%20(Sky%20Automobiles%2C%20Ganjam%2C%20Berhampur)!5e0!3m2!1sen!2sin!4v1727091677429!5m2!1sen!2sin",
+        salesPersonName: "Mr. Bighnaraj Satpathy",
+        phone: "7064906490",
+        servicePersonName: "Mr. Biswajit ",
+        servicePhone: "9776999977",
         email: "",
       },
     ],
   },
-  {
-    name: "Workshop",
-    locations: [
-      // Workshop
+  // {
+  //   name: "Workshop",
+  //   locations: [
+  //     // Workshop
 
-      {
-        name: "SKY AUTOMOBILES - Maudhapara ",
-        channel: "Workshop",
-        address:
-          "Mahavir Gaushala Complex, KK Rd, Janak Bada, Station Road, Moudhapara, Raipur, Chhattisgarh 492001",
-        map: "https://maps.app.goo.gl/UN9oHUmghSvQ66d19",
-        iframe:
-          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.497504078807!2d81.63270277555439!3d21.251765780453958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dd909238419d%3A0xc0813fa489e8695b!2sMaruti%20Suzuki%20Service%20(Sky%20Automobiles)!5e0!3m2!1sen!2sin!4v1726039881106!5m2!1sen!2sin",
-        salesPersonName: "",
-        phone: "",
-        servicePersonName: "Mr. Simalu Rao",
-        servicePhone: "9584433147",
-        email: "",
-      },
-    ],
-  },
+  //     {
+  //       name: "SKY AUTOMOBILES - Maudhapara ",
+  //       channel: "Workshop",
+  //       address:
+  //         "Mahavir Gaushala Complex, KK Rd, Janak Bada, Station Road, Moudhapara, Raipur, Chhattisgarh 492001",
+  //       map: "https://maps.app.goo.gl/UN9oHUmghSvQ66d19",
+  //       iframe:
+  //         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.497504078807!2d81.63270277555439!3d21.251765780453958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dd909238419d%3A0xc0813fa489e8695b!2sMaruti%20Suzuki%20Service%20(Sky%20Automobiles)!5e0!3m2!1sen!2sin!4v1726039881106!5m2!1sen!2sin",
+  //       salesPersonName: "",
+  //       phone: "",
+  //       servicePersonName: "Mr. Simalu Rao",
+  //       servicePhone: "9584433147",
+  //       email: "",
+  //     },
+  //   ],
+  // },
   {
     name: "True value",
     locations: [
       // TrueValue
       {
-        name: "SKY AUTOMOBILES - Mahoba Bazar",
-        channel: "True Value ",
+        name: "SKY AUTOMOBILES - Bhubaneswar",
+        channel: "True Value",
         address:
-          "Maruti Heights Commercial Complex, Mohaba Bazar Great Eastern Road NH 6, near Ambika Rly Crossing, Raipur, Chhattisgarh 492001",
-        map: "https://maps.app.goo.gl/J82JQAyo91wE2hss7",
+          "Plot No. -435/1886, Khata No.- 474/456, near Big Bazar, Patia, Bhubaneswar, Odisha 751021",
+        map: "https://maps.app.goo.gl/Gioa4PemStvMFDdb9",
         iframe:
-          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.400185799678!2d81.59120527555443!3d21.255621080451128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28de0522f7a7af%3A0x329f8a757d9f4500!2sMaruti%20Suzuki%20True%20Value%20(Sky%20Automobiles%2C%20Raipur%2C%20Mohaba%20Bazar)!5e0!3m2!1sen!2sin!4v1726040077387!5m2!1sen!2sin",
-        salesPersonName: "Mr. Ajit Biswas",
-        phone: "9584433005",
+          "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14963.524401873929!2d85.824638!3d20.34653!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190966d730554d%3A0xeabfbdeaf10087f2!2sMaruti%20Suzuki%20TRUE%20VALUE%20(Sky%20Automobiles%2C%20Bhubaneswar%2C%20Patia)!5e0!3m2!1sen!2sin!4v1727092165956!5m2!1sen!2sin",
+
+        salesPersonName: "Mr. Md. Imtiyaz",
+        phone: "9583522333",
+        servicePersonName: "",
+        servicePhone: "",
+        email: "",
+      },
+      {
+        name: "SKY AUTOMOBILES - Cuttack",
+        channel: "True Value",
+        address: "NH16, Bhanpur, Cuttack, Urali, Odisha 753011",
+        map: "https://maps.app.goo.gl/SZQEd1SaiSBvqUDB9",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7478.744695995085!2d85.880508!3d20.408753!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190d6e115c031f%3A0x21ff7ddff2c6def5!2sMaruti%20Suzuki%20TRUE%20VALUE%20(Sky%20Automobiles%2C%20Cuttack%2C%20NH-5)!5e0!3m2!1sen!2sin!4v1727092090120!5m2!1sen!2sin",
+        salesPersonName: "Mr. Pratyush Bose",
+        phone: "9776900999",
+        servicePersonName: "",
+        servicePhone: "",
+        email: "",
+      },
+      {
+        name: "SKY AUTOMOBILES - Berhampur",
+        channel: "True Value",
+        address: "",
+        map: "",
+        iframe: "",
+        salesPersonName: "Mr. Samarendra Das",
+        phone: "7381019416",
         servicePersonName: "",
         servicePhone: "",
         email: "",

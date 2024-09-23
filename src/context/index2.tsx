@@ -82,7 +82,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/api/on-road-price?rangeValue=allData&channel=Arena"
+          "http://localhost:3000/api/on-road-price?rangeValue=allData"
         );
 
         if (!response.ok) {
@@ -90,7 +90,21 @@ export function DataWrapper({ children }: DataWrapperProps) {
         }
 
         const data = await response.json();
-        setArenaData(data);
+
+        if (data.length>0) {
+        
+          data.forEach((item: any) => {
+            
+
+            if (item.channel === "Arena") {
+              setArenaData((prev) => [...prev, item]);
+              console.log(item);
+            } else {
+              setNexaData((prev) => [...prev, item]);
+            }
+          });
+        }
+        // setArenaData(data);
       } catch (err: any) {
         setError(err.message);
       } finally {

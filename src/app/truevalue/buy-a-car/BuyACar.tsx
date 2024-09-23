@@ -22,6 +22,7 @@ const carData = [
     price: "₹ 4.40 Lakh",
     emi: "EMI from ₹ 8,003/m",
     location: "Mahoba Bazar",
+    carNumber: "OD 12 4567",
     image:
       "https://www.varunmaruti.com/uploads/trueValueCars/161674921718.jpeg",
   },
@@ -34,6 +35,7 @@ const carData = [
     price: "₹ 3.15 Lakh",
     emi: "EMI from ₹ 8,003/m",
     location: "Udhyog Bhawan",
+    carNumber: "CG 8966",
     image: "https://www.varunmaruti.com/uploads/trueValueCars/16167468937.jpeg",
   },
   {
@@ -45,6 +47,7 @@ const carData = [
     price: "₹ 5.70 Lakh",
     emi: "EMI from ₹ 8,003/m",
     location: "Mahoba Bazar",
+    carNumber: "OD 11 AB 1235",
     image:
       "https://www.varunmaruti.com/uploads/trueValueCars/161674921718.jpeg",
   },
@@ -57,6 +60,7 @@ const carData = [
     price: "₹ 3.15 Lakh",
     emi: "EMI from ₹ 8,003/m",
     location: "Udhyog Bhawan",
+    carNumber: "CG 1354",
     image: "https://www.varunmaruti.com/uploads/trueValueCars/16167468937.jpeg",
   },
   {
@@ -68,6 +72,7 @@ const carData = [
     price: "₹ 5.70 Lakh",
     emi: "EMI from ₹ 8,003/m",
     location: "Mahoba Bazar",
+    carNumber: "CG 67 AC 2739",
     image:
       "https://www.varunmaruti.com/uploads/trueValueCars/161674921718.jpeg",
   },
@@ -80,6 +85,7 @@ const carData = [
     price: "₹ 3.15 Lakh",
     emi: "EMI from ₹ 8,003/m",
     location: "Udhyog Bhawan",
+    carNumber: "OD 02 AB 7546",
     image: "https://www.varunmaruti.com/uploads/trueValueCars/16167468937.jpeg",
   },
   // Add more car objects as needed
@@ -91,6 +97,8 @@ const BuyACar: React.FC = () => {
   const [sortOption, setSortOption] = useState("");
   const [filteredCars, setFilteredCars] = useState(carData);
   const [showBuyACar, setShowBuyACar] = useState(false);
+  const [carNumber, setCarNumber] = useState("");
+  const [model, setModel] = useState("");
 
   // Handle Search
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -129,6 +137,12 @@ const BuyACar: React.FC = () => {
     }
 
     setFilteredCars(sortedCars);
+  };
+
+  const handleShowBuyACar = (carNumber: string, model: string) => {
+    setCarNumber(carNumber);
+    setModel(model);
+    setShowBuyACar(true);
   };
 
   return (
@@ -284,10 +298,9 @@ const BuyACar: React.FC = () => {
                             ? "group-hover:text-primaryBlue group-hover:bg-white bg-primaryBlue text-white"
                             : "group-hover:text-primaryRed group-hover:bg-white bg-primaryRed text-white"
                         }`}
-                        onClick={() => {
-                          // toast.success("Enquiry Submitted Successfully");
-                          setShowBuyACar(true);
-                        }}
+                        onClick={() =>
+                          handleShowBuyACar(car.carNumber, car.name)
+                        }
                       >
                         Enquire Now
                       </button>
@@ -300,7 +313,12 @@ const BuyACar: React.FC = () => {
         </div>
       </div>
       <Footer />
-      <ModalBuyACar showBuyACar={showBuyACar} setShowBuyACar={setShowBuyACar} />
+      <ModalBuyACar
+        showBuyACar={showBuyACar}
+        setShowBuyACar={setShowBuyACar}
+        model={model}
+        carNumber={carNumber}
+      />
     </div>
   );
 };

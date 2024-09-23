@@ -1,28 +1,24 @@
 "use client";
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
-import { cgOutlets } from "@/constants";
+import { odOutlets } from "@/constants";
 import { useAppContext } from "@/context";
 import React, { useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-
-
-const ChhattisgarhOutlets: React.FC = () => {
+const OdishaOutlets: React.FC = () => {
   const [filter, setFilter] = useState<string>("All");
   const { selectedState } = useAppContext();
 
-
-
   // Convert Set to array to avoid TypeScript iteration issue
-  const uniqueChannels = ["All", "Arena", "Nexa", "Workshop", "True Value"];
+  const uniqueChannels = ["All", "Arena", "Nexa", "True Value"];
 
   // Function to handle filter change
   const handleFilterChange = (channel: string) => {
     setFilter(channel);
   };
 
-  const filteredLocations = cgOutlets.flatMap((category) =>
+  const filteredLocations = odOutlets.flatMap((category) =>
     category.locations.filter((location) => {
       const isChannelMatch = filter === "All" || location.channel === filter;
 
@@ -40,7 +36,7 @@ const ChhattisgarhOutlets: React.FC = () => {
         </div>
         <div className="container py-16 mx-auto xl:max-w-7xl lg:py-20">
           <h4 className="text-3xl font-bold text-primaryGray mb-6 ">
-            Chhattisgarh{" "}
+            Odisha{" "}
             <span
               className={`   ${
                 selectedState === "Odisha"
@@ -134,7 +130,7 @@ const ChhattisgarhOutlets: React.FC = () => {
                               <td className="pb-2">{location.servicePhone}</td>
                             </tr>
                           )}
-                          {location.email && (
+                          {/* {location.email && (
                             <tr className="border-t ">
                               <td className="font-semibold pr-4 pt-1">
                                 Email:
@@ -144,7 +140,7 @@ const ChhattisgarhOutlets: React.FC = () => {
                               </td>
                             </tr>
                           )}
-                          {/* <tr>
+                           <tr>
                           <td className="font-semibold pr-4">Timing:</td>
                           <td>
                             9:30 AM to 8 PM - Mon to Sat <br />
@@ -183,4 +179,4 @@ const ChhattisgarhOutlets: React.FC = () => {
   );
 };
 
-export default ChhattisgarhOutlets;
+export default OdishaOutlets;

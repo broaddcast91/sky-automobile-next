@@ -57,7 +57,6 @@ const Insurance: React.FC = () => {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Form Data:", { ...formData, state: selectedState });
 
     try {
       // Send the POST request
