@@ -91,11 +91,8 @@ export function DataWrapper({ children }: DataWrapperProps) {
 
         const data = await response.json();
 
-        if (data.length>0) {
-        
+        if (data.length > 0) {
           data.forEach((item: any) => {
-            
-
             if (item.channel === "Arena") {
               setArenaData((prev) => [...prev, item]);
               console.log(item);
@@ -107,7 +104,47 @@ export function DataWrapper({ children }: DataWrapperProps) {
         // setArenaData(data);
       } catch (err: any) {
         setError(err.message);
-      } finally {
+      }
+      // Buy A Car
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/buy-a-car?rangeValue=allData"
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+
+        if (data.length > 0) {
+          setBuyACarData(data);
+        }
+        console.log(data);
+        // setArenaData(data);
+      } catch (err: any) {
+        setError(err.message);
+      } // Sell A Car
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/sell-your-car?rangeValue=allData"
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+
+        if (data.length > 0) {
+          setSellACarData(data);
+        }
+        console.log(data);
+        // setArenaData(data);
+      } catch (err: any) {
+        setError(err.message);
+      } 
+      finally {
         setLoading(false);
       }
     };

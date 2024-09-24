@@ -79,7 +79,8 @@ export async function POST(req: NextRequest) {
     });
 
     // Save the document to the database
-    await newSellYourCar.save();
+    const finalData = await newSellYourCar.save();
+    console.log(finalData);
 
     // Return a success response
     return new NextResponse(
@@ -89,6 +90,108 @@ export async function POST(req: NextRequest) {
       }),
       { status: 201 }
     );
+  } catch (err: any) {
+    console.error("Error:", err.message);
+    return new NextResponse(JSON.stringify({ message: err.message }), {
+      status: 500,
+    });
+  }
+}
+
+export async function GET(req: NextRequest) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const rangeValue = searchParams.get("rangeValue");
+    const startDate = searchParams.get("startDate");
+    const endDate = searchParams.get("endDate");
+
+    console.log(rangeValue, startDate, endDate);
+
+    let filter: any = { isDeleted: false };
+
+    switch (rangeValue) {
+      case "today":
+        filter.date = moment().format("DD/MM/YYYY");
+        break;
+
+      case "yesterday":
+        filter.date = moment().subtract(1, "day").format("DD/MM/YYYY");
+        break;
+
+      case "thisMonth":
+        filter.date = {
+          $gte: moment().startOf("month").format("DD/MM/YYYY"),
+          $lte: moment().endOf("month").format("DD/MM/YYYY"),
+        };
+        break;
+
+      case "lastMonth":
+        filter.date = {
+          $gte: moment()
+            .subtract(1, "month")
+            .startOf("month")
+            .format("DD/MM/YYYY"),
+          $lte: moment()
+            .subtract(1, "month")
+            .endOf("month")
+            .format("DD/MM/YYYY"),
+        };
+        break;
+
+      case "last3Months":
+        filter.date = {
+          $gte: moment()
+            .subtract(3, "months")
+            .startOf("month")
+            .format("DD/MM/YYYY"),
+          $lte: moment().endOf("month").format("DD/MM/YYYY"),
+        };
+        break;
+
+      case "last6Months":
+        filter.date = {
+          $gte: moment()
+            .subtract(6, "months")
+            .startOf("month")
+            .format("DD/MM/YYYY"),
+          $lte: moment().endOf("month").format("DD/MM/YYYY"),
+        };
+        break;
+
+      case "last12Months":
+        filter.date = {
+          $gte: moment()
+            .subtract(12, "months")
+            .startOf("month")
+            .format("DD/MM/YYYY"),
+          $lte: moment().endOf("month").format("DD/MM/YYYY"),
+        };
+        break;
+
+      case "Between":
+        if (startDate && endDate) {
+          filter.date = {
+            $gte: moment(startDate).format("DD/MM/YYYY"),
+            $lte: moment(endDate).format("DD/MM/YYYY"),
+          };
+        } else {
+          return new NextResponse(
+            JSON.stringify({ error: "Start date and End date are required" }),
+            { status: 400 }
+          );
+        }
+        break;
+
+      case "allData":
+      default:
+        // No date filter for all data
+        filter = { isDeleted: false };
+        break;
+    }
+
+    // Fetch the filtered data from the database
+    const enquiries = await SellYourCar.find(filter);
+    return new NextResponse(JSON.stringify(enquiries), { status: 200 });
   } catch (err: any) {
     console.error("Error:", err.message);
     return new NextResponse(JSON.stringify({ message: err.message }), {

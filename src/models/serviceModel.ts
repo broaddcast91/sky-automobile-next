@@ -17,6 +17,7 @@ interface IService {
   date: string;
   isDeleted?: boolean;
   deletedAt?: Date;
+  
 }
 
 // Define the schema with type annotations

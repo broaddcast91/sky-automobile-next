@@ -20,6 +20,8 @@ interface ISellYourCar {
   state: string;
   isDeleted?: boolean;
   deletedAt?: Date;
+  time: string;
+  date: string;
 }
 
 // Define the schema with type annotations
@@ -110,6 +112,14 @@ const sellYourCarSchema: Schema = new Schema<ISellYourCar>(
     },
     deletedAt: {
       type: Date,
+    },
+    time: {
+      type: String,
+      required: true,
+    },
+    date: {
+      type: String,
+      required: true,
     },
   },
   { timestamps: true }
