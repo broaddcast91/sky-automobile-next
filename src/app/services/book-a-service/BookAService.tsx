@@ -325,6 +325,7 @@ const BookAService: React.FC = () => {
                     type="radio"
                     name="isPickup"
                     value="Yes"
+                    required
                     checked={formData.isPickup === "Yes"}
                     onChange={handleChange}
                     className="form-radio"
@@ -336,6 +337,7 @@ const BookAService: React.FC = () => {
                     type="radio"
                     name="isPickup"
                     value="No"
+                    required
                     checked={formData.isPickup === "No"}
                     onChange={handleChange}
                     className="form-radio "

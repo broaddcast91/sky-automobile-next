@@ -17,7 +17,7 @@ interface IService {
   date: string;
   isDeleted?: boolean;
   deletedAt?: Date;
-  
+
 }
 
 // Define the schema with type annotations
@@ -101,6 +101,7 @@ const serviceSchema: Schema = new Schema<IService>(
 
 // Create the model with the interface
 const Service: Model<IService> =
-  mongoose.models.Service || mongoose.model<IService>("service", serviceSchema);
+  mongoose.models.BookService ||
+  mongoose.model<IService>("BookService", serviceSchema);
 
 export default Service;

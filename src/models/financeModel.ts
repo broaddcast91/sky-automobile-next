@@ -83,6 +83,6 @@ const financeSchema: Schema = new Schema<IFinance>(
 
 // Create the model with the interface
 const Finance: Model<IFinance> =
-  mongoose.models.Finance || mongoose.model<IFinance>("finance", financeSchema);
+  mongoose.models.FinanceCol || mongoose.model<IFinance>("FinanceCol", financeSchema);
 
 export default Finance;

@@ -71,6 +71,8 @@ const EnqTable = ({ data, columns }: { data: any, columns: any }) => {
           //   padding: "8px",
           flexWrap: "wrap",
           marginTop: "8px",
+          marginBottom: "4px",
+          
         }}
       >
         {/* <Button
@@ -97,7 +99,7 @@ const EnqTable = ({ data, columns }: { data: any, columns: any }) => {
           // onChange={handleChangeDateRange}
           value={rangeValue}
           onChange={(e) => setRangeValue(e.target.value)}
-          className="h-10 p-1    border-none foucs:outline-none"
+          className="h-9 p-1    border-none foucs:outline-none"
           variant="outlined"
           style={{ color: "#303a9b", borderColor: "#303a9b" }}
         >
@@ -154,7 +156,7 @@ const EnqTable = ({ data, columns }: { data: any, columns: any }) => {
           onClick={handleExportData}
           startIcon={<FileDownloadIcon />}
           variant="contained"
-          style={{ backgroundColor: "#303a9b", color: "white" }}
+          style={{ backgroundColor: "#303a9b", color: "white", height: "35px" }}
         >
           Export
         </Button>

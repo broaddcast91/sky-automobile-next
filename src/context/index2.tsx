@@ -95,7 +95,6 @@ export function DataWrapper({ children }: DataWrapperProps) {
           data.forEach((item: any) => {
             if (item.channel === "Arena") {
               setArenaData((prev) => [...prev, item]);
-              console.log(item);
             } else {
               setNexaData((prev) => [...prev, item]);
             }
@@ -120,11 +119,10 @@ export function DataWrapper({ children }: DataWrapperProps) {
         if (data.length > 0) {
           setBuyACarData(data);
         }
-        console.log(data);
-        // setArenaData(data);
       } catch (err: any) {
         setError(err.message);
-      } // Sell A Car
+      }
+      // Sell A Car
       try {
         const response = await fetch(
           "http://localhost:3000/api/sell-your-car?rangeValue=allData"
@@ -139,12 +137,73 @@ export function DataWrapper({ children }: DataWrapperProps) {
         if (data.length > 0) {
           setSellACarData(data);
         }
+
+        // setArenaData(data);
+      } catch (err: any) {
+        setError(err.message);
+      }
+
+      // service
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/service?rangeValue=allData"
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+
+        if (data.length > 0) {
+          setBookAServiceData(data);
+        }
         console.log(data);
         // setArenaData(data);
       } catch (err: any) {
         setError(err.message);
       } 
-      finally {
+      // Finance 
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/finance?rangeValue=allData"
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+
+        if (data.length > 0) {
+          setFinanceData(data);
+        }
+
+        // setArenaData(data);
+      } catch (err: any) {
+        setError(err.message);
+      }
+      // Insurance 
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/insurance?rangeValue=allData"
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+
+        if (data.length > 0) {
+          setInsuranceData(data);
+        }
+
+        // setArenaData(data);
+      } catch (err: any) {
+        setError(err.message);
+      }
+       finally {
         setLoading(false);
       }
     };

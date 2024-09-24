@@ -79,7 +79,7 @@ const insuranceSchema: Schema = new Schema<IInsurance>(
 
 // Create the model with the interface
 const Insurance: Model<IInsurance> =
-  mongoose.models.Insurance ||
-  mongoose.model<IInsurance>("insurance", insuranceSchema);
+  mongoose.models.InsuranceCol ||
+  mongoose.model<IInsurance>("InsuranceCol", insuranceSchema);
 
 export default Insurance;

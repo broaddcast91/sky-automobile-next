@@ -125,20 +125,20 @@ const TrueValue = () => {
         <div className="flex gap-4 flex-wrap items-center">
           {" "}
           <h5 className="text-xl my-4 text-primaryBlue uppercase">
-            Truevalue Enquiries 
+            Truevalue Enquiries
           </h5>
           <button
             onClick={() => setShowSell(false)}
-            className={`  px-4 py-1.5 rounded-lg ${
-              showSell ? "bg-secondaryGray3" : "bg-primaryBlue text-white"
+            className={`  px-4 py-1.5 rounded text-sm border ${
+              showSell ? "border-primaryBlue" : "bg-primaryBlue text-white"
             }`}
           >
             Buy A Car
           </button>{" "}
           <button
             onClick={() => setShowSell(true)}
-            className={`  px-4 py-1.5 rounded-lg ${
-              !showSell ? "bg-secondaryGray3" : "bg-primaryBlue text-white"
+            className={`  px-4 py-1.5 rounded text-sm border ${
+              !showSell ? " border-primaryBlue" : "bg-primaryBlue text-white"
             }`}
           >
             Sell A Car
