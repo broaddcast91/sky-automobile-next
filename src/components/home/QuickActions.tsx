@@ -12,16 +12,21 @@ import { IoIosCalculator } from "react-icons/io";
 import { FaCar } from "react-icons/fa";
 
 // Define the types for the props
+interface QuickActionsProps {
+  isHeading?: boolean;
+}
 
-const QuickActions: React.FC = () => {
+const QuickActions: React.FC<QuickActionsProps> = ({ isHeading }) => {
   const { selectedState } = useAppContext();
   const [showTestDrive, setShowTestDrive] = useState(false);
   return (
     <>
       <div className="container py-10 mx-auto mb-8 xl:max-w-7xl">
-        <h4 className="mb-6 text-3xl font-bold text-center text-primaryGray lg:mb-10">
-          Quick Actions
-        </h4>
+        {isHeading && (
+          <h4 className="mb-6 text-3xl font-bold text-center text-primaryGray lg:mb-10">
+            Quick Actions
+          </h4>
+        )}
         <div className="grid grid-cols-2 px-2 lg:grid-cols-3">
           <div
             className={`flex flex-col items-center justify-center gap-4 px-4 py-10 border  group hover:text-white md:flex-row ${
@@ -251,7 +256,6 @@ const QuickActions: React.FC = () => {
       <ModalTestDrive
         showTestDrive={showTestDrive}
         setShowTestDrive={setShowTestDrive}
-        
       />
     </>
   );

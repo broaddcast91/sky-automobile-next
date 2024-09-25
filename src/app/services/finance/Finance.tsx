@@ -117,6 +117,7 @@ const Finance: React.FC = () => {
         toast.success(
           "Thank you for contacting us. We will get back to you soon!"
         );
+         window.location.href = "/thank-you";
       } else {
         toast.error("Failed to send request. Please try again later.");
       }

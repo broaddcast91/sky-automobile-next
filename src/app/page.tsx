@@ -15,7 +15,7 @@ export default function Home() {
       <HeroSection />
       <EnqHome />
       <VehcileRange />
-      <QuickActions />
+      <QuickActions isHeading={true} />
       <WhyChooseUs />
       <OurChannels />
       <ReviewsAndRecom />
