@@ -171,7 +171,7 @@ const Services = () => {
         <div className="flex gap-4 flex-wrap items-center">
           {" "}
           <h5 className="text-xl my-4 text-primaryBlue uppercase">
-            Service Enquiries{" "}
+            {selectedTable} Enquiries{" "}
           </h5>
           <button
             onClick={() => setSelectedTable("Service")}

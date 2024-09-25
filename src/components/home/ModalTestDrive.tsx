@@ -1,4 +1,5 @@
 "use client";
+import { cgOutlets, odOutlets } from "@/constants";
 import { useAppContext } from "@/context";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -7,12 +8,14 @@ interface ModalTestDriveProps {
   showTestDrive: boolean;
   setShowTestDrive: React.Dispatch<React.SetStateAction<boolean>>;
   model?: string;
+  index?: number;
 }
 
 const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
   showTestDrive,
   setShowTestDrive,
   model,
+  index,
 }) => {
   const handleOnClose = (e: any) => {
     if (e.target.id === "container") setShowTestDrive(false);
@@ -55,10 +58,43 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
   };
 
   // Handle form submission
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (
+    event
+  ) => {
     event.preventDefault();
     console.log("Form Data:", { ...formData, state: selectedState });
-    toast.success("Thank You for contacting us. We will get back to you soon!");
+
+    try {
+      // Send the POST request
+      const response = await fetch("/api/test-drive", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...formData, state: selectedState }),
+      });
+
+      // Check if the response is ok
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Parse the JSON response
+      const data = await response.json();
+
+      // Handle the response based on the data
+      if (data.status === true) {
+        toast.success(
+          "Thank you for contacting us. We will get back to you soon!"
+        );
+      } else {
+        toast.error("Failed to send request. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("Failed to send request. Please try again later.");
+      console.error("Error sending request:", error);
+    }
+
     // Optionally, reset form state after submission
     setFormData({
       name: "",
@@ -186,6 +222,90 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
                 <option value="I want to buy">I want to buy</option>
                 <option value="I want to sell">I want to sell</option>
               </optgroup> */}
+              </select>
+            )}
+
+            {index ? (
+              <select
+                name="outlet"
+                className={`w-full p-2 bg-transparent border-b-2   focus:outline-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : " border-b-primaryRed"
+                }`}
+                onChange={handleChange}
+                required
+                defaultValue={""}
+              >
+                <option value="" disabled>
+                  Select Outlet
+                </option>
+                {selectedState !== "Odisha" && index < 9
+                  ? cgOutlets[0].locations.map((outlet, i) => (
+                      <option key={i} value={outlet.name}>
+                        {outlet.name}
+                      </option>
+                    ))
+                  : selectedState !== "Odisha" && index > 8
+                  ? cgOutlets[1].locations.map((outlet, i) => (
+                      <option key={i} value={outlet.name}>
+                        {outlet.name}
+                      </option>
+                    ))
+                  : selectedState === "Odisha" && index > 8
+                  ? odOutlets[1].locations.map((outlet, i) => (
+                      <option key={i} value={outlet.name}>
+                        {outlet.name}
+                      </option>
+                    ))
+                  : odOutlets[0].locations.map((outlet, i) => (
+                      <option key={i} value={outlet.name}>
+                        {outlet.name}
+                      </option>
+                    ))}
+              </select>
+            ) : (
+              <select
+                name="outlet"
+                className={`w-full p-2 bg-transparent border-b-2   focus:outline-none ${
+                  selectedState === "Odisha"
+                    ? "border-b-primaryBlue"
+                    : " border-b-primaryRed"
+                }`}
+                onChange={handleChange}
+                required
+                defaultValue={""}
+              >
+                <option value="" disabled>
+                  Select Outlet
+                </option>
+                {selectedState !== "Odisha" ? (
+                  <>
+                    {cgOutlets[0].locations.map((outlet, i) => (
+                      <option key={i} value={outlet.name}>
+                        {outlet.name}
+                      </option>
+                    ))}
+                    {cgOutlets[1].locations.map((outlet, i) => (
+                      <option key={i} value={outlet.name}>
+                        {outlet.name}
+                      </option>
+                    ))}
+                  </>
+                ) : (
+                  <>
+                    {odOutlets[0].locations.map((outlet, i) => (
+                      <option key={i} value={outlet.name}>
+                        {outlet.name}
+                      </option>
+                    ))}
+                    {odOutlets[0].locations.map((outlet, i) => (
+                      <option key={i} value={outlet.name}>
+                        {outlet.name}
+                      </option>
+                    ))}
+                  </>
+                )}
               </select>
             )}
 

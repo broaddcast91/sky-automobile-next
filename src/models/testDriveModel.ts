@@ -1,17 +1,16 @@
-import mongoose, { Document, Schema, Model } from "mongoose";
+import mongoose, { Schema, Model } from "mongoose";
 
 // Define a TypeScript interface that extends mongoose.Document
-interface ICareer {
+interface ITestDrive {
   name: string;
   phone: string;
   email: string;
-  designation: string;
-  noticePeriod: string;
-  experience: string;
-  currentCTC: string;
-  expectedCTC: string;
+  model: string;
+  outlet: string;
   state: string;
   leadFrom: string;
+ 
+  channel: string;
   time: string;
   date: string;
   isDeleted?: boolean;
@@ -19,7 +18,7 @@ interface ICareer {
 }
 
 // Define the schema with type annotations
-const careerSchema: Schema = new Schema<ICareer>(
+const TestDriveSchema: Schema = new Schema<ITestDrive>(
   {
     name: {
       type: String,
@@ -36,31 +35,26 @@ const careerSchema: Schema = new Schema<ICareer>(
       required: true,
       trim: true,
     },
-    designation: {
+    model: {
       type: String,
       required: true,
       trim: true,
     },
-    noticePeriod: {
-      type: String,
-      trim: true,
-    },
-    experience: {
+    outlet: {
       type: String,
       required: true,
       trim: true,
     },
-    currentCTC: {
+   
+    channel: {
       type: String,
-      trim: true,
-    },
-    expectedCTC: {
-      type: String,
+      required: true,
       trim: true,
     },
     leadFrom: {
       type: String,
-      default: "Career",
+      default: "Test Drive",
+      trim: true,
     },
     state: {
       type: String,
@@ -88,7 +82,8 @@ const careerSchema: Schema = new Schema<ICareer>(
 );
 
 // Create the model with the interface
-const Career: Model<ICareer> =
-  mongoose.models.CareerCol || mongoose.model<ICareer>("CareerCol", careerSchema);
+const TestDrive =
+  mongoose.models.TestDrive ||
+  mongoose.model("TestDrive", TestDriveSchema);
 
-export default Career;
+export default TestDrive;

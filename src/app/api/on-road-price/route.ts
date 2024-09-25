@@ -165,7 +165,7 @@ export async function GET(req: NextRequest) {
     }
 
     // Fetch the filtered data from the database
-    const enquiries = await OnRoadPrice.find(filter);
+    const enquiries = await OnRoadPrice.find(filter).sort({ createdAt: -1 });;
     return new NextResponse(JSON.stringify(enquiries), { status: 200 });
   } catch (err: any) {
     console.error("Error:", err.message);

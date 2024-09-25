@@ -162,8 +162,8 @@ export function DataWrapper({ children }: DataWrapperProps) {
         // setArenaData(data);
       } catch (err: any) {
         setError(err.message);
-      } 
-      // Finance 
+      }
+      // Finance
       try {
         const response = await fetch(
           "http://localhost:3000/api/finance?rangeValue=allData"
@@ -183,7 +183,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
       } catch (err: any) {
         setError(err.message);
       }
-      // Insurance 
+      // Insurance
       try {
         const response = await fetch(
           "http://localhost:3000/api/insurance?rangeValue=allData"
@@ -199,6 +199,60 @@ export function DataWrapper({ children }: DataWrapperProps) {
           setInsuranceData(data);
         }
 
+        // setArenaData(data);
+      } catch (err: any) {
+        setError(err.message);
+      }
+      // Contact Us
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/contactUs?rangeValue=allData"
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+
+        if (data.length > 0) {
+          setContactUsData(data);
+        }
+        // setArenaData(data);
+      } catch (err: any) {
+        setError(err.message);
+      }
+      // Career
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/career?rangeValue=allData"
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+
+        if (data.length > 0) {
+          setCareerData(data);
+        }
+        // setArenaData(data);
+      } catch (err: any) {
+        setError(err.message);
+      }
+      // Test Drive
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/test-drive?rangeValue=allData"
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+
+        if (data.length > 0) {
+          setTestDriveData(data);
+        }
         // setArenaData(data);
       } catch (err: any) {
         setError(err.message);

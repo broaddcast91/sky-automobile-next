@@ -102,7 +102,6 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
       phone: "",
       email: "",
       outlet: "",
-
       variant: data?.variants[0]?.variant || "",
     });
     const formElement = document.getElementById("myForm") as HTMLFormElement;
@@ -110,7 +109,6 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
       formElement.reset();
     }
   };
-
 
   if (!data) return null;
 
@@ -580,6 +578,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
         showTestDrive={showTestDrive}
         setShowTestDrive={setShowTestDrive}
         model={data?.subName}
+        index={index}
       />
     </div>
   );

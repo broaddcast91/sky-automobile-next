@@ -10,11 +10,9 @@ interface CareerFormData {
   name: string;
   email: string;
   designation: string;
-  noticePeriod: string;
+
   phone: string;
   experience: string;
-  currentCTC: string;
-  expectedCTC: string;
 }
 
 const CareerPage: React.FC = () => {
@@ -22,11 +20,9 @@ const CareerPage: React.FC = () => {
     name: "",
     email: "",
     designation: "",
-    noticePeriod: "",
+
     phone: "",
     experience: "",
-    currentCTC: "",
-    expectedCTC: "",
   });
   const { selectedState } = useAppContext();
 
@@ -79,11 +75,8 @@ const CareerPage: React.FC = () => {
       name: "",
       email: "",
       designation: "",
-      noticePeriod: "",
       phone: "",
       experience: "",
-      currentCTC: "",
-      expectedCTC: "",
     });
   };
 
@@ -198,68 +191,20 @@ const CareerPage: React.FC = () => {
                 value={formData.experience}
                 onChange={handleChange}
               />
-              <input
-                type="text"
-                name="currentCTC"
-                placeholder="Current CTC*"
-                required
-                pattern="^\d+(?:\.\d{1,2})?$"
-                title="Please enter a valid current CTC in numbers (e.g., 50000, 50000.00)"
-                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
+              <button
+                type="submit"
+                className={`px-4 py-2   hover:text-white duration-500 border-b-2   md:px-4 hover:shadow-lg  whitespace-nowrap ${
                   selectedState === "Odisha"
-                    ? "border-b-primaryBlue"
-                    : "border-b-primaryRed"
-                }`}
-                value={formData.currentCTC}
-                onChange={handleChange}
-              />
-              <input
-                type="text"
-                name="expectedCTC"
-                placeholder="Expected CTC*"
-                required
-                pattern="^\d+(?:\.\d{1,2})?$"
-                title="Please enter a valid expected CTC in numbers (e.g., 60000, 60000.00)"
-                className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none rounded-none ${
-                  selectedState === "Odisha"
-                    ? "border-b-primaryBlue"
-                    : "border-b-primaryRed"
-                }`}
-                value={formData.expectedCTC}
-                onChange={handleChange}
-              />
-              <select
-                className={`w-full p-2 bg-transparent border-b-2  focus:outline-none rounded-none ${
-                  selectedState === "Odisha"
-                    ? "border-b-primaryBlue"
-                    : "border-b-primaryRed"
-                }`}
-                name="noticePeriod"
-                required
-                value={formData.noticePeriod}
-                onChange={handleChange}
+                    ? "hover:bg-primaryBlue border-primaryBlue"
+                    : "hover:bg-primaryRed border-primaryRed"
+                } `}
               >
-                <option value="" disabled>
-                  Notice Period*
-                </option>
-                <option value="Immediate">Immediate Joiner</option>
-                <option value="15 Days">15 Days</option>
-                <option value="1 Month">1 Month</option>
-                <option value="2 Months">2 Months</option>
-                <option value="3 Months">3 Months</option>
-                <option value="More than 3 Months">More than 3 Months</option>
-              </select>
+                Apply Now
+              </button>
             </div>
-            <button
-              type="submit"
-              className={`px-2 py-2 text-sm text-white duration-500 border rounded-md md:text-sm md:px-4 hover:shadow-lg  whitespace-nowrap mt-6 min-w-40 ${
-                selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
-              }`}
-            >
-              Apply Now
-            </button>
+
             <p className="mt-4 text-[10px] text-gray-500">
-              *Disclaimer: I agree that by clicking the &apos;Book Now&apos;
+              *Disclaimer: I agree that by clicking the &apos;Apply Now&apos;
               button below, I am explicitly soliciting a call and message via
               whatsapp or any other medium from us.
             </p>

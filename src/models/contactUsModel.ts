@@ -73,7 +73,7 @@ const contactUsSchema: Schema = new Schema<IContactUs>(
 
 // Create the model with the interface
 const ContactUs: Model<IContactUs> =
-  mongoose.models.ContactUs ||
-  mongoose.model<IContactUs>("contactUs", contactUsSchema);
+  mongoose.models.Contact ||
+  mongoose.model<IContactUs>("Contact", contactUsSchema);
 
 export default ContactUs;

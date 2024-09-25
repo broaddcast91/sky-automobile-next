@@ -358,7 +358,7 @@ export const models = [
   },
   //2- Maruti Brezza
   {
-    name: " Maruti Brezza ",
+    name: "Maruti Brezza",
     subName: "Brezza",
     offersAmount: 25000,
     offersAdditionalDec: "",
@@ -889,7 +889,7 @@ export const models = [
   // Maruti WagonR 5
   {
     name: "Maruti WagonR",
-    subName: "Wagon R",
+    subName: "WagonR",
     offersAmount: 58100,
     offersAdditionalDec: "",
     link: "/arena/wagon-r-on-road-price",
