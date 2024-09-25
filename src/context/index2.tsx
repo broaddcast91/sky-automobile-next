@@ -81,9 +81,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/on-road-price?rangeValue=allData"
-        );
+        const response = await fetch("/api/on-road-price?rangeValue=allData");
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -106,9 +104,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
       }
       // Buy A Car
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/buy-a-car?rangeValue=allData"
-        );
+        const response = await fetch("/api/buy-a-car?rangeValue=allData");
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -124,9 +120,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
       }
       // Sell A Car
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/sell-your-car?rangeValue=allData"
-        );
+        const response = await fetch("/api/sell-your-car?rangeValue=allData");
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -145,9 +139,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
 
       // service
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/service?rangeValue=allData"
-        );
+        const response = await fetch("/api/service?rangeValue=allData");
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -165,9 +157,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
       }
       // Finance
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/finance?rangeValue=allData"
-        );
+        const response = await fetch("/api/finance?rangeValue=allData");
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -185,9 +175,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
       }
       // Insurance
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/insurance?rangeValue=allData"
-        );
+        const response = await fetch("/api/insurance?rangeValue=allData");
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -205,9 +193,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
       }
       // Contact Us
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/contactUs?rangeValue=allData"
-        );
+        const response = await fetch("/api/contactUs?rangeValue=allData");
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -223,9 +209,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
       }
       // Career
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/career?rangeValue=allData"
-        );
+        const response = await fetch("/api/career?rangeValue=allData");
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -241,9 +225,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
       }
       // Test Drive
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/test-drive?rangeValue=allData"
-        );
+        const response = await fetch("/api/test-drive?rangeValue=allData");
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -256,8 +238,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
         // setArenaData(data);
       } catch (err: any) {
         setError(err.message);
-      }
-       finally {
+      } finally {
         setLoading(false);
       }
     };

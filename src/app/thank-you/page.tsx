@@ -44,10 +44,10 @@ const PrivacyPolicy = () => {
           </div>
           <p className="text-xl  text-primaryGray text-center font-medium mb-1">
             {" "}
-            Your given details submitted successfully
+            Your given details submitted successfully.
           </p>
           <p className="texsm text-primaryGray text-center mb-20">
-            Someone will get in touch with you shortly
+            Someone from Sky Automobile will get in touch with you soon.
           </p>
         </div>
           <QuickActions isHeading={false} />
