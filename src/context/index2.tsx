@@ -55,6 +55,8 @@ interface DataContextType {
   setNexaData: (data: MongoDBData[]) => void;
   bookAServiceData: MongoDBData[];
   setBookAServiceData: (data: MongoDBData[]) => void;
+  recentData: MongoDBData[];
+  // setRecentData: (data: MongoDBData[]) => void;
 }
 
 // Create a context with a default value
@@ -75,6 +77,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
   const [arenaData, setArenaData] = useState<MongoDBData[]>([]);
   const [nexaData, setNexaData] = useState<MongoDBData[]>([]);
   const [bookAServiceData, setBookAServiceData] = useState<MongoDBData[]>([]);
+  const [recentData, setRecentData] = useState<MongoDBData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -90,6 +93,8 @@ export function DataWrapper({ children }: DataWrapperProps) {
         const data = await response.json();
 
         if (data.length > 0) {
+          setRecentData(data.slice(0, 15));
+
           data.forEach((item: any) => {
             if (item.channel === "Arena") {
               setArenaData((prev) => [...prev, item]);
@@ -267,6 +272,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
     setNexaData,
     bookAServiceData,
     setBookAServiceData,
+    recentData
   };
 
   return (

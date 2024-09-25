@@ -33,7 +33,7 @@ const SidebarMenuItem: React.FC<SidebarMenuItemProps> = ({
         {/* Render the passed icon */}
         {text !== "Nexa" ? (
           <Icon
-            className={` ${isCollapsed ? "mx-auto" : "mr-4"} text-lg ${
+            className={` ${isCollapsed ? "mx-auto" : "mr-4"} text-xl ${
               active && "text-white"
             }`}
           />

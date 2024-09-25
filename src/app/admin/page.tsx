@@ -1,9 +1,11 @@
-import React from 'react'
+"use client";
+import React, { useEffect } from "react";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  useEffect(() => {
+    window.location.href = "/admin/home";
+  }, []);
+  return <div>Home</div>;
+};
 
-export default Home
+export default Home;

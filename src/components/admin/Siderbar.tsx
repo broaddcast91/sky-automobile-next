@@ -62,9 +62,9 @@ const Sidebar: React.FC<SidebarProps> = ({
           {/* <SidebarMenuItem
             isCollapsed={isCollapsed}
             text="Home"
-            to="/admin"
+            to="/admin/home"
             icon={HiMiniHome} // Use a specific icon
-            active={pathname === "/admin"}
+            active={pathname === "/admin/home"}
           /> */}
           <SidebarMenuItem
             isCollapsed={isCollapsed}
