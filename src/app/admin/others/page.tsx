@@ -139,41 +139,43 @@ const Others = () => {
   return (
     <div className="bg-white min-h-[calc(100vh-25px)] p-2  rounded-lg mr-2 mt-1">
       <div className="min-h-40 px-4">
-        <div className="flex gap-4 flex-wrap items-center">
+        <div className="flex gap-4 flex-wrap items-center justify-between">
           {" "}
           <h5 className="text-xl my-4 text-primaryBlue uppercase">
-            Others Enquiries{" "}
+            {selectedTable} Enquiries{" "}
           </h5>
-          <button
-            onClick={() => setSelectedTable("Test Drive")}
-            className={`  px-4 py-1.5 rounded text-sm ${
-              selectedTable === "Test Drive"
-                ? "bg-primaryBlue text-white"
-                : "border border-primaryBlue"
-            }`}
-          >
-            Test Drive
-          </button>{" "}
-          <button
-            onClick={() => setSelectedTable("Contact")}
-            className={`  px-4 py-1.5 rounded text-sm ${
-              selectedTable === "Contact"
-                ? "bg-primaryBlue text-white"
-                : "border border-primaryBlue"
-            }`}
-          >
-            Contact Us
-          </button>{" "}
-          <button
-            onClick={() => setSelectedTable("Career")}
-            className={`  px-4 py-1.5 rounded text-sm ${
-              selectedTable === "Career"
-                ? "bg-primaryBlue text-white"
-                : "border border-primaryBlue"
-            }`}
-          >
-            Career
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={() => setSelectedTable("Test Drive")}
+              className={`  px-4 py-1.5 rounded text-sm min-w-36 ${
+                selectedTable === "Test Drive"
+                  ? "bg-primaryBlue text-white"
+                  : "border border-primaryBlue"
+              }`}
+            >
+              Test Drive
+            </button>{" "}
+            <button
+              onClick={() => setSelectedTable("Contact")}
+              className={`  px-4 py-1.5 rounded text-sm min-w-36 ${
+                selectedTable === "Contact"
+                  ? "bg-primaryBlue text-white"
+                  : "border border-primaryBlue"
+              }`}
+            >
+              Contact Us
+            </button>{" "}
+            <button
+              onClick={() => setSelectedTable("Career")}
+              className={`  px-4 py-1.5 rounded text-sm min-w-36 ${
+                selectedTable === "Career"
+                  ? "bg-primaryBlue text-white"
+                  : "border border-primaryBlue"
+              }`}
+            >
+              Career
+            </button>
+          </div>
         </div>
         <EnqTable
           data={

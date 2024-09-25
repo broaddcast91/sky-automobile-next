@@ -25,8 +25,8 @@ const Services = () => {
       size: 120,
     }),
     columnHelper.accessor("phone", {
-      header: "Phone Number",
-      size: 120,
+      header: "Phone ",
+      size: 80,
     }),
     columnHelper.accessor("email", {
       header: "Email",
@@ -38,11 +38,11 @@ const Services = () => {
     }),
     columnHelper.accessor("isPickup", {
       header: "Pickup",
-      size: 120,
+      size: 80,
     }),
     columnHelper.accessor("serviceDate", {
       header: "Service Date",
-      size: 120,
+      size: 80,
     }),
     columnHelper.accessor("serviceType", {
       header: "Service Type",
@@ -50,16 +50,16 @@ const Services = () => {
     }),
     columnHelper.accessor("address", {
       header: "Address",
-      size: 200,
+      size: 170,
     }),
     columnHelper.accessor("city", {
       header: "City",
       size: 120,
     }),
-    columnHelper.accessor("state", {
-      header: "state",
-      size: 120,
-    }),
+    // columnHelper.accessor("state", {
+    //   header: "state",
+    //   size: 120,
+    // }),
 
     // columnHelper.accessor("state", {
     //   header: "State",
@@ -168,41 +168,43 @@ const Services = () => {
   return (
     <div className="bg-white min-h-[calc(100vh-25px)] p-2  rounded-lg mr-2 mt-1">
       <div className="min-h-40 px-4">
-        <div className="flex gap-4 flex-wrap items-center">
+        <div className="flex gap-4 flex-wrap items-center justify-between">
           {" "}
           <h5 className="text-xl my-4 text-primaryBlue uppercase">
             {selectedTable} Enquiries{" "}
           </h5>
-          <button
-            onClick={() => setSelectedTable("Service")}
-            className={`  px-4 py-1.5 rounded text-sm ${
-              selectedTable === "Service"
-                ? "bg-primaryBlue text-white"
-                : "border border-primaryBlue"
-            }`}
-          >
-            Book A Service
-          </button>{" "}
-          <button
-            onClick={() => setSelectedTable("Finance")}
-            className={`  px-4 py-1.5 rounded text-sm ${
-              selectedTable === "Finance"
-                ? "bg-primaryBlue text-white"
-                : "border border-primaryBlue"
-            }`}
-          >
-            Finance
-          </button>
-          <button
-            onClick={() => setSelectedTable("Insurance")}
-            className={`  px-4 py-1.5 rounded text-sm ${
-              selectedTable === "Insurance"
-                ? "bg-primaryBlue text-white"
-                : "border border-primaryBlue"
-            }`}
-          >
-            Insurance
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={() => setSelectedTable("Service")}
+              className={`  px-4 py-1.5 rounded text-sm min-w-36 ${
+                selectedTable === "Service"
+                  ? "bg-primaryBlue text-white"
+                  : "border border-primaryBlue"
+              }`}
+            >
+              Book A Service
+            </button>{" "}
+            <button
+              onClick={() => setSelectedTable("Finance")}
+              className={`  px-4 py-1.5 rounded text-sm min-w-36 ${
+                selectedTable === "Finance"
+                  ? "bg-primaryBlue text-white"
+                  : "border border-primaryBlue"
+              }`}
+            >
+              Finance
+            </button>
+            <button
+              onClick={() => setSelectedTable("Insurance")}
+              className={`  px-4 py-1.5 rounded text-sm min-w-36 ${
+                selectedTable === "Insurance"
+                  ? "bg-primaryBlue text-white"
+                  : "border border-primaryBlue"
+              }`}
+            >
+              Insurance
+            </button>
+          </div>
         </div>
 
         <EnqTable

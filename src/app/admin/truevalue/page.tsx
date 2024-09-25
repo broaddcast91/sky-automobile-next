@@ -122,11 +122,12 @@ const TrueValue = () => {
   return (
     <div className="bg-white min-h-[calc(100vh-25px)] p-2  rounded-lg mr-2 mt-1">
       <div className="min-h-40 px-4">
-        <div className="flex gap-4 flex-wrap items-center">
+        <div className="flex gap-4 flex-wrap items-center justify-between">
           {" "}
           <h5 className="text-xl my-4 text-primaryBlue uppercase">
-            Truevalue Enquiries
+            Truevalue Enquiries - {showSell ? "Sell A Car" : "Buy A Car"}
           </h5>
+          <div className="flex gap-2">
           <button
             onClick={() => setShowSell(false)}
             className={`  px-4 py-1.5 rounded text-sm border ${
@@ -142,7 +143,7 @@ const TrueValue = () => {
             }`}
           >
             Sell A Car
-          </button>
+          </button></div>
         </div>
 
         <EnqTable
