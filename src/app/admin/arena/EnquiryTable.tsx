@@ -107,7 +107,7 @@ const EnqTable = ({ data, columns }: { data: any; columns: any }) => {
           className="h-9 p-1    border-none foucs:outline-none"
           variant="outlined"
           style={{ color: "#303a9b", borderColor: "#303a9b" }}
-        >
+        > 
           {/* <option value="">All Enquiries</option> */}
           <option value="allData">All Data</option>
           <option value="today">Today</option>
