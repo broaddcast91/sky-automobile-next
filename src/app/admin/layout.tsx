@@ -2,8 +2,10 @@
 import Sidebar from "@/components/admin/Siderbar";
 import { DataWrapper } from "@/context/index2";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
+import toast from "react-hot-toast";
 
 export default function DashboardLayout({
   children,
@@ -13,14 +15,20 @@ export default function DashboardLayout({
   const [isCollapsed, setIsCollapsed] = useState(true);
   // const [showSidebar, setShowSidebar] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
 
   // Use useEffect to update showSidebar only on the client side
-  // useEffect(() => {
-  //   setShowSidebar(pathname !== "/admin/login" && pathname !== "/admin");
-  // }, [pathname]);
- const showSidebar = pathname !== "/admin/login" && pathname !== "/admin";
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token && pathname !== "/admin/login") {
+      toast.error("Please login first");
+      router.push("/admin/login"); // Redirect to "/admin/login";
+    }
+  }, [pathname]);
+
+  const showSidebar = pathname !== "/admin/login" && pathname !== "/admin";
   return (
     <section className="bg-slate-200">
       {showSidebar && (
@@ -31,7 +39,9 @@ export default function DashboardLayout({
         />
       )}
       <div
-        className={`flex-1 min-h-screen ${pathname !== "/admin/login" && "pl-4 py-2"}  ${
+        className={`flex-1 min-h-screen ${
+          pathname !== "/admin/login" && "pl-4 py-2"
+        }  ${
           showSidebar ? (isCollapsed ? "ml-[85px]" : "ml-[255px]") : "ml-0"
         } transition-all duration-300`}
       >

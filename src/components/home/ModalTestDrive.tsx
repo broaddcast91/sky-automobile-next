@@ -3,6 +3,7 @@ import { cgOutlets, odOutlets } from "@/constants";
 import { useAppContext } from "@/context";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 interface ModalTestDriveProps {
   showTestDrive: boolean;
@@ -27,6 +28,8 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
     outlet: string;
     email: string;
   }
+
+    const router = useRouter();
 
   useEffect(() => {
     // Prevent scrolling when the modal is open
@@ -87,7 +90,8 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
         toast.success(
           "Thank you for contacting us. We will get back to you soon!"
         );
-         window.location.href = "/thank-you";
+        //  window.location.href = "/thank-you";
+         router.push("/thank-you");
       } else {
         toast.error("Failed to send request. Please try again later.");
       }

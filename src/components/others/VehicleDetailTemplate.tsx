@@ -12,6 +12,7 @@ import { GiSpeedometer } from "react-icons/gi";
 import { PiEngine } from "react-icons/pi";
 import ModalTestDrive from "../home/ModalTestDrive";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface FormData {
   name: string;
@@ -26,6 +27,7 @@ interface VehiceProps {
 
 const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
   const { selectedState } = useAppContext();
+    const router = useRouter();
 
   const data = models[index];
   const [selectedColor, setSelectedColor] = useState<number>(0);
@@ -90,7 +92,8 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
         toast.success(
           "Thank you for contacting us. We will get back to you soon!"
         );
-         window.location.href = "/thank-you";
+        //  window.location.href = "/thank-you";
+          router.push("/thank-you");
       } else {
         toast.error("Failed to send request. Please try again later.");
       }

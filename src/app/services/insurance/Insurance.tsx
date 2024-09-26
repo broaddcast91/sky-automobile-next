@@ -12,6 +12,7 @@ import React, {
 } from "react";
 import toast from "react-hot-toast";
 import AddonsSlider from "./AddonsSlider";
+import { useRouter } from "next/navigation";
 
 // Define the type for the form data
 interface FormData {
@@ -35,6 +36,7 @@ const Insurance: React.FC = () => {
   const dateInputRef = useRef<HTMLInputElement>(null);
 
   const { selectedState } = useAppContext();
+    const router = useRouter();
 
   useEffect(() => {
     // Get today's date in YYYY-MM-DD format
@@ -81,7 +83,8 @@ const Insurance: React.FC = () => {
         toast.success(
           "Thank you for contacting us. We will get back to you soon!"
         );
-         window.location.href = "/thank-you";
+        //  window.location.href = "/thank-you";
+         router.push("/thank-you");
       } else {
         toast.error("Failed to send request. Please try again later.");
       }

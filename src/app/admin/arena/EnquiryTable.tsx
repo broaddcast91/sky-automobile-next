@@ -1,21 +1,19 @@
 "use client";
 import { useState } from "react";
 import {
-  createMRTColumnHelper,
   MaterialReactTable,
-  // MRT_Row,
   useMaterialReactTable,
-  // type MRT_ColumnDef,
 } from "material-react-table";
 import { Box, Button, Select } from "@mui/material";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import { mkConfig, generateCsv, download } from "export-to-csv";
 
-import { FiSearch } from "react-icons/fi";
+import { FiRefreshCcw, FiSearch } from "react-icons/fi";
+import { useDataContext } from "@/context/index2";
 
-const EnqTable = ({ data, columns }: { data: any, columns: any }) => {
+const EnqTable = ({ data, columns }: { data: any; columns: any }) => {
   const [rangeValue, setRangeValue] = useState("");
-
+  const { setRefreshing, refreshing, loading } = useDataContext();
 
   const csvConfig = mkConfig({
     fieldSeparator: ",",
@@ -26,6 +24,11 @@ const EnqTable = ({ data, columns }: { data: any, columns: any }) => {
   const handleExportData = () => {
     const csv = generateCsv(csvConfig)(data);
     download(csvConfig)(csv);
+  };
+
+  const handleRefreshData = () => {
+    // window.location.reload();
+    setRefreshing(!refreshing);
   };
 
   // const handleExportRows = (rows: MRT_Row<Person>[]) => {
@@ -48,6 +51,9 @@ const EnqTable = ({ data, columns }: { data: any, columns: any }) => {
         pageSize: 15, // Set the default number of rows per page
       },
     },
+    // state: {
+    //   showProgressBars: loading,
+    // },
     // enableRowSelection: true,
     columnFilterDisplayMode: "popover",
     paginationDisplayMode: "pages",
@@ -72,7 +78,6 @@ const EnqTable = ({ data, columns }: { data: any, columns: any }) => {
           flexWrap: "wrap",
           marginTop: "8px",
           marginBottom: "4px",
-          
         }}
       >
         {/* <Button
@@ -153,6 +158,15 @@ const EnqTable = ({ data, columns }: { data: any, columns: any }) => {
         )}
         <Button
           //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
+          onClick={handleRefreshData}
+          startIcon={<FiRefreshCcw />}
+          variant="outlined"
+          style={{ borderColor: "#303a9b", color: "#303a9b", height: "35px" }}
+        >
+          Refresh
+        </Button>
+        <Button
+          //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
           onClick={handleExportData}
           startIcon={<FileDownloadIcon />}
           variant="contained"
@@ -205,7 +219,14 @@ const EnqTable = ({ data, columns }: { data: any, columns: any }) => {
         borderRadius: "4px",
       }}
     >
-      <MaterialReactTable table={table} />
+      {loading ? (
+        <div className="flex justify-center items-center h-[80vh] gap-2 ">
+          {" "}
+          <FiRefreshCcw className="animate-spin text-3xl text-primaryBlue"  /> <span className=" text-xl">Loading...</span> 
+        </div>
+      ) : (
+        <MaterialReactTable  table={table} />
+      )}
     </Box>
   );
 };

@@ -5,10 +5,13 @@ import { BiWindows } from "react-icons/bi";
 import { FaWpforms } from "react-icons/fa";
 import Image from "next/image";
 import { SiSuzuki } from "react-icons/si";
+import Cookies from "js-cookie";
 
 import { HiMiniHome } from "react-icons/hi2";
 import { GiCheckMark } from "react-icons/gi";
 import { FiLogOut } from "react-icons/fi";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 interface SidebarProps {
   isCollapsed: boolean;
@@ -23,6 +26,17 @@ const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   // Get current route
 
+    const router = useRouter();
+
+  const handleLogout = () => {
+    Cookies.remove("token");
+    Cookies.remove("driverId");
+    Cookies.remove("isAdmin");
+
+    toast.success("Logout Successfully");
+    // window.location.href = "/admin/login";
+     router.push("/admin/login");
+  };
   return (
     <div
       className={`fixed min-h-[95vh] h-[calc(100vh-24px)] ${
@@ -108,6 +122,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         className={`w-full text-black flex items-center mb-6 cursor-pointer overflow-hidden ${
           isCollapsed ? "justify-center" : "ml-11 "
         }`}
+        onClick={handleLogout}
       >
         <FiLogOut className={`text-xl `} />
         {!isCollapsed && <span className="whitespace-nowrap pl-4">Logout</span>}

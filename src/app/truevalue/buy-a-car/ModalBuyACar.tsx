@@ -3,6 +3,7 @@ import { useAppContext } from "@/context";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { cgOutlets, odOutlets } from "@/constants";
+import { useRouter } from "next/navigation";
 
 interface ModalBuyACarProps {
   showBuyACar: boolean;
@@ -45,6 +46,7 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
     email: "",
     outlet: "",
   });
+    const router = useRouter();
 
   // Handle form input changes
   const handleChange = (
@@ -96,7 +98,8 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
         toast.success(
           "Thank you for contacting us. We will get back to you soon!"
         );
-         window.location.href = "/thank-you";
+        //  window.location.href = "/thank-you";
+         router.push("/thank-you");
       } else {
         toast.error("Failed to send request. Please try again later.");
       }

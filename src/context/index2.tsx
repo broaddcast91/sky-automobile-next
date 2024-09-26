@@ -7,6 +7,7 @@ import {
   ReactNode,
   useEffect,
 } from "react";
+import toast from "react-hot-toast";
 
 // Define the shape of the MongoDB data
 interface MongoDBData {
@@ -57,6 +58,9 @@ interface DataContextType {
   setBookAServiceData: (data: MongoDBData[]) => void;
   recentData: MongoDBData[];
   // setRecentData: (data: MongoDBData[]) => void;
+  refreshing: boolean;
+  setRefreshing: (refreshing: boolean) => void;
+  loading: boolean;
 }
 
 // Create a context with a default value
@@ -79,10 +83,23 @@ export function DataWrapper({ children }: DataWrapperProps) {
   const [bookAServiceData, setBookAServiceData] = useState<MongoDBData[]>([]);
   const [recentData, setRecentData] = useState<MongoDBData[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  // const [error, setError] = useState<string | null>(null);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
+      setFinanceData([]);
+      setInsuranceData([]);
+      setTestDriveData([]);
+      setCareerData([]);
+      setContactUsData([]);
+      setBuyACarData([]);
+      setSellACarData([]);
+      setArenaData([]);
+      setNexaData([]);
+      setBookAServiceData([]);
+      setRecentData([]);
       try {
         const response = await fetch("/api/on-road-price?rangeValue=allData");
 
@@ -105,7 +122,8 @@ export function DataWrapper({ children }: DataWrapperProps) {
         }
         // setArenaData(data);
       } catch (err: any) {
-        setError(err.message);
+        // setError(err.message);
+        toast.error(err.message);
       }
       // Buy A Car
       try {
@@ -121,7 +139,8 @@ export function DataWrapper({ children }: DataWrapperProps) {
           setBuyACarData(data);
         }
       } catch (err: any) {
-        setError(err.message);
+        // setError(err.message);
+        toast.error(err.message);
       }
       // Sell A Car
       try {
@@ -139,7 +158,8 @@ export function DataWrapper({ children }: DataWrapperProps) {
 
         // setArenaData(data);
       } catch (err: any) {
-        setError(err.message);
+        // setError(err.message);
+        toast.error(err.message);
       }
 
       // service
@@ -158,7 +178,8 @@ export function DataWrapper({ children }: DataWrapperProps) {
         console.log(data);
         // setArenaData(data);
       } catch (err: any) {
-        setError(err.message);
+        // setError(err.message);
+        toast.error(err.message);
       }
       // Finance
       try {
@@ -176,7 +197,8 @@ export function DataWrapper({ children }: DataWrapperProps) {
 
         // setArenaData(data);
       } catch (err: any) {
-        setError(err.message);
+        // setError(err.message);
+        toast.error(err.message);
       }
       // Insurance
       try {
@@ -194,7 +216,9 @@ export function DataWrapper({ children }: DataWrapperProps) {
 
         // setArenaData(data);
       } catch (err: any) {
-        setError(err.message);
+        // setError(err.message);
+
+        toast.error(err.message);
       }
       // Contact Us
       try {
@@ -210,7 +234,8 @@ export function DataWrapper({ children }: DataWrapperProps) {
         }
         // setArenaData(data);
       } catch (err: any) {
-        setError(err.message);
+        // setError(err.message);
+        toast.error(err.message);
       }
       // Career
       try {
@@ -226,7 +251,8 @@ export function DataWrapper({ children }: DataWrapperProps) {
         }
         // setArenaData(data);
       } catch (err: any) {
-        setError(err.message);
+        // setError(err.message);
+        toast.error(err.message);
       }
       // Test Drive
       try {
@@ -242,14 +268,15 @@ export function DataWrapper({ children }: DataWrapperProps) {
         }
         // setArenaData(data);
       } catch (err: any) {
-        setError(err.message);
+        // setError(err.message);
+        toast.error(err.message);
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-  }, []);
+  }, [refreshing]);
   // Define the context value
   const contextValue: DataContextType = {
     financeData,
@@ -272,7 +299,10 @@ export function DataWrapper({ children }: DataWrapperProps) {
     setNexaData,
     bookAServiceData,
     setBookAServiceData,
-    recentData
+    recentData,
+    refreshing,
+    setRefreshing,
+    loading,
   };
 
   return (

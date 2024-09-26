@@ -2,6 +2,7 @@
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
 import { useAppContext } from "@/context";
+import { useRouter } from "next/navigation";
 import React, {
   ChangeEvent,
   FormEvent,
@@ -39,6 +40,7 @@ const BookAService: React.FC = () => {
   const dateInputRef = useRef<HTMLInputElement>(null);
 
   const { selectedState } = useAppContext();
+    const router = useRouter();
 
   useEffect(() => {
     // Get today's date in YYYY-MM-DD format
@@ -85,7 +87,8 @@ const BookAService: React.FC = () => {
         toast.success(
           "Thank you for contacting us. We will get back to you soon!"
         );
-         window.location.href = "/thank-you";
+        //  window.location.href = "/thank-you";
+         router.push("/thank-you");
       } else {
         toast.error("Failed to send request. Please try again later.");
       }

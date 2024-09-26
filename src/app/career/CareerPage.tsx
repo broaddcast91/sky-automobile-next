@@ -2,6 +2,7 @@
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
 import { useAppContext } from "@/context";
+import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import toast from "react-hot-toast";
 
@@ -25,6 +26,7 @@ const CareerPage: React.FC = () => {
     experience: "",
   });
   const { selectedState } = useAppContext();
+    const router = useRouter();
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -35,6 +37,7 @@ const CareerPage: React.FC = () => {
       [name]: value,
     });
   };
+
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -62,7 +65,8 @@ const CareerPage: React.FC = () => {
         toast.success(
           "Thank you for contacting us. We will get back to you soon!"
         );
-        window.location.href = "/thank-you";
+        // window.location.href = "/thank-you";
+        router.push("/thank-you");
       } else {
         toast.error("Failed to send request. Please try again later.");
       }

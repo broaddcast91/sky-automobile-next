@@ -12,11 +12,12 @@ import { models } from "@/constants";
 import toast from "react-hot-toast";
 import EMISlider from "./EMISlider";
 import { useAppContext } from "@/context";
+import { useRouter } from "next/navigation";
 
 interface FormData {
   name: string;
   phone: string;
-  email: string;
+email: string;
   model: string;
   city: string;
   loanAmount: number;
@@ -35,6 +36,7 @@ const Finance: React.FC = () => {
   });
 
   const { selectedState } = useAppContext();
+    const router = useRouter();
 
   const [index, setIndex] = useState(0);
   const [selectedColor, setSelectedColor] = useState<number>(0);
@@ -117,7 +119,8 @@ const Finance: React.FC = () => {
         toast.success(
           "Thank you for contacting us. We will get back to you soon!"
         );
-         window.location.href = "/thank-you";
+        //  window.location.href = "/thank-you";
+         router.push("/thank-you");
       } else {
         toast.error("Failed to send request. Please try again later.");
       }
