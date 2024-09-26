@@ -11,24 +11,27 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const [showSidebar, setShowSidebar] = useState(true);
+  // const [showSidebar, setShowSidebar] = useState(false);
   const pathname = usePathname();
 
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
 
   // Use useEffect to update showSidebar only on the client side
-  useEffect(() => {
-    setShowSidebar(pathname !== "/login" && pathname !== "/");
-  }, [pathname]);
+  // useEffect(() => {
+  //   setShowSidebar(pathname !== "/admin/login" && pathname !== "/admin");
+  // }, [pathname]);
+ const showSidebar = pathname !== "/admin/login" && pathname !== "/admin";
   return (
     <section className="bg-slate-200">
-      <Sidebar
-        isCollapsed={isCollapsed}
-        toggleSidebar={toggleSidebar}
-        pathname={pathname}
-      />
+      {showSidebar && (
+        <Sidebar
+          isCollapsed={isCollapsed}
+          toggleSidebar={toggleSidebar}
+          pathname={pathname}
+        />
+      )}
       <div
-        className={`flex-1 min-h-screen pl-4 py-2 ${
+        className={`flex-1 min-h-screen ${pathname !== "/admin/login" && "pl-4 py-2"}  ${
           showSidebar ? (isCollapsed ? "ml-[85px]" : "ml-[255px]") : "ml-0"
         } transition-all duration-300`}
       >

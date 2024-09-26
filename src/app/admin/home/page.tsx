@@ -10,38 +10,37 @@ import { createMRTColumnHelper } from "material-react-table";
 import RecentEnqTable from "./RecentEnq";
 
 const Home = () => {
-  const { arenaData, nexaData,recentData, sellACarData, buyACarData } = useDataContext();
+  const { arenaData, nexaData, recentData, sellACarData, buyACarData } =
+    useDataContext();
   // console.log(arenaData, "arena data");
- const columnHelper = createMRTColumnHelper<any>();
+  const columnHelper = createMRTColumnHelper<any>();
 
- const columns = [
-  //  columnHelper.accessor("date", {
-  //    header: "Date",
-  //    size: 40,
-  //  }),
-   columnHelper.accessor("time", {
-     header: "Time",
-     size: 120,
-   }),
-   columnHelper.accessor("name", {
-     header: "Name",
-     size: 120,
-   }),
-   columnHelper.accessor("phone", {
-     header: "Phone Number",
-     size: 120,
-   }),
-  //  columnHelper.accessor("email", {
-  //    header: "Email",
-  //    size: 120,
-  //  }),
-   columnHelper.accessor("model", {
-     header: "Model",
-     size: 120,
-   }),
-
-  
- ];
+  const columns = [
+    //  columnHelper.accessor("date", {
+    //    header: "Date",
+    //    size: 40,
+    //  }),
+    columnHelper.accessor("time", {
+      header: "Time",
+      size: 120,
+    }),
+    columnHelper.accessor("name", {
+      header: "Name",
+      size: 120,
+    }),
+    columnHelper.accessor("phone", {
+      header: "Phone Number",
+      size: 120,
+    }),
+    //  columnHelper.accessor("email", {
+    //    header: "Email",
+    //    size: 120,
+    //  }),
+    columnHelper.accessor("model", {
+      header: "Model",
+      size: 120,
+    }),
+  ];
   return (
     <div className="bg-white min-h-[calc(100vh-25px)] p-2  rounded-lg mr-2 mt-1">
       <div className=" px-4">
@@ -58,7 +57,11 @@ const Home = () => {
               <p className="py-2 text-sm">Total Arena Enquires</p>
               <div className="flex items-center justify-between gap-4">
                 <p className="text-3xl font-semibold">
-                  <CountUp start={0} end={arenaData.length + 1} duration={4} />
+                  <CountUp
+                    start={0}
+                    end={arenaData.length > 0 ? arenaData.length - 1 : 0}
+                    duration={4}
+                  />
                 </p>
                 {/* <p className="flex gap-0.5  font-bold text-green-700 items-center">
                   <IoMdArrowDropup className="text-lg" /> 5%
@@ -73,7 +76,11 @@ const Home = () => {
               <p className="py-2 text-sm">Total Nexa Enquires</p>
               <div className="flex items-center justify-between gap-4">
                 <p className="text-3xl font-semibold">
-                  <CountUp start={0} end={nexaData.length + 1} duration={4} />
+                  <CountUp
+                    start={0}
+                    end={nexaData.length > 0 ? nexaData.length - 1 : 0}
+                    duration={4}
+                  />
                 </p>
                 {/* <p className="flex gap-0.5  font-bold text-red-500 items-center">
                   <IoMdArrowDropup className="text-lg rotate-180" /> 5%
@@ -90,7 +97,7 @@ const Home = () => {
                 <p className="text-3xl font-semibold">
                   <CountUp
                     start={0}
-                    end={buyACarData.length + 1}
+                    end={buyACarData.length > 0 ? buyACarData.length - 1 : 0}
                     duration={4}
                   />
                 </p>
@@ -108,7 +115,7 @@ const Home = () => {
                 <p className="text-3xl font-semibold">
                   <CountUp
                     start={0}
-                    end={sellACarData.length + 1}
+                    end={sellACarData.length > 0 ? sellACarData.length - 1 : 0}
                     duration={4}
                   />
                 </p>
@@ -122,7 +129,7 @@ const Home = () => {
             <BasicBars />
           </div>
         </div>
-        <div className="col-span-2 m-2   rounded-lg ">
+        <div className="col-span-2 mx-2   rounded-lg ">
           <RecentEnqTable data={recentData} columns={columns} />
         </div>
         {/* <div className="col-span-3 bg-secondaryGray4 min-h-60 rounded-lg"></div> */}

@@ -24,6 +24,7 @@ const config: Config = {
       },
       animation: {
         shake: "shake infinite 0.1s linear",
+        "custom-spin": "customSpin 10s linear infinite", // Custom slow spin
       },
       keyframes: {
         shake: {
@@ -31,6 +32,10 @@ const config: Config = {
           "25%": { marginLeft: "1rem" },
           "75%": { marginLeft: "-1rem" },
           "100%": { marginLeft: "0rem" },
+        },
+        customSpin: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
         },
       },
     },
