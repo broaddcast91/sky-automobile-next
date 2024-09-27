@@ -95,7 +95,6 @@ const EnqTable = ({
     columnFilterDisplayMode: "popover",
     paginationDisplayMode: "pages",
     positionToolbarAlertBanner: "bottom",
-
     //  enableDensityToggle: false,
     muiTableContainerProps: { sx: { minHeight: "70vh", maxHeight: "72vh" } },
     muiTableBodyCellProps: {
