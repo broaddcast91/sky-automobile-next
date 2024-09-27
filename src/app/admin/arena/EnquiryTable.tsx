@@ -88,15 +88,15 @@ const EnqTable = ({
         pageSize: 15, // Set the default number of rows per page
       },
     },
-    state: {
-      showProgressBars: loading,
-    },
+    // state: {
+    //   showProgressBars: loading,
+    // },
     // enableRowSelection: true,
     columnFilterDisplayMode: "popover",
     paginationDisplayMode: "pages",
     positionToolbarAlertBanner: "bottom",
     //  enableDensityToggle: false,
-    muiTableContainerProps: { sx: { minHeight: "70vh", maxHeight: "72vh" } },
+    muiTableContainerProps: { sx: { minHeight: "69vh", maxHeight: "70vh" } },
     muiTableBodyCellProps: {
       sx: (theme) => ({
         backgroundColor:
@@ -245,24 +245,40 @@ const EnqTable = ({
   return (
     <Box
       sx={{
-        overflow: "hidden",
-        boxShadow: "none", // Remove shadow from the table
+        // overflow: "hidden",
+        // boxShadow: "none", // Remove shadow from the table
         // borderTop: "1px solid #e1e3e6",
         // borderRight: "0px solid #e1e3e6",
         // borderBottom: "1px solid #e1e3e6",
         // borderLeft: "1px solid #e1e3e6",
-        border: "1px solid #e1e3e6",
+        // border: "1px solid #e1e3e6",
         borderRadius: "4px",
       }}
     >
-      {/* {loading ? (
+      {loading ? (
         <div className="flex justify-center items-center h-[80vh] gap-2 ">
           {" "}
-          <FiRefreshCcw className="animate-spin text-3xl text-primaryBlue"  /> <span className=" text-xl">Loading...</span> 
+          <FiRefreshCcw className="animate-spin text-3xl text-primaryBlue" />{" "}
+          <span className=" text-xl">Loading...</span>
         </div>
-      ) : ( */}
-      <MaterialReactTable table={table} />
-      {/* )} */}
+      ) : (
+        <MaterialReactTable table={table} />
+      )}
+      <div className="flex items-center gap-2 text-xs lg:gap-4  mt-1 ">
+        Powered by
+        <a
+          href="https://www.broaddcast.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="text-white"
+        >
+          <img
+            src="https://www.broaddcast.com/assets/images/BroaddCast-Logo.svg"
+            alt="Broaddcast"
+            className="h-8 -ml-2 "
+          />
+        </a>
+      </div>
     </Box>
   );
 };

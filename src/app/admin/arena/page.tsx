@@ -64,6 +64,7 @@ const Arena = () => {
           setState={setArenaData}
           channel="Arena"
         />
+      
       </div>
     </div>
   );
