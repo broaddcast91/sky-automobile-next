@@ -6,7 +6,7 @@ import { createMRTColumnHelper } from "material-react-table";
 import EnqTable from "../arena/EnquiryTable";
 
 const Arena = () => {
-  const { nexaData } = useDataContext();
+  const { nexaData, setNexaData } = useDataContext();
 
   const columnHelper = createMRTColumnHelper<any>();
 
@@ -57,7 +57,14 @@ const Arena = () => {
         <h5 className="text-xl my-4 text-primaryBlue uppercase">
           Nexa Enquiries{" "}
         </h5>
-        <EnqTable data={nexaData} columns={columns} />
+        <EnqTable
+          data={nexaData}
+          columns={columns}
+          fileName="Nexa Enquiries"
+          endPoint="on-road-price"
+          channel="Nexa"
+          setState={setNexaData}
+        />
       </div>
     </div>
   );

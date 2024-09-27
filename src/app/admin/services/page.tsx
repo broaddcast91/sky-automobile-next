@@ -6,7 +6,7 @@ import { createMRTColumnHelper } from "material-react-table";
 import EnqTable from "../arena/EnquiryTable";
 
 const Services = () => {
-  const { bookAServiceData, financeData, insuranceData } = useDataContext();
+  const { bookAServiceData, financeData, insuranceData , setBookAServiceData, setFinanceData, setInsuranceData} = useDataContext();
   const [selectedTable, setSelectedTable] = React.useState("Service");
 
   const columnHelper = createMRTColumnHelper<any>();
@@ -222,6 +222,27 @@ const Services = () => {
               ? columns2
               : columns3
           }
+          fileName={
+            selectedTable === "Service"
+              ? "Book A Service Enquiries"
+              : selectedTable === "Finance"
+              ? "Finance Enquiries"
+              : "Insurance Enquiries"
+          }
+          endPoint={
+            selectedTable === "Service"
+              ? "service"
+              : selectedTable === "Finance"
+              ? "finance"
+              : "insurance"
+          }
+          setState={
+            selectedTable === "Service"
+              ? setBookAServiceData
+              : selectedTable === "Finance"
+              ? setFinanceData
+              : setInsuranceData
+          } 
         />
       </div>
     </div>

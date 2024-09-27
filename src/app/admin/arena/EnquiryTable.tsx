@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   MaterialReactTable,
   useMaterialReactTable,
@@ -11,7 +11,21 @@ import { mkConfig, generateCsv, download } from "export-to-csv";
 import { FiRefreshCcw, FiSearch } from "react-icons/fi";
 import { useDataContext } from "@/context/index2";
 
-const EnqTable = ({ data, columns }: { data: any; columns: any }) => {
+const EnqTable = ({
+  data,
+  columns,
+  fileName,
+  endPoint,
+  setState,
+  channel,
+}: {
+  data: any;
+  columns: any;
+  fileName?: string;
+  endPoint?: string;
+  setState?: any;
+  channel?: string;
+}) => {
   const [rangeValue, setRangeValue] = useState("");
   const { setRefreshing, refreshing, loading } = useDataContext();
 
@@ -20,7 +34,30 @@ const EnqTable = ({ data, columns }: { data: any; columns: any }) => {
     decimalSeparator: ".",
     useKeysAsHeaders: true,
   });
+  useEffect(() => {
+    const fetchData = async () => {
+      let response = null;
+      try {
+        if (channel) {
+          response = await fetch(
+            `/api/${endPoint}?rangeValue=${rangeValue}&channel=${channel}`
+          );
+        } else {
+          response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
+        }
 
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const result = await response.json();
+        setState(result); // Update state with the fetched data
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    };
+
+    fetchData();
+  }, [rangeValue]); // Trigger fetch on rangeValue change
   const handleExportData = () => {
     const csv = generateCsv(csvConfig)(data);
     download(csvConfig)(csv);
@@ -51,9 +88,9 @@ const EnqTable = ({ data, columns }: { data: any; columns: any }) => {
         pageSize: 15, // Set the default number of rows per page
       },
     },
-    // state: {
-    //   showProgressBars: loading,
-    // },
+    state: {
+      showProgressBars: loading,
+    },
     // enableRowSelection: true,
     columnFilterDisplayMode: "popover",
     paginationDisplayMode: "pages",
@@ -107,7 +144,7 @@ const EnqTable = ({ data, columns }: { data: any; columns: any }) => {
           className="h-9 p-1    border-none foucs:outline-none"
           variant="outlined"
           style={{ color: "#303a9b", borderColor: "#303a9b" }}
-        > 
+        >
           {/* <option value="">All Enquiries</option> */}
           <option value="allData">All Data</option>
           <option value="today">Today</option>
@@ -219,14 +256,14 @@ const EnqTable = ({ data, columns }: { data: any; columns: any }) => {
         borderRadius: "4px",
       }}
     >
-      {loading ? (
+      {/* {loading ? (
         <div className="flex justify-center items-center h-[80vh] gap-2 ">
           {" "}
           <FiRefreshCcw className="animate-spin text-3xl text-primaryBlue"  /> <span className=" text-xl">Loading...</span> 
         </div>
-      ) : (
-        <MaterialReactTable  table={table} />
-      )}
+      ) : ( */}
+      <MaterialReactTable table={table} />
+      {/* )} */}
     </Box>
   );
 };

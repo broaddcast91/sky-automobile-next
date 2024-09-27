@@ -6,8 +6,7 @@ import { createMRTColumnHelper } from "material-react-table";
 import EnqTable from "./EnquiryTable";
 
 const Arena = () => {
-  const { arenaData } = useDataContext();
-  console.log(arenaData, "arena data");
+  const { arenaData, setArenaData } = useDataContext();
   const columnHelper = createMRTColumnHelper<any>();
 
   const columns = [
@@ -57,7 +56,14 @@ const Arena = () => {
         <h5 className="text-xl my-4 text-primaryBlue uppercase">
           Arena Enquiries{" "}
         </h5>
-        <EnqTable data={arenaData} columns={columns} />
+        <EnqTable
+          data={arenaData}
+          columns={columns}
+          fileName="Arena Enquiries"
+          endPoint="on-road-price"
+          setState={setArenaData}
+          channel="Arena"
+        />
       </div>
     </div>
   );

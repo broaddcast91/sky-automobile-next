@@ -6,7 +6,8 @@ import { createMRTColumnHelper } from "material-react-table";
 import EnqTable from "../arena/EnquiryTable";
 
 const TrueValue = () => {
-  const { buyACarData, sellACarData } = useDataContext();
+  const { buyACarData, sellACarData, setSellACarData, setBuyACarData } =
+    useDataContext();
   const [showSell, setShowSell] = React.useState(false);
 
   const columnHelper = createMRTColumnHelper<any>();
@@ -128,27 +129,31 @@ const TrueValue = () => {
             Truevalue Enquiries - {showSell ? "Sell A Car" : "Buy A Car"}
           </h5>
           <div className="flex gap-2">
-          <button
-            onClick={() => setShowSell(false)}
-            className={`  px-4 py-1.5 rounded text-sm border ${
-              showSell ? "border-primaryBlue" : "bg-primaryBlue text-white"
-            }`}
-          >
-            Buy A Car
-          </button>{" "}
-          <button
-            onClick={() => setShowSell(true)}
-            className={`  px-4 py-1.5 rounded text-sm border ${
-              !showSell ? " border-primaryBlue" : "bg-primaryBlue text-white"
-            }`}
-          >
-            Sell A Car
-          </button></div>
+            <button
+              onClick={() => setShowSell(false)}
+              className={`  px-4 py-1.5 rounded text-sm border ${
+                showSell ? "border-primaryBlue" : "bg-primaryBlue text-white"
+              }`}
+            >
+              Buy A Car
+            </button>{" "}
+            <button
+              onClick={() => setShowSell(true)}
+              className={`  px-4 py-1.5 rounded text-sm border ${
+                !showSell ? " border-primaryBlue" : "bg-primaryBlue text-white"
+              }`}
+            >
+              Sell A Car
+            </button>
+          </div>
         </div>
 
         <EnqTable
           data={showSell ? sellACarData : buyACarData}
           columns={showSell ? columns2 : columns}
+          fileName={showSell ? "Sell A Car Enquiries" : "Buy A Car Enquiries"}
+          endPoint={showSell ? "sell-a-car" : "buy-a-car"}
+          setState={showSell ? setSellACarData : setBuyACarData}
         />
       </div>
     </div>
