@@ -8,6 +8,7 @@ import {
   useEffect,
 } from "react";
 import toast from "react-hot-toast";
+import Cookies from "js-cookie";
 
 // Define the shape of the MongoDB data
 interface MongoDBData {
@@ -87,6 +88,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
   const [refreshing, setRefreshing] = useState<boolean>(false);
 
   useEffect(() => {
+    const token = Cookies.get("token");
     const fetchData = async () => {
       setLoading(true);
       setFinanceData([]);
@@ -275,7 +277,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
       }
     };
 
-    fetchData();
+    if (token) fetchData();
   }, [refreshing]);
   // Define the context value
   const contextValue: DataContextType = {

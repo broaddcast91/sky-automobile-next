@@ -4,11 +4,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { useDataContext } from "@/context/index2";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const { setRefreshing, refreshing } = useDataContext();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevent default form submission
@@ -32,9 +34,7 @@ const Login: React.FC = () => {
       if (res.status === "success") {
         toast.success("Login successful");
         //   cookies().set("token", response.data.token, { expires: 7 }); // Expires in 7 days
-
-        console.log(res);
-
+        setRefreshing(!refreshing);
         router.push("/admin/arena");
         // window.location.href = "/admin/arena"; // Navigate to /popup
       } else {
