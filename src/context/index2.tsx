@@ -8,7 +8,6 @@ import {
   useEffect,
 } from "react";
 import toast from "react-hot-toast";
-import Cookies from "js-cookie";
 
 // Define the shape of the MongoDB data
 interface MongoDBData {
@@ -62,6 +61,7 @@ interface DataContextType {
   refreshing: boolean;
   setRefreshing: (refreshing: boolean) => void;
   loading: boolean;
+  setLoading: (loading: boolean) => void;
 }
 
 // Create a context with a default value
@@ -88,7 +88,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
   const [refreshing, setRefreshing] = useState<boolean>(false);
 
   useEffect(() => {
-    const token = Cookies.get("token");
+    // const token = Cookies.get("token");
     const fetchData = async () => {
       setLoading(true);
       setFinanceData([]);
@@ -277,7 +277,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
       }
     };
 
-    if (token) fetchData();
+    // if (token) fetchData();
   }, [refreshing]);
   // Define the context value
   const contextValue: DataContextType = {
@@ -305,6 +305,7 @@ export function DataWrapper({ children }: DataWrapperProps) {
     refreshing,
     setRefreshing,
     loading,
+    setLoading,
   };
 
   return (

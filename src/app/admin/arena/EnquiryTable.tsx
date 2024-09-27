@@ -264,20 +264,23 @@ const EnqTable = ({
       ) : (
         <MaterialReactTable table={table} />
       )}
-      <div className="flex items-center gap-2 text-xs lg:gap-4  mt-1 ">
-        Powered by
-        <a
-          href="https://www.broaddcast.com/"
-          target="_blank"
-          rel="noreferrer"
-          className="text-white"
-        >
-          <img
-            src="https://www.broaddcast.com/assets/images/BroaddCast-Logo.svg"
-            alt="Broaddcast"
-            className="h-8 -ml-2 "
-          />
-        </a>
+      <div className="flex flex-col items-center justify-between  md:flex-row  pt-1">
+        <p className="text-xs">© 2024 Sky Automobiles All Rights Reserved.</p>
+        <div className="flex items-center gap-2 text-xs lg:gap-4">
+          Powered by
+          <a
+            href="https://www.broaddcast.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-white"
+          >
+            <img
+              src="https://www.broaddcast.com/assets/images/BroaddCast-Logo.svg"
+              alt="Broaddcast"
+              className="h-8 -ml-2"
+            />
+          </a>
+        </div>
       </div>
     </Box>
   );

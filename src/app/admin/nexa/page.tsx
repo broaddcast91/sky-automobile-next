@@ -1,13 +1,42 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { useDataContext } from "@/context/index2";
 import { createMRTColumnHelper } from "material-react-table";
 import EnqTable from "../arena/EnquiryTable";
+import Cookies from "js-cookie";
+import toast from "react-hot-toast";
 
 const Arena = () => {
-  const { nexaData, setNexaData } = useDataContext();
+  const { refreshing, setLoading } = useDataContext();
+  const [nexaData, setNexaData] = useState([]);
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token) {
+      toast.error("Please login first");
+      window.location.href = "/admin/login";
+    }
 
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `/api/on-road-price?rangeValue=allData&channel=Nexa`
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const result = await response.json();
+        setNexaData(result); // Update state with the fetched data
+        setLoading(false);
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    };
+
+    fetchData();
+  }, [refreshing]);
+  
   const columnHelper = createMRTColumnHelper<any>();
 
   const columns = [
