@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 
 const Arena = () => {
   const { refreshing, setLoading } = useDataContext();
+  const [rangeValue, setRangeValue] = useState("");
   const [nexaData, setNexaData] = useState([]);
   useEffect(() => {
     const token = Cookies.get("token");
@@ -19,24 +20,32 @@ const Arena = () => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `/api/on-road-price?rangeValue=allData&channel=Nexa`
-        );
+        let response = null;
+        if (rangeValue === "") {
+          response = await fetch(
+            `/api/on-road-price?rangeValue=allData&channel=Nexa`
+          );
+        } else {
+          response = await fetch(`/api/on-road-price?rangeValue=${rangeValue}`);
+        }
 
-        if (!response.ok) {
+        if (!response?.ok) {
           throw new Error("Network response was not ok");
         }
         const result = await response.json();
         setNexaData(result); // Update state with the fetched data
         setLoading(false);
+        if (result.length === 0) {
+          toast.error("No data found");
+        } else toast.success("Nexa Data fetched successfully");
       } catch (error) {
         console.error("Fetch error:", error);
       }
     };
 
     fetchData();
-  }, [refreshing]);
-  
+  }, [refreshing, setLoading, rangeValue]);
+
   const columnHelper = createMRTColumnHelper<any>();
 
   const columns = [
@@ -90,9 +99,8 @@ const Arena = () => {
           data={nexaData}
           columns={columns}
           fileName="Nexa Enquiries"
-          endPoint="on-road-price"
-          channel="Nexa"
-          setState={setNexaData}
+          rangeValue={rangeValue}
+          setRangeValue={setRangeValue}
         />
       </div>
     </div>

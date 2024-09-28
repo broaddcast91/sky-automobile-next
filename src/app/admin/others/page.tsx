@@ -1,14 +1,87 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useDataContext } from "@/context/index2";
 import { createMRTColumnHelper } from "material-react-table";
 import EnqTable from "../arena/EnquiryTable";
+import toast from "react-hot-toast";
+import Cookies from "js-cookie";
+
 
 const Others = () => {
-  const { contactUsData, careerData, testDriveData, setTestDriveData, setContactUsData, setCareerData } = useDataContext();
+  const {
+    contactUsData,
+    careerData,
+    testDriveData,
+    setTestDriveData,
+    setContactUsData,
+    setCareerData,
+    setLoading,
+    refreshing,
+  } = useDataContext();
   const [selectedTable, setSelectedTable] = React.useState("Test Drive");
+  const [rangeValue, setRangeValue] = React.useState("");
   const columnHelper = createMRTColumnHelper<any>();
+
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token) {
+      toast.error("Please login first");
+      window.location.href = "/admin/login";
+    }
+
+    const fetchData = async () => {
+      try {
+        let response = null;
+        let endPoint = "";
+        if (selectedTable === "Contact") {
+          endPoint = "contactUs";
+        } else if (selectedTable === "Career") {
+          endPoint = "career";
+        } else {
+          endPoint = "test-drive";
+        }
+        if (rangeValue === "") {
+          response = await fetch(`/api/${endPoint}?rangeValue=allData`);
+        } else {
+          response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
+        }
+
+        if (!response?.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const result = await response.json();
+        if (selectedTable === "Contact") {
+          setContactUsData(result);
+        } else if (selectedTable === "Career") {
+          setCareerData(result);
+        } else {
+          setTestDriveData(result);
+        }
+        // Update state with the fetched data
+        setLoading(false);
+        if (result.length === 0) {
+          toast.error("No data found");
+        } else toast.success(`${selectedTable} Data fetched successfully`);
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    };
+
+    fetchData();
+  }, [refreshing, setLoading, rangeValue, selectedTable]);
+
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token) {
+      toast.error("Please login first");
+      window.location.href = "/admin/login";
+    }
+  }, [refreshing]);
+
+  useEffect(() => {
+    setRangeValue("");
+  }, [selectedTable]);
 
   // Contact
   const columns = [
@@ -199,20 +272,8 @@ const Others = () => {
               ? "Career Enquiries"
               : "Test-Drive Enquiries"
           }
-          endPoint={
-            selectedTable === "Contact"
-              ? "contactUs"
-              : selectedTable === "Career"
-              ? "career"
-              : "test-drive"
-          }
-          setState={
-            selectedTable === "Contact"
-              ? setContactUsData
-              : selectedTable === "Career"
-              ? setCareerData
-              : setTestDriveData
-          } 
+          rangeValue={rangeValue}
+          setRangeValue={setRangeValue}
         />
       </div>
     </div>

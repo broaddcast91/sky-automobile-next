@@ -1,16 +1,77 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useDataContext } from "@/context/index2";
 import { createMRTColumnHelper } from "material-react-table";
 import EnqTable from "../arena/EnquiryTable";
+import toast from "react-hot-toast";
+import Cookies from "js-cookie";
 
 const Services = () => {
-  const { bookAServiceData, financeData, insuranceData , setBookAServiceData, setFinanceData, setInsuranceData} = useDataContext();
+  const { bookAServiceData, financeData, insuranceData,refreshing, setLoading , setBookAServiceData, setFinanceData, setInsuranceData} = useDataContext();
   const [selectedTable, setSelectedTable] = React.useState("Service");
-
+  const [rangeValue, setRangeValue] = React.useState("");
   const columnHelper = createMRTColumnHelper<any>();
+ useEffect(() => {
+   const token = Cookies.get("token");
+   if (!token) {
+     toast.error("Please login first");
+     window.location.href = "/admin/login";
+   }
 
+   const fetchData = async () => {
+     try {
+       let response = null;
+       let endPoint = "";
+       if (selectedTable === "Service") {
+         endPoint = "service";
+       } else if (selectedTable === "Finance") {
+         endPoint = "finance";
+       } else {
+         endPoint = "insurance";
+       }
+       if (rangeValue === "") {
+         response = await fetch(`/api/${endPoint}?rangeValue=allData`);
+       } else {
+         response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
+       }
+
+       if (!response?.ok) {
+         throw new Error("Network response was not ok");
+       }
+       const result = await response.json();
+       if (selectedTable === "Service") {
+         setBookAServiceData(result);
+       } else if (selectedTable === "Finance") {
+         setFinanceData(result);
+       } else {
+         setInsuranceData(result);
+       }
+       // Update state with the fetched data
+       setLoading(false);
+       if (result.length === 0) {
+         toast.error("No data found");
+       } else toast.success(`${selectedTable} Data fetched successfully`);
+     } catch (error) {
+       console.error("Fetch error:", error);
+     }
+   };
+
+   fetchData();
+ }, [refreshing, setLoading, rangeValue, selectedTable]);
+
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token) {
+      toast.error("Please login first");
+      window.location.href = "/admin/login";
+    }
+  }, [refreshing]);
+
+  useEffect(() => {
+    setRangeValue("");
+  }, [selectedTable]);
+  
   const columns = [
     columnHelper.accessor("date", {
       header: "Date",
@@ -229,20 +290,9 @@ const Services = () => {
               ? "Finance Enquiries"
               : "Insurance Enquiries"
           }
-          endPoint={
-            selectedTable === "Service"
-              ? "service"
-              : selectedTable === "Finance"
-              ? "finance"
-              : "insurance"
-          }
-          setState={
-            selectedTable === "Service"
-              ? setBookAServiceData
-              : selectedTable === "Finance"
-              ? setFinanceData
-              : setInsuranceData
-          } 
+         
+          rangeValue={rangeValue}
+          setRangeValue={setRangeValue}
         />
       </div>
     </div>

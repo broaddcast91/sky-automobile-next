@@ -1,14 +1,22 @@
 "use client";
-import React from "react";
-
+import React, { useEffect } from "react";
 import { useDataContext } from "@/context/index2";
 import { createMRTColumnHelper } from "material-react-table";
 import EnqTable from "../arena/EnquiryTable";
+import toast from "react-hot-toast";
+import Cookies from "js-cookie";
 
 const TrueValue = () => {
-  const { buyACarData, sellACarData, setSellACarData, setBuyACarData } =
-    useDataContext();
+  const {
+    buyACarData,
+    sellACarData,
+    refreshing,
+    setLoading,
+    setSellACarData,
+    setBuyACarData,
+  } = useDataContext();
   const [showSell, setShowSell] = React.useState(false);
+  const [rangeValue, setRangeValue] = React.useState("");
 
   const columnHelper = createMRTColumnHelper<any>();
 
@@ -120,6 +128,65 @@ const TrueValue = () => {
     // }),
   ];
 
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token) {
+      toast.error("Please login first");
+      window.location.href = "/admin/login";
+    }
+
+    const fetchData = async () => {
+      try {
+        let response = null;
+        let endPoint = "";
+        if (showSell) {
+          endPoint = "sell-your-car";
+        } else {
+          endPoint = "buy-a-car";
+        }
+        if (rangeValue === "") {
+          response = await fetch(`/api/${endPoint}?rangeValue=allData`);
+        } else {
+          response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
+        }
+
+        if (!response?.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const result = await response.json();
+        if (showSell) {
+          setSellACarData(result);
+        } else {
+          setBuyACarData(result);
+        }
+        // Update state with the fetched data
+        setLoading(false);
+        if (result.length === 0) {
+          toast.error("No data found");
+        } else
+          toast.success(
+            `${showSell ? "Sell A Car" : "Buy A Car"} Data fetched successfully`
+          );
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    };
+
+    fetchData();
+  }, [refreshing, rangeValue, showSell]);
+
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token) {
+      toast.error("Please login first");
+      window.location.href = "/admin/login";
+    }
+  }, [refreshing]);
+
+  useEffect(() => {
+    setRangeValue("");
+  }, [showSell]);
+
   return (
     <div className="bg-white min-h-[calc(100vh-25px)] p-2  rounded-lg mr-2 mt-1">
       <div className="min-h-40 px-4">
@@ -152,8 +219,8 @@ const TrueValue = () => {
           data={showSell ? sellACarData : buyACarData}
           columns={showSell ? columns2 : columns}
           fileName={showSell ? "Sell A Car Enquiries" : "Buy A Car Enquiries"}
-          endPoint={showSell ? "sell-a-car" : "buy-a-car"}
-          setState={showSell ? setSellACarData : setBuyACarData}
+          rangeValue={rangeValue}
+          setRangeValue={setRangeValue}
         />
       </div>
     </div>

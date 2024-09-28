@@ -10,23 +10,22 @@ import { mkConfig, generateCsv, download } from "export-to-csv";
 
 import { FiRefreshCcw, FiSearch } from "react-icons/fi";
 import { useDataContext } from "@/context/index2";
+import { ImSpinner } from "react-icons/im";
 
 const EnqTable = ({
   data,
   columns,
   fileName,
-  endPoint,
-  setState,
-  channel,
+  rangeValue,
+  setRangeValue,
 }: {
   data: any;
   columns: any;
   fileName?: string;
-  endPoint?: string;
-  setState?: any;
-  channel?: string;
+  rangeValue?: string;
+  setRangeValue?: any;
 }) => {
-  const [rangeValue, setRangeValue] = useState("");
+
   const { setRefreshing, refreshing, loading } = useDataContext();
 
   const csvConfig = mkConfig({
@@ -34,34 +33,36 @@ const EnqTable = ({
     decimalSeparator: ".",
     useKeysAsHeaders: true,
   });
-  useEffect(() => {
-    const fetchData = async () => {
-      let response = null;
-      try {
-        if (channel) {
-          response = await fetch(
-            `/api/${endPoint}?rangeValue=${rangeValue}&channel=${channel}`
-          );
-        } else {
-          response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
-        }
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     let response = null;
+  //     try {
+  //       if (channel) {
+  //         response = await fetch(
+  //           `/api/${endPoint}?rangeValue=${rangeValue}&channel=${channel}`
+  //         );
+  //       } else {
+  //         response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
+  //       }
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const result = await response.json();
-        setState(result); // Update state with the fetched data
-      } catch (error) {
-        console.error("Fetch error:", error);
-      }
-    };
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       const result = await response.json();
+  //       setState(result); // Update state with the fetched data
+  //     } catch (error) {
+  //       console.error("Fetch error:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, [rangeValue]); // Trigger fetch on rangeValue change
+  //   fetchData();
+  // }, [rangeValue]); // Trigger fetch on rangeValue change
   const handleExportData = () => {
     const csv = generateCsv(csvConfig)(data);
     download(csvConfig)(csv);
   };
+
+
 
   const handleRefreshData = () => {
     // window.location.reload();
@@ -195,7 +196,7 @@ const EnqTable = ({
         <Button
           //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
           onClick={handleRefreshData}
-          startIcon={<FiRefreshCcw />}
+          startIcon={<FiRefreshCcw className="text-sm" />}
           variant="outlined"
           style={{ borderColor: "#303a9b", color: "#303a9b", height: "35px" }}
         >
@@ -253,17 +254,18 @@ const EnqTable = ({
         // borderLeft: "1px solid #e1e3e6",
         // border: "1px solid #e1e3e6",
         borderRadius: "4px",
+        position: "relative",
       }}
     >
-      {loading ? (
-        <div className="flex justify-center items-center h-[80vh] gap-2 ">
+      {loading && (
+        <div className="flex justify-center items-center h-[calc(100%-34px)] gap-3 absolute top-0 left-0 bg-secondaryGray2 w-full z-10 bg-opacity-10 text-primaryBlue rounded-lg ">
           {" "}
-          <FiRefreshCcw className="animate-spin text-3xl text-primaryBlue" />{" "}
+          <ImSpinner className="animate-spin text-3xl " />{" "}
           <span className=" text-xl">Loading...</span>
         </div>
-      ) : (
-        <MaterialReactTable table={table} />
       )}
+      <MaterialReactTable table={table} />
+
       <div className="flex flex-col items-center justify-between  md:flex-row  pt-1">
         <p className="text-xs">© 2024 Sky Automobiles All Rights Reserved.</p>
         <div className="flex items-center gap-2 text-xs lg:gap-4">

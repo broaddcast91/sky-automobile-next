@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 const Arena = () => {
   const { refreshing, setLoading } = useDataContext();
   const [arenaData, setArenaData] = useState([]);
+  const [rangeValue, setRangeValue] = useState("");
   useEffect(() => {
     const token = Cookies.get("token");
     if (!token) {
@@ -19,24 +20,32 @@ const Arena = () => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `/api/on-road-price?rangeValue=allData&channel=Arena`
-        );
+        let response = null;
+        if (rangeValue === "") {
+          response = await fetch(
+            `/api/on-road-price?rangeValue=allData&channel=Arena`
+          );
+        } else {
+          response = await fetch(`/api/on-road-price?rangeValue=${rangeValue}`);
+        }
 
-        if (!response.ok) {
+        if (!response?.ok) {
           throw new Error("Network response was not ok");
         }
         const result = await response.json();
         setArenaData(result); // Update state with the fetched data
         setLoading(false);
+        if (result.length === 0) {
+          toast.error("No data found");
+        } else toast.success("Arena Data fetched successfully");
       } catch (error) {
         console.error("Fetch error:", error);
       }
     };
 
     fetchData();
-  }, [refreshing]);
-  
+  }, [refreshing, setLoading, rangeValue]);
+
   const columnHelper = createMRTColumnHelper<any>();
 
   const columns = [
@@ -90,9 +99,8 @@ const Arena = () => {
           data={arenaData}
           columns={columns}
           fileName="Arena Enquiries"
-          endPoint="on-road-price"
-          setState={setArenaData}
-          channel="Arena"
+          rangeValue={rangeValue}
+          setRangeValue={setRangeValue}
         />
       </div>
     </div>

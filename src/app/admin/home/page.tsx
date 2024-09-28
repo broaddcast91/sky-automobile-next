@@ -59,7 +59,8 @@ const Home = () => {
                 <p className="text-3xl font-semibold">
                   <CountUp
                     start={0}
-                    end={arenaData.length > 0 ? arenaData.length - 1 : 0}
+                    end={10}
+                    // end={arenaData.length > 0 ? arenaData.length - 1 : 0}
                     duration={4}
                   />
                 </p>
@@ -78,7 +79,8 @@ const Home = () => {
                 <p className="text-3xl font-semibold">
                   <CountUp
                     start={0}
-                    end={nexaData.length > 0 ? nexaData.length - 1 : 0}
+                    end={20}
+                    // end={nexaData.length > 0 ? nexaData.length - 1 : 0}
                     duration={4}
                   />
                 </p>
@@ -97,7 +99,8 @@ const Home = () => {
                 <p className="text-3xl font-semibold">
                   <CountUp
                     start={0}
-                    end={buyACarData.length > 0 ? buyACarData.length - 1 : 0}
+                    end={25}
+                    // end={buyACarData.length > 0 ? buyACarData.length - 1 : 0}
                     duration={4}
                   />
                 </p>
@@ -115,7 +118,8 @@ const Home = () => {
                 <p className="text-3xl font-semibold">
                   <CountUp
                     start={0}
-                    end={sellACarData.length > 0 ? sellACarData.length - 1 : 0}
+                    end={10}
+                    // end={sellACarData.length > 0 ? sellACarData.length - 1 : 0}
                     duration={4}
                   />
                 </p>

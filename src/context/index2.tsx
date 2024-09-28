@@ -87,198 +87,190 @@ export function DataWrapper({ children }: DataWrapperProps) {
   // const [error, setError] = useState<string | null>(null);
   const [refreshing, setRefreshing] = useState<boolean>(false);
 
-  useEffect(() => {
-    // const token = Cookies.get("token");
-    const fetchData = async () => {
-      setLoading(true);
-      setFinanceData([]);
-      setInsuranceData([]);
-      setTestDriveData([]);
-      setCareerData([]);
-      setContactUsData([]);
-      setBuyACarData([]);
-      setSellACarData([]);
-      setArenaData([]);
-      setNexaData([]);
-      setBookAServiceData([]);
-      setRecentData([]);
-      try {
-        const response = await fetch("/api/on-road-price?rangeValue=allData");
+  // useEffect(() => {
+  //   // const token = Cookies.get("token");
+  //   const fetchData = async () => {
+  //     setLoading(true);
+  //     setFinanceData([]);
+  //     setInsuranceData([]);
+  //     setTestDriveData([]);
+  //     setCareerData([]);
+  //     setContactUsData([]);
+  //     setBuyACarData([]);
+  //     setSellACarData([]);
+  //     setArenaData([]);
+  //     setNexaData([]);
+  //     setBookAServiceData([]);
+  //     setRecentData([]);
+  //     try {
+  //       const response = await fetch("/api/on-road-price?rangeValue=allData");
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
 
-        const data = await response.json();
+  //       const data = await response.json();
 
-        if (data.length > 0) {
-          setRecentData(data.slice(0, 15));
+  //       if (data.length > 0) {
+  //         setRecentData(data.slice(0, 15));
+  //       }
+  //       // setArenaData(data);
+  //     } catch (err: any) {
+  //       // setError(err.message);
+  //       toast.error(err.message);
+  //     }
+  //     // Buy A Car
+  //     try {
+  //       const response = await fetch("/api/buy-a-car?rangeValue=allData");
 
-          data.forEach((item: any) => {
-            if (item.channel === "Arena") {
-              setArenaData((prev) => [...prev, item]);
-            } else {
-              setNexaData((prev) => [...prev, item]);
-            }
-          });
-        }
-        // setArenaData(data);
-      } catch (err: any) {
-        // setError(err.message);
-        toast.error(err.message);
-      }
-      // Buy A Car
-      try {
-        const response = await fetch("/api/buy-a-car?rangeValue=allData");
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+  //       const data = await response.json();
 
-        const data = await response.json();
+  //       if (data.length > 0) {
+  //         setBuyACarData(data);
+  //       }
+  //     } catch (err: any) {
+  //       // setError(err.message);
+  //       toast.error(err.message);
+  //     }
+  //     // Sell A Car
+  //     try {
+  //       const response = await fetch("/api/sell-your-car?rangeValue=allData");
 
-        if (data.length > 0) {
-          setBuyACarData(data);
-        }
-      } catch (err: any) {
-        // setError(err.message);
-        toast.error(err.message);
-      }
-      // Sell A Car
-      try {
-        const response = await fetch("/api/sell-your-car?rangeValue=allData");
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+  //       const data = await response.json();
 
-        const data = await response.json();
+  //       if (data.length > 0) {
+  //         setSellACarData(data);
+  //       }
 
-        if (data.length > 0) {
-          setSellACarData(data);
-        }
+  //       // setArenaData(data);
+  //     } catch (err: any) {
+  //       // setError(err.message);
+  //       toast.error(err.message);
+  //     }
 
-        // setArenaData(data);
-      } catch (err: any) {
-        // setError(err.message);
-        toast.error(err.message);
-      }
+  //     // service
+  //     try {
+  //       const response = await fetch("/api/service?rangeValue=allData");
 
-      // service
-      try {
-        const response = await fetch("/api/service?rangeValue=allData");
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+  //       const data = await response.json();
 
-        const data = await response.json();
+  //       if (data.length > 0) {
+  //         setBookAServiceData(data);
+  //       }
+  //       console.log(data);
+  //       // setArenaData(data);
+  //     } catch (err: any) {
+  //       // setError(err.message);
+  //       toast.error(err.message);
+  //     }
+  //     // Finance
+  //     try {
+  //       const response = await fetch("/api/finance?rangeValue=allData");
 
-        if (data.length > 0) {
-          setBookAServiceData(data);
-        }
-        console.log(data);
-        // setArenaData(data);
-      } catch (err: any) {
-        // setError(err.message);
-        toast.error(err.message);
-      }
-      // Finance
-      try {
-        const response = await fetch("/api/finance?rangeValue=allData");
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+  //       const data = await response.json();
 
-        const data = await response.json();
+  //       if (data.length > 0) {
+  //         setFinanceData(data);
+  //       }
 
-        if (data.length > 0) {
-          setFinanceData(data);
-        }
+  //       // setArenaData(data);
+  //     } catch (err: any) {
+  //       // setError(err.message);
+  //       toast.error(err.message);
+  //     }
+  //     // Insurance
+  //     try {
+  //       const response = await fetch("/api/insurance?rangeValue=allData");
 
-        // setArenaData(data);
-      } catch (err: any) {
-        // setError(err.message);
-        toast.error(err.message);
-      }
-      // Insurance
-      try {
-        const response = await fetch("/api/insurance?rangeValue=allData");
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+  //       const data = await response.json();
 
-        const data = await response.json();
+  //       if (data.length > 0) {
+  //         setInsuranceData(data);
+  //       }
 
-        if (data.length > 0) {
-          setInsuranceData(data);
-        }
+  //       // setArenaData(data);
+  //     } catch (err: any) {
+  //       // setError(err.message);
 
-        // setArenaData(data);
-      } catch (err: any) {
-        // setError(err.message);
+  //       toast.error(err.message);
+  //     }
+  //     // Contact Us
+  //     try {
+  //       const response = await fetch("/api/contactUs?rangeValue=allData");
 
-        toast.error(err.message);
-      }
-      // Contact Us
-      try {
-        const response = await fetch("/api/contactUs?rangeValue=allData");
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       const data = await response.json();
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
+  //       if (data.length > 0) {
+  //         setContactUsData(data);
+  //       }
+  //       // setArenaData(data);
+  //     } catch (err: any) {
+  //       // setError(err.message);
+  //       toast.error(err.message);
+  //     }
+  //     // Career
+  //     try {
+  //       const response = await fetch("/api/career?rangeValue=allData");
 
-        if (data.length > 0) {
-          setContactUsData(data);
-        }
-        // setArenaData(data);
-      } catch (err: any) {
-        // setError(err.message);
-        toast.error(err.message);
-      }
-      // Career
-      try {
-        const response = await fetch("/api/career?rangeValue=allData");
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       const data = await response.json();
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
+  //       if (data.length > 0) {
+  //         setCareerData(data);
+  //       }
+  //       // setArenaData(data);
+  //     } catch (err: any) {
+  //       // setError(err.message);
+  //       toast.error(err.message);
+  //     }
+  //     // Test Drive
+  //     try {
+  //       const response = await fetch("/api/test-drive?rangeValue=allData");
 
-        if (data.length > 0) {
-          setCareerData(data);
-        }
-        // setArenaData(data);
-      } catch (err: any) {
-        // setError(err.message);
-        toast.error(err.message);
-      }
-      // Test Drive
-      try {
-        const response = await fetch("/api/test-drive?rangeValue=allData");
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       const data = await response.json();
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
+  //       if (data.length > 0) {
+  //         setTestDriveData(data);
+  //       }
+  //       // setArenaData(data);
+  //     } catch (err: any) {
+  //       // setError(err.message);
+  //       toast.error(err.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-        if (data.length > 0) {
-          setTestDriveData(data);
-        }
-        // setArenaData(data);
-      } catch (err: any) {
-        // setError(err.message);
-        toast.error(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    // if (token) fetchData();
-  }, [refreshing]);
+  //   // if (token) fetchData();
+  // }, [refreshing]);
   // Define the context value
   const contextValue: DataContextType = {
     financeData,
