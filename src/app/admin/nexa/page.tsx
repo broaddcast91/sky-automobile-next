@@ -8,9 +8,9 @@ import Cookies from "js-cookie";
 import toast from "react-hot-toast";
 
 const Arena = () => {
-  const { refreshing, setLoading } = useDataContext();
+  const { refreshing, setLoading, nexaData, setNexaData } = useDataContext();
   const [rangeValue, setRangeValue] = useState("");
-  const [nexaData, setNexaData] = useState([]);
+
   useEffect(() => {
     const token = Cookies.get("token");
     if (!token) {
