@@ -9,7 +9,7 @@ import { useAppContext } from "@/context";
 
 const NavigationLinks: React.FC<{
   title: string;
-  links: { label: string; href: string }[];
+  links: { label: string; href: string; hrefOD?: string }[];
   selectedState: string;
 }> = ({ title, links, selectedState }) => (
   <div>
@@ -29,7 +29,13 @@ const NavigationLinks: React.FC<{
               ? "hover:text-white hover:font-medium"
               : "hover:text-primaryRed"
           }`}
-          href={link.href}
+          href={`${
+            selectedState === "Odisha" && link.hrefOD
+              ? link.href
+              : selectedState !== "Odisha" && link.hrefOD
+              ? link.hrefOD
+              : link.href
+          }`}
         >
           {link.label}
         </Link>
@@ -87,32 +93,97 @@ const Footer: React.FC = () => {
                 title="Arena"
                 selectedState={selectedState}
                 links={[
-                  { label: "Alto K10", href: "/arena/alto-k10-on-road-price" },
-                  { label: "Swift", href: "/arena/swift-on-road-price" },
-                  { label: "Brezza", href: "/arena/brezza-on-road-price" },
-                  { label: "Dzire", href: "/arena/dzire-on-road-price" },
-                  { label: "S-Presso", href: "/arena/spresso-on-road-price" },
-                  { label: "Wagon R", href: "/arena/wagon-r-on-road-price" },
-                  { label: "Ertiga", href: "/arena/ertiga-on-road-price" },
-                  { label: "Celerio", href: "/arena/celerio-on-road-price" },
-                  { label: "Eeco", href: "/arena/eeco-on-road-price" },
+                  {
+                    label: "Alto K10",
+                    href: "/arena/alto-k10-on-road-price-in-bhubaneswar",
+                    hrefOD: "/arena/alto-k10-on-road-price-in-raipur",
+                  },
+                  {
+                    label: "Swift",
+                    href: "/arena/swift-on-road-price-in-bhubaneswar",
+                    hrefOD: "/arena/swift-on-road-price-in-raipur",
+                  },
+                  {
+                    label: "Brezza",
+                    href: "/arena/brezza-on-road-price-in-bhubaneswar",
+                    hrefOD: "/arena/brezza-on-road-price-in-raipur",
+                  },
+                  {
+                    label: "Dzire",
+                    href: "/arena/dzire-on-road-price-in-bhubaneswar",
+                    hrefOD: "/arena/dzire-on-road-price-in-raipur",
+                  },
+                  {
+                    label: "S-Presso",
+                    href: "/arena/spresso-on-road-price-in-bhubaneswar",
+                    hrefOD: "",
+                  },
+                  {
+                    label: "Wagon R",
+                    href: "/arena/wagon-r-on-road-price-in-bhubaneswar",
+                    hrefOD: "/arena/wagon-r-on-road-price-in-raipur",
+                  },
+                  {
+                    label: "Ertiga",
+                    href: "/arena/ertiga-on-road-price-in-bhubaneswar",
+                    hrefOD: "/arena/ertiga-on-road-price-in-raipur",
+                  },
+                  {
+                    label: "Celerio",
+                    href: "/arena/celerio-on-road-price-in-bhubaneswar",
+                    hrefOD: "/arena/celerio-on-road-price-in-raipur",
+                  },
+                  {
+                    label: "Eeco",
+                    href: "/arena/eeco-on-road-price-in-bhubaneswar",
+                    hrefOD: "/arena/eeco-on-road-price-in-raipur",
+                  },
                 ]}
               />
               <NavigationLinks
                 title="Nexa"
                 selectedState={selectedState}
                 links={[
-                  { label: "Invicto", href: "/nexa/invicto-on-road-price" },
-                  { label: "Jimny", href: "/nexa/jimny-on-road-price" },
-                  { label: "Fronx", href: "/nexa/fronx-on-road-price" },
+                  {
+                    label: "Invicto",
+                    href: "/nexa/invicto-on-road-price-in-bhubaneswar",
+                    hrefOD: "/nexa/invicto-on-road-price-in-raipur",
+                  },
+                  {
+                    label: "Jimny",
+                    href: "/nexa/jimny-on-road-price-in-bhubaneswar",
+                    hrefOD: "/nexa/jimny-on-road-price-in-raipur",
+                  },
+                  {
+                    label: "Fronx",
+                    href: "/nexa/fronx-on-road-price-in-bhubaneswar",
+                    hrefOD: "/nexa/fronx-on-road-price-in-raipur",
+                  },
                   {
                     label: "Grand Vitara",
-                    href: "/nexa/grand-vitara-on-road-price",
+                    href: "/nexa/grand-vitara-on-road-price-in-bhubaneswar",
+                    hrefOD: "/nexa/grand-vitara-on-road-price-in-raipur",
                   },
-                  { label: "XL6", href: "/nexa/xl6-on-road-price" },
-                  { label: "Ciaz", href: "/nexa/ciaz-on-road-price" },
-                  { label: "Baleno", href: "/nexa/baleno-on-road-price" },
-                  { label: "Ignis", href: "/nexa/ignis-on-road-price" },
+                  {
+                    label: "XL6",
+                    href: "/nexa/xl6-on-road-price-in-bhubaneswar",
+                    hrefOD: "/nexa/xl6-on-road-price-in-raipur",
+                  },
+                  {
+                    label: "Ciaz",
+                    href: "/nexa/ciaz-on-road-price-in-bhubaneswar",
+                    hrefOD: "/nexa/ciaz-on-road-price-in-raipur",
+                  },
+                  {
+                    label: "Baleno",
+                    href: "/nexa/baleno-on-road-price-in-bhubaneswar",
+                    hrefOD: "/nexa/baleno-on-road-price-in-raipur",
+                  },
+                  {
+                    label: "Ignis",
+                    href: "/nexa/ignis-on-road-price-in-bhubaneswar",
+                    hrefOD: "/nexa/ignis-on-road-price-in-raipur",
+                  },
                 ]}
               />
               <NavigationLinks

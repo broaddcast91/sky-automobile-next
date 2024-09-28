@@ -2,6 +2,8 @@
 // const { GiSpeedometer } = require("react-icons/gi");
 // const { PiEngine } = require("react-icons/pi");
 
+import { link } from "fs";
+
 export const models = [
   //0- Maruti ALTO K10
   {
@@ -10,6 +12,8 @@ export const models = [
     offersAmount: 56100,
     offersAdditionalDec: "",
     link: "/arena/alto-k10-on-road-price",
+    linkCG: "/arena/alto-k10-on-road-price-in-raipur",
+    linkOD: "/arena/alto-k10-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -172,6 +176,8 @@ export const models = [
     offersAmount: 38100,
     offersAdditionalDec: "",
     link: "/arena/swift-on-road-price",
+    linkCG: "/arena/swift-on-road-price-in-raipur",
+    linkOD: "/arena/swift-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -363,6 +369,8 @@ export const models = [
     offersAmount: 25000,
     offersAdditionalDec: "",
     link: "/arena/brezza-on-road-price",
+    linkCG: "/arena/brezza-on-road-price-in-raipur",
+    linkOD: "/arena/brezza-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -567,6 +575,8 @@ export const models = [
     offersAmount: 30000,
     offersAdditionalDec: "",
     link: "/arena/dzire-on-road-price",
+    linkCG: "/arena/dzire-on-road-price-in-raipur",
+    linkOD: "/arena/dzire-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -744,6 +754,8 @@ export const models = [
     offersAmount: 56100,
     offersAdditionalDec: "",
     link: "/arena/spresso-on-road-price",
+    linkCG: "/arena/spresso-on-road-price-in-raipur",
+    linkOD: "/arena/spresso-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -893,6 +905,8 @@ export const models = [
     offersAmount: 58100,
     offersAdditionalDec: "",
     link: "/arena/wagon-r-on-road-price",
+    linkCG: "/arena/wagon-r-on-road-price-in-raipur",
+    linkOD: "/arena/wagon-r-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -1083,6 +1097,8 @@ export const models = [
     offersAmount: 0,
     offersAdditionalDec: "",
     link: "/arena/ertiga-on-road-price",
+    linkCG: "/arena/ertiga-on-road-price-in-raipur",
+    linkOD: "/arena/ertiga-on-road-price-in-odisha",
     offerValidTill: "",
     colors: [
       {
@@ -1246,6 +1262,8 @@ export const models = [
     offersAmount: 53100,
     offersAdditionalDec: "",
     link: "/arena/celerio-on-road-price",
+    linkCG: "/arena/celerio-on-road-price-in-raipur",
+    linkOD: "/arena/celerio-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -1392,6 +1410,8 @@ export const models = [
     offersAmount: 33100,
     offersAdditionalDec: "",
     link: "/arena/eeco-on-road-price",
+    linkCG: "/arena/eeco-on-road-price-in-raipur",
+    linkOD: "/arena/eeco-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -1552,6 +1572,8 @@ export const models = [
     offersAmount: 0,
     offersAdditionalDec: "",
     link: "/nexa/invicto-on-road-price",
+    linkCG: "/nexa/invicto-on-road-price-in-raipur",
+    linkOD: "/nexa/invicto-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -1684,6 +1706,8 @@ export const models = [
     offersAmount: 100000,
     offersAdditionalDec: "+ 1.5 Lakh MSSF Offer",
     link: "/nexa/jimny-on-road-price",
+    linkCG: "/nexa/jimny-on-road-price-in-raipur",
+    linkOD: "/nexa/jimny-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -1838,6 +1862,8 @@ export const models = [
     offersAmount: 45000,
     offersAdditionalDec: "+ Velocity Kit worth 43K ",
     link: "/nexa/fronx-on-road-price",
+    linkCG: "/nexa/fronx-on-road-price-in-raipur",
+    linkOD: "/nexa/fronx-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -2021,6 +2047,8 @@ export const models = [
     offersAmount: 108100,
     offersAdditionalDec: "+ Royal Platinum EW",
     link: "/nexa/grand-vitara-on-road-price",
+    linkCG: "/nexa/grand-vitara-on-road-price-in-raipur",
+    linkOD: "/nexa/grand-vitara-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -2232,6 +2260,8 @@ export const models = [
     offersAmount: 40000,
     offersAdditionalDec: "",
     link: "/nexa/xl6-on-road-price",
+    linkCG: "/nexa/xl6-on-road-price-in-raipur",
+    linkOD: "/nexa/xl6-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -2390,6 +2420,8 @@ export const models = [
     offersAmount: 48000,
     offersAdditionalDec: "",
     link: "/nexa/ciaz-on-road-price",
+    linkCG: "/nexa/ciaz-on-road-price-in-raipur",
+    linkOD: "/nexa/ciaz-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -2563,6 +2595,8 @@ export const models = [
     offersAmount: 57100,
     offersAdditionalDec: "",
     link: "/nexa/baleno-on-road-price",
+    linkCG: "/nexa/baleno-on-road-price-in-raipur",
+    linkOD: "/nexa/baleno-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {
@@ -2689,6 +2723,8 @@ export const models = [
     offersAmount: 58100,
     offersAdditionalDec: "+ Radiance Kit Worth 3K",
     link: "/nexa/ignis-on-road-price",
+    linkCG: "/nexa/ignis-on-road-price-in-raipur",
+    linkOD: "/nexa/ignis-on-road-price-in-bhubaneswar",
     offerValidTill: "Sep 30, 2024",
     colors: [
       {

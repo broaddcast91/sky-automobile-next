@@ -84,7 +84,11 @@ const RangeSlider: React.FC<SlideProps> = ({ selected }) => {
       >
         {filteredModels?.map((slide, index) => (
           <SwiperSlide key={index} className="mt-4">
-            <Link href={slide.link}>
+            <Link
+              href={`${
+                selectedState === "Odisha" ? slide.linkOD : slide.linkCG
+              }`}
+            >
               <div
                 className={`rounded-xl overflow-hidden hover:shadow-lg cursor-pointer w-[400px] py-10 px-2 flex flex-col gap-1 group ${
                   selectedState === "Odisha"

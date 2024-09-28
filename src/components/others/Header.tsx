@@ -207,7 +207,7 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="relative  ">
+            {/* <div className="relative  ">
               <div
                 onMouseEnter={() => setIsVehicle(false)}
                 // href="/outlets"
@@ -241,7 +241,22 @@ const Header = () => {
                   Odisa <FaCaretRight />
                 </Link>
               </div>
-            </div>
+            </div> */}
+            <Link
+              onMouseEnter={() => setIsVehicle(false)}
+              href={`${
+                selectedState === "Odisha"
+                  ? "/outlets/odisa-outlets"
+                  : "/outlets/chhattisgarh-outlets"
+              }`}
+              className={`font-medium  ${
+                selectedState === "Odisha"
+                  ? "hover:text-primaryBlue"
+                  : "hover:text-primaryRed"
+              }`}
+            >
+              Outlets
+            </Link>
             <Link
               onMouseEnter={() => setIsVehicle(false)}
               href="/contact-us"
@@ -386,7 +401,9 @@ const Header = () => {
                   <Link
                     onClick={() => setIsVehicle(false)}
                     key={index}
-                    href={slide.link}
+                    href={`${
+                      selectedState === "Odisha" ? slide.linkOD : slide.linkCG
+                    }`}
                   >
                     <div
                       className={`rounded-xl hover:shadow-lg   cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1 ${
@@ -413,7 +430,9 @@ const Header = () => {
                   <Link
                     onClick={() => setIsVehicle(false)}
                     key={index}
-                    href={slide.link}
+                    href={`${
+                      selectedState === "Odisha" ? slide.linkOD : slide.linkCG
+                    }`}
                   >
                     <div
                       className={`rounded-xl hover:shadow-lg  ${

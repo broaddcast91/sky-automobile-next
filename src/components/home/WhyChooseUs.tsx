@@ -41,7 +41,7 @@ const WhyChooseUs: React.FC = () => {
               <CountUp
                 start={400000}
                 end={500000}
-                duration={30}
+                duration={10}
                 suffix="+ "
                 className="text-3xl lg:text-4xl lg:font-bold pb-2 "
               />
@@ -80,7 +80,7 @@ const WhyChooseUs: React.FC = () => {
               <CountUp
                 start={100000}
                 end={200000}
-                duration={25}
+                duration={10}
                 suffix="+ "
                 className="text-3xl lg:text-4xl lg:font-bold pb-2"
               />
@@ -109,7 +109,7 @@ const WhyChooseUs: React.FC = () => {
               <CountUp
                 start={0}
                 end={40}
-                duration={25}
+                duration={10}
                 suffix="+ "
                 className="text-3xl lg:text-4xl lg:font-bold pb-2"
               />
