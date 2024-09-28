@@ -188,6 +188,7 @@ const EnqTable = ({
                 name="endDate"
                 value={dateRange.endDate}
                 required
+                min={dateRange.startDate || ""}
                 onChange={handleDateChange}
                 className="border rounded-md px-4 py-1.5"
               />
