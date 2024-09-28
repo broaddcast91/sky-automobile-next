@@ -13,6 +13,7 @@ import { PiEngine } from "react-icons/pi";
 import ModalTestDrive from "../home/ModalTestDrive";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { FaSpinner } from "react-icons/fa";
 
 interface FormData {
   name: string;
@@ -38,7 +39,8 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
     outlet: "",
     variant: data?.variants[0]?.variant || "",
   });
-  const [selected, setSelected] = React.useState("Exterior");
+  const [selected, setSelected] = useState("Exterior");
+  const [loading,setLoading]= useState(false);
   const [showTestDrive, setShowTestDrive] = useState(false);
 
   const handleClickColor = (index: number): void => {
@@ -57,6 +59,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    setLoading(true)
     event.preventDefault();
     console.log("Form Data:", {
       ...formData,
@@ -112,6 +115,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
     if (formElement) {
       formElement.reset();
     }
+    setLoading(false)
   };
 
   if (!data) return null;
@@ -351,13 +355,20 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
               </select>
               <button
                 type="submit"
-                className={`px-4 py-2   hover:text-white duration-500 border-b-2   md:px-4 hover:shadow-lg  whitespace-nowrap ${
+                disabled={loading}
+                className={`px-4 py-2  ${loading ? "cursor-not-allowed" : ""} text-white duration-500 border-b-2   md:px-4 hover:shadow-lg  whitespace-nowrap ${
                   selectedState === "Odisha"
-                    ? "hover:bg-primaryBlue border-primaryBlue"
-                    : "hover:bg-primaryRed border-primaryRed"
+                    ? "bg-primaryBlue border-primaryBlue"
+                    : "bg-primaryRed border-primaryRed"
                 } `}
               >
-                Enquire Now
+                {loading ? (
+                  <div className="flex items-center justify-center gap-2">
+                    <FaSpinner className="animate-spin" /> Submitting
+                  </div>
+                ) : (
+                  "Enquire Now"
+                )}
               </button>
             </div>
             <p className="mt-6 text-xs text-gray-500">

@@ -5,6 +5,7 @@ import { useAppContext } from "@/context";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import toast from "react-hot-toast";
+import { FaSpinner } from "react-icons/fa";
 
 // Define the type for the career form data
 interface CareerFormData {
@@ -27,6 +28,7 @@ const CareerPage: React.FC = () => {
   });
   const { selectedState } = useAppContext();
     const router = useRouter();
+      const [loading, setLoading] = useState(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -40,6 +42,7 @@ const CareerPage: React.FC = () => {
 
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     event.preventDefault();
     console.log("Career Form Data:", formData);
     try {
@@ -73,6 +76,8 @@ const CareerPage: React.FC = () => {
     } catch (error) {
       toast.error("Failed to send request. Please try again later.");
       console.error("Error sending request:", error);
+    }finally{
+      setLoading(false);
     }
 
     // Reset the form after submission
@@ -198,13 +203,20 @@ const CareerPage: React.FC = () => {
               />
               <button
                 type="submit"
-                className={`px-4 py-2   hover:text-white duration-500 border-b-2   md:px-4 hover:shadow-lg  whitespace-nowrap ${
+                disabled={loading}
+                className={`px-4 py-2   text-white duration-500 border-b-2   md:px-4 hover:shadow-lg  whitespace-nowrap ${
                   selectedState === "Odisha"
-                    ? "hover:bg-primaryBlue border-primaryBlue"
-                    : "hover:bg-primaryRed border-primaryRed"
+                    ? "bg-primaryBlue border-primaryBlue"
+                    : "bg-primaryRed border-primaryRed"
                 } `}
               >
-                Apply Now
+                {loading ? (
+                  <div className="flex items-center justify-center gap-2">
+                    <FaSpinner className="animate-spin" /> Submitting
+                  </div>
+                ) : (
+                  "Apply Now"
+                )}
               </button>
             </div>
 

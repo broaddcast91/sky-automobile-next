@@ -11,6 +11,7 @@ import React, {
   useState,
 } from "react";
 import toast from "react-hot-toast";
+import { FaSpinner } from "react-icons/fa";
 
 // Define the type for the form data
 interface FormData {
@@ -73,8 +74,9 @@ const SellCar: React.FC = () => {
       [e.target.name]: e.target.value,
     });
   };
-
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     event.preventDefault();
     try {
       // Send the POST request
@@ -100,13 +102,15 @@ const SellCar: React.FC = () => {
           "Thank you for contacting us. We will get back to you soon!"
         );
         //  window.location.href = "/thank-you";
-         router.push("/thank-you");
+        router.push("/thank-you");
       } else {
         toast.error("Failed to send request. Please try again later.");
       }
     } catch (error) {
       toast.error("Failed to send request. Please try again later.");
       console.error("Error sending request:", error);
+    } finally {
+      setLoading(false);
     }
 
     // Uncomment if you want to reset the form after submission
@@ -445,14 +449,21 @@ const SellCar: React.FC = () => {
             </div>
             <button
               type="submit"
+              disabled={loading}
               className={`px-2 py-2 text-sm text-white duration-500 border rounded-md md:text-sm md:px-4 hover:shadow-lg  whitespace-nowrap mt-10 min-w-40 ${
                 selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
               }`}
             >
-              Submit
+              {loading ? (
+                <div className="flex items-center justify-center gap-2">
+                  <FaSpinner className="animate-spin" /> Submitting
+                </div>
+              ) : (
+                "Enquire Now"
+              )}
             </button>
             <p className="mt-4 text-[10px] text-gray-500">
-              *Disclaimer: I agree that by clicking the &apos;Book Now&apos;
+              *Disclaimer: I agree that by clicking the &apos;Submit&apos;
               button below, I am explicitly soliciting a call and message via
               whatsapp or any other medium from us.
             </p>

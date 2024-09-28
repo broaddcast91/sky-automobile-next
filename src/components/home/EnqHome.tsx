@@ -2,6 +2,7 @@
 import { useAppContext } from "@/context";
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import toast from "react-hot-toast";
+import { FaSpinner } from "react-icons/fa";
 
 const EnqHome: React.FC = () => {
   // Define the type for the form data
@@ -32,9 +33,11 @@ const EnqHome: React.FC = () => {
       [name]: value,
     }));
   };
+  const [loading, setLoading] = useState(false);
 
   // Handle form submission
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+    setLoading(true);
     event.preventDefault();
     console.log("Form Data:", { ...formData, state: selectedState });
     toast.success("Thank You for contacting us. We will get back to you soon!");
@@ -45,6 +48,7 @@ const EnqHome: React.FC = () => {
       email: "",
       lookingFor: "",
     });
+    setLoading(false);
   };
 
   return (
@@ -90,7 +94,6 @@ const EnqHome: React.FC = () => {
               type="email"
               name="email"
               placeholder="Email"
-           
               // title="Only 10 digit Indian numbers are allowed"
               // pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
               className={`w-full p-2 bg-transparent border-b-2 appearance-none  focus:outline-none placeholder:text-white lg:col-span-2 ${
@@ -149,25 +152,39 @@ const EnqHome: React.FC = () => {
 
             <button
               type="submit"
+              disabled={loading}
               className={`hidden px-2 py-2 mx-auto text-sm duration-500 bg-transparent border rounded-md md:text-sm md:px-4 hover:shadow-lg  w-min whitespace-nowrap lg:block ${
                 selectedState === "Odisha"
                   ? " hover:bg-primaryBlue"
                   : "hover:border-primaryRed hover:bg-primaryRed"
               } `}
             >
-              Enquire Now
+              {loading ? (
+                <div className="flex items-center justify-center gap-2">
+                  <FaSpinner className="animate-spin" /> Submitting
+                </div>
+              ) : (
+                "Enquire Now"
+              )}
             </button>
           </div>
           <div className="flex justify-center py-2 mt-4 lg:hidden">
             <button
               type="submit"
+              disabled={loading}
               className={`px-2 py-2 mt-2 text-sm duration-500 bg-transparent border rounded-md md:text-base md:px-4 hover:shadow-lg  ${
                 selectedState === "Odisha"
                   ? " hover:bg-primaryBlue"
                   : "hover:border-primaryRed hover:bg-primaryRed"
               }`}
             >
-              Enquire Now
+              {loading ? (
+                <div className="flex items-center justify-center gap-2">
+                  <FaSpinner className="animate-spin" /> Submitting
+                </div>
+              ) : (
+                "Enquire Now"
+              )}
             </button>
           </div>
         </form>

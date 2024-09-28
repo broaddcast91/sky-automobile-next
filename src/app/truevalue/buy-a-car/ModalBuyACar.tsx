@@ -4,6 +4,7 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { cgOutlets, odOutlets } from "@/constants";
 import { useRouter } from "next/navigation";
+import { FaSpinner } from "react-icons/fa";
 
 interface ModalBuyACarProps {
   showBuyACar: boolean;
@@ -58,11 +59,13 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
       [name]: value,
     }));
   };
+    const [loading, setLoading] = useState(false);
 
   // Handle form submission
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (
     event
   ) => {
+    setLoading(true);
     event.preventDefault();
     console.log("Form Data:", {
       ...formData,
@@ -99,13 +102,15 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
           "Thank you for contacting us. We will get back to you soon!"
         );
         //  window.location.href = "/thank-you";
-         router.push("/thank-you");
+        router.push("/thank-you");
       } else {
         toast.error("Failed to send request. Please try again later.");
       }
     } catch (error) {
       toast.error("Failed to send request. Please try again later.");
       console.error("Error sending request:", error);
+    } finally {
+      setLoading(false);
     }
     // Optionally, reset form state after submission
     setFormData({
@@ -235,7 +240,13 @@ const ModalBuyACar: React.FC<ModalBuyACarProps> = ({
               } `}
               onClick={() => setShowBuyACar(true)}
             >
-              Enquire Now
+              {loading ? (
+                <div className="flex items-center justify-center gap-2">
+                  <FaSpinner className="animate-spin" /> Submitting
+                </div>
+              ) : (
+                "Enquire Now"
+              )}
             </button>
             <p className=" text-[10px] text-gray-500">
               *Disclaimer: I agree that by clicking the &apos;Enquir Now&apos;

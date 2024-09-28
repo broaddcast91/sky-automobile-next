@@ -5,7 +5,7 @@ import { useAppContext } from "@/context";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import toast from "react-hot-toast";
-import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaSpinner } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 
 // Define the type for the form data
@@ -37,9 +37,12 @@ const ContactUs: React.FC = () => {
       [name]: value,
     });
   };
+    const [loading,setLoading]= useState(false);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     event.preventDefault();
+
     console.log("Form Data:", { ...formData, state: selectedState });
     try {
       // Send the POST request
@@ -72,6 +75,8 @@ const ContactUs: React.FC = () => {
     } catch (error) {
       toast.error("Failed to send request. Please try again later.");
       console.error("Error sending request:", error);
+    }finally{
+      setLoading(false);
     }
     // Uncomment if you want to reset the form after submission
     setFormData({
@@ -199,13 +204,20 @@ const ContactUs: React.FC = () => {
               </div>
               <button
                 type="submit"
+                disabled={loading}
                 className={`px-2 py-2 text-sm text-white duration-500 border rounded-md md:text-sm md:px-4   whitespace-nowrap mt-6 min-w-40 hover:shadow-xl  ${
                   selectedState === "Odisha"
                     ? "bg-primaryBlue"
                     : "bg-primaryRed"
                 }`}
               >
-                Submit
+                {loading ? (
+                  <div className="flex items-center justify-center gap-2">
+                    <FaSpinner className="animate-spin" /> Submitting
+                  </div>
+                ) : (
+                  "Submit"
+                )}
               </button>
               <p className="mt-6 text-xs text-gray-500">
                 *Disclaimer: By clicking &apos;Submit&apos;, you have agreed to

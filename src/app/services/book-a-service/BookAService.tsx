@@ -11,6 +11,7 @@ import React, {
   useState,
 } from "react";
 import toast from "react-hot-toast";
+import { FaSpinner } from "react-icons/fa";
 
 // Define the type for the form data
 interface FormData {
@@ -60,8 +61,10 @@ const BookAService: React.FC = () => {
       [e.target.name]: e.target.value,
     });
   };
+    const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     event.preventDefault();
     console.log("Form Data:", { ...formData, state: selectedState });
     try {
@@ -95,6 +98,8 @@ const BookAService: React.FC = () => {
     } catch (error) {
       toast.error("Failed to send request. Please try again later.");
       console.error("Error sending request:", error);
+    }finally{
+      setLoading(false);
     }
 
     // Uncomment if you want to reset the form after submission
@@ -352,11 +357,18 @@ const BookAService: React.FC = () => {
             </div>
             <button
               type="submit"
+              disabled={loading}
               className={`px-2 py-2 text-sm text-white duration-500 border rounded-md md:text-sm md:px-4 hover:shadow-lg  whitespace-nowrap mt-6 min-w-40 ${
                 selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
               }`}
             >
-              Enquire Now
+              {loading ? (
+                <div className="flex items-center justify-center gap-2">
+                  <FaSpinner className="animate-spin" /> Submitting
+                </div>
+              ) : (
+                "Book Now"
+              )}
             </button>
             <p className="mt-4 text-[10px] text-gray-500">
               *Disclaimer: I agree that by clicking the &apos;Book Now&apos;

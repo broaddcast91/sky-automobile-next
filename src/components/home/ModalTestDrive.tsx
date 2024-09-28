@@ -4,6 +4,7 @@ import { useAppContext } from "@/context";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { FaSpinner } from "react-icons/fa";
 
 interface ModalTestDriveProps {
   showTestDrive: boolean;
@@ -59,11 +60,13 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
       [name]: value,
     }));
   };
+    const [loading, setLoading] = useState(false);
 
   // Handle form submission
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (
     event
   ) => {
+    setLoading(true);
     event.preventDefault();
     console.log("Form Data:", { ...formData, state: selectedState });
 
@@ -91,13 +94,15 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
           "Thank you for contacting us. We will get back to you soon!"
         );
         //  window.location.href = "/thank-you";
-         router.push("/thank-you");
+        router.push("/thank-you");
       } else {
         toast.error("Failed to send request. Please try again later.");
       }
     } catch (error) {
       toast.error("Failed to send request. Please try again later.");
       console.error("Error sending request:", error);
+    } finally {
+      setLoading(false);
     }
 
     // Optionally, reset form state after submission
@@ -316,13 +321,20 @@ const ModalTestDrive: React.FC<ModalTestDriveProps> = ({
 
             <button
               type="submit"
+              disabled={loading}
               className={`mt-4  px-2 py-2  text-sm duration-500  border rounded-md md:text-sm md:px-4 hover:shadow-lg   whitespace-nowrap text-white  ${
                 selectedState === "Odisha"
                   ? " bg-primaryBlue"
                   : "border-primaryRed bg-primaryRed"
               } `}
             >
-              Book Now
+              {loading ? (
+                <div className="flex items-center justify-center gap-2">
+                  <FaSpinner className="animate-spin" /> Submitting
+                </div>
+              ) : (
+                "Book Now"
+              )}
             </button>
             <p className="mt-4 text-[10px] text-gray-500">
               *Disclaimer: I agree that by clicking the &apos;Book Now&apos;

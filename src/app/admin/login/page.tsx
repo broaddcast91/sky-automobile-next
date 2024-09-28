@@ -5,14 +5,18 @@ import Image from "next/image";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useDataContext } from "@/context/index2";
+import { FaSpinner } from "react-icons/fa";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+    const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { setRefreshing, refreshing } = useDataContext();
 
   const handleSubmit = async (e: React.FormEvent) => {
+    setLoading(true);
     e.preventDefault(); // Prevent default form submission
     try {
       const options = {
@@ -44,6 +48,8 @@ const Login: React.FC = () => {
     } catch (error) {
       console.error("Error logging in:", error);
       toast.error("Login failed");
+    }finally{
+      setLoading(false);
     }
   };
 
@@ -125,13 +131,20 @@ const Login: React.FC = () => {
             {/* Submit button */}
             <button
               type="submit"
+              disabled={loading}
               //   disabled={!isFormValid}
               className='hover:shadow-custom-red rounded-xl px-32 py-2.5 overflow-hidden group bg-[#EA3A51] relative
                    hover:bg-gradient-to-r hover:from-[#EA3A51] hover:to-[#EA3A51]  hover:ring-4 hover:ring-[#fa0324] transition-all ease-out duration-100"
               '
             >
               <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-24 bg-white opacity-15 rotate-12 group-hover:-translate-x-72 ease"></span>
-              <span className="relative">Submit</span>
+              {loading ? (
+                <div className="flex items-center justify-center gap-2">
+                  <FaSpinner className="animate-spin" /> Submitting
+                </div>
+              ) : (
+                "Login Now"
+              )}
             </button>
           </form>
         </div>

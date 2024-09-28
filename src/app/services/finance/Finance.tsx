@@ -13,6 +13,7 @@ import toast from "react-hot-toast";
 import EMISlider from "./EMISlider";
 import { useAppContext } from "@/context";
 import { useRouter } from "next/navigation";
+import { FaSpinner } from "react-icons/fa";
 
 interface FormData {
   name: string;
@@ -56,6 +57,7 @@ const Finance: React.FC = () => {
   const [value1, setValue1] = useState(MIN1);
   const [value2, setValue2] = useState(MIN2);
   const [value3, setValue3] = useState(MIN3);
+    const [loading, setLoading] = useState(false);
 
   // Calculate the EMI based on current slider values
   const calculateEMI = useCallback(
@@ -92,6 +94,7 @@ const Finance: React.FC = () => {
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     event.preventDefault();
     console.log("Form Data:", { ...formData, state: selectedState });
 
@@ -120,13 +123,15 @@ const Finance: React.FC = () => {
           "Thank you for contacting us. We will get back to you soon!"
         );
         //  window.location.href = "/thank-you";
-         router.push("/thank-you");
+        router.push("/thank-you");
       } else {
         toast.error("Failed to send request. Please try again later.");
       }
     } catch (error) {
       toast.error("Failed to send request. Please try again later.");
       console.error("Error sending request:", error);
+    } finally {
+      setLoading(false);
     }
 
     // Reset the form after submission
@@ -369,7 +374,9 @@ const Finance: React.FC = () => {
                     </h6>
                   </div>
                 </div>
-                <p className="text-xs text-gray-500 mt-4">Note:drag the slider to change the values</p>
+                <p className="text-xs text-gray-500 mt-4">
+                  Note:drag the slider to change the values
+                </p>
               </div>
             </div>
           </div>
@@ -520,9 +527,16 @@ const Finance: React.FC = () => {
           </div>
           <button
             type="submit"
+            disabled={loading}
             className=" mt-4 text-center bg-primaryRed rounded-sm py-2 text-white px-6 lg:px-10"
           >
-            Submit
+            {loading ? (
+              <div className="flex items-center justify-center gap-2">
+                <FaSpinner className="animate-spin" /> Submitting
+              </div>
+            ) : (
+              "Submit"
+            )}
           </button>
           <p className="mt-6 text-xs text-gray-500">
             *Disclaimer: By clicking &apos;Submit&apos;, I am explicitly
