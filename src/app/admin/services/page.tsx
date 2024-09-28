@@ -30,7 +30,7 @@ const Services = () => {
        } else {
          endPoint = "insurance";
        }
-       if (rangeValue === "") {
+       if (rangeValue === "" || rangeValue === "Between") {
          response = await fetch(`/api/${endPoint}?rangeValue=allData`);
        } else {
          response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
@@ -71,7 +71,7 @@ const Services = () => {
   useEffect(() => {
     setRangeValue("");
   }, [selectedTable]);
-  
+
   const columns = [
     columnHelper.accessor("date", {
       header: "Date",

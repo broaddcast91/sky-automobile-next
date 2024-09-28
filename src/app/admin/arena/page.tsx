@@ -11,6 +11,8 @@ const Arena = () => {
   const { refreshing, setLoading, arenaData, setArenaData } = useDataContext();
 
   const [rangeValue, setRangeValue] = useState("");
+  const [dateRange, setDateRange] = useState({ startDate: "", endDate: "" });
+
   useEffect(() => {
     const token = Cookies.get("token");
     if (!token) {
@@ -21,7 +23,7 @@ const Arena = () => {
     const fetchData = async () => {
       try {
         let response = null;
-        if (rangeValue === "") {
+        if (rangeValue === "" || rangeValue === "Between") {
           response = await fetch(
             `/api/on-road-price?rangeValue=allData&channel=Arena`
           );

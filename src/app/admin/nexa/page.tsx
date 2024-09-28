@@ -21,13 +21,13 @@ const Arena = () => {
     const fetchData = async () => {
       try {
         let response = null;
-        if (rangeValue === "") {
-          response = await fetch(
-            `/api/on-road-price?rangeValue=allData&channel=Nexa`
-          );
-        } else {
-          response = await fetch(`/api/on-road-price?rangeValue=${rangeValue}`);
-        }
+       if (rangeValue === "" || rangeValue === "Between") {
+         response = await fetch(
+           `/api/on-road-price?rangeValue=allData&channel=Nexa`
+         );
+       } else {
+         response = await fetch(`/api/on-road-price?rangeValue=${rangeValue}`);
+       }
 
         if (!response?.ok) {
           throw new Error("Network response was not ok");

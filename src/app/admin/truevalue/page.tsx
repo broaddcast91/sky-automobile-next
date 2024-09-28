@@ -17,6 +17,65 @@ const TrueValue = () => {
   } = useDataContext();
   const [showSell, setShowSell] = React.useState(false);
   const [rangeValue, setRangeValue] = React.useState("");
+  
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token) {
+      toast.error("Please login first");
+      window.location.href = "/admin/login";
+    }
+
+    const fetchData = async () => {
+      try {
+        let response = null;
+        let endPoint = "";
+        if (showSell) {
+          endPoint = "sell-your-car";
+        } else {
+          endPoint = "buy-a-car";
+        }
+        if (rangeValue === "" || rangeValue === "Between") {
+          response = await fetch(`/api/${endPoint}?rangeValue=allData`);
+        } else {
+          response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
+        }
+
+        if (!response?.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const result = await response.json();
+        if (showSell) {
+          setSellACarData(result);
+        } else {
+          setBuyACarData(result);
+        }
+        // Update state with the fetched data
+        setLoading(false);
+        if (result.length === 0) {
+          toast.error("No data found");
+        } else
+          toast.success(
+            `${showSell ? "Sell A Car" : "Buy A Car"} Data fetched successfully`
+          );
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    };
+
+    fetchData();
+  }, [refreshing, rangeValue, showSell]);
+
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token) {
+      toast.error("Please login first");
+      window.location.href = "/admin/login";
+    }
+  }, [refreshing]);
+
+  useEffect(() => {
+    setRangeValue("");
+  }, [showSell]);
 
   const columnHelper = createMRTColumnHelper<any>();
 
@@ -127,65 +186,6 @@ const TrueValue = () => {
     //   size: 220,
     // }),
   ];
-
-  useEffect(() => {
-    const token = Cookies.get("token");
-    if (!token) {
-      toast.error("Please login first");
-      window.location.href = "/admin/login";
-    }
-
-    const fetchData = async () => {
-      try {
-        let response = null;
-        let endPoint = "";
-        if (showSell) {
-          endPoint = "sell-your-car";
-        } else {
-          endPoint = "buy-a-car";
-        }
-        if (rangeValue === "") {
-          response = await fetch(`/api/${endPoint}?rangeValue=allData`);
-        } else {
-          response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
-        }
-
-        if (!response?.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const result = await response.json();
-        if (showSell) {
-          setSellACarData(result);
-        } else {
-          setBuyACarData(result);
-        }
-        // Update state with the fetched data
-        setLoading(false);
-        if (result.length === 0) {
-          toast.error("No data found");
-        } else
-          toast.success(
-            `${showSell ? "Sell A Car" : "Buy A Car"} Data fetched successfully`
-          );
-      } catch (error) {
-        console.error("Fetch error:", error);
-      }
-    };
-
-    fetchData();
-  }, [refreshing, rangeValue, showSell]);
-
-  useEffect(() => {
-    const token = Cookies.get("token");
-    if (!token) {
-      toast.error("Please login first");
-      window.location.href = "/admin/login";
-    }
-  }, [refreshing]);
-
-  useEffect(() => {
-    setRangeValue("");
-  }, [showSell]);
 
   return (
     <div className="bg-white min-h-[calc(100vh-25px)] p-2  rounded-lg mr-2 mt-1">

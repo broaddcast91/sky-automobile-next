@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+
 import {
   MaterialReactTable,
   useMaterialReactTable,
@@ -11,6 +11,7 @@ import { mkConfig, generateCsv, download } from "export-to-csv";
 import { FiRefreshCcw, FiSearch } from "react-icons/fi";
 import { useDataContext } from "@/context/index2";
 import { ImSpinner } from "react-icons/im";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 const EnqTable = ({
   data,
@@ -25,8 +26,19 @@ const EnqTable = ({
   rangeValue?: string;
   setRangeValue?: any;
 }) => {
-
   const { setRefreshing, refreshing, loading } = useDataContext();
+  const [dateRange, setDateRange] = useState({ startDate: "", endDate: "" });
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    // You can now use dateRange for your logic
+    console.log(dateRange);
+  };
+
+  const handleDateChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    const { name, value } = e.target;
+    setDateRange((prev) => ({ ...prev, [name]: value }));
+  };
 
   const csvConfig = mkConfig({
     fieldSeparator: ",",
@@ -61,8 +73,6 @@ const EnqTable = ({
     const csv = generateCsv(csvConfig)(data);
     download(csvConfig)(csv);
   };
-
-
 
   const handleRefreshData = () => {
     // window.location.reload();
@@ -141,7 +151,7 @@ const EnqTable = ({
           // onChange={handleChangeDateRange}
           value={rangeValue}
           onChange={(e) => setRangeValue(e.target.value)}
-          className="h-9 p-1    border-none foucs:outline-none"
+          className="h-9 p-1 border-none foucs:outline-none"
           variant="outlined"
           style={{ color: "#303a9b", borderColor: "#303a9b" }}
         >
@@ -157,28 +167,28 @@ const EnqTable = ({
           <option value="Between">Between Dates</option>
         </Select>{" "}
         {rangeValue === "Between" && (
-          <form className="flex gap-2">
+          <form onSubmit={handleSubmit} className="flex gap-2">
             <div className="relative">
-              {" "}
               <input
                 type="date"
-                name=""
-                id=""
+                name="startDate"
+                value={dateRange.startDate}
                 max={new Date().toISOString().split("T")[0]}
                 required
+                onChange={handleDateChange}
                 className="border rounded-md px-4 py-1.5"
               />
               <label className="absolute -top-2 left-1 text-xs bg-white px-1 text-gray-400">
                 Start Date
               </label>
-            </div>{" "}
+            </div>
             <div className="relative">
-              {" "}
               <input
                 type="date"
-                name=""
-                id=""
+                name="endDate"
+                value={dateRange.endDate}
                 required
+                onChange={handleDateChange}
                 className="border rounded-md px-4 py-1.5"
               />
               <label className="absolute -top-2 left-1 text-xs bg-white px-1 text-gray-400">

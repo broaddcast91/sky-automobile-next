@@ -41,7 +41,7 @@ const Others = () => {
         } else {
           endPoint = "test-drive";
         }
-        if (rangeValue === "") {
+        if (rangeValue === "" || rangeValue === "Between") {
           response = await fetch(`/api/${endPoint}?rangeValue=allData`);
         } else {
           response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
