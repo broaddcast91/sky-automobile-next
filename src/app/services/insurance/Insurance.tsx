@@ -152,7 +152,6 @@ const Insurance: React.FC = () => {
   //     dateInputRef.current.showPicker();
   //   }
   // };
-
   return (
     <div className="">
       <Header />

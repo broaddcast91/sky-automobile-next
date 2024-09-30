@@ -190,7 +190,7 @@ const Footer: React.FC = () => {
                 title="Helpful Links"
                 selectedState={selectedState}
                 links={[
-                  { label: "Buy a Car", href: "/truevalue/buy-a-car" },
+                  // { label: "Buy a Car", href: "/truevalue/buy-a-car" },
                   { label: "Sell Your Car", href: "/truevalue/sell-a-car" },
                   { label: "Offers", href: "/offers" },
                   {

@@ -199,8 +199,8 @@ const QuickActions: React.FC<QuickActionsProps> = ({ isHeading }) => {
                 perfect match today! */}
                 Discover new True Value cars and drive home your perfect match!
               </p>
-              <Link href={"/truevalue/buy-a-car"}>
-                {" "}
+              <Link href={"/truevalue/sell-a-car"}>
+                {/* <Link href={"/truevalue/buy-a-car"}> */}{" "}
                 <button
                   className={`px-4 py-2 mx-auto mt-4 text-sm border rounded-lg group-hover:border-white hover:bg-white  md:mx-0 ${
                     selectedState === "Odisha"
@@ -209,7 +209,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({ isHeading }) => {
                   }`}
                   aria-label="TrueValue - Buy A Car Now"
                 >
-                  TrueValue - Buy A Car Now
+                  TrueValue - Sell Your Car Now
                 </button>{" "}
               </Link>
             </div>

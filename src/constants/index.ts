@@ -3059,9 +3059,11 @@ export const cgOutlets = [
       {
         name: "SKY AUTOMOBILES - MAGARLOAD",
         channel: "Arena",
-        address: "",
-        map: "",
-        iframe: "",
+        address:
+          "Kasra No.238/2 Sehara Dabri, Raipur Rd, Dhamtari, Chhattisgarh 492009",
+        map: "https://maps.app.goo.gl/QHf1zrQRmGkqqEkL8",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.202978453152!2d81.5759785110188!3d20.742565497466607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2f29745ccaded5%3A0x9e1b18ca6780297f!2sMaruti%20Suzuki%20Service%20(Sky%20Automobiles)!5e0!3m2!1sen!2sin!4v1726034449515!5m2!1sen!2sin",
         salesPersonName: "Mr. Santosh Singh",
         phone: "9893307417",
         servicePersonName: "",
@@ -3105,9 +3107,12 @@ export const cgOutlets = [
       {
         name: "SKY AUTOMOBILES - BALODA BAZAAR",
         channel: "Nexa",
-        address: "",
-        map: "",
-        iframe: "",
+        address:
+          "M547+FP9, Ambedkar Chowk, Raipur Rd, Baloda Bazar, Chhattisgarh 493332",
+        map: "https://maps.app.goo.gl/TjGXALPwd6JNrg4q6",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3708.8468887026147!2d82.17568717556416!3d21.63088918017342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28808ee8817f3f%3A0x99a6617344ab4a70!2sMaruti%20Suzuki%20Arena%20(Sky%20Automobiles%2C%20Baloda%20Bazar%2C%20Raipur%20Road)!5e0!3m2!1sen!2sin!4v1726035214037!5m2!1sen!2sin",
+
         salesPersonName: "Mr. Rajneesh",
         phone: "9111107013",
         servicePersonName: "Mr. Deepak Pandey ",
@@ -3117,9 +3122,11 @@ export const cgOutlets = [
       {
         name: "SKY AUTOMOBILES - DHAMTARI",
         channel: "Nexa",
-        address: "",
-        map: "",
-        iframe: "",
+        address:
+          "Kasra No.238/2 Sehara Dabri, Raipur Rd, Dhamtari, Chhattisgarh 492009",
+        map: "https://maps.app.goo.gl/QHf1zrQRmGkqqEkL8",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.202978453152!2d81.5759785110188!3d20.742565497466607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2f29745ccaded5%3A0x9e1b18ca6780297f!2sMaruti%20Suzuki%20Service%20(Sky%20Automobiles)!5e0!3m2!1sen!2sin!4v1726034449515!5m2!1sen!2sin",
         salesPersonName: "Mr. Pramod ",
         phone: "9111107014",
         servicePersonName: "Mr. Rajesh Vishwakarma",
@@ -3135,9 +3142,11 @@ export const cgOutlets = [
       {
         name: "SKY AUTOMOBILES - Sarona",
         channel: "Workshop",
-        address: "",
-        map: "",
-        iframe: "",
+        address:
+          "7H2H+8RP, Sarona Rd, Doomar Talab Thana Rd, Raipur, Chhattisgarh 492001",
+        map: "https://maps.app.goo.gl/dAPsRr2sCYzmb75p8",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d495.0767793354671!2d81.5795559!3d21.2507596!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28df004a1217a1%3A0xa06f141c7155abca!2sMaruti%20Suzuki%20Service%2C%20Sarona!5e1!3m2!1sen!2sin!4v1727678892957!5m2!1sen!2sin",
         salesPersonName: "",
         phone: "",
         servicePersonName: "Mr. Yogesh Sahu",
@@ -3195,9 +3204,12 @@ export const cgOutlets = [
       {
         name: "SKY AUTOMOBILES - JAGDALPUR ",
         channel: "True Value",
-        address: "",
-        map: "",
-        iframe: "",
+        address:
+          "Ganga Nagar, Ward, Geedam Rd, Hikmipara, Jagdalpur, Chhattisgarh 494001",
+        map: "https://maps.app.goo.gl/HPHaJ3kJZ6H33qxG8",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15083.258693451746!2d81.9894603!3d19.0718842!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a301334ac7f5107%3A0xafb4e93610c07b40!2sNEXA%20(Sky%20Automobiles%2C%20Jagdalpur%2C%20Geedam%20Road)!5e0!3m2!1sen!2sin!4v1726038754903!5m2!1sen!2sin",
+
         salesPersonName: "Mr. Ramdas Mukharjee",
         phone: "6260288613",
         servicePersonName: "",
@@ -3388,7 +3400,8 @@ export const odOutlets = [
       {
         name: "SKY AUTOMOBILES - BALIGUDA",
         channel: "Arena",
-        address: "",
+        address:
+          "Maruti Suzuki Arena ( Sky Automobiles, Balliguda, Odisha 762103",
         map: "https://maps.app.goo.gl/Bpm8zFiEK8Q8pteQ8",
         iframe:
           "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7488.75276110039!2d83.90309825869141!3d20.201674924864673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a237580e8151827%3A0x775f31287b8dca23!2sMaruti%20Suzuki%20Arena%20(%20Sky%20Automobiles%2C%20Baliguda%2C%20Kandhamala)!5e0!3m2!1sen!2sin!4v1727088811313!5m2!1sen!2sin",
@@ -3489,9 +3502,11 @@ export const odOutlets = [
       {
         name: "SKY AUTOMOBILES - Berhampur",
         channel: "True Value",
-        address: "",
-        map: "",
-        iframe: "",
+        address:
+          "N.H. - 5, Amabapua Mouza, Between Gopalpur, Junction, Jaganathpur, Brahmapur, Odisha 760007",
+        map: "https://maps.app.goo.gl/GnR9rkkmAFKxoPHE6",
+        iframe:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.3216906316534!2d84.84798137601607!3d19.31184228194186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3d51b3544ed31d%3A0xa3fb10ccd1f5fc83!2sNEXA%20(Sky%20Automobiles%2C%20Ganjam%2C%20Berhampur)!5e0!3m2!1sen!2sin!4v1727091677429!5m2!1sen!2sin",
         salesPersonName: "Mr. Samarendra Das",
         phone: "7381019416",
         servicePersonName: "",

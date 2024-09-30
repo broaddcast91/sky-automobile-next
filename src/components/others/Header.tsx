@@ -465,7 +465,7 @@ const Header = () => {
                 ))}
               {selectedTab === 2 && (
                 <div className=" col-span-4 w-full  gap-1 min-h-24 pb-2 pl-4 flex xl:flex-col justify-center xl:justify-start items-center xl:items-start">
-                  <button
+                  {/* <button
                     aria-label="Buy A Car Now"
                     className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 xl:w-full max-w-md ${
                       selectedState === "Odisha"
@@ -480,9 +480,9 @@ const Header = () => {
                       {" "}
                       Buy A Car Now <FaCaretRight />
                     </Link>
-                  </button>
+                  </button> */}
                   <button
-                    aria-label="Buy A Car Now"
+                    aria-label="Buy Your Car Now"
                     className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 xl:w-full max-w-md ${
                       selectedState === "Odisha"
                         ? "hover:text-white hover:bg-primaryBlue text-primaryBlue border border-primaryBlue  "
@@ -494,7 +494,7 @@ const Header = () => {
                       href="/truevalue/sell-a-car"
                     >
                       {" "}
-                      Sell A Car Now <FaCaretRight />
+                      Sell Your Car Now <FaCaretRight />
                     </Link>
                   </button>
                 </div>
