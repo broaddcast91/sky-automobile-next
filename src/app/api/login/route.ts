@@ -11,7 +11,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
     await connectDB();
     const reqBody = await req.json();
     const { email, password } = reqBody;
-    console.log(reqBody);
     if (!email || !password) {
       return NextResponse.json(
         { message: "Reqired fields are missing" },
@@ -46,13 +45,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
     };
 
     //create token
-    const token = await jwt.sign(
-      tokenData,
-      process.env.JWT_SECRET! ,
-      {
-        expiresIn: "1d",
-      }
-    );
+    const token = await jwt.sign(tokenData, process.env.JWT_SECRET!, {
+      expiresIn: "1d",
+    });
 
     const expireDuration = new Date(Date.now() + 12 * 60 * 60 * 1000);
     const cookieString = `token=${token}; expires = ${expireDuration}; path=/;`;
@@ -80,6 +75,3 @@ export async function POST(req: NextRequest, res: NextResponse) {
     return NextResponse.json({ message: err.message }, { status: 500 });
   }
 }
-
-
-

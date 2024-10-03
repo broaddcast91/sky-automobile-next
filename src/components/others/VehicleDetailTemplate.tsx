@@ -28,7 +28,7 @@ interface VehiceProps {
 
 const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
   const { selectedState } = useAppContext();
-    const router = useRouter();
+  const router = useRouter();
 
   const data = models[index];
   const [selectedColor, setSelectedColor] = useState<number>(0);
@@ -40,7 +40,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
     variant: data?.variants[0]?.variant || "",
   });
   const [selected, setSelected] = useState("Exterior");
-  const [loading,setLoading]= useState(false);
+  const [loading, setLoading] = useState(false);
   const [showTestDrive, setShowTestDrive] = useState(false);
 
   const handleClickColor = (index: number): void => {
@@ -59,7 +59,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    setLoading(true)
+    setLoading(true);
     event.preventDefault();
     console.log("Form Data:", {
       ...formData,
@@ -96,7 +96,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
           "Thank you for contacting us. We will get back to you soon!"
         );
         //  window.location.href = "/thank-you";
-          router.push("/thank-you");
+        router.push("/thank-you");
       } else {
         toast.error("Failed to send request. Please try again later.");
       }
@@ -115,7 +115,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
     if (formElement) {
       formElement.reset();
     }
-    setLoading(false)
+    setLoading(false);
   };
 
   if (!data) return null;
@@ -356,7 +356,9 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
               <button
                 type="submit"
                 disabled={loading}
-                className={`px-4 py-2  ${loading ? "cursor-not-allowed" : ""} text-white duration-500 border-b-2   md:px-4 hover:shadow-lg  whitespace-nowrap ${
+                className={`px-4 py-2  ${
+                  loading ? "cursor-not-allowed" : ""
+                } text-white duration-500 border-b-2   md:px-4 hover:shadow-lg  whitespace-nowrap ${
                   selectedState === "Odisha"
                     ? "bg-primaryBlue border-primaryBlue"
                     : "bg-primaryRed border-primaryRed"
@@ -570,7 +572,14 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
                   >
                     Book Test Drive
                   </button>{" "} */}
-                    <Link href={models?.[vehicle]?.link} className="w-full">
+                    <Link
+                      href={
+                        selectedState === "Odisha"
+                          ? models?.[vehicle]?.linkOD
+                          : models?.[vehicle]?.linkCG
+                      }
+                      className="w-full"
+                    >
                       <button
                         className={`w-full border col-span-4 border-white font-bold text-sm rounded-lg px-2 py-2  ${
                           selectedState === "Odisha"

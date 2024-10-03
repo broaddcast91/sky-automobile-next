@@ -1,4 +1,5 @@
 'use client';
+import Image from "next/image";
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -8,9 +9,11 @@ const HeroSection = () => {
   return (
     <main>
       <div className="relative min-h-screen bg-center bg-primaryRed">
-        <img
-          src="https://saboonexa.in/static/media/Maruti_Suzuki_Nexa_Strong_Hybrid_Saboo_RKS_Motor_%20(1).723741a650166d1c9b42.webp"
+        <Image
+          src='/images/other/Home_HeroBanner_1.webp'
           alt=""
+          height={1080}
+          width={1920}
           className="object-cover w-full h-screen"
         />
 
