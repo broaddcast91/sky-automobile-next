@@ -11,7 +11,7 @@ import { mkConfig, generateCsv, download } from "export-to-csv";
 import { FiRefreshCcw, FiSearch } from "react-icons/fi";
 import { useDataContext } from "@/context/index2";
 import { ImSpinner } from "react-icons/im";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
 const EnqTable = ({
   data,
@@ -19,15 +19,18 @@ const EnqTable = ({
   fileName,
   rangeValue,
   setRangeValue,
+  dateRange,
+  setDateRange,
 }: {
   data: any;
   columns: any;
   fileName?: string;
   rangeValue?: string;
   setRangeValue?: any;
+  dateRange?: any;
+  setDateRange?: any;
 }) => {
   const { setRefreshing, refreshing, loading } = useDataContext();
-  const [dateRange, setDateRange] = useState({ startDate: "", endDate: "" });
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
@@ -37,7 +40,7 @@ const EnqTable = ({
 
   const handleDateChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
-    setDateRange((prev) => ({ ...prev, [name]: value }));
+    setDateRange((prev: any) => ({ ...prev, [name]: value }));
   };
 
   const csvConfig = mkConfig({
@@ -78,6 +81,12 @@ const EnqTable = ({
     // window.location.reload();
     setRefreshing(!refreshing);
   };
+
+  useEffect(() => {
+    if (rangeValue !== "Between") {
+      setDateRange({ startDate: "", endDate: "" });
+    }
+  }, [rangeValue]);
 
   // const handleExportRows = (rows: MRT_Row<Person>[]) => {
   //   const rowData = rows.map((row) => row.original);
@@ -173,7 +182,9 @@ const EnqTable = ({
                 type="date"
                 name="startDate"
                 value={dateRange.startDate}
-                max={new Date().toISOString().split("T")[0]}
+                max={
+                  dateRange.endDate || new Date().toISOString().split("T")[0]
+                }
                 required
                 onChange={handleDateChange}
                 className="border rounded-md px-4 py-1.5"
@@ -198,6 +209,10 @@ const EnqTable = ({
             </div>
             <button
               type="submit"
+              onSubmit={(e) => {
+                e.preventDefault();
+                setRefreshing(!refreshing);
+              }}
               className="mr-10 ml-2 flex items-center gap-2 border px-4 py-1 rounded-lg bg-primaryBlue text-white"
             >
               <FiSearch /> Search

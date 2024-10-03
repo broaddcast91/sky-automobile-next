@@ -11,7 +11,7 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-    const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { setRefreshing, refreshing } = useDataContext();
 
@@ -48,7 +48,7 @@ const Login: React.FC = () => {
     } catch (error) {
       console.error("Error logging in:", error);
       toast.error("Login failed");
-    }finally{
+    } finally {
       setLoading(false);
     }
   };

@@ -23,11 +23,13 @@ const Arena = () => {
     const fetchData = async () => {
       try {
         let response = null;
-        if (rangeValue === "" || rangeValue === "Between") {
+        if (rangeValue === "") {
           response = await fetch(
             `/api/on-road-price?rangeValue=allData&channel=Arena`
           );
-        } else {
+        } else if (rangeValue === "Between" && dateRange.startDate && dateRange.endDate) {
+          response = await fetch(`/api/on-road-price?rangeValue=${rangeValue}&startDate=${dateRange.startDate}&endDate=${dateRange.endDate}`);
+        } else if (rangeValue !== "Between") {
           response = await fetch(`/api/on-road-price?rangeValue=${rangeValue}`);
         }
 
@@ -46,7 +48,7 @@ const Arena = () => {
     };
 
     fetchData();
-  }, [refreshing, setLoading, rangeValue]);
+  }, [refreshing, setLoading, rangeValue, dateRange.endDate, dateRange.startDate]);
 
   const columnHelper = createMRTColumnHelper<any>();
 
@@ -103,6 +105,8 @@ const Arena = () => {
           fileName="Arena Enquiries"
           rangeValue={rangeValue}
           setRangeValue={setRangeValue}
+          dateRange={dateRange}
+          setDateRange={setDateRange}
         />
       </div>
     </div>
