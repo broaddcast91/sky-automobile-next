@@ -207,41 +207,6 @@ const Header = () => {
               </div>
             </div>
 
-            {/* <div className="relative  ">
-              <div
-                onMouseEnter={() => setIsVehicle(false)}
-                // href="/outlets"
-                className={`font-medium  peer  cursor-default flex  items-center gap-1 ${
-                  selectedState === "Odisha"
-                    ? "hover:text-primaryBlue"
-                    : "hover:text-primaryRed"
-                }`}
-              >
-                Outlets <FaCaretRight className="rotate-90" />
-              </div>
-              <div className=" absolute top-4 -left-1/3 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
-                <Link
-                  href="/outlets/chhattisgarh-outlets"
-                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
-                    selectedState === "Odisha"
-                      ? " hover:bg-primaryBlue"
-                      : "hover:bg-primaryRed"
-                  }`}
-                >
-                  Chhattisgarh <FaCaretRight />
-                </Link>{" "}
-                <Link
-                  href="/outlets/odisa-outlets"
-                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
-                    selectedState === "Odisha"
-                      ? " hover:bg-primaryBlue"
-                      : "hover:bg-primaryRed"
-                  }`}
-                >
-                  Odisa <FaCaretRight />
-                </Link>
-              </div>
-            </div> */}
             <Link
               onMouseEnter={() => setIsVehicle(false)}
               href={`${
@@ -280,17 +245,51 @@ const Header = () => {
               Blogs
             </Link> */}
 
-            <Link
-              onMouseEnter={() => setIsVehicle(false)}
-              href="/career"
-              className={`font-medium  ${
-                selectedState === "Odisha"
-                  ? "hover:text-primaryBlue"
-                  : "hover:text-primaryRed"
-              }`}
-            >
-              Career
-            </Link>
+            <div className="relative  ">
+              <div
+                onMouseEnter={() => setIsVehicle(false)}
+                // href="/outlets"
+                className={`font-medium  peer  cursor-default flex  items-center gap-1 ${
+                  selectedState === "Odisha"
+                    ? "hover:text-primaryBlue"
+                    : "hover:text-primaryRed"
+                }`}
+              >
+                MORE <FaCaretRight className="rotate-90" />
+              </div>
+              <div className=" absolute top-4 -left-1/3 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
+                <Link
+                  href="/career"
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                    selectedState === "Odisha"
+                      ? " hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed"
+                  }`}
+                >
+                  Career <FaCaretRight />
+                </Link>{" "}
+                <Link
+                  href="/blogs"
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                    selectedState === "Odisha"
+                      ? " hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed"
+                  }`}
+                >
+                  Blogs <FaCaretRight />
+                </Link>
+                <Link
+                  href="/privacy-policy"
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                    selectedState === "Odisha"
+                      ? " hover:bg-primaryBlue"
+                      : "hover:bg-primaryRed"
+                  }`}
+                >
+                  Privacy Policy <FaCaretRight />
+                </Link>
+              </div>
+            </div>
           </nav>
 
           <div className="flex items-center gap-2 mr-1 ">
@@ -314,7 +313,12 @@ const Header = () => {
               <FaMapMarkerAlt className="" />
               {selectedState && (
                 <p className={`  text-sm uppercase `}>
-                  {selectedState === "Odisha" ? "Odisha" : "Chhattisgarh"}
+                  <span className="hidden md:block">
+                    {selectedState === "Odisha" ? "Odisha" : "Chhattisgarh"}
+                  </span>
+                  <span className=" md:hidden">
+                    {selectedState === "Odisha" ? "OD" : "CG"}
+                  </span>
                 </p>
               )}
               <FaCaretRight className="rotate-90" />
