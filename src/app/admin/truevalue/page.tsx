@@ -17,7 +17,11 @@ const TrueValue = () => {
   } = useDataContext();
   const [showSell, setShowSell] = React.useState(false);
   const [rangeValue, setRangeValue] = React.useState("");
-  
+  const [dateRange, setDateRange] = React.useState({
+    startDate: "",
+    endDate: "",
+  });
+
   useEffect(() => {
     const token = Cookies.get("token");
     if (!token) {
@@ -34,9 +38,17 @@ const TrueValue = () => {
         } else {
           endPoint = "buy-a-car";
         }
-        if (rangeValue === "" || rangeValue === "Between") {
+        if (rangeValue === "") {
           response = await fetch(`/api/${endPoint}?rangeValue=allData`);
-        } else {
+        } else if (
+          rangeValue === "Between" &&
+          dateRange.startDate &&
+          dateRange.endDate
+        ) {
+          response = await fetch(
+            `/api/${endPoint}?rangeValue=${rangeValue}&startDate=${dateRange.startDate}&endDate=${dateRange.endDate}`
+          );
+        } else if (rangeValue !== "Between") {
           response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
         }
 
@@ -63,7 +75,13 @@ const TrueValue = () => {
     };
 
     fetchData();
-  }, [refreshing, rangeValue, showSell]);
+  }, [
+    refreshing,
+    setLoading,
+    rangeValue,
+    dateRange.endDate,
+    dateRange.startDate,
+  ]);
 
   useEffect(() => {
     const token = Cookies.get("token");
@@ -221,6 +239,8 @@ const TrueValue = () => {
           fileName={showSell ? "Sell A Car Enquiries" : "Buy A Car Enquiries"}
           rangeValue={rangeValue}
           setRangeValue={setRangeValue}
+          dateRange={dateRange}
+          setDateRange={setDateRange}
         />
       </div>
     </div>

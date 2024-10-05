@@ -8,7 +8,7 @@ const HeroSection = () => {
 
   return (
     <main>
-      <div className="relative min-h-screen bg-center bg-primaryRed">
+      <div className="relative min-h-screen bg-center bg-primaryBlue">
         <Image
           src='/images/other/Home_HeroBanner_1.webp'
           alt=""

@@ -28,9 +28,9 @@ const Arena = () => {
             `/api/on-road-price?rangeValue=allData&channel=Arena`
           );
         } else if (rangeValue === "Between" && dateRange.startDate && dateRange.endDate) {
-          response = await fetch(`/api/on-road-price?rangeValue=${rangeValue}&startDate=${dateRange.startDate}&endDate=${dateRange.endDate}`);
+          response = await fetch(`/api/on-road-price?rangeValue=${rangeValue}&startDate=${dateRange.startDate}&endDate=${dateRange.endDate}&channel=Arena`);
         } else if (rangeValue !== "Between") {
-          response = await fetch(`/api/on-road-price?rangeValue=${rangeValue}`);
+          response = await fetch(`/api/on-road-price?rangeValue=${rangeValue}&channel=Arena`);
         }
 
         if (!response?.ok) {

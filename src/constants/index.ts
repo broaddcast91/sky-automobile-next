@@ -3349,9 +3349,9 @@ export const odOutlets = [
         channel: "Arena",
         address:
           "NH-16, Jagannathpur-Gopalpur Jn, Dist, Brahmapur, Odisha 760010",
-        map: "https://maps.app.goo.gl/bU3rxP3DMBuuamm19",
+        map: "https://maps.app.goo.gl/QXT8YaQ92a8hbqsU9",
         iframe:
-          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238685.84372829174!2d85.98461797812499!3d20.812868294635525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a195148eecbd077%3A0x9eed6dd171481fc3!2sMaruti%20Suzuki%20Arena%20(Sky%20Automobiles%2C%20Jajpur%2C%20Benapur)!5e0!3m2!1sen!2sin!4v1727088180853!5m2!1sen!2sin",
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.245914054893!2d84.85389107601618!3d19.315132481939383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3d500f3686400d%3A0x4c3cae13a22d5210!2sMaruti%20Suzuki%20ARENA%20(Sky%20Automobiles%2C%20Berhampur)!5e0!3m2!1sen!2sin!4v1728035521580!5m2!1sen!2sin",
         phone: "9776645725",
         salesPersonName: "Mr. Dillip Behera",
         // email: "",

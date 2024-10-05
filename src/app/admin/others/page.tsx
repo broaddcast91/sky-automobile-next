@@ -21,6 +21,12 @@ const Others = () => {
   } = useDataContext();
   const [selectedTable, setSelectedTable] = React.useState("Test Drive");
   const [rangeValue, setRangeValue] = React.useState("");
+ const [dateRange, setDateRange] = React.useState({
+   startDate: "",
+   endDate: "",
+ });
+
+
   const columnHelper = createMRTColumnHelper<any>();
 
   useEffect(() => {
@@ -41,9 +47,17 @@ const Others = () => {
         } else {
           endPoint = "test-drive";
         }
-        if (rangeValue === "" || rangeValue === "Between") {
+        if (rangeValue === "" ) {
           response = await fetch(`/api/${endPoint}?rangeValue=allData`);
-        } else {
+        } else if (
+          rangeValue === "Between" &&
+          dateRange.startDate &&
+          dateRange.endDate
+        ) {
+          response = await fetch(
+            `/api/${endPoint}?rangeValue=${rangeValue}&startDate=${dateRange.startDate}&endDate=${dateRange.endDate}`
+          );
+        } else if (rangeValue !== "Between") {
           response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
         }
 
@@ -69,7 +83,14 @@ const Others = () => {
     };
 
     fetchData();
-  }, [refreshing, setLoading, rangeValue, selectedTable]);
+  }, [
+    refreshing,
+    setLoading,
+    rangeValue,
+    selectedTable,
+    dateRange.endDate,
+    dateRange.startDate,
+  ]);
 
   useEffect(() => {
     const token = Cookies.get("token");
@@ -274,6 +295,8 @@ const Others = () => {
           }
           rangeValue={rangeValue}
           setRangeValue={setRangeValue}
+          dateRange={dateRange}
+          setDateRange={setDateRange}
         />
       </div>
     </div>

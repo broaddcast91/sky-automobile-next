@@ -141,7 +141,7 @@ const Blogs = () => {
                   Published by: <span className="italic">{post.author}</span>{" "}
                 </p>
                 <h5
-                  className="min-h-4 mb-1 mt-2 line-clamp-4"
+                  className="min-h-4 mb-1 mt-2 line-clamp-5 text-sm "
                   title={post.excerpt}
                 >
                   {post.excerpt}

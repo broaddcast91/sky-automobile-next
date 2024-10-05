@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Get current date and time
-    const date = moment().format("DD/MM/YYYY");
+    const date = moment().format("YYYY-MM-DD");
     const time = moment().format("HH:mm:ss");
 
     // Create a new Contact Us document
@@ -69,17 +69,17 @@ export async function GET(req: NextRequest) {
 
     switch (rangeValue) {
       case "today":
-        filter.date = moment().format("DD/MM/YYYY");
+        filter.date = moment().format("YYYY-MM-DD");
         break;
 
       case "yesterday":
-        filter.date = moment().subtract(1, "day").format("DD/MM/YYYY");
+        filter.date = moment().subtract(1, "day").format("YYYY-MM-DD");
         break;
 
       case "thisMonth":
         filter.date = {
-          $gte: moment().startOf("month").format("DD/MM/YYYY"),
-          $lte: moment().endOf("month").format("DD/MM/YYYY"),
+          $gte: moment().startOf("month").format("YYYY-MM-DD"),
+          $lte: moment().endOf("month").format("YYYY-MM-DD"),
         };
         break;
 
@@ -88,11 +88,11 @@ export async function GET(req: NextRequest) {
           $gte: moment()
             .subtract(1, "month")
             .startOf("month")
-            .format("DD/MM/YYYY"),
+            .format("YYYY-MM-DD"),
           $lte: moment()
             .subtract(1, "month")
             .endOf("month")
-            .format("DD/MM/YYYY"),
+            .format("YYYY-MM-DD"),
         };
         break;
 
@@ -101,8 +101,8 @@ export async function GET(req: NextRequest) {
           $gte: moment()
             .subtract(3, "months")
             .startOf("month")
-            .format("DD/MM/YYYY"),
-          $lte: moment().endOf("month").format("DD/MM/YYYY"),
+            .format("YYYY-MM-DD"),
+          $lte: moment().endOf("month").format("YYYY-MM-DD"),
         };
         break;
 
@@ -111,8 +111,8 @@ export async function GET(req: NextRequest) {
           $gte: moment()
             .subtract(6, "months")
             .startOf("month")
-            .format("DD/MM/YYYY"),
-          $lte: moment().endOf("month").format("DD/MM/YYYY"),
+            .format("YYYY-MM-DD"),
+          $lte: moment().endOf("month").format("YYYY-MM-DD"),
         };
         break;
 
@@ -121,16 +121,16 @@ export async function GET(req: NextRequest) {
           $gte: moment()
             .subtract(12, "months")
             .startOf("month")
-            .format("DD/MM/YYYY"),
-          $lte: moment().endOf("month").format("DD/MM/YYYY"),
+            .format("YYYY-MM-DD"),
+          $lte: moment().endOf("month").format("YYYY-MM-DD"),
         };
         break;
 
       case "Between":
         if (startDate && endDate) {
           filter.date = {
-            $gte: moment(startDate).format("DD/MM/YYYY"),
-            $lte: moment(endDate).format("DD/MM/YYYY"),
+            $gte: moment(startDate).format("YYYY-MM-DD"),
+            $lte: moment(endDate).format("YYYY-MM-DD"),
           };
         } else {
           return new NextResponse(
@@ -148,7 +148,7 @@ export async function GET(req: NextRequest) {
     }
 
     // Fetch the filtered data from the database
-    const enquiries = await ContactUs.find(filter).sort({ createdAt: -1 });;
+    const enquiries = await ContactUs.find(filter).sort({ createdAt: -1 });
     return new NextResponse(JSON.stringify(enquiries), { status: 200 });
   } catch (err: any) {
     console.error("Error:", err.message);

@@ -8,57 +8,87 @@ import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 
 const Services = () => {
-  const { bookAServiceData, financeData, insuranceData,refreshing, setLoading , setBookAServiceData, setFinanceData, setInsuranceData} = useDataContext();
+  const {
+    bookAServiceData,
+    financeData,
+    insuranceData,
+    refreshing,
+    setLoading,
+    setBookAServiceData,
+    setFinanceData,
+    setInsuranceData,
+  } = useDataContext();
   const [selectedTable, setSelectedTable] = React.useState("Service");
   const [rangeValue, setRangeValue] = React.useState("");
+  const [dateRange, setDateRange] = React.useState({
+    startDate: "",
+    endDate: "",
+  });
+
   const columnHelper = createMRTColumnHelper<any>();
- useEffect(() => {
-   const token = Cookies.get("token");
-   if (!token) {
-     toast.error("Please login first");
-     window.location.href = "/admin/login";
-   }
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (!token) {
+      toast.error("Please login first");
+      window.location.href = "/admin/login";
+    }
 
-   const fetchData = async () => {
-     try {
-       let response = null;
-       let endPoint = "";
-       if (selectedTable === "Service") {
-         endPoint = "service";
-       } else if (selectedTable === "Finance") {
-         endPoint = "finance";
-       } else {
-         endPoint = "insurance";
-       }
-       if (rangeValue === "" || rangeValue === "Between") {
-         response = await fetch(`/api/${endPoint}?rangeValue=allData`);
-       } else {
-         response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
-       }
+    const fetchData = async () => {
+      try {
+        let response = null;
+        let endPoint = "";
+        if (selectedTable === "Service") {
+          endPoint = "service";
+        } else if (selectedTable === "Finance") {
+          endPoint = "finance";
+        } else {
+          endPoint = "insurance";
+        }
+        if (rangeValue === "" ) {
+          response = await fetch(`/api/${endPoint}?rangeValue=allData`);
+        } else if  (
+          rangeValue === "Between" &&
+          dateRange.startDate &&
+          dateRange.endDate
+        ) {
+          response = await fetch(
+            `/api/${endPoint}?rangeValue=${rangeValue}&startDate=${dateRange.startDate}&endDate=${dateRange.endDate}`
+          );
+        
+        } else if (rangeValue !== "Between") {
+          response = await fetch(`/api/${endPoint}?rangeValue=${rangeValue}`);
+        }
 
-       if (!response?.ok) {
-         throw new Error("Network response was not ok");
-       }
-       const result = await response.json();
-       if (selectedTable === "Service") {
-         setBookAServiceData(result);
-       } else if (selectedTable === "Finance") {
-         setFinanceData(result);
-       } else {
-         setInsuranceData(result);
-       }
-       // Update state with the fetched data
-       setLoading(false);
-       if (result.length === 0) {
-         toast.error("No data found");
-       } else toast.success(`${selectedTable} Data fetched successfully`);
-     } catch (error) {
-       console.error("Fetch error:", error);
-     }
-   };
+        if (!response?.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const result = await response.json();
+        if (selectedTable === "Service") {
+          setBookAServiceData(result);
+        } else if (selectedTable === "Finance") {
+          setFinanceData(result);
+        } else {
+          setInsuranceData(result);
+        }
+        // Update state with the fetched data
+        setLoading(false);
+        if (result.length === 0) {
+          toast.error("No data found");
+        } else toast.success(`${selectedTable} Data fetched successfully`);
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    };
 
-   fetchData();
- }, [refreshing, setLoading, rangeValue, selectedTable]);
+    fetchData();
+  }, [
+    refreshing,
+    setLoading,
+    rangeValue,
+    selectedTable,
+    dateRange.endDate,
+    dateRange.startDate,
+  ]);
 
   useEffect(() => {
     const token = Cookies.get("token");
@@ -290,9 +320,10 @@ const Services = () => {
               ? "Finance Enquiries"
               : "Insurance Enquiries"
           }
-         
           rangeValue={rangeValue}
           setRangeValue={setRangeValue}
+          dateRange={dateRange}
+          setDateRange={setDateRange}
         />
       </div>
     </div>

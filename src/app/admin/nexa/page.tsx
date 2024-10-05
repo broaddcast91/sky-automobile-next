@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 const Arena = () => {
   const { refreshing, setLoading, nexaData, setNexaData } = useDataContext();
   const [rangeValue, setRangeValue] = useState("");
+    const [dateRange, setDateRange] = useState({ startDate: "", endDate: "" });
 
   useEffect(() => {
     const token = Cookies.get("token");
@@ -21,13 +22,21 @@ const Arena = () => {
     const fetchData = async () => {
       try {
         let response = null;
-       if (rangeValue === "" || rangeValue === "Between") {
-         response = await fetch(
-           `/api/on-road-price?rangeValue=allData&channel=Nexa`
-         );
-       } else {
-         response = await fetch(`/api/on-road-price?rangeValue=${rangeValue}`);
-       }
+        if (rangeValue === "") {
+          response = await fetch(
+            `/api/on-road-price?rangeValue=allData&channel=Nexa`
+          );
+        } else if (
+          rangeValue === "Between" &&
+          dateRange.startDate &&
+          dateRange.endDate
+        ) {
+          response = await fetch(
+            `/api/on-road-price?rangeValue=${rangeValue}&startDate=${dateRange.startDate}&endDate=${dateRange.endDate}&channel=Nexa`
+          );
+        } else if (rangeValue !== "Between") {
+          response = await fetch(`/api/on-road-price?rangeValue=${rangeValue}&channel=Nexa`);
+        }
 
         if (!response?.ok) {
           throw new Error("Network response was not ok");
@@ -37,14 +46,21 @@ const Arena = () => {
         setLoading(false);
         if (result.length === 0) {
           toast.error("No data found");
-        } else toast.success("Nexa Data fetched successfully");
+        } else toast.success("Arena Data fetched successfully");
       } catch (error) {
         console.error("Fetch error:", error);
       }
     };
 
     fetchData();
-  }, [refreshing, setLoading, rangeValue]);
+  }, [
+    refreshing,
+    setLoading,
+    rangeValue,
+    dateRange.endDate,
+    dateRange.startDate,
+  ]);
+
 
   const columnHelper = createMRTColumnHelper<any>();
 
@@ -101,6 +117,8 @@ const Arena = () => {
           fileName="Nexa Enquiries"
           rangeValue={rangeValue}
           setRangeValue={setRangeValue}
+          dateRange={dateRange}
+          setDateRange={setDateRange}
         />
       </div>
     </div>

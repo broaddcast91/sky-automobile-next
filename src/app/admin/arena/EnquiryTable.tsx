@@ -272,8 +272,8 @@ const EnqTable = ({
   return (
     <Box
       sx={{
-        // overflow: "hidden",
-        // boxShadow: "none", // Remove shadow from the table
+        overflow: "hidden",
+        boxShadow: "none", // Remove shadow from the table
         // borderTop: "1px solid #e1e3e6",
         // borderRight: "0px solid #e1e3e6",
         // borderBottom: "1px solid #e1e3e6",
