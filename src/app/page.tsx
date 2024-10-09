@@ -1,6 +1,6 @@
 import EnqHome from "@/components/home/EnqHome";
 import HeroSection from "@/components/home/HeroSection";
-// import HomeOutlets from "@/components/home/HomeOutlets";
+import HomeOutlets from "@/components/home/HomeOutlets";
 import OurChannels from "@/components/home/OurChannels";
 import QuickActions from "@/components/home/QuickActions";
 import ReviewsAndRecom from "@/components/home/ReviewsAndRecom";
@@ -19,7 +19,7 @@ export default function Home() {
       <QuickActions isHeading={true} />
       <WhyChooseUs />
       <OurChannels />
-      {/* <HomeOutlets /> */}
+      <HomeOutlets />
       <ReviewsAndRecom />
       <Footer />
     </main>
