@@ -217,14 +217,14 @@ const Finance: React.FC = () => {
                     <option value="8">Eeco</option>
                   </optgroup>
                   <optgroup label="Nexa" className="text-sm text-primaryGray">
-                    <option value="9">Jimny</option>
-                    <option value="10">Fronx</option>
-                    <option value="16">Invicto</option>
-                    <option value="11">Grand Vitara</option>
-                    <option value="12">XL6</option>
-                    <option value="13">Ciaz</option>
-                    <option value="14">Baleno</option>
-                    <option value="15">Ignis</option>
+                    <option value="9">Invicto</option>
+                    <option value="10">Jimny</option>
+                    <option value="11">Fronx</option>
+                    <option value="12">Grand Vitara</option>
+                    <option value="13">XL6</option>
+                    <option value="14">Ciaz</option>
+                    <option value="15">Baleno</option>
+                    <option value="16">Ignis</option>
                   </optgroup>
                 </select>
               </div>

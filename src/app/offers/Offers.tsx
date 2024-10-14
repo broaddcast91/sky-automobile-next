@@ -82,7 +82,11 @@ const Offers = () => {
                   className="py-4 overflow-hidden border shadow-lg rounded-lg bg-gray-50 group lg:p-5 flex flex-col justify-between relative max-w-96 mx-auto"
                 >
                   <div className="flex flex-col justify-center items-center h-full bg-secondaryGray4 rounded-xl">
-                    <Link href={offer.link}>
+                    <Link
+                      href={
+                        selectedState === "Odisha" ? offer.linkOD : offer.linkCG
+                      }
+                    >
                       <img
                         src={offer.colors[0]?.img}
                         alt={offer.name}
@@ -118,7 +122,11 @@ const Offers = () => {
                     </div>
                     <div className="flex items-center justify-center gap-4 pb-2 mx-4">
                       <Link
-                        href={offer.link}
+                        href={
+                          selectedState === "Odisha"
+                            ? offer.linkOD
+                            : offer.linkCG
+                        }
                         className={`w-full p-1.5 text-sm text-center uppercase border rounded-lg   hover:text-white group-hover:text-white  ${
                           selectedState === "Odisha"
                             ? "group-hover:bg-primaryBlue border-primaryBlue"

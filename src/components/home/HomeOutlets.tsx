@@ -20,7 +20,7 @@ const HomeOutlets = () => {
                 allowFullScreen
                 aria-hidden="false"
                 loading="lazy"
-                title=""
+                title=" Arena Patia - Bhubhneshwar"
                 className="rounded-xl"
               />
             </div>
@@ -49,7 +49,7 @@ const HomeOutlets = () => {
               allowFullScreen
               aria-hidden="false"
               loading="lazy"
-              title=""
+              title="Nexa - Bhubhneshwar"
               className="rounded-xl"
             />{" "}
             <a
@@ -74,7 +74,7 @@ const HomeOutlets = () => {
               allowFullScreen
               aria-hidden="false"
               loading="lazy"
-              title=""
+              title="Arena Behrampur"
               className="rounded-xl"
             />{" "}
             <a
@@ -103,7 +103,7 @@ const HomeOutlets = () => {
                 allowFullScreen
                 aria-hidden="false"
                 loading="lazy"
-                title=""
+                title="Arena Mohoba Bazar"
                 className="rounded-xl"
               />
             </div>
@@ -130,7 +130,7 @@ const HomeOutlets = () => {
               allowFullScreen
               aria-hidden="false"
               loading="lazy"
-              title=""
+              title="Arena Jagdalpur"
               className="rounded-xl"
             />{" "}
             <a
@@ -155,7 +155,7 @@ const HomeOutlets = () => {
               allowFullScreen
               aria-hidden="false"
               loading="lazy"
-              title=""
+              title=" Nexa Raipur"
               className="rounded-xl"
             />{" "}
             <a
