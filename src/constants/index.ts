@@ -2,8 +2,6 @@
 // const { GiSpeedometer } = require("react-icons/gi");
 // const { PiEngine } = require("react-icons/pi");
 
-import { link } from "fs";
-
 export const models = [
   //0- Maruti ALTO K10
   {
@@ -1098,7 +1096,7 @@ export const models = [
     offersAdditionalDec: "",
     link: "/arena/ertiga-on-road-price",
     linkCG: "/arena/ertiga-on-road-price-in-raipur",
-    linkOD: "/arena/ertiga-on-road-price-in-odisha",
+    linkOD: "/arena/ertiga-on-road-price-in-bhubaneswar",
     offerValidTill: "",
     colors: [
       {
