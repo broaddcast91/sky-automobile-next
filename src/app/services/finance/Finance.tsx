@@ -14,6 +14,7 @@ import EMISlider from "./EMISlider";
 import { useAppContext } from "@/context";
 import { useRouter } from "next/navigation";
 import { FaSpinner } from "react-icons/fa";
+import Image from "next/image";
 
 interface FormData {
   name: string;
@@ -149,15 +150,22 @@ const Finance: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <div className="pt-20 min-h-40 bg-primaryGray">
-        {/* <img
-            src="/images/other/sky-automobile-outlet-banner.jpg"
-            alt=""
-            className="object-cover w-full h-full -mt-1 max-h-[50vh]"
-          /> */}{" "}
-        <div className="h-full min-h-[40vh] flex justify-center items-center text-white text-3xl ">
-          Required Banner Image
-        </div>
+      <div className=" min-h-40 bg-primaryGray   ">
+      
+        <Image
+          height={1080}
+          width={1920}
+          src="/images/other/finance_banner.webp"
+          alt="Sky Automobile Career Banner"
+          className="object-cover w-full h-full  max-h-[50vh] hidden sm:block"
+        />
+        <Image
+          height={1920}
+          width={500}
+          src="/images/other/finance_mobile.webp"
+          alt="Sky Automobile Career Banner"
+          className="object-cover w-full h-full  min-h-[50vh]  sm:hidden"
+        />
       </div>
 
       <div

@@ -3,6 +3,7 @@ import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
 import { models } from "@/constants";
 import { useAppContext } from "@/context";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaRegCalendarCheck } from "react-icons/fa";
@@ -27,15 +28,21 @@ const Offers = () => {
     <div>
       <Header />
       <div className="min-h-screen">
-        <div className="pt-20 min-h-40 bg-primaryGray">
-          {/* <img
-            src="/images/other/sky-automobile-outlet-banner.jpg"
-            alt=""
-            className="object-cover w-full h-full -mt-1 max-h-[50vh]"
-          /> */}{" "}
-          <div className="h-full min-h-[40vh] flex justify-center items-center text-white text-3xl ">
-            Required Banner Image
-          </div>
+        <div className=" min-h-40 bg-primaryGray   ">
+          <Image
+            height={1080}
+            width={1920}
+            src="/images/other/offers_banner.webp"
+            alt="Sky Automobile Career Banner"
+            className="object-cover w-full h-full  max-h-[50vh] hidden sm:block"
+          />
+          <Image
+            height={1920}
+            width={500}
+            src="/images/other/offer_mobile.webp"
+            alt="Sky Automobile Career Banner"
+            className="object-cover w-full h-full  min-h-[50vh]  sm:hidden"
+          />
         </div>
         <div className="container py-16 mx-auto xl:max-w-7xl lg:py-20">
           <h4 className="text-3xl font-bold text-primaryGray mb-3  text-center  ">
