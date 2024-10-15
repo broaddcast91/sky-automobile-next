@@ -58,7 +58,7 @@ const Page = () => {
             spacious interior, advanced safety features, and modern technology
             integration. With prices starting at around Rs 8.44 lakh, it offers
             excellent value for money compared to other SUVs in its segment.
-            Whether you're navigating city streets or embarking on weekend
+            Whether you&apos;re navigating city streets or embarking on weekend
             adventures, the Fronx is designed to meet diverse driving needs
             while ensuring comfort and reliability.
           </p>

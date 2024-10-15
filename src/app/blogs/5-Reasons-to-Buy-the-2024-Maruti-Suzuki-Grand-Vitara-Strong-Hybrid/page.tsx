@@ -59,10 +59,10 @@ const Page = () => {
             hybrid performance, advanced safety features, premium interior
             technology, and robust after-sales support. With prices starting at
             approximately Rs 18.32 lakh, it offers excellent value compared to
-            other hybrids and conventional SUVs available today. Whether you're
-            navigating city streets or embarking on weekend adventures, the
-            Grand Vitara Strong Hybrid is designed to meet diverse driving needs
-            while ensuring comfort and reliability.
+            other hybrids and conventional SUVs available today. Whether
+            you&apos;re navigating city streets or embarking on weekend
+            adventures, the Grand Vitara Strong Hybrid is designed to meet
+            diverse driving needs while ensuring comfort and reliability.
           </p>
           <p>
             Book your test drive today at your nearest Sky Automobiles

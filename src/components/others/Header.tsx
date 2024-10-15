@@ -130,33 +130,33 @@ const Header = () => {
               >
                 Services <FaCaretRight className="rotate-90" />
               </div>
-              <div className=" absolute top-4 -left-1/3 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
+              <div className=" absolute top-5 -left-1/3 w-40  hidden  peer-hover:block hover:block  delay-300 pt-[32px] -mt-0.5 ">
                 <Link
                   href="/services/book-a-service"
-                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-gray-50 hover:text-white border-y  ${
                     selectedState === "Odisha"
-                      ? " hover:bg-primaryBlue"
-                      : "hover:bg-primaryRed"
+                      ? " hover:bg-primaryBlue hover:border-b-primaryBlue"
+                      : "hover:bg-primaryRed hover:border-b-primaryRed"
                   }`}
                 >
                   Book A Service <FaCaretRight />
                 </Link>
                 <Link
                   href="/services/finance"
-                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-gray-50 hover:text-white border-b  ${
                     selectedState === "Odisha"
-                      ? " hover:bg-primaryBlue"
-                      : "hover:bg-primaryRed"
+                      ? " hover:bg-primaryBlue hover:border-b-primaryBlue"
+                      : "hover:bg-primaryRed hover:border-b-primaryRed"
                   }`}
                 >
                   Finance <FaCaretRight />
                 </Link>
                 <Link
                   href="/services/insurance"
-                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-gray-50 hover:text-white rounded-b overflow-hidden border-b ${
                     selectedState === "Odisha"
-                      ? " hover:bg-primaryBlue"
-                      : "hover:bg-primaryRed"
+                      ? " hover:bg-primaryBlue hover:border-b-primaryBlue"
+                      : "hover:bg-primaryRed hover:border-b-primaryRed"
                   }`}
                 >
                   Insurance <FaCaretRight />
@@ -214,33 +214,33 @@ const Header = () => {
               >
                 MORE <FaCaretRight className="rotate-90" />
               </div>
-              <div className=" absolute top-4 -left-1/3 w-40  hidden  peer-hover:block hover:block  delay-300 pt-8 ">
+              <div className=" absolute top-5 -left-1/3 w-40  hidden  peer-hover:block hover:block  delay-300 pt-[32px] rounded-b overflow-hidden -mt-0.5  ">
                 <Link
                   href="/career"
-                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-gray-50 hover:text-white border-b ${
                     selectedState === "Odisha"
-                      ? " hover:bg-primaryBlue"
-                      : "hover:bg-primaryRed"
+                      ? " hover:bg-primaryBlue hover:border-b-primaryBlue"
+                      : "hover:bg-primaryRed hover:border-b-primaryRed"
                   }`}
                 >
                   Career <FaCaretRight />
                 </Link>{" "}
                 <Link
                   href="/blogs"
-                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-gray-50 hover:text-white border-b ${
                     selectedState === "Odisha"
-                      ? " hover:bg-primaryBlue"
-                      : "hover:bg-primaryRed"
+                      ? " hover:bg-primaryBlue hover:border-b-primaryBlue"
+                      : "hover:bg-primaryRed hover:border-b-primaryRed"
                   }`}
                 >
                   Blogs <FaCaretRight />
                 </Link>
                 <Link
                   href="/privacy-policy"
-                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-secondaryGray2 text-white  ${
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 bg-gray-50 hover:text-white border-b ${
                     selectedState === "Odisha"
-                      ? " hover:bg-primaryBlue"
-                      : "hover:bg-primaryRed"
+                      ? " hover:bg-primaryBlue hover:border-b-primaryBlue"
+                      : "hover:bg-primaryRed hover:border-b-primaryRed"
                   }`}
                 >
                   Privacy Policy <FaCaretRight />

@@ -44,12 +44,12 @@ const Page = () => {
                 <span className="font-bold">Tata Nexon:</span> The Nexon, a
                 popular choice in the compact SUV segment, offers a mileage of
                 around 21.5 km/l for its petrol variants. While efficient, it
-                does not match the Grand Vitara Strong Hybrid's figures,
+                does not match the Grand Vitara Strong Hybrid&apos;s figures,
                 particularly in city driving conditions where the hybrid
                 technology shines.
               </li>
               <li>
-                <span className="font-bold">Hyundai Creta:</span> The Creta's
+                <span className="font-bold">Hyundai Creta:</span> The Creta&apos;s
                 petrol variants deliver approximately 17-18 km/l, depending on
                 the engine choice and driving conditions. This places it
                 considerably behind the Grand Vitara Strong Hybrid, which can
@@ -59,7 +59,7 @@ const Page = () => {
                 <span className="font-bold">Kia Seltos: </span>
                 Similar to the Creta, the Seltos offers a fuel efficiency range
                 of about 17-19 km/l for its petrol models. Again, this falls
-                short compared to the Grand Vitara's strong hybrid performance.
+                short compared to the Grand Vitara&apos;s strong hybrid performance.
               </li>
               <li>
                 <span className="font-bold">Honda HR-V:</span> The HR-V is known

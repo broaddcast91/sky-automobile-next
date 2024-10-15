@@ -57,10 +57,10 @@ const Page = () => {
             The 2024 Maruti Suzuki Alto K10 is an excellent option for anyone
             looking for an entry-level hatchback that offers exceptional fuel
             efficiency, peppy performance, spacious interiors, strong
-            after-sales support, and affordability. Whether you're a first-time
-            car buyer or someone needing a reliable city car, the Alto K10
-            delivers on multiple fronts, ensuring you get great value for your
-            investment.
+            after-sales support, and affordability. Whether you&apos;re a
+            first-time car buyer or someone needing a reliable city car, the
+            Alto K10 delivers on multiple fronts, ensuring you get great value
+            for your investment.
           </p>
           <p>
             Book your test drive today at your nearest Sky Automobiles

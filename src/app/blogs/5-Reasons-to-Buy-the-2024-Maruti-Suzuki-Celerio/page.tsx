@@ -56,11 +56,11 @@ const Page = () => {
             The 2024 Maruti Suzuki Celerio combines outstanding fuel efficiency,
             peppy performance, spacious interiors, advanced safety features, and
             affordability into an attractive package for hatchback buyers.
-            Whether you're navigating city streets or embarking on weekend
+            Whether you&apos;re navigating city streets or embarking on weekend
             getaways, the Celerio is designed to meet diverse driving needs
             while ensuring comfort and reliability. With its impressive features
-            and value-for-money proposition, it's definitely worth considering
-            for your next vehicle purchase.
+            and value-for-money proposition, it&apos;s definitely worth
+            considering for your next vehicle purchase.
           </p>
           <p>
             Book your test drive today at your nearest Sky Automobiles
