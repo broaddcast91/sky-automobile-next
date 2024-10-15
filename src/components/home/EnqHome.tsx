@@ -3,6 +3,7 @@ import { useAppContext } from "@/context";
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import toast from "react-hot-toast";
 import { FaSpinner } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const EnqHome: React.FC = () => {
   // Define the type for the form data
@@ -14,7 +15,7 @@ const EnqHome: React.FC = () => {
   }
 
   const { selectedState } = useAppContext();
-
+  const router = useRouter()
   // Initialize form state
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -36,19 +37,55 @@ const EnqHome: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   // Handle form submission
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     setLoading(true);
     event.preventDefault();
     console.log("Form Data:", { ...formData, state: selectedState });
-    toast.success("Thank You for contacting us. We will get back to you soon!");
-    // Optionally, reset form state after submission
+
+    // toast.success("Thank You for contacting us. We will get back to you soon!");
+    try {
+      // Send the POST request
+      const response = await fetch("/api/home", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...formData, state: selectedState }),
+      });
+
+      // Check if the response is ok
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Parse the JSON response
+      const data = await response.json();
+
+      // Handle the response based on the data
+      if (data.status === true) {
+        toast.success(
+          "Thank you for contacting us. We will get back to you soon!"
+        );
+        //  window.location.href = "/thank-you";
+        router.push("/thank-you");
+      } else {
+        toast.error("Failed to send request. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("Failed to send request. Please try again later.");
+      console.error("Error sending request:", error);
+    } finally {
+      setLoading(false);
+    }
+
+    // Reset the form after submission
     setFormData({
       name: "",
       phone: "",
       email: "",
-      lookingFor: "",
+     lookingFor: "",
+    
     });
-    setLoading(false);
   };
 
   return (

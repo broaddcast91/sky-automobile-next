@@ -2,6 +2,7 @@
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
 import { useAppContext } from "@/context";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import toast from "react-hot-toast";
@@ -27,8 +28,8 @@ const CareerPage: React.FC = () => {
     experience: "",
   });
   const { selectedState } = useAppContext();
-    const router = useRouter();
-      const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -39,7 +40,6 @@ const CareerPage: React.FC = () => {
       [name]: value,
     });
   };
-
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     setLoading(true);
@@ -76,7 +76,7 @@ const CareerPage: React.FC = () => {
     } catch (error) {
       toast.error("Failed to send request. Please try again later.");
       console.error("Error sending request:", error);
-    }finally{
+    } finally {
       setLoading(false);
     }
 
@@ -94,10 +94,24 @@ const CareerPage: React.FC = () => {
     <div className="">
       <Header />
       <div className="min-h-screen">
-        <div className="pt-20 min-h-40 bg-primaryGray">
-          <div className="h-full min-h-[40vh] flex justify-center items-center text-white text-3xl">
+        <div className=" min-h-40 bg-primaryGray md:pt-20  md:-mt-1 lg:pt-0 lg:mt-0">
+          {/* <div className="h-full min-h-[40vh] flex justify-center items-center text-white text-3xl">
             Required Banner Image
-          </div>
+          </div> */}
+          <Image
+            height={1080}
+            width={1920}
+            src="/images/other/sky-career-banner.webp"
+            alt="Sky Automobile Career Banner"
+            className="object-cover w-full h-full  max-h-[50vh] hidden sm:block"
+          />
+          <Image
+           height={1920}
+            width={500}
+            src="/images/other/sky-career-mobile.webp"
+            alt="Sky Automobile Career Banner"
+            className="object-cover w-full h-full  min-h-[50vh]  sm:hidden"
+          />
         </div>
         <div className="container min-h-[50vh] py-16 mx-auto xl:max-w-7xl lg:py-20 px-2">
           <h4 className="text-3xl font-bold text-primaryGray lg:mb-6">

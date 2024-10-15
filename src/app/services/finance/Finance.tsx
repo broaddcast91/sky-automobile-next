@@ -18,7 +18,7 @@ import { FaSpinner } from "react-icons/fa";
 interface FormData {
   name: string;
   phone: string;
-email: string;
+  email: string;
   model: string;
   city: string;
   loanAmount: number;
@@ -37,7 +37,7 @@ const Finance: React.FC = () => {
   });
 
   const { selectedState } = useAppContext();
-    const router = useRouter();
+  const router = useRouter();
 
   const [index, setIndex] = useState(0);
   const [selectedColor, setSelectedColor] = useState<number>(0);
@@ -57,7 +57,7 @@ const Finance: React.FC = () => {
   const [value1, setValue1] = useState(MIN1);
   const [value2, setValue2] = useState(MIN2);
   const [value3, setValue3] = useState(MIN3);
-    const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   // Calculate the EMI based on current slider values
   const calculateEMI = useCallback(

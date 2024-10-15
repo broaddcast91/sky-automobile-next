@@ -1,5 +1,4 @@
-import Footer from "@/components/others/Footer";
-import Header from "@/components/others/Header";
+
 import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
@@ -111,7 +110,7 @@ const blogPosts = [
 const Blogs = () => {
   return (
     <div className="min-h-screen">
-      <Header />
+   
       <div className="md:pt-20 min-h-40 bg-primaryGray pt-16 pb-8">
         <div className="min-h-40 flex justify-center items-center text-white text-3xl">
           Check the Latest Blog Posts on Automobile News
@@ -165,7 +164,7 @@ const Blogs = () => {
           ))}
         </div>
       </div>
-      <Footer />
+     
     </div>
   );
 };
