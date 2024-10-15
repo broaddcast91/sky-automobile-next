@@ -25,61 +25,10 @@ const Header = () => {
     <header
       className={`sticky top-0 z-50 duration-500 bg-white min-h-16 lg:min-h-20 `}
     >
-      {/* <div
-        onMouseEnter={() => setIsVehicle(false)}
-        className={` text-white max-h-9 ${
-          selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
-        } `}
-      >
-        <div className="container flex items-center justify-between h-full px-2 py-2 mx-auto xl:max-w-8xl">
-          <div className="flex justify-between w-full gap-4 md:justify-start md:max-w-1/2">
-            <div className="flex items-center gap-2 text-sm">
-              <FaPhoneAlt />
-              <a href="tel:+91123456789" target="_blank" rel="noreferrer">
-                +91 123456789
-              </a>
-            </div>
-            <div className="flex items-center gap-2">
-              <IoMailSharp />
-              <a
-                href="mailto: xxxxxx@xxxx.xx"
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm"
-              >
-                xxxxxx@xxxx.xx
-              </a>
-            </div>
-          </div>
-          <div className="hidden gap-4 md:flex">
-            <a
-              href="https://www.facebook.com/profile.php?id=100057528455659"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {" "}
-              <FaFacebookF />
-            </a>
-            <a href="https://www.instagram.com/sky.automobiles/">
-              {" "}
-              <LuInstagram />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/company/skyautomobiles/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {" "}
-              <FaLinkedin />
-            </a>
-          </div>
-        </div>
-      </div> */}
       <div
-        className={` absolute top-0 left-0 w-full hover:bg-white hover:text-black duration-200 transition-all hover:backdrop-blur-lg  shadow `}
+        className={` absolute top-0 left-0 w-full  hover:text-black duration-200 transition-all   shadow `}
       >
-        <div className="container flex items-center justify-between h-full  mx-auto group min-h-16 lg:min-h-20">
+        <div className="container flex items-center justify-between h-full  mx-auto group min-h-16 lg:min-h-20 ">
           <div className="select-none">
             <Link onMouseEnter={() => setIsVehicle(false)} href="/">
               {/* {scrolled ? ( */}
@@ -311,122 +260,124 @@ const Header = () => {
           <div
             onMouseLeave={() => setIsVehicle(false)}
             onMouseEnter={() => setIsVehicle(true)}
-            className="container hidden lg:gap-2 p-2 pb-6 mx-auto bg-white xl:max-w-8xl group xl:flex overflow-x-hidden lg:block xl:overflow-visible  "
+            className=" bg-white w-full"
           >
-            <div className="flex xl:flex-col gap-2 text-white xl:w-60 justify-center xl:justify-start mb-2">
-              {" "}
-              <div
-                onClick={() => setSelectedTab(0)}
-                className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28  ${
-                  selectedTab === 0 && selectedState === "Odisha"
-                    ? "text-white bg-primaryBlue"
-                    : selectedTab === 0
-                    ? "text-white bg-primaryRed"
-                    : "text-black bg-secondaryGray3"
-                }`}
-              >
-                Arena <FaCaretRight />
-              </div>{" "}
-              <div
-                onClick={() => setSelectedTab(1)}
-                className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28  ${
-                  selectedTab === 1 && selectedState === "Odisha"
-                    ? "text-white bg-primaryBlue"
-                    : selectedTab === 1
-                    ? "text-white bg-primaryRed"
-                    : "text-black bg-secondaryGray3"
-                }`}
-              >
-                Nexa <FaCaretRight />
+            <div className="container hidden lg:gap-2 p-2 pb-6 mx-auto bg-white xl:max-w-8xl group xl:flex overflow-x-hidden lg:block xl:overflow-visible  ">
+              <div className="flex xl:flex-col gap-2 text-white xl:w-60 justify-center xl:justify-start mb-2">
+                {" "}
+                <div
+                  onClick={() => setSelectedTab(0)}
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 rounded-full  ${
+                    selectedTab === 0 && selectedState === "Odisha"
+                      ? "text-white bg-primaryBlue"
+                      : selectedTab === 0
+                      ? "text-white bg-primaryRed"
+                      : "text-black bg-secondaryGray3"
+                  }`}
+                >
+                  <p className="w-full text-center"> Arena</p> <FaCaretRight />
+                </div>{" "}
+                <div
+                  onClick={() => setSelectedTab(1)}
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 rounded-full  ${
+                    selectedTab === 1 && selectedState === "Odisha"
+                      ? "text-white bg-primaryBlue"
+                      : selectedTab === 1
+                      ? "text-white bg-primaryRed"
+                      : "text-black bg-secondaryGray3"
+                  }`}
+                >
+                  <p className="w-full text-center"> Nexa</p> <FaCaretRight />
+                </div>
+                <div
+                  onClick={() => setSelectedTab(2)}
+                  className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 rounded-full  ${
+                    selectedTab === 2 && selectedState === "Odisha"
+                      ? "text-white bg-primaryBlue"
+                      : selectedTab === 2
+                      ? "text-white bg-primaryRed"
+                      : "text-black bg-secondaryGray3"
+                  }`}
+                >
+                  <p className="w-full text-center"> TrueValue</p>{" "}
+                  <FaCaretRight />
+                </div>
               </div>
               <div
-                onClick={() => setSelectedTab(2)}
-                className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28  ${
-                  selectedTab === 2 && selectedState === "Odisha"
-                    ? "text-white bg-primaryBlue"
-                    : selectedTab === 2
-                    ? "text-white bg-primaryRed"
-                    : "text-black bg-secondaryGray3"
-                }`}
+                className={`grid w-full grid-cols-4 text-black  max-h-[70vh] xl:overflow-hidden ${
+                  selectedTab === 0 ? "xl:grid-cols-5" : "xl:grid-cols-4"
+                } `}
               >
-                TrueValue <FaCaretRight />
-              </div>
-            </div>
-            <div
-              className={`grid w-full grid-cols-4 text-black  max-h-[70vh] xl:overflow-hidden ${
-                selectedTab === 0 ? "xl:grid-cols-5" : "xl:grid-cols-4"
-              } `}
-            >
-              {selectedTab === 0 &&
-                models.slice(0, 9).map((slide, index) => (
-                  <Link
-                    onClick={() => setIsVehicle(false)}
-                    key={index}
-                    href={`${
-                      selectedState === "Odisha" ? slide.linkOD : slide.linkCG
-                    }`}
-                  >
-                    <div
-                      className={`rounded-xl hover:shadow-lg   cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1 ${
-                        selectedState === "Odisha"
-                          ? "hover:bg-primaryBlue"
-                          : "hover:bg-primaryRed"
-                      }  hover:text-white`}
+                {selectedTab === 0 &&
+                  models.slice(0, 9).map((slide, index) => (
+                    <Link
+                      onClick={() => setIsVehicle(false)}
+                      key={index}
+                      href={`${
+                        selectedState === "Odisha" ? slide.linkOD : slide.linkCG
+                      }`}
                     >
-                      <img
-                        src={slide.thumbnail}
-                        alt={slide.subName}
-                        loading="lazy"
-                        className=" mb-4  h-32 w-auto mx-auto  "
-                      />
-
-                      <h5 className="text-lg font-bold text-center uppercase lg:text-xl lg:font-extrabold ">
-                        {slide.subName}
-                      </h5>
-                    </div>
-                  </Link>
-                ))}
-              {selectedTab === 1 &&
-                models.slice(9).map((slide, index) => (
-                  <Link
-                    onClick={() => setIsVehicle(false)}
-                    key={index}
-                    href={`${
-                      selectedState === "Odisha" ? slide.linkOD : slide.linkCG
-                    }`}
-                  >
-                    <div
-                      className={`rounded-xl hover:shadow-lg  ${
-                        selectedState === "Odisha"
-                          ? "hover:bg-primaryBlue"
-                          : "hover:bg-primaryRed"
-                      } cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white`}
-                    >
-                      <div className="">
-                        {" "}
+                      <div
+                        className={`rounded-xl hover:shadow-lg   cursor-pointer w-[250px] py-8 px-2 flex flex-col gap-1 ${
+                          selectedState === "Odisha"
+                            ? "hover:bg-primaryBlue"
+                            : "hover:bg-primaryRed"
+                        }  hover:text-white`}
+                      >
                         <img
                           src={slide.thumbnail}
                           alt={slide.subName}
                           loading="lazy"
-                          className=" mb-4 px-2 h-36 w-auto mx-auto "
+                          className=" mb-4  h-32 w-auto mx-auto  "
                         />
-                      </div>
 
-                      <h5 className="text-lg font-bold text-center uppercase lg:text-xl lg:font-extrabold ">
-                        {slide.subName}
-                      </h5>
-                      {/* <p className="text-sm text-center ">
+                        <h5 className="text-lg font-bold text-center uppercase lg:text-xl lg:font-extrabold ">
+                          {slide.subName}
+                        </h5>
+                      </div>
+                    </Link>
+                  ))}
+                {selectedTab === 1 &&
+                  models.slice(9).map((slide, index) => (
+                    <Link
+                      onClick={() => setIsVehicle(false)}
+                      key={index}
+                      href={`${
+                        selectedState === "Odisha" ? slide.linkOD : slide.linkCG
+                      }`}
+                    >
+                      <div
+                        className={`rounded-xl hover:shadow-lg  ${
+                          selectedState === "Odisha"
+                            ? "hover:bg-primaryBlue"
+                            : "hover:bg-primaryRed"
+                        } cursor-pointer w-[300px] py-8 px-2 flex flex-col gap-1   hover:text-white`}
+                      >
+                        <div className="">
+                          {" "}
+                          <img
+                            src={slide.thumbnail}
+                            alt={slide.subName}
+                            loading="lazy"
+                            className=" mb-4 px-2 h-36 w-auto mx-auto "
+                          />
+                        </div>
+
+                        <h5 className="text-lg font-bold text-center uppercase lg:text-xl lg:font-extrabold ">
+                          {slide.subName}
+                        </h5>
+                        {/* <p className="text-sm text-center ">
                         {slide.description}
                       </p> */}
-                      {/* <button className="px-4 py-2 mx-auto mt-4 text-sm text-white rounded-lg opacity-0 cursor-pointer group-hover:opacity-100 bg-primaryRed w-min whitespace-nowrap">
+                        {/* <button className="px-4 py-2 mx-auto mt-4 text-sm text-white rounded-lg opacity-0 cursor-pointer group-hover:opacity-100 bg-primaryRed w-min whitespace-nowrap">
                 Explore Now
               </button> */}
-                    </div>
-                  </Link>
-                ))}
-              {selectedTab === 2 && (
-                <div className=" col-span-4 w-full  gap-1 min-h-24 pb-2 pl-4 flex xl:flex-col justify-center xl:justify-start items-center xl:items-start">
-                  {/* <button
+                      </div>
+                    </Link>
+                  ))}
+                {selectedTab === 2 && (
+                  <div className=" col-span-4 w-full  gap-1 min-h-24 pb-2 pl-4 flex xl:flex-col justify-center xl:justify-start items-center xl:items-start">
+                    {/* <button
                     aria-label="Buy A Car Now"
                     className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 xl:w-full max-w-md ${
                       selectedState === "Odisha"
@@ -442,24 +393,25 @@ const Header = () => {
                       Buy A Car Now <FaCaretRight />
                     </Link>
                   </button> */}
-                  <button
-                    aria-label="Buy Your Car Now"
-                    className={`flex items-center justify-between px-2 py-3 text-sm cursor-pointer min-w-28 xl:w-full max-w-md ${
-                      selectedState === "Odisha"
-                        ? "hover:text-white hover:bg-primaryBlue text-primaryBlue border border-primaryBlue  "
-                        : "hover:text-white hover:bg-primaryRed text-primaryRed border border-primaryRed"
-                    }`}
-                  >
-                    <Link
-                      className="flex gap-2 w-full items-center justify-between"
-                      href="/truevalue/sell-a-car"
+                    <button
+                      aria-label="Buy Your Car Now"
+                      className={`flex items-center justify-between px-4 py-3 text-sm cursor-pointer min-w-28 rounded-full xl:w-full max-w-md ${
+                        selectedState === "Odisha"
+                          ? "hover:text-white hover:bg-primaryBlue text-primaryBlue border border-primaryBlue  "
+                          : "hover:text-white hover:bg-primaryRed text-primaryRed border border-primaryRed"
+                      }`}
                     >
-                      {" "}
-                      Sell Your Car Now <FaCaretRight />
-                    </Link>
-                  </button>
-                </div>
-              )}
+                      <Link
+                        className="flex gap-2 w-full items-center justify-between"
+                        href="/truevalue/sell-a-car"
+                      >
+                        {" "}
+                        Sell Your Car Now <FaCaretRight />
+                      </Link>
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         )}
