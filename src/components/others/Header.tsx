@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { FaCaretRight, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
-import { FaFacebookF, FaLinkedin } from "react-icons/fa6";
+// import { FaFacebookF, FaLinkedin } from "react-icons/fa6";
 import { IoClose, IoMailSharp } from "react-icons/io5";
-import { LuInstagram } from "react-icons/lu";
+// import { LuInstagram } from "react-icons/lu";
 import { RiMenu3Fill } from "react-icons/ri";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -14,7 +14,6 @@ import { models } from "@/constants";
 import ModalSidePannel from "./ModalSidePannel";
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [isVehicle, setIsVehicle] = useState(false);
   const [selectedTab, setSelectedTab] = useState(0);
   const [showSidePanel, setShowSidePanel] = useState(false);
@@ -22,29 +21,11 @@ const Header = () => {
   // const { pathname } = useNavigate();
   const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
   return (
     <header
-      className={`sticky top-0 z-50 duration-500 hover:bg-white  ${
-        scrolled && " bg-white -translate-y-9"
-      }`}
+      className={`sticky top-0 z-50 duration-500 bg-white min-h-16 lg:min-h-20 `}
     >
-      <div
+      {/* <div
         onMouseEnter={() => setIsVehicle(false)}
         className={` text-white max-h-9 ${
           selectedState === "Odisha" ? "bg-primaryBlue" : "bg-primaryRed"
@@ -94,19 +75,11 @@ const Header = () => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
       <div
-        className={`absolute top-9 left-0 w-full hover:bg-white hover:text-black duration-200 transition-all hover:backdrop-blur-lg ${
-          scrolled || isVehicle
-            ? `bg-white text-black  shadow ${
-                selectedState === "Odisha"
-                  ? "border-b-primaryBlue"
-                  : "border-b-primaryRed"
-              } `
-            : "lg:text-white bg-white lg:bg-transparent lg:hover:bg-white hover:shadow  "
-        }`}
+        className={` absolute top-0 left-0 w-full hover:bg-white hover:text-black duration-200 transition-all hover:backdrop-blur-lg  shadow `}
       >
-        <div className="container flex items-center justify-between h-full py-2 mx-auto group">
+        <div className="container flex items-center justify-between h-full  mx-auto group min-h-16 lg:min-h-20">
           <div className="select-none">
             <Link onMouseEnter={() => setIsVehicle(false)} href="/">
               {/* {scrolled ? ( */}
@@ -116,23 +89,7 @@ const Header = () => {
                 alt="logo"
                 width={300}
                 height={300}
-                className={`w-auto h-12 rounded-lg md:h-14 duration-500 mb-1   ${
-                  scrolled || isVehicle
-                    ? "block "
-                    : " lg:hidden group-hover:block "
-                }`}
-              />
-              <Image
-                src="/images/other/logo-white.png"
-                // src={require("../assets/logo2_sky.png")}
-                alt="logo"
-                width={300}
-                height={300}
-                className={`w-auto h-12 rounded-lg md:h-14 duration-500 mb-1  ${
-                  !scrolled && !isVehicle
-                    ? "hidden lg:block group-hover:hidden"
-                    : "hidden  "
-                }`}
+                className={`w-auto h-12 rounded-lg md:h-14 duration-500  `}
               />
             </Link>
           </div>

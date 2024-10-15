@@ -7,11 +7,11 @@ const AboutUs = () => {
 
   return (
     <div>
-      <div className="md:pt-20 min-h-40 bg-primaryGray pt-16 ">
+      <div className=" min-h-40 bg-primaryGray  ">
         <img
           src="/images/other/banner automobile.jpg"
           alt=""
-          className="w-full object-cover max-h-[80vh] mt-1 object-bottom"
+          className="w-full object-cover max-h-[80vh]  object-bottom"
         />
         {/* <div className="h-full min-h-[40vh] flex justify-center items-center text-gray-400 text-3xl ">
           Required Banner Image

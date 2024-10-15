@@ -22,6 +22,8 @@ const blogPosts = [
       "The 2024 Maruti Suzuki Swift has made a significant impact in the hatchback segment, offering a blend of style, efficiency, and advanced features. Here are five compelling reasons why you should consider the new Swift over its competitors.",
     linkCG: "/arena/swift-on-road-price-in-raipur",
     linkOD: "/arena/swift-on-road-price-in-bhubaneswar",
+    blogLink:
+      "/blogs/5-Reasons-to-Buy-the-2024-Maruti-Suzuki-Swift-Over-Other-Hatchbacks",
   },
   {
     id: 2,
@@ -33,6 +35,8 @@ const blogPosts = [
       "The 2024 Maruti Suzuki Brezza has emerged as a strong contender in the subcompact SUV market, combining style, safety, and practicality. Here are five compelling reasons to choose the Brezza over its competitors.",
     linkCG: "/arena/brezza-on-road-price-in-raipur",
     linkOD: "/arena/brezza-on-road-price-in-bhubaneswar",
+    blogLink:
+      "/blogs/5-Reasons-to-Buy-the-2024-Maruti-Suzuki-Brezza-Over-Other-Subcompact-SUVs",
   },
   {
     id: 3,
@@ -44,6 +48,8 @@ const blogPosts = [
       "The 2024 Maruti Suzuki Wagon R continues to be a popular choice in the hatchback segment, offering a perfect blend of practicality, efficiency, and modern features. Here are five compelling reasons to consider the Wagon R over its competitors.",
     linkCG: "/arena/wagon-r-on-road-price-in-raipur",
     linkOD: "/arena/wagon-r-on-road-price-in-bhubaneswar",
+    blogLink:
+      "/blogs/5-Reasons-to-Buy-the-2024-Maruti-Suzuki-Wagon-R-Over-Other-Hatchbacks",
   },
   {
     id: 4,
@@ -54,6 +60,8 @@ const blogPosts = [
       "The 2024 Maruti Suzuki Grand Vitara Strong Hybrid is making waves in the compact SUV segment, offering a unique combination of performance, efficiency, and advanced features. Here are five compelling reasons to consider this hybrid model over its competitors.",
     linkCG: "/arena/grand-vitara-on-road-price-in-raipur",
     linkOD: "/arena/grand-vitara-on-road-price-in-bhubaneswar",
+    blogLink:
+      "/blogs/5-Reasons-to-Buy-the-2024-Maruti-Suzuki-Grand-Vitara-Strong-Hybrid",
   },
   {
     id: 5,
@@ -64,6 +72,7 @@ const blogPosts = [
       "The 2024 Maruti Suzuki Grand Vitara Strong Hybrid stands out in the compact SUV segment, particularly due to its impressive fuel efficiency. Here’s how its fuel efficiency compares to other SUVs in the same category.",
     linkCG: "/nexa/grand-vitara-on-road-price-in-raipur",
     linkOD: "/nexa/grand-vitara-on-road-price-in-bhubaneswar",
+    blogLink: "/blogs/Fuel-Efficiency-of-Grand-Vitara-Strong-Hybrid-Compared",
   },
   {
     id: 6,
@@ -74,6 +83,7 @@ const blogPosts = [
       "The 2024 Maruti Suzuki Alto K10 is a standout choice in the entry-level hatchback segment, appealing to first-time car buyers and urban commuters alike. Here are five compelling reasons to consider the Alto K10 for your next vehicle.",
     linkCG: "/arena/alto-k10-on-road-price-in-raipur",
     linkOD: "/arena/alto-k10-on-road-price-in-bhubaneswar",
+    blogLink: "/blogs/5-Reasons-to-Buy-the-2024-Maruti-Suzuki-Alto-K10",
   },
   {
     id: 7,
@@ -84,6 +94,7 @@ const blogPosts = [
       "The 2024 Maruti Suzuki Celerio is a compact hatchback that has garnered attention for its blend of efficiency, comfort, and modern features. Here are five compelling reasons to consider the Celerio for your next vehicle purchase.",
     linkCG: "/arena/celerio-on-road-price-in-raipur",
     linkOD: "/arena/celerio-on-road-price-in-bhubaneswar",
+    blogLink: "/blogs/5-Reasons-to-Buy-the-2024-Maruti-Suzuki-Celerio",
   },
   {
     id: 8,
@@ -94,6 +105,7 @@ const blogPosts = [
       "The 2024 Maruti Suzuki Fronx has emerged as a compelling choice in the compact SUV segment, combining modern design, efficiency, and advanced features. Here are five reasons why the Fronx deserves your attention.",
     linkCG: "/nexa/fronx-on-road-price-in-raipur",
     linkOD: "/nexa/fronx-on-road-price-in-bhubaneswar",
+    blogLink: "/blogs/5-Reasons-to-Buy-the-2024-Maruti-Suzuki-Fronx",
   },
   {
     id: 9,
@@ -104,6 +116,7 @@ const blogPosts = [
       "The 2024 Maruti Suzuki Baleno continues to be a popular choice in the premium hatchback segment, offering a blend of style, performance, and advanced features. Here are five compelling reasons to consider the Baleno for your next vehicle purchase.",
     linkCG: "/nexa/baleno-on-road-price-in-raipur",
     linkOD: "/nexa/baleno-on-road-price-in-bhubaneswar",
+    blogLink: "/blogs/5-Reasons-to-Buy-the-2024-Maruti-Suzuki-Baleno",
   },
 ];
 
@@ -149,9 +162,11 @@ const Blogs = () => {
                   Read More...
                 </button> */}
                 <div className="flex justify-between gap-2 mt-4">
-                  <button className="text-primaryBlue group-hover:bg-white group-hover:text-primaryBlue  border px-4 py-1.5 rounded w-1/2 text-sm ">
+                  <Link href={post.blogLink} className="w-1/2 text-sm">
+                  <button className="text-primaryBlue group-hover:bg-white group-hover:text-primaryBlue  border px-4 py-1.5 rounded w-full text-sm ">
                     Read More
                   </button>
+                  </Link>
                   <Link href={post.linkCG} className="w-1/2 text-sm">
                     {" "}
                     <button className="text-primaryBlue group-hover:text-white  border px-4 py-1.5 rounded w-full ">

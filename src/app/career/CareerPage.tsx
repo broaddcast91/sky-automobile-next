@@ -94,7 +94,7 @@ const CareerPage: React.FC = () => {
     <div className="">
       <Header />
       <div className="min-h-screen">
-        <div className=" min-h-40 bg-primaryGray md:pt-20  md:-mt-1 lg:pt-0 lg:mt-0">
+        <div className=" min-h-40 bg-primaryGray   ">
           {/* <div className="h-full min-h-[40vh] flex justify-center items-center text-white text-3xl">
             Required Banner Image
           </div> */}
