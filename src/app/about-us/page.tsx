@@ -1,4 +1,3 @@
-
 import Footer from "@/components/others/Footer";
 import Header from "@/components/others/Header";
 import { Metadata } from "next";
@@ -11,11 +10,10 @@ export const metadata: Metadata = {
 };
 
 const AboutUsPage = () => {
-
   return (
     <div className="min-h-screen">
       <Header />
-     <AboutUs />
+      <AboutUs />
       <Footer />
     </div>
   );

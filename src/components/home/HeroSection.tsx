@@ -8,13 +8,13 @@ const HeroSection = () => {
 
   return (
     <main>
-      <div className="relative min-h-screen bg-center bg-primaryBlue">
+      <div className="relative h-[calc(100vh-80px)] overflow-hidden w-full bg-[url('/images/other/Home_HeroBanner_1.webp')] bg-center bg-primaryBlue">
         <Image
           src='/images/other/Home_HeroBanner_1.webp'
           alt=""
           height={1080}
           width={1920}
-          className="object-cover w-full h-screen"
+          className=" object-cover w-full absolute bottom-0 left-0  "
         />
 
         <div className="absolute  -ml-4 right-1/2 duration-500 bottom-10 ">

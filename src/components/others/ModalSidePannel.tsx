@@ -16,7 +16,7 @@ const ModalSidePannel = ({ setShowSidePanel }: ModalSidePannelProps) => {
 
   return (
     <div
-      className={`fixed top-[104px] md:top-[110px] right-0 w-full h-full bg-white  z-50 min-h-[calc(100vh-50px)] lg:hidden max-w-md px-2 overflow-scroll border-l  max-h-[200vh] ${
+      className={`fixed top-16  right-0 w-full h-full bg-white  z-50 min-h-[calc(100vh-50px)] lg:hidden max-w-md px-2 overflow-scroll border-l  max-h-[200vh] ${
         selectedState === "Odisha" ? "text-primaryBlue" : "text-primaryRed"
       }  py-6`}
     >
