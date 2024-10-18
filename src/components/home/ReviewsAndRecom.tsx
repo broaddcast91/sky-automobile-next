@@ -16,45 +16,99 @@ const ReviewsAndRecom = () => {
   const blogsData = [
     {
       review:
-        "Excellent service by sales executive MD Arbaaz. Thank you for your valuable time to give us ",
-      name: "Mr. Mdaslam Aslam",
+        "A smooth and enjoyable Alto k10 car buying Experience at sky automobiles arena bhubaneswar.Thanks to the entire team.",
+      name: "Mr. Nilu Kumar Das",
       rating: "5",
     },
     {
       review:
-        "Excellent service by mohd Ismail team leader and sales person very professional approach towards customer service",
-      name: "Mr. Mohd Mohdsohil",
+        "The experience of getting my new maruti suzuki wagon r purchase at sky automobiles patia arena Bhubaneswar. Thanks to sky team",
+      name: "Mr. chitta ranjan bhuyan",
       rating: "5",
     },
     {
       review:
-        "very good handling and explanation in every single detailed and well mannered sale executive name mohd waseem subhan. had a good experience in buying. purchased Honda Activa 125.",
-      name: "Mr. Kamran_ Ahme",
+        "The process of buying my new wagonr car at sky automobiles patia was very pleasant.",
+      name: "Mr. Santosh Kumar",
       rating: "5",
     },
     {
       review:
-        "Good services Mr. Kashif, good response, and Roofi Jameel sir also, thanks for the support",
-      name: "Mr. Md Amer",
+        "My new maruti suzuki brezza car 🚗 purchase at sky automobiles patia was extremely positive.",
+      name: "Mr. P raja Rao",
       rating: "5",
     },
     {
       review:
-        "Excellent service by sales executive Vinay, good response to customers",
-      name: "Mr. Shekhar Reddy",
+        "Visited Nexa Hanspal Showroom to look for Fronx Delta Plus. Ms Subhashree has attended us ans clarified all our doubts and questions very promptly. She has too good product knowledge. We will be booking it soon.",
+      name: "Mr. Sandip Panda",
       rating: "5",
     },
     {
       review:
-        "Good response from your sales executive Vinay, good receiver, and way of talking is nice",
-      name: "Mrs. Satya Narayana",
+        "Service is excellent,Behaviour of sales persons, other staff are good in nexa twin City, Naharakanta & delivery time is very less with all set. Excellent experience",
+      name: "Mrs. Satya Narayan Mishra",
       rating: "5",
     },
     {
       review:
-        "Staff here were much better than at their Masab Tank branch. At the Masab Tank branch, everyone keeps asking for tips. Here, only one employee asked",
-      name: "Rutwik Phatak",
-      rating: "3",
+        "The nexa showroom near hanspal have a excellent overall performance towards for the purchase of new car with fulfilling all the criteria of the customer and the relationship by the sales personal namely Dyutimaya sasmal and Somanath Swain is excellent. I am very much thank to all the staff of Maruti nexa for their service.",
+      name: "Mr. Ajay Rath",
+      rating: "5",
+    },
+    {
+      review:
+        "When I reach the sky showroom RM behaviour is so good mostly Wilson sir. He is the best RM. polite behaviour supportive person. I'm very happy 😊",
+      name: "Mr. Ritik pandariya",
+      rating: "5",
+    },
+    {
+      review:
+        "All staff are copretive and All process are very good and all staff's person behaviour is very polite I'm happy to buying my car from sky automobile 👍,,,,Sales executive masuk soni sir are very supportive they are very helpful and I'm buying I 'm ertiga showroom Dilevery process is excellent",
+      name: "Mr. Pankaj Pradhan",
+      rating: "5",
+    },
+    {
+      review:
+        "I have a huge genuine experience in the showroom. All staff i have meet was literally polite and helpful and i they will also gentle whom i haven't meet. overall experience was excellent 👌",
+      name: "Mr. Poornima Sahu",
+      rating: "5",
+    },
+    {
+      review:
+        "Its was a wonderful experience from my 1st visit till the delivery in Sky Automobiles. Very good interaction with staffs Mr. Lukesh and Mr. Nomesh and everyone all. Thanks a lot!",
+      name: "Mr. Vishwaroop Chandra Deo",
+      rating: "5",
+    },
+    {
+      review:
+        "I had really good experience with the showroom , I really loved the service and the staff of sky automobiles mohaba bazar",
+      name: "Mr. Sakshi Sen",
+      rating: "5",
+    },
+    {
+      review:
+        "Excellent service by the delivery agent Mr.Akash Singh Sir through out the purchasing process. Thank you soo much Maruti Suzuki Arena Mohaba for the awesome delivery, Staff members were too polite , well behaved, over all I loved the service.",
+      name: "Mr. Vidhi manjhi ",
+      rating: "5",
+    },
+    {
+      review:
+        "I have recently purchased my Jimny from Sky Automobiles Nexa. My experience of buying car from this Sky Nexa Showroom has been fantabulous. Staff is really very cooperative. I really loved to b part of this showroom.",
+      name: "Mr. Shivam Verma ",
+      rating: "5",
+    },
+    {
+      review:
+        "I have recently purchased My Grand Vitara from Sky Automobiles Nexa Magneto. I must say these people have been truly amazing. Everything was at place and before time. My car was ready for the unveiling. Ceremony was grand and my experience has been excellent. This Sky Nexa showroom beside Magneto mall is what I’ll definitely recommend due to its Welcome experience, hospitality and timely management.",
+      name: "Mr. Vardan Sharma ",
+      rating: "5",
+    },
+    {
+      review:
+        "Today I purchased a Baleno and had a superb experience. The executives were very cooperative, making the entire process smooth. Delivery was timely, and the service was excellent!",
+      name: "Mr. Amandeep gulati",
+      rating: "5",
     },
   ];
 
