@@ -5,7 +5,7 @@ import React from "react";
 export const metadata: Metadata = {
   title: "Maruti Suzuki Swift On-Road Price Raipur | Features & Offers",
   description:
-    "Discover the Maruti Suzuki Swift in Raipur with on-road prices, features, and exclusive offers. Book a test drive today at Sky Maruti Suzuki Raipur.",
+    "Discover the Maruti Suzuki Swift in Raipur with on-road prices, features, and exclusive offers. Book a test drive today at Sky Automobiles Maruti Suzuki Raipur.",
 };
 const Swift: React.FC = () => {
   return (

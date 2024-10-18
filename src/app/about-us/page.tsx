@@ -5,9 +5,10 @@ import React from "react";
 import AboutUs from "./AboutUs";
 
 export const metadata: Metadata = {
-  title: "About Sky Maruti Suzuki Bhubaneswar, Raipur | Trusted Maruti Suzuki Dealer",
+  title:
+    "About Sky Automobiles Maruti Suzuki Bhubaneswar, Raipur | Trusted Maruti Suzuki Dealer",
   description:
-    "Sky Maruti Suzuki in Bhubaneswar offers unmatched services for Maruti Suzuki vehicles. Discover our journey, commitment to excellence, and why we are Bhubaneswar's & Raipur's preferred Maruti Suzuki dealer.",
+    "Sky Automobiles Maruti Suzuki in Bhubaneswar offers unmatched services for Maruti Suzuki vehicles. Discover our journey, commitment to excellence, and why we are Bhubaneswar's & Raipur's preferred Maruti Suzuki dealer.",
 };
 
 const AboutUsPage = () => {

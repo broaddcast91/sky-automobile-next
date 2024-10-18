@@ -5,7 +5,7 @@ import React from "react";
 export const metadata: Metadata = {
   title: "Maruti Suzuki WagonR On-Road Price Raipur | Spacious Hatchback",
   description:
-    "Explore the spacious Maruti Suzuki WagonR in Raipur. Get on-road prices, features, and exciting offers at Sky Maruti Suzuki Raipur.",
+    "Explore the spacious Maruti Suzuki WagonR in Raipur. Get on-road prices, features, and exciting offers at Sky Automobiles Maruti Suzuki Raipur.",
 };
 const WagonR: React.FC = () => {
   return (

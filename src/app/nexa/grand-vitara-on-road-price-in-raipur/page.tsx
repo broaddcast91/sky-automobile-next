@@ -5,7 +5,7 @@ import React from "react";
 export const metadata: Metadata = {
   title: "NEXA Grand Vitara On-Road Price Raipur | Premium SUV",
   description:
-    "Explore the premium NEXA Grand Vitara SUV in Raipur. Get on-road prices, advanced features, and exciting offers at NEXA Sky Maruti Suzuki Raipur.",
+    "Explore the premium NEXA Grand Vitara SUV in Raipur. Get on-road prices, advanced features, and exciting offers at NEXA Sky Automobiles Maruti Suzuki Raipur.",
 };
 const GrandVitara: React.FC = () => {
   return (

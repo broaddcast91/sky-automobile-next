@@ -5,11 +5,11 @@ import React from "react";
 export const metadata: Metadata = {
   title: "NEXA Ciaz On-Road Price Raipur | Luxury Sedan",
   description:
-    "Check out the luxurious NEXA Ciaz sedan in Raipur. Discover its on-road price, premium features, and exclusive offers at NEXA Sky Maruti Suzuki Raipur.",
+    "Check out the luxurious NEXA Ciaz sedan in Raipur. Discover its on-road price, premium features, and exclusive offers at NEXA Sky Automobiles Maruti Suzuki Raipur.",
 };
 const Ciaz: React.FC = () => {
   return (
-    <div> 
+    <div>
       <VehicleDetailTemplate index={14} />
     </div>
   );

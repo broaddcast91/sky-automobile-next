@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
 import { Metadata } from "next";
-import ChhattisgarhOutlets from './ChhattisgarhOutlets';
+import ChhattisgarhOutlets from "./ChhattisgarhOutlets";
 
 // Server-side metadata export
 export const metadata: Metadata = {
-  title: "Sky Maruti Suzuki Showrooms & Service Centers Raipur",
+  title: "Sky Automobiles Maruti Suzuki Showrooms & Service Centers Raipur",
   description:
-    "Locate Sky Maruti Suzuki showrooms and service centers in Raipur. Visit us for the latest Maruti Suzuki cars, test drives, and exceptional customer service.",
+    "Locate Sky Automobiles Maruti Suzuki showrooms and service centers in Raipur. Visit us for the latest Maruti Suzuki cars, test drives, and exceptional customer service.",
 };
 
 const CGOutlets = () => {
- return <ChhattisgarhOutlets />
-}
+  return <ChhattisgarhOutlets />;
+};
 
 export default CGOutlets;

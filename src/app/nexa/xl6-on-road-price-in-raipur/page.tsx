@@ -5,9 +5,9 @@ import React from "react";
 export const metadata: Metadata = {
   title: "NEXA XL6 On-Road Price Raipur | Premium 6-Seater MPV",
   description:
-    "Explore the premium NEXA XL6 MPV in Raipur. Find on-road prices, features, and attractive offers at NEXA Sky Maruti Suzuki Raipur.",
-}; 
-const XL6 : React.FC = () => {
+    "Explore the premium NEXA XL6 MPV in Raipur. Find on-road prices, features, and attractive offers at NEXA Sky Automobiles Maruti Suzuki Raipur.",
+};
+const XL6: React.FC = () => {
   return (
     <div>
       <VehicleDetailTemplate index={13} />
@@ -15,4 +15,4 @@ const XL6 : React.FC = () => {
   );
 };
 
-export default XL6 ;
+export default XL6;
