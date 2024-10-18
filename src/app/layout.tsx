@@ -8,7 +8,7 @@ import ModalSelectState from "@/components/others/ModalSelectState";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Sky Maruti Suzuki Bhubaneswar , Raipur | Authorized Maruti Suzuki Dealer",
+  title: "Sky Automobiles Maruti Suzuki  Bhubaneswar , Raipur | Authorized Maruti Suzuki Dealer",
   description:
     "Welcome to Sky Maruti Suzuki, Bhubaneswar’s trusted Maruti Suzuki dealer. Explore the latest models, book a test drive, and avail exclusive offers on Maruti Suzuki cars. Visit us for unparalleled sales and after-sales services.",
 };
