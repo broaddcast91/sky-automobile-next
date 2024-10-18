@@ -132,7 +132,7 @@ const HeroSection = () => {
               </div>
             </SwiperSlide>
 
-            <div className="lg:flex justify-center gap-4 my-6 absolute bottom-10 left-1/2 z-20 hidden ">
+            <div className="lg:flex justify-center gap-4 my-6 absolute bottom-10 left-1/2 z-20 hidden -translate-x-1/2 ">
               <div
                 ref={navigationPrevRef}
                 className={`flex items-center justify-center w-10 h-10 text-xl font-bold border-2 rounded-full cursor-pointer text-white border-secondaryGray2 ${
