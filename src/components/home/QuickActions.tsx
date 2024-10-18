@@ -165,7 +165,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({ isHeading }) => {
                 href="tel:+91 9156822218"
                 target="_blank"
                 rel="noreferrer"
-                className={`px-4 py-2 mx-auto mt-4 text-sm border rounded-lg group-hover:border-white hover:bg-white  md:mx-0 ${
+                className={`px-2 md:px-4 text-center py-2 mx-auto mt-4 text-sm border rounded-lg group-hover:border-white hover:bg-white  md:mx-0  ${
                   selectedState === "Odisha"
                     ? "hover:text-primaryBlue"
                     : "hover:text-primaryRed"
@@ -209,7 +209,7 @@ const QuickActions: React.FC<QuickActionsProps> = ({ isHeading }) => {
                   }`}
                   aria-label="TrueValue - Buy A Car Now"
                 >
-                  TrueValue - Sell Your Car Now
+                   Sell Your Car Now
                 </button>{" "}
               </Link>
             </div>
