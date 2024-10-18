@@ -1,5 +1,6 @@
 
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -124,13 +125,20 @@ const blogPosts = [
 const Blogs = () => {
   return (
     <div className="min-h-screen">
-   
-      <div className="md:pt-20 min-h-40 bg-primaryGray pt-16 pb-8">
-        <div className="min-h-40 flex justify-center items-center text-white text-3xl">
-          Check the Latest Blog Posts on Automobile News
-        </div>
+      <div className=" bg-primaryGray min-h-20 ">
+        <Image
+          src="/images/other/Ignis_Radiance_Edition_banner.webp"
+          alt="banner"
+          className="w-full object-cover  object-bottom"
+          width={1920}
+          height={500}
+        />
       </div>
-      <div className="container min-h-[50vh] py-16 mx-auto xl:max-w-7xl lg:py-28 px-2">
+      <div className="container min-h-[50vh] py-16 mx-auto xl:max-w-7xl lg:py-24 px-2">
+        <h1 className="text-3xl font-bold mb-8">
+          {" "}
+          Check the Latest Blog Posts on Automobile News
+        </h1>
         <div className="grid lg:grid-cols-3 gap-4 md:grid-cols-2 lg:gap-y-6 ">
           {blogPosts.map((post) => (
             <article
@@ -164,9 +172,9 @@ const Blogs = () => {
                 </button> */}
                 <div className="flex justify-between gap-2 mt-4">
                   <Link href={post.blogLink} className="w-1/2 text-sm">
-                  <button className="text-primaryBlue group-hover:bg-white group-hover:text-primaryBlue  border px-4 py-1.5 rounded w-full text-sm ">
-                    Read More
-                  </button>
+                    <button className="text-primaryBlue group-hover:bg-white group-hover:text-primaryBlue  border px-4 py-1.5 rounded w-full text-sm ">
+                      Read More
+                    </button>
                   </Link>
                   <Link href={post.linkCG} className="w-1/2 text-sm">
                     {" "}
@@ -180,7 +188,6 @@ const Blogs = () => {
           ))}
         </div>
       </div>
-     
     </div>
   );
 };
