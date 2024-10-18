@@ -60,74 +60,82 @@ const HeroSection = () => {
             className="relative  overflow-visible mySwiper"
           >
             <SwiperSlide className="">
-              <div className={` group `}>
+              <div className="hidden sm:block w-full">
                 <Image
                   src="/images/other/main_page_strong_hybrid.webp"
                   alt=""
                   height={600}
                   width={1366}
-                  className=" object-cover w-full hidden sm:block  "
+                  className=" object-cover w-full   "
                 />
+              </div>
+              <div className="sm:hidden w-full  ">
                 <Image
                   src="/images/other/main_strong_hybrid_mobile.webp"
                   alt=""
                   height={547}
                   width={425}
-                  className=" object-cover w-full sm:hidden  "
+                  className=" object-cover w-full   "
                 />
               </div>
             </SwiperSlide>
             <SwiperSlide className="">
-              <div className={` group `}>
+              <div className="hidden sm:block w-full">
                 <Image
                   src="/images/other/main_page_fronx.webp"
                   alt=""
+                  className=" object-cover w-full   "
                   height={600}
                   width={1366}
-                  className=" object-cover w-full hidden sm:block  "
                 />
+              </div>
+              <div className="sm:hidden w-full">
                 <Image
                   src="/images/other/main_fronx_mobile.webp"
                   alt=""
+                  className=" object-cover w-full   "
                   height={547}
                   width={425}
-                  className=" object-cover w-full sm:hidden  "
                 />
               </div>
             </SwiperSlide>
             <SwiperSlide className="">
-              <div className={` group `}>
+              <div className="hidden sm:block w-full">
                 <Image
                   src="/images/other/main_page_swift.webp"
                   alt=""
+                  className=" object-cover w-full   "
                   height={600}
                   width={1366}
-                  className=" object-cover w-full hidden sm:block  "
                 />
+              </div>
+              <div className="sm:hidden w-full">
                 <Image
                   src="/images/other/main_swift_mobile.webp"
                   alt=""
+                  className=" object-cover w-full   "
                   height={547}
                   width={425}
-                  className=" object-cover w-full sm:hidden  "
                 />
               </div>
             </SwiperSlide>
             <SwiperSlide className="">
-              <div className={` group `}>
+              <div className="hidden sm:block w-full">
                 <Image
                   src="/images/other/main_page_scng.webp"
                   alt=""
+                  className=" object-cover w-full   "
                   height={600}
                   width={1366}
-                  className=" object-cover w-full hidden sm:block  "
                 />
+              </div>
+              <div className="sm:hidden w-full">
                 <Image
                   src="/images/other/main_scng_mobile.webp"
                   alt=""
+                  className=" object-cover w-full   "
                   height={547}
                   width={425}
-                  className=" object-cover w-full sm:hidden  "
                 />
               </div>
             </SwiperSlide>
