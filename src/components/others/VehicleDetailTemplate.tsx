@@ -439,10 +439,10 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
       <section id="exterior-interior-section">
         <div className="py-10 bg-secondaryGray4 lg:py-20 my-10">
           <div className="container flex flex-col items-center mx-auto r xl:max-w-7xl">
-            {index === 11 ? (
+            {index === 12 ? (
               <div className="rounded-lg ">
                 <p
-                  className={`  text-white text-center mb-6 text-xl w-min mx-auto px-4 lg:px-8 py-1.5 ${
+                  className={`  text-white text-center mb-6 text-lg w-min mx-auto px-4 lg:px-8 py-1.5 rounded-full ${
                     selectedState === "Odisha"
                       ? " bg-primaryBlue border-primaryBlue"
                       : "bg-primaryRed border-primaryRed"
