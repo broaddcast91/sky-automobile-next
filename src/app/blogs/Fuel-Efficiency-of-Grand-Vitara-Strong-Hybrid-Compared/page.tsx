@@ -9,10 +9,8 @@ const Page = () => {
             Fuel Efficiency of Grand Vitara Strong Hybrid Compared
           </h1>
           <p className="text-sm font-medium my-4">
-            Published by: Sky Automobile on{" "}
-            <time dateTime={`2024-10-15`} className="">
-              Tue Oct 15 2024
-            </time>
+            Published by: Sky Automobiles
+           
           </p>
           <p className="mb-3">
             The 2024 Maruti Suzuki Grand Vitara Strong Hybrid stands out in the
@@ -49,17 +47,18 @@ const Page = () => {
                 technology shines.
               </li>
               <li>
-                <span className="font-bold">Hyundai Creta:</span> The Creta&apos;s
-                petrol variants deliver approximately 17-18 km/l, depending on
-                the engine choice and driving conditions. This places it
-                considerably behind the Grand Vitara Strong Hybrid, which can
-                achieve nearly 25 km/l in similar urban settings.
+                <span className="font-bold">Hyundai Creta:</span> The
+                Creta&apos;s petrol variants deliver approximately 17-18 km/l,
+                depending on the engine choice and driving conditions. This
+                places it considerably behind the Grand Vitara Strong Hybrid,
+                which can achieve nearly 25 km/l in similar urban settings.
               </li>
               <li>
                 <span className="font-bold">Kia Seltos: </span>
                 Similar to the Creta, the Seltos offers a fuel efficiency range
                 of about 17-19 km/l for its petrol models. Again, this falls
-                short compared to the Grand Vitara&apos;s strong hybrid performance.
+                short compared to the Grand Vitara&apos;s strong hybrid
+                performance.
               </li>
               <li>
                 <span className="font-bold">Honda HR-V:</span> The HR-V is known

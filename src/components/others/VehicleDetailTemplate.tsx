@@ -553,9 +553,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
                       : "hover:bg-primaryRed "}`}
                 >
                   <div className="">
-                    <time dateTime={post.date} className="text-sm ">
-                      {new Date(post.date).toDateString()}
-                    </time>
+                   
                     <h4
                       title={post.title}
                       className="font-medium text-xl min-h-4 mb-2 "

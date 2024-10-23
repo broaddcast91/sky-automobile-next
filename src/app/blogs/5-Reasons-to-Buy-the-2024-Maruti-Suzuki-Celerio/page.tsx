@@ -23,7 +23,6 @@ const reasons = [
   },
 ];
 
-
 const Page = () => {
   return (
     <div>
@@ -33,10 +32,8 @@ const Page = () => {
             5 Reasons to Buy the 2024 Maruti Suzuki Celerio
           </h1>
           <p className="text-sm font-medium my-4">
-            Published by: Sky Automobile on{" "}
-            <time dateTime={`2024-10-15`} className="">
-              Tue Oct 15 2024
-            </time>
+            Published by: Sky Automobiles
+           
           </p>
           <p className="mb-3">
             The 2024 Maruti Suzuki Celerio is a compact hatchback that has

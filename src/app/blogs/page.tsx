@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const blogPosts = [
   {
     id: 1,
-    date: "Tue Oct 15 2024",
+   
     title:
       "5 Reasons to Buy the 2024 Maruti Suzuki Swift Over Other Hatchbacks",
     author: "Sky Automobiles",
@@ -29,7 +29,7 @@ const blogPosts = [
   },
   {
     id: 2,
-    date: "Tue Oct 15 2024",
+   
     title:
       "5 Reasons to Buy the 2024 Maruti Suzuki Brezza Over Other Subcompact SUVs",
     author: "Sky Automobiles",
@@ -42,7 +42,7 @@ const blogPosts = [
   },
   {
     id: 3,
-    date: "Tue Oct 15 2024",
+   
     title:
       "5 Reasons to Buy the 2024 Maruti Suzuki Wagon R Over Other Hatchbacks",
     author: "Sky Automobiles",
@@ -55,7 +55,7 @@ const blogPosts = [
   },
   {
     id: 4,
-    date: "Tue Oct 15 2024",
+   
     title: "5 Reasons to Buy the 2024 Maruti Suzuki Grand Vitara Strong Hybrid",
     author: "Sky Automobiles",
     excerpt:
@@ -67,7 +67,7 @@ const blogPosts = [
   },
   {
     id: 5,
-    date: "Tue Oct 15 2024",
+   
     title: "Fuel Efficiency of Grand Vitara Strong Hybrid Compared",
     author: "Sky Automobiles",
     excerpt:
@@ -78,7 +78,7 @@ const blogPosts = [
   },
   {
     id: 6,
-    date: "Tue Oct 15 2024",
+   
     title: "5 Reasons to Buy the 2024 Maruti Suzuki Alto K10",
     author: "Sky Automobiles",
     excerpt:
@@ -89,7 +89,7 @@ const blogPosts = [
   },
   {
     id: 7,
-    date: "Tue Oct 15 2024",
+   
     title: "5 Reasons to Buy the 2024 Maruti Suzuki Celerio",
     author: "Sky Automobiles",
     excerpt:
@@ -100,7 +100,7 @@ const blogPosts = [
   },
   {
     id: 8,
-    date: "Tue Oct 15 2024",
+   
     title: "5 Reasons to Buy the 2024 Maruti Suzuki Fronx",
     author: "Sky Automobiles",
     excerpt:
@@ -111,7 +111,7 @@ const blogPosts = [
   },
   {
     id: 9,
-    date: "Tue Oct 15 2024",
+   
     title: "5 Reasons to Buy the 2024 Maruti Suzuki Baleno",
     author: "Sky Automobiles",
     excerpt:
@@ -146,9 +146,10 @@ const Blogs = () => {
               className="border rounded-lg px-4 py-6 hover:shadow-2xl hover:bg-primaryBlue hover:text-white group flex justify-between flex-col"
             >
               <div className="">
-                <time dateTime={post.date} className="text-sm ">
-                  {new Date(post.date).toDateString()}
-                </time>
+                <time
+                  dateTime={new Date().toDateString()}
+                  className="text-sm "
+                ></time>
                 <h4
                   title={post.title}
                   className="font-medium text-xl min-h-4 mb-2 "
