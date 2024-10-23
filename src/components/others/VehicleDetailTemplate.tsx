@@ -111,10 +111,10 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
       outlet: "",
       variant: data?.variants[0]?.variant || "",
     });
-    const formElement = document.getElementById("myForm") as HTMLFormElement;
-    if (formElement) {
-      formElement.reset();
-    }
+    // const formElement = document.getElementById("myForm") as HTMLFormElement;
+    // if (formElement) {
+    //   formElement.reset();
+    // }
     setLoading(false);
   };
 
@@ -123,6 +123,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
   return (
     <div className="">
       <Header />
+      {/* Hero Section */}
       <section id="car-hero-section">
         <div className="px-1 py-28 bg-primaryGray lg:py-20 min-h-[80vh] flex flex-col justify-center">
           <div className="container grid items-center mx-auto text-white md:grid-cols-2 xl:max-w-7xl">
@@ -230,6 +231,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
           </div>
         </div>
       </section>
+      {/* Enquiry Form */}
       <section id="car-enq-section">
         <div
           id="enq-form"
@@ -381,6 +383,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
           </form>
         </div>
       </section>
+      {/* variant price */}
       <section id="variant-price-section">
         <div className="pb-10 container mx-auto xl:max-w-7xl bg-white pt-2">
           <h4 className="text-2xl font-bold text-primaryGray lg:mb-3">
@@ -436,6 +439,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
           </div>
         </div>
       </section>
+      {/* Exterior and Interior */}
       <section id="exterior-interior-section">
         <div className="py-10 bg-secondaryGray4 lg:py-20 my-10">
           <div className="container flex flex-col items-center mx-auto r xl:max-w-7xl">
@@ -499,6 +503,7 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
           </div>
         </div>
       </section>
+      {/* Key Specifications */}
       <section id="key-specifications">
         <div className="container pt-6 pb-10 mx-auto xl:max-w-7xl lg:pb-12 px-1 ">
           <h4 className="text-2xl font-bold text-primaryGray lg:mb-6">
@@ -530,6 +535,72 @@ const VehicleDetailTemplate: React.FC<VehiceProps> = ({ index }) => {
           </div>
         </div>
       </section>
+      {/* Blogs  */}
+      {data && data?.blogs && data?.blogs.length && (
+        <section id="blogs-section">
+          <div className="container pt-6 pb-10 mx-auto xl:max-w-7xl  px-1 ">
+            {" "}
+            <h4 className="text-2xl font-bold text-primaryGray mb-6">
+              {data?.name} Latest Blogs
+            </h4>
+            <div className="grid  gap-4 md:grid-cols-2 lg:gap-y-6  ">
+              {data.blogs.map((post, i) => (
+                <article
+                  key={i}
+                  className={`border rounded-lg px-4 py-6 hover:shadow-2xl  hover:text-white group flex justify-between flex-col ${
+                    selectedState === "Odisha"
+                      ? "hover:bg-primaryBlue "
+                      : "hover:bg-primaryRed "}`}
+                >
+                  <div className="">
+                    <time dateTime={post.date} className="text-sm ">
+                      {new Date(post.date).toDateString()}
+                    </time>
+                    <h4
+                      title={post.title}
+                      className="font-medium text-xl min-h-4 mb-2 "
+                    >
+                      {post.title}
+                    </h4>
+                  </div>
+                  <div className="">
+                    {" "}
+                    <p className="text-sm ">
+                      Published by:{" "}
+                      <span className="italic">{post.author}</span>{" "}
+                    </p>
+                    <h5
+                      className="min-h-4  mt-2 line-clamp-5 text-sm mb-2 "
+                      title={post.desc}
+                    >
+                      {post.desc}
+                    </h5>
+                   
+                    <Link
+                      href={post.link}
+                      className=" underline group-hover:text-white "
+                    >
+                      Read More
+                    </Link>
+                    {/* <Link href={post.link} className="w-full text-sm">
+                      <button className="text-primaryBlue group-hover:bg-white group-hover:text-primaryBlue  border px-4 py-1.5 rounded w-full text-sm ">
+                        Read More
+                      </button>
+                    </Link>
+                     <Link href={post.linkCG} className="w-1/2 text-sm">
+                    {" "}
+                    <button className="text-primaryBlue group-hover:text-white  border px-4 py-1.5 rounded w-full ">
+                      Explore
+                    </button>
+                  </Link> */}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}{" "}
+      {/* Explore More */}
       <section id="explore-more-section">
         <div className="container pt-6 pb-10 mx-auto xl:max-w-7xl lg:pb-20 px-1 ">
           {" "}

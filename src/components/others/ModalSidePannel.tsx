@@ -10,7 +10,7 @@ interface ModalSidePannelProps {
   setShowSidePanel: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ModalSidePannel = ({ setShowSidePanel }: ModalSidePannelProps) => {
+const ModalSidePannel = ({ setShowSidePanel, showSidePanel }: ModalSidePannelProps) => {
   const { selectedState } = useAppContext();
   const [openShowVehicle, setOpenShowVehicle] = React.useState(0);
 
@@ -18,7 +18,7 @@ const ModalSidePannel = ({ setShowSidePanel }: ModalSidePannelProps) => {
     <div
       className={`fixed top-16  right-0 w-full h-full bg-white  z-50 min-h-[calc(100vh-50px)] lg:hidden max-w-md px-2 overflow-scroll border-l  max-h-[200vh] ${
         selectedState === "Odisha" ? "text-primaryBlue" : "text-primaryRed"
-      }  py-6`}
+      } ${showSidePanel ? "translate-x-0 " : "translate-x-full"} duration-500 py-6`}
     >
       <div>
         {/* <input
@@ -182,19 +182,19 @@ const ModalSidePannel = ({ setShowSidePanel }: ModalSidePannelProps) => {
             </button>
           )}
           {openShowVehicle === 4 && (
-            <div className="bg-gray-50 rounded-lg">
-              <Link href="/truevalue/buy-a-car">
+            <div className="bg-gray-100 rounded-lg mb-1 ">
+              {/* <Link href="/truevalue/buy-a-car">
                 <div
                   onClick={() => setShowSidePanel(false)}
                   className="  min-h-8 pl-12 py-2 border-b  text-sm "
                 >
                   Buy a Vehicle
                 </div>
-              </Link>
+              </Link> */}
               <Link href="/truevalue/sell-a-car">
                 <div
                   onClick={() => setShowSidePanel(false)}
-                  className="  min-h-8 pl-12 py-2 border-b  text-sm "
+                  className="  min-h-8 pl-12 py-2  "
                 >
                   Sell your Car
                 </div>
@@ -301,7 +301,7 @@ const ModalSidePannel = ({ setShowSidePanel }: ModalSidePannelProps) => {
                 : "bg-white "
             }   `}
           >
-            Other{" "}
+            More{" "}
             <FaCaretRight
               className={`duration-500 ${
                 openShowVehicle === 7 ? "-rotate-90" : "rotate-90"
@@ -321,6 +321,12 @@ const ModalSidePannel = ({ setShowSidePanel }: ModalSidePannelProps) => {
                 className="  min-h-8 pl-12 py-2 border-b "
               >
                 <Link href={"/contact-us"}>Contact Us</Link>
+              </div>
+              <div
+                onClick={() => setShowSidePanel(false)}
+                className=" min-h-8 pl-12 py-2 border-b    "
+              >
+                <Link href={"/blogs"}> Blogs</Link>
               </div>
               <div
                 onClick={() => setShowSidePanel(false)}

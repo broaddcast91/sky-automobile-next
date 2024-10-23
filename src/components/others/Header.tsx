@@ -416,7 +416,7 @@ const Header = () => {
           </div>
         )}
       </div>
-      {showSidePanel && <ModalSidePannel setShowSidePanel={setShowSidePanel} />}
+      <ModalSidePannel showSidePanel={showSidePanel} setShowSidePanel={setShowSidePanel} />
     </header>
   );
 };
